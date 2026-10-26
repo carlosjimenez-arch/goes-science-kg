@@ -5,8 +5,14 @@ description: Corre o retoma el estudio internacional de un tramo de grados (9_11
 
 # Contraste internacional por tramo
 
-Lee primero la spec del tramo (`specs/11_…` o `specs/12_…`) y `HANDOFF_INTERNACIONAL.md`. Todo comando lleva
-`--tramo` (por defecto 9_11).
+Lee primero la spec del tramo (`specs/11_…` o `specs/12_…`); los informes y hallazgos verificados están en
+`internacional/` (se restaura del bucket con `gskg datos sincronizar`). Todo comando lleva `--tramo` (por defecto 9_11).
+
+Decisiones del usuario que no se reabren: nueve países (SG, JP, KR, ENG, AU, HK, TW, EE, ON); contraste contra la
+malla V2; dos niveles por país, núcleo (contraste principal) y especialización (techo); Ontario con la fuente de
+Grade 9; Hong Kong con los marcos actualizados del CDC de junio de 2026; Inglaterra con el contenido DfE 2014/2015
+hasta que se publique el currículo renovado. Si Vertex devuelve 403, el usuario debe volver a autenticar `gcloud`
+con la cuenta GOES. El traspaso original del 7–8 de octubre está en el historial de Git (commit `022efed`).
 
 1. **Fuentes.** Cada documento nuevo se descarga con la skill `fuentes-descargar` y se registra en `manifest.csv`.
    Después va al catálogo del tramo (`config/internacional.yaml` o `config/internacional_2_8.yaml`) con páginas del

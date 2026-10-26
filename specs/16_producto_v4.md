@@ -90,7 +90,8 @@ La vista admite un catálogo parcial y muestra sus estados; ello no permite publ
 producto completo. El motor exige evidencia original y todos los dictámenes. Su respaldo automático
 no equivale a eficacia demostrada, calibración psicométrica ni aprobación del MINED.
 
-Aceptación, investigaciones y tareas abiertas: [roadmap](../docs/ROADMAP.md).
+Aceptación y tareas abiertas: [continuidad](../HANDOFF.md); el roadmap y las investigaciones previas están en el
+historial de Git (commit `022efed`).
 
 
 ## Formatos producto-3 y producto-4

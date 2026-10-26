@@ -61,15 +61,17 @@ Los dictámenes automáticos no equivalen a aprobación del MINED ni eficacia de
 ## Guiones y biblioteca docente
 
 `clases/` produce guiones por objetivo con redacción, cuatro lectores ciegos y reparación acotada;
-`materiales/` empaqueta la biblioteca docente (2.867 registros) servida en `/api/v4/materiales`.
+`materiales/` empaqueta la biblioteca docente vigente (3.837 registros, con los guiones) servida en
+`/api/v4/materiales`; la biblioteca de preparaciones (2.867 registros) sólo sirve para recompilar guiones.
 La ampliación autorizó 4.000 invocaciones y USD 3.500 de reserva **acumuladas** sobre las 668 previas
 (`config/presupuesto_clases_v4.json`). No reiniciar el ledger ni repetir votos de un contenido vetado.
 El 25 de octubre de 2026 el usuario amplió el tope a 4.400 llamadas: R21 y R22 dejaron 4.294 llamadas y
 USD 3.219,54 de reserva; el usuario no autorizó ampliarlo más. Tras revisar directamente los 968 guiones que sólo
 tenían lectores automáticos (13,6 % con defectos materiales), se publican 862 guiones, todos con revisión directa
 aprobada, y 151 objetivos quedan declarados sin guion. Ningún guion se libera sin cuatro lectores favorables ni
-con un bloqueo de revisión directa, y toda versión nueva requiere revisión directa independiente. Las 34
-correcciones R23 (`data/clases_v4/ediciones_editoriales/r23/`) esperan autorización para sus cuatro lecturas. Recompilar usa la biblioteca de
+con un bloqueo de revisión directa, y toda versión nueva requiere revisión directa independiente. Las 132
+correcciones R23 (`data/clases_v4/ediciones_editoriales/r23/`) quedan sin ejecutar: el usuario no autorizó sus
+cuatro lecturas (315–630 llamadas). Recompilar usa la biblioteca de
 preparaciones (`data/materiales_preparaciones`), no la ampliada. Alcance y
 límites: `specs/18_materiales_docentes.md`, `specs/19_guiones_completos_v4.md`,
 `docs/MATERIALES_DOCENTES.md` y `docs/CLASES_V4.md`.

@@ -9,7 +9,19 @@ uv run pytest -q
 make lint
 ```
 
-Python mínimo 3.11; dependencias resueltas en `uv.lock`. En el sandbox de Codex, si la caché global de uv no es accesible, usa una caché temporal autorizada: `UV_CACHE_DIR=/tmp/goes-uv-cache uv run pytest -q`. No se desactivan hooks para hacer pasar pruebas. La CI portable se configura en `.github/workflows/quality.yml`; la suite integral usa el corpus local.
+Python mínimo 3.11; dependencias resueltas en `uv.lock`. No se desactivan hooks para hacer pasar pruebas. La CI portable se configura en `.github/workflows/quality.yml`; la suite integral necesita el corpus sincronizado desde GCS.
+
+## Traer los datos
+
+```bash
+uv run --frozen gskg datos sincronizar          # descarga lo que falte según los recibos de config/*.lock.json
+uv run --frozen gskg servir --sincronizar      # sincroniza y después sirve en 127.0.0.1:8010
+```
+
+`sincronizar` nunca sobrescribe datos existentes y rechaza estados parciales o divergentes; `gskg datos estado`
+y `gskg datos verificar` comparan lo local con los recibos. `servir` sólo escucha en loopback salvo con
+`--permitir-red`: la API no autentica y, fuera de loopback, debe ir detrás de un proxy con control de acceso.
+[Recibos, publicación de datos nuevos y límites](DATOS_EXTERNOS.md).
 
 ## Servicio de aplicación y calidad
 
@@ -31,9 +43,9 @@ por lo que no autoriza reanudar campañas antiguas. [Excepciones y métricas](CA
 
 ## Datos y propuestas V4
 
-Antes de usar el corpus en un checkout de código, ejecutar `uv run gskg datos restaurar --en-repo`.
-La recuperación requiere la misma cuenta GOES, verifica inventario y migra sólo la identidad física
-de los ledgers. [Respaldo y retiro](DATOS_EXTERNOS.md). No se restauran credenciales desde GCS.
+Antes de usar el corpus en un checkout de código, ejecutar `uv run gskg datos sincronizar`.
+La recuperación requiere la cuenta GOES, verifica inventario y migra sólo la identidad física
+de los ledgers. [Datos en GCS](DATOS_EXTERNOS.md). No se restauran credenciales desde GCS.
 
 ```bash
 uv run gskg producto mejoras preparar --destino data/operaciones/campana_nueva
@@ -54,8 +66,8 @@ Un cambio de contexto exige un protocolo nuevo con antecedentes conservados. Ant
 fallo como voto; el seguimiento finito recupera las revisiones ausentes. Nunca repetir votos para buscar
 un consenso distinto sobre el mismo texto vetado. Los logs usan VERDE/AMARILLO/ROJO y archivo durable.
 
-La revisión P5 conserva diez incidencias; el plan P6 preparado las incluye todas. Consultar
-[el estado vigente y las rutas exactas](CURRICULARIZACION_V4.md) antes de gastar o promover una selección.
+La campaña de curricularización está cerrada (108 unidades, 1.013 filas, 668 invocaciones); su resumen está en
+[Arquitectura](ARQUITECTURA.md#curricularización-completa-y-publicación-producto-4). No repetirla.
 
 ## Fuentes y versiones
 
@@ -85,13 +97,13 @@ El constructor exige piloto superado y catálogo completo, verifica celdas y cre
 sin llamadas remotas. Las filas pendientes o fuera de alcance no entran como evidencia de una disciplina.
 Las alertas científicas conocidas se revalidan y bloquean generación sobre las filas afectadas. El
 diagnóstico conserva aparte lo declarado y lo realmente verificado; las 22 categorías documentales no
-son 22 alineaciones curriculares. [Contrato y pruebas](investigacion/producto_v4.md).
+son 22 alineaciones curriculares. Contrato y pruebas: registro histórico en el historial de Git (commit `022efed`).
 
 El usuario autorizó la continuación de clasificación V4 el 21 de octubre de 2026. Se conserva
 `catalogacion-v4-20261021`, con hasta 52 intentos nuevos, 76 acumulados y USD 8 acumulados.
 El [registro del plan autorizado](../data/producto/V4/autorizacion_catalogacion_20261021.json)
 fija el corpus y destino; no amplía el permiso a otros workflows.
-[Procedimiento y contabilidad](investigacion/catalogacion_v4.md).
+Procedimiento y contabilidad: registro histórico en el historial de Git (commit `022efed`).
 
 ## Referencias internacionales verificadas
 
@@ -102,7 +114,7 @@ con las dependencias fijadas:
 ```bash
 uv run gskg investigacion referencias ingerir pisa_2025_marco_final erce_2019_marco_y_resultados_ciencias timss_2027_marco erce_2019_reporte_tecnico_2025 --descargar
 uv run gskg investigacion referencias buscar "scientific competencies" --fuente pisa_2025_marco_final
-uv run gskg investigacion referencias pagina erce_2019_marco_y_resultados_ciencias 19 --salida /tmp/erce-p19.json
+uv run gskg investigacion referencias pagina erce_2019_marco_y_resultados_ciencias 19 --salida <trabajo>/erce-p19.json
 uv run gskg investigacion referencias validar-dimensiones
 ```
 
@@ -115,8 +127,8 @@ La consulta localiza páginas; no aplica la calidad del benchmark histórico a e
 ```bash
 uv run gskg alineacion listar-referentes --marco PISA
 uv run gskg alineacion validar-referentes
-uv run gskg alineacion preparar <fila-id> <referente-local-id> --salida /tmp/par-preparado.json
-uv run gskg alineacion evaluar <fila-id> <referente-local-id> --salida /tmp/plan-alineacion.json
+uv run gskg alineacion preparar <fila-id> <referente-local-id> --salida <trabajo>/par-preparado.json
+uv run gskg alineacion evaluar <fila-id> <referente-local-id> --salida <trabajo>/plan-alineacion.json
 ```
 
 Los 29 criterios representan tres competencias, quince subcompetencias y tres tipos de conocimiento
@@ -146,19 +158,19 @@ infieren modalidades Foundation desde texto que perdió subrayados. Ver auditor�
 ## Conocimiento y unidades
 
 ```bash
-uv run gskg producto conocimiento --salida /tmp/candidatos-v4.json
-uv run gskg producto conocimiento --politica config/politica_conocimiento_v4.yaml --salida /tmp/candidatos-ediciones-v4.json
+uv run gskg producto conocimiento --salida <trabajo>/candidatos-v4.json
+uv run gskg producto conocimiento --politica config/politica_conocimiento_v4.yaml --salida <trabajo>/candidatos-ediciones-v4.json
 uv run gskg producto juicios --help
 uv run gskg producto unidades listar --grado 10 --asignatura-malla Física
-uv run gskg producto unidades preparar --grado 10 --asignatura-malla Física --unidad "1. La física como ciencia" --catalogo data/evaluacion/v4/catalogo_piloto_referencia.json --destino /tmp/unidad-fisica --conectividad sin_conexion
-uv run gskg producto unidades ejecutar /tmp/unidad-fisica/paquete.json --destino /tmp/unidad-fisica
+uv run gskg producto unidades preparar --grado 10 --asignatura-malla Física --unidad "1. La física como ciencia" --catalogo data/evaluacion/v4/catalogo_piloto_referencia.json --destino <trabajo>/unidad-fisica --conectividad sin_conexion
+uv run gskg producto unidades ejecutar <trabajo>/unidad-fisica/paquete.json --destino <trabajo>/unidad-fisica
 ```
 
 El descubrimiento local utiliza alias completos y celdas originales, conserva todas las filas y devuelve
 hipótesis, ambigüedades y bloqueos. Sus 6.901 candidatos iniciales no son enlaces aceptados: los objetivos
 extranjeros históricos necesitan edición, edad/grado y evidencia; los prerrequisitos necesitan juicio de
 dependencia y validación de progresión. Cero prácticas recuperadas por alias es una brecha del método,
-no ausencia de prácticas en V4. [Resultados y límites](investigacion/conocimiento_v4.md).
+no ausencia de prácticas en V4. Resultados y límites: registro histórico en el historial de Git (commit `022efed`).
 
 La política opcional fija cuatro registros históricos cotejados por bytes con DfE/MOE. No certifica
 traducción, modalidad o pertinencia de una relación. La hidratación estructurada usa el código oficial
@@ -183,9 +195,9 @@ PISA/ERCE (un respaldo documental, un rechazo y dos abstenciones). Para reproduc
 coleccionar <ids-originales> --salida <archivo.json>` verifica checkpoints en modo sólo lectura y relee
 fuentes; luego se pasa `--alineaciones <archivo.json>` junto a `--conocimiento` en `producto construir`.
 No crea proveedores ni repone contadores. `GET /api/v4/alineaciones` lista todos los estados y
-`GET /api/v4/alineaciones/{id}` los audita con sus fuentes. [Comandos exactos](investigacion/integracion_alineaciones_v4.md).
+`GET /api/v4/alineaciones/{id}` los audita con sus fuentes. Comandos exactos: registro histórico en el historial de Git (commit `022efed`).
 `--coleccion progresiones` en `investigacion referencias` consulta el almacén NGSS separado y fijado
-por SHA. Descargarlo no admite relaciones curriculares. [Fuentes y límites](investigacion/progresiones_ngss_20261021.md).
+por SHA. Descargarlo no admite relaciones curriculares. Fuentes y límites: registro histórico en el historial de Git (commit `022efed`).
 
 El paquete incluye cada objetivo, indicador, evidencia, fase y alerta de la unidad. Una sesión por fila
 es una organización propuesta, no carga horaria normativa. Tiempo, materiales, conectividad, apoyos y
@@ -194,7 +206,7 @@ exige la misma publicación completa. `unidades ejecutar` muestra el plan sin GC
 un único presupuesto entre sesiones y reutiliza checkpoints terminales. Una respuesta que cita otra fila
 no se cuenta como respaldo del objetivo solicitado. La solicitud incluye `fila_id`; el recuperador
 comprueba identidad/grado/disciplina y el Motor veta otro anclaje antes de los jueces. Las evidencias
-persistidas se rehidratan también al reanudar. [Contrato](investigacion/paquetes_unidad.md).
+persistidas se rehidratan también al reanudar. Contrato: registro histórico en el historial de Git (commit `022efed`).
 
 `unidades ejecutar --max-salida-tokens` fija la salida estructurada dentro de la huella de la ejecución.
 No amplía automáticamente intentos ni USD. Antes de una ejecución remota debe comprobarse el acceso
@@ -211,11 +223,11 @@ propuestas o dictámenes, exclusivamente por `TransportError`. Revalida los chec
 sus fuentes; conserva ID, ledger, configuración y límites. Exporta aparte, con hash del original y
 anexo de consumo. No admite otro voto tras una respuesta, ni renovar presupuesto; si vuelve a fallar
 el transporte, detiene los objetivos restantes. El módulo operativo fija su propio protocolo además
-del entorno original del motor. [Contrato](investigacion/paquetes_unidad.md).
+del entorno original del motor. Contrato: registro histórico en el historial de Git (commit `022efed`).
 
 ## Publicación de la API
 
-La API fija y verifica el grafo por instancia. Los generadores `grados construir` y `propuesta simular` publican procedencia después de recalcular. Los diagnósticos y simulaciones históricos sin publicación no se presentan como resultados del grafo actual: devuelven `503` hasta regenerarlos. Una mutación de una propuesta no invalida otros artículos; un cambio del grafo requiere reiniciar. Los endpoints de listas señalan omisiones con `X-Articulos-No-Disponibles`. Comandos, contratos y límites están en [coherencia de la API](investigacion/coherencia_api.md).
+La API fija y verifica el grafo por instancia. Los generadores `grados construir` y `propuesta simular` publican procedencia después de recalcular. Los diagnósticos y simulaciones históricos sin publicación no se presentan como resultados del grafo actual: devuelven `503` hasta regenerarlos. Una mutación de una propuesta no invalida otros artículos; un cambio del grafo requiere reiniciar. Los endpoints de listas señalan omisiones con `X-Articulos-No-Disponibles`. Comandos, contratos y límites: registro histórico en el historial de Git (commit `022efed`).
 
 ## Recuperación y contexto
 
@@ -264,7 +276,7 @@ continuar lo pendiente de Ciencias hasta cerrar. Las ocho filas de Física 10.º
 presupuesto único de 64 intentos/USD 8: cuatro respaldadas y cuatro abstenciones, 58 intentos consumidos
 y USD 7,4261195 reservados. La autorización concreta está junto al paquete. Reanudar recuperó los ocho
 terminales con cero generación y cero gasto adicional; conservó también las abstenciones.
-[Evidencia y límites](investigacion/resultados_unidad_fisica10_v4.md). No ampliar ese presupuesto ni
+Evidencia y límites: registro histórico en el historial de Git (commit `022efed`). No ampliar ese presupuesto ni
 trasladar a Ciencias autorizaciones dirigidas expresamente a otro producto.
 
 ## Limpieza y compatibilidad
@@ -273,13 +285,10 @@ La CLI monolítica se reemplazó por un paquete; se conserva su entrypoint y los
 
 Se retiró del runtime la garantía de marco desactivada (`GARANTIA_MARCO=0` y su rama): la ablación histórica no mostró mejora y no tenía efecto sobre el ranking. Su resultado experimental se conserva en el historial de evaluación.
 
-Última verificación global (2026-10-21): **1.161 pruebas aprobadas en 160,45 s**, con
-`UV_CACHE_DIR=/tmp/goes-auditoria-uv-cache .venv/bin/pytest -q`; Ruff sobre `src`, `tests` y `.claude/hooks`,
-y `git diff --check`, sin errores. La clave del planificador coincide con `planificador_recuperacion`;
-no se ajustaron prompts o ranking del recuperador con el reservado. La primera corrida tras declarar certifi tuvo un fallo de resolución
-de dependencias del hook: se sincronizó el editable sin red y pasaron los 32 tests del harness y después
-la suite global. Las fuentes, reportes y grafo históricos no tienen
-diferencias. La copia V4 se obtuvo del Drive institucional; el inventario y el mapeo de todas sus hojas
+Última medición local completa (26-10-2026): **1.718 pruebas aprobadas y 79,3 % de cobertura de líneas**, según
+[medicion.json](badges/medicion.json) y los badges del README. La clave del planificador coincide con
+`planificador_recuperacion`; no se ajustaron prompts o ranking del recuperador con el reservado. Las fuentes,
+reportes y grafo históricos no tienen diferencias. La copia V4 se obtuvo del Drive institucional; el inventario y el mapeo de todas sus hojas
 están implementados. El SDK de Google puede emitir un aviso de deprecación bajo Python 3.14; no provocó
 fallo de ejecución.
 
@@ -289,7 +298,7 @@ grado incompatible con cero llamadas, ocho sesiones con fuentes verificadas y 27
 
 La revisión visual confirmó escritorio, filtros, teclado, fichas y alertas, y móvil a 390 × 844. Se corrigió
 un desbordamiento del SHA del pie. La descarga real de Markdown sigue sin confirmar en Chrome; la
-exportación tiene pruebas locales de contenido y sintaxis. Ver [evidencia y límites](investigacion/revision_visual_v4.md).
+exportación tiene pruebas locales de contenido y sintaxis. Evidencia y límites: registro histórico en el historial de Git (commit `022efed`).
 
 El plan aplica 76 intentos acumulados: 24 previos + hasta 52 nuevos, dentro del techo solicitado de 78.
 
@@ -304,7 +313,7 @@ una ejecución. [Ensayo real y conservación del contador](VERIFICACION_GCS.md).
 
 ## Interfaz curricular GOES
 
-Con el corpus repuesto, `uv run gskg servir --puerto 8010` abre la aplicación en
+Con el corpus sincronizado, `uv run gskg servir --puerto 8010` abre la aplicación en
 `http://127.0.0.1:8010/app/`; la raíz redirige allí y OpenAPI continúa en `/docs`.
 Las API históricas y V4 conservan sus rutas. La nueva API de la interfaz está en `/api/v4/interfaz`.
 No necesita un build npm ni peticiones a CDN. Navegar, exportar y compilar briefs no consume Vertex.
@@ -312,9 +321,9 @@ Los datos restaurados para servir quedan ignorados por Git; no se incluyen en lo
 [Operación y verificación de la aplicación](APLICACION_CIENCIAS.md).
 
 
-La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
-V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
-Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
-La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
-clases; no se presentan como guiones completos nuevos para todos los objetivos.
+La biblioteca docente vigente tiene 3.837 registros: guiones publicados, 1.013 preparaciones V4 por objetivo,
+108 por unidad y el material histórico sin migrar sus dictámenes. La biblioteca de preparaciones (2.867
+registros, sin guiones) se conserva aparte sólo para recompilar guiones. `gskg datos sincronizar` trae ambas;
+`gskg materiales restaurar` repone sólo la biblioteca. Consultar `/api/v4/materiales` y su OpenAPI.
+La preparación reutiliza textos revisados y no consume Vertex.
 [Detalle, almacenamiento y pruebas](MATERIALES_DOCENTES.md).

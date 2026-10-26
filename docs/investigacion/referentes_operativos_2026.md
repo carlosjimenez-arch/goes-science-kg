@@ -164,8 +164,8 @@ Se comparó localmente con **PDFplumber 0.11.10**, sin modificar objetos ni mani
 
 Los conteos usan un detector explícito de nombres de glifo y no representan una tasa de error de OCR ni
 una medición completa de fidelidad. Ambos extractores produjeron cero controles no espaciales en estas
-dos páginas. La comparación completa con hashes del texto está en `/tmp/erce_comparacion_extractores.json`;
-los textos de control están en `/tmp/erce_tecnico_pdf11_pypdf.txt`, `/tmp/erce_tecnico_pdf11_pdfplumber.txt`
+dos páginas. La comparación completa con hashes del texto está en `<temporal>/erce_comparacion_extractores.json`;
+los textos de control están en `<temporal>/erce_tecnico_pdf11_pypdf.txt`, `<temporal>/erce_tecnico_pdf11_pdfplumber.txt`
 y los equivalentes para PDF 19. No se presenta la ausencia de marcadores como garantía de lectura correcta.
 
 Se concretó una extracción adicional versionada en
@@ -212,7 +212,7 @@ adicional identificada, sin migrar ni sobrescribir el raw.
 Huella del archivo de perfiles auditado:
 `3347b0a5dfdd2716d909cef93e1079450e19f784dc45b6995a04cfaaa139728e`.
 
-Los cinco PNG y textos están en `/tmp/erce_regiones_auditadas/`: `pdf11_cuerpo_izquierda.png`,
+Los cinco PNG y textos están en `<temporal>/erce_regiones_auditadas/`: `pdf11_cuerpo_izquierda.png`,
 `pdf11_cuerpo_derecha.png`, `pdf11_nota_izquierda.png`, `pdf11_nota_derecha.png` y `pdf19_tabla_2_9.png`.
 `auditoria.json` conserva dimensiones, cajas y huellas de las variantes de texto con y sin `layout=True`.
 
@@ -227,5 +227,5 @@ archivos nuevos; validación completa de los 29 referentes contra los dos docume
 verifican rechazos por edición, SHA, citas, páginas, población y jerarquía incorrectos. No evalúan psicometría,
 eficacia de aprendizaje ni la fidelidad semántica de todas las paráfrasis mediante un estudio externo.
 
-Renderizados de inspección conservados en `/tmp`: `erce_tecnico_pdf02.png`, `erce_tecnico_pdf11.png`,
+Renderizados de inspección conservados en una carpeta temporal: `erce_tecnico_pdf02.png`, `erce_tecnico_pdf11.png`,
 `erce_tecnico_pdf19.png`, `pisa_final_pdf24.png`, `pisa_final_pdf34.png` y `pisa_final_pdf36.png`.

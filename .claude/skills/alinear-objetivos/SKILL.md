@@ -5,7 +5,7 @@ description: Alinea objetivos (de un país o temas de la malla SV) contra un cat
 
 # Alinear contra el pivote
 
-Prompts de referencia (ya probados): `reportes/cobertura_curricular/prompts/alinear_paises.md`,
+Prompts de referencia (ya probados), todos en `reportes/cobertura_curricular/prompts/`: `alinear_paises.md`,
 `clasificar_lote.md` y `clasificar_lote_pisa.md`.
 
 1. **Preparar lotes** (script, no a mano): `data/interim/alineaciones/lotes/lote_<PAIS>_<MARCO>_<n>.json`,

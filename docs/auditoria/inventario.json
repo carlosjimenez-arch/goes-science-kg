@@ -1,16 +1,16 @@
 {
-  "archivos_inspeccionados": 611,
+  "archivos_inspeccionados": 560,
   "conteos": {
     "AsyncFunctionDef": 4,
     "AsyncFunctionDef_documentados": 2,
     "ClassDef": 297,
     "ClassDef_documentados": 253,
-    "FunctionDef": 1670,
-    "FunctionDef_documentados": 1030,
-    "Module": 236,
-    "Module_documentados": 236,
-    "lineas_python": 48870,
-    "modulos_python": 236
+    "FunctionDef": 1664,
+    "FunctionDef_documentados": 1024,
+    "Module": 235,
+    "Module_documentados": 235,
+    "lineas_python": 48662,
+    "modulos_python": 235
   },
   "consumidores_estaticos": {
     "src/goes_science_kg/__init__.py": [
@@ -247,7 +247,6 @@
       "tests/test_clases_editorial.py",
       "tests/test_clases_enrutamiento.py",
       "tests/test_clases_entrega_parcial.py",
-      "tests/test_clases_extractos.py",
       "tests/test_clases_fundamentacion.py",
       "tests/test_clases_insumos.py",
       "tests/test_clases_planificacion.py",
@@ -328,11 +327,13 @@
       "tests/test_salidas.py",
       "tests/test_seguimiento_mejoras.py",
       "tests/test_seleccion_contextual.py",
+      "tests/test_servir.py",
       "tests/test_simulador.py",
       "tests/test_sin_rutas_locales.py",
       "tests/test_sincronizacion.py",
       "tests/test_unidades.py",
       "tests/test_validacion_conocimiento.py",
+      "tests/test_vertex_historico.py",
       "tests/test_web_cientifica.py"
     ],
     "src/goes_science_kg/agentes_vertex.py": [
@@ -548,7 +549,6 @@
       "tests/test_clases_editorial.py",
       "tests/test_clases_enrutamiento.py",
       "tests/test_clases_entrega_parcial.py",
-      "tests/test_clases_extractos.py",
       "tests/test_clases_fundamentacion.py",
       "tests/test_clases_insumos.py",
       "tests/test_clases_planificacion.py",
@@ -634,9 +634,6 @@
     ],
     "src/goes_science_kg/clases/enrutamiento.py": [
       "tests/test_clases_enrutamiento.py"
-    ],
-    "src/goes_science_kg/clases/extractos.py": [
-      "tests/test_clases_extractos.py"
     ],
     "src/goes_science_kg/clases/fuentes.py": [
       "src/goes_science_kg/clases/complementos.py",
@@ -758,7 +755,8 @@
       "tests/test_referencias.py",
       "tests/test_referencias_adversarial.py",
       "tests/test_revision_v4.py",
-      "tests/test_salidas.py"
+      "tests/test_salidas.py",
+      "tests/test_servir.py"
     ],
     "src/goes_science_kg/cli/__main__.py": [],
     "src/goes_science_kg/cli/alineacion.py": [
@@ -1072,7 +1070,6 @@
       "src/goes_science_kg/producto/mejoras_contratos.py",
       "src/goes_science_kg/producto/unidades.py",
       "src/goes_science_kg/producto/vista.py",
-      "src/goes_science_kg/recuperacion/evaluacion_v4.py",
       "tests/test_catalogacion_v4.py",
       "tests/test_cli_unidades.py",
       "tests/test_producto_v4.py",
@@ -1458,7 +1455,8 @@
       "tests/test_bucle.py",
       "tests/test_calidad_grafos.py",
       "tests/test_internacional.py",
-      "tests/test_salidas.py"
+      "tests/test_salidas.py",
+      "tests/test_vertex_historico.py"
     ],
     "src/goes_science_kg/internacional/consenso.py": [
       "src/goes_science_kg/cli/internacional.py",
@@ -1526,7 +1524,8 @@
       "src/goes_science_kg/internacional/etiquetar.py",
       "src/goes_science_kg/internacional/extraer.py",
       "tests/test_aprendizaje.py",
-      "tests/test_internacional.py"
+      "tests/test_internacional.py",
+      "tests/test_vertex_historico.py"
     ],
     "src/goes_science_kg/internacional/visor.py": [
       "src/goes_science_kg/internacional/informe.py",
@@ -2747,8 +2746,7 @@
       "tests/test_agentic.py"
     ],
     "src/goes_science_kg/recuperacion/baseline.py": [
-      "src/goes_science_kg/recuperacion/__init__.py",
-      "src/goes_science_kg/recuperacion/evaluacion_v4.py"
+      "src/goes_science_kg/recuperacion/__init__.py"
     ],
     "src/goes_science_kg/recuperacion/buscador.py": [
       "src/goes_science_kg/recuperacion/__init__.py",
@@ -3053,19 +3051,6 @@
       ]
     },
     {
-      "archivo": "HANDOFF_INTERNACIONAL.md",
-      "enlaces": [
-        {
-          "destino": "HANDOFF.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "docs/README.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
       "archivo": "README.md",
       "enlaces": [
         {
@@ -3117,10 +3102,6 @@
           "estado": "versionado"
         },
         {
-          "destino": "docs/PUBLICACION.md",
-          "estado": "versionado"
-        },
-        {
           "destino": "specs/17_aplicacion_curricular.md",
           "estado": "versionado"
         },
@@ -3165,15 +3146,11 @@
           "estado": "versionado"
         },
         {
-          "destino": "docs/auditoria/REVISION_API_2026.md",
-          "estado": "versionado"
-        },
-        {
           "destino": "specs/README.md",
           "estado": "versionado"
         },
         {
-          "destino": "docs/auditoria/QA_SEGUNDA_REVISION.md",
+          "destino": "HANDOFF.md",
           "estado": "versionado"
         },
         {
@@ -3239,6 +3216,10 @@
           "estado": "versionado"
         },
         {
+          "destino": "DATOS_EXTERNOS.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "PROGRESION_2_11.md",
           "estado": "versionado"
         },
@@ -3276,23 +3257,7 @@
           "estado": "versionado"
         },
         {
-          "destino": "investigacion/integracion_alineaciones_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/coherencia_api.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/agentic_v4.md",
-          "estado": "versionado"
-        },
-        {
           "destino": "DATOS_EXTERNOS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CURRICULARIZACION_V4.md",
           "estado": "versionado"
         },
         {
@@ -3325,6 +3290,10 @@
           "estado": "versionado"
         },
         {
+          "destino": "auditoria/QA_PRODUCTO_20261025.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "auditoria/GITIGNORE_2026.md",
           "estado": "versionado"
         },
@@ -3335,104 +3304,12 @@
       ]
     },
     {
-      "archivo": "docs/CIERRE_TECNICO.md",
-      "enlaces": [
-        {
-          "destino": "README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "APLICACION_CIENCIAS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CURRICULARIZACION_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CONTINUIDAD_CIENCIAS_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "PUBLICACION.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "DATOS_EXTERNOS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "MATERIALES_DOCENTES.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
       "archivo": "docs/CLASES_V4.md",
-      "enlaces": [
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/CONTINUIDAD_CIENCIAS_V4.md",
-      "enlaces": [
-        {
-          "destino": "CLASES_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CURRICULARIZACION_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "DATOS_EXTERNOS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CIERRE_TECNICO.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/CURRICULARIZACION_V4.md",
-      "enlaces": [
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        }
-      ]
+      "enlaces": []
     },
     {
       "archivo": "docs/DATOS_EXTERNOS.md",
       "enlaces": [
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "VERIFICACION_GCS.md",
-          "estado": "versionado"
-        },
         {
           "destino": "VERIFICACION_GCS.md",
           "estado": "versionado"
@@ -3447,6 +3324,10 @@
       "archivo": "docs/OPERACION.md",
       "enlaces": [
         {
+          "destino": "DATOS_EXTERNOS.md",
+          "estado": "versionado"
+        },
+        {
           "destino": "CALIDAD.md",
           "estado": "versionado"
         },
@@ -3455,20 +3336,12 @@
           "estado": "versionado"
         },
         {
-          "destino": "CURRICULARIZACION_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/producto_v4.md",
+          "destino": "ARQUITECTURA.md",
           "estado": "versionado"
         },
         {
           "destino": "../data/producto/V4/autorizacion_catalogacion_20261021.json",
           "estado": "activo_local"
-        },
-        {
-          "destino": "investigacion/catalogacion_v4.md",
-          "estado": "versionado"
         },
         {
           "destino": "alineacion.md",
@@ -3487,31 +3360,7 @@
           "estado": "versionado"
         },
         {
-          "destino": "investigacion/conocimiento_v4.md",
-          "estado": "versionado"
-        },
-        {
           "destino": "juicios_conocimiento.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/integracion_alineaciones_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/progresiones_ngss_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/paquetes_unidad.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/paquetes_unidad.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/coherencia_api.md",
           "estado": "versionado"
         },
         {
@@ -3523,16 +3372,12 @@
           "estado": "activo_local"
         },
         {
-          "destino": "investigacion/resultados_unidad_fisica10_v4.md",
+          "destino": "badges/medicion.json",
           "estado": "versionado"
         },
         {
           "destino": "investigacion/verificacion_runtime_v4.json",
           "estado": "activo_local"
-        },
-        {
-          "destino": "investigacion/revision_visual_v4.md",
-          "estado": "versionado"
         },
         {
           "destino": "VERIFICACION_GCS.md",
@@ -3553,19 +3398,6 @@
       "enlaces": []
     },
     {
-      "archivo": "docs/PUBLICACION.md",
-      "enlaces": [
-        {
-          "destino": "CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "badges/medicion.json",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
       "archivo": "docs/README.md",
       "enlaces": [
         {
@@ -3573,15 +3405,7 @@
           "estado": "versionado"
         },
         {
-          "destino": "APLICACION_CIENCIAS.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "ARQUITECTURA.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "OPERACION.md",
+          "destino": "../HANDOFF.md",
           "estado": "versionado"
         },
         {
@@ -3589,7 +3413,19 @@
           "estado": "versionado"
         },
         {
-          "destino": "PUBLICACION.md",
+          "destino": "VERIFICACION_GCS.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "APLICACION_CIENCIAS.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "OPERACION.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "ARQUITECTURA.md",
           "estado": "versionado"
         },
         {
@@ -3605,23 +3441,7 @@
           "estado": "versionado"
         },
         {
-          "destino": "auditoria/REVISION_API_2026.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "auditoria/QA_SEGUNDA_REVISION.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "CURRICULARIZACION_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "PROGRESION_2_11.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "MATERIALES_DOCENTES.md",
+          "destino": "auditoria/QA_PRODUCTO_20261025.md",
           "estado": "versionado"
         },
         {
@@ -3629,15 +3449,11 @@
           "estado": "versionado"
         },
         {
-          "destino": "auditoria/QA_PRODUCTO_20261025.md",
+          "destino": "MATERIALES_DOCENTES.md",
           "estado": "versionado"
         },
         {
-          "destino": "CIERRE_TECNICO.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "VERIFICACION_GCS.md",
+          "destino": "PROGRESION_2_11.md",
           "estado": "versionado"
         },
         {
@@ -3649,15 +3465,27 @@
           "estado": "versionado"
         },
         {
-          "destino": "ROADMAP.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/README.md",
-          "estado": "versionado"
-        },
-        {
           "destino": "../specs/README.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "investigacion/auditoria_fuentes_primarias.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "investigacion/referentes_operativos_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "investigacion/curriculo_inglaterra_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "investigacion/curriculos_sg_jp_2026.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "investigacion/educacion.md",
           "estado": "versionado"
         }
       ]
@@ -3674,64 +3502,11 @@
           "estado": "versionado"
         },
         {
-          "destino": "auditoria/REVISION_API_2026.md",
+          "destino": "auditoria/QA_PRODUCTO_20261025.md",
           "estado": "versionado"
         },
         {
           "destino": "APLICACION_CIENCIAS.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/ROADMAP.md",
-      "enlaces": [
-        {
-          "destino": "CURRICULARIZACION_V4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/educacion.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/arquitectura_ia.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/auditoria_repo.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/conocimiento_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/continuacion_ciencias_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/contexto_conocimiento_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "juicios_conocimiento.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/entrega_unidad_fisica10_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/integracion_alineaciones_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "investigacion/progresiones_ngss_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "MATERIALES_DOCENTES.md",
           "estado": "versionado"
         }
       ]
@@ -3760,18 +3535,9 @@
         {
           "destino": "../badges/medicion.json",
           "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/auditoria/QA_INDEPENDIENTE.md",
-      "enlaces": [
-        {
-          "destino": "../REFERENCIA_EOR_API.md",
-          "estado": "versionado"
         },
         {
-          "destino": "QA_SEGUNDA_REVISION.md",
+          "destino": "../badges/medicion.json",
           "estado": "versionado"
         }
       ]
@@ -3806,284 +3572,6 @@
       ]
     },
     {
-      "archivo": "docs/auditoria/QA_SEGUNDA_REVISION.md",
-      "enlaces": [
-        {
-          "destino": "../REFERENCIA_EOR_API.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "qa-briefs-2026.png",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../badges/medicion.json",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/auditoria/REVISION_API_2026.md",
-      "enlaces": [
-        {
-          "destino": "inventario.json",
-          "estado": "versionado"
-        },
-        {
-          "destino": "compatibilidad_ast.json",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../REFERENCIA_EOR_API.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "benchmark_consultas.json",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../badges/medicion.json",
-          "estado": "versionado"
-        },
-        {
-          "destino": "app-goes-2026.png",
-          "estado": "versionado"
-        },
-        {
-          "destino": "QA_INDEPENDIENTE.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "QA_SEGUNDA_REVISION.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "GITIGNORE_2026.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/README.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CIERRE_TECNICO.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "integracion_alineaciones_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "progresiones_ngss_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "educacion.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "auditoria_fuentes_primarias.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "dimensiones_verificadas.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "arquitectura_ia.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "auditoria_repo.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_recuperacion.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_embeddings_vertex.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_jueces.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_jueces_ciegos.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_workflow.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "coherencia_api.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "metricas_api_local.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "analisis_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "ingesta_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "contexto_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "catalogacion_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_catalogacion_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "comparacion_v3_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "producto_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "agentic_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_baseline_v4_parcial.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_baseline_v4_catalogado.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "verificacion_runtime_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_unidad_fisica10_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "contexto_conocimiento_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "continuacion_ciencias_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_seleccion_grupos_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_lectura_completa_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "medicion_lectura_primaria_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "api_v4_publicada_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_escenarios_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "incidente_transporte_unidad60_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_unidad60_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "entrega_unidad_fisica10_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "revision_visual_v4.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/agentic_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/analisis_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/arquitectura_ia.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "continuacion_ciencias_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_recuperacion.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_recuperacion.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_embeddings_vertex.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_embeddings_vertex.json",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
       "archivo": "docs/investigacion/auditoria_fuentes_primarias.md",
       "enlaces": [
         {
@@ -4092,190 +3580,6 @@
         },
         {
           "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/auditoria_repo.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/catalogacion_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_catalogacion_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "verificacion_runtime_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_baseline_v4_catalogado.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/coherencia_api.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "metricas_api_local.json",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/comparacion_v3_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/conocimiento_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_conocimiento_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "../juicios_conocimiento.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/contexto_conocimiento_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "presupuesto_contexto_v4_antes.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "presupuesto_contexto_v4.json",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/contexto_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/continuacion_ciencias_20261021.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "integracion_alineaciones_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "progresiones_ngss_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "medicion_lectura_primaria_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "api_v4_publicada_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "localizadores_tiempo_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_continuacion_ciencias_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_seleccion_grupos_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "lectura_primaria_si_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_escenarios_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_unidad_fisica10_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_unidad60_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "entrega_unidad_fisica10_20261021.md",
           "estado": "versionado"
         }
       ]
@@ -4324,158 +3628,6 @@
       ]
     },
     {
-      "archivo": "docs/investigacion/entrega_unidad_fisica10_20261021.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../../data/producto/unidades/fisica-10-entrega-experimental/unidad.md",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "../../data/producto/unidades/fisica-10-entrega-experimental/unidad.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "entrega_unidad_fisica10_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "reanudacion_dos_bloques_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_unidad60_20261021.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/ingesta_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/integracion_alineaciones_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/metodo_evaluacion_motor.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/metodo_evaluacion_motor_ciego.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/paquetes_unidad.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "entrega_unidad_fisica10_20261021.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_unidad_fisica10_v4.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_juicios_locales_2026.json",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/producto_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../juicios_conocimiento.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_juicios_locales_2026.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "verificacion_runtime_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_catalogacion_v4.json",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/progresiones_ngss_20261021.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
       "archivo": "docs/investigacion/referentes_operativos_2026.md",
       "enlaces": [
         {
@@ -4489,176 +3641,11 @@
       ]
     },
     {
-      "archivo": "docs/investigacion/resultados_baseline_v4_catalogado.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_baseline_v4_parcial.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_baseline_v4_catalogado.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_embeddings_vertex.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_jueces.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_jueces_ciegos.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_recuperacion.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_unidad60_20261021.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "resultados_unidad60_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "reanudacion_unidad60_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "incidente_transporte_unidad60_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "../../data/producto/unidades/fisica-10-60min-recuperada/paquete.md",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/resultados_unidad_fisica10_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../../data/producto/unidades/fisica-10-v4-catalogada/autorizacion_generacion_20261021.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "resultados_unidad_fisica10_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "reanudacion_unidad_fisica10_v4.json",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "../../data/producto/unidades/fisica-10-v4-catalogada/paquete.md",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
-      "archivo": "docs/investigacion/revision_visual_v4.md",
-      "enlaces": [
-        {
-          "destino": "../README.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../CALIDAD.md",
-          "estado": "versionado"
-        },
-        {
-          "destino": "../../data/producto/revision_visual/movil_cua_2026-10-21.jpg",
-          "estado": "activo_local"
-        },
-        {
-          "destino": "../../data/producto/revision_visual/escritorio_cua_2026-10-21.jpg",
-          "estado": "activo_local"
-        }
-      ]
-    },
-    {
       "archivo": "docs/juicios_conocimiento.md",
       "enlaces": [
         {
           "destino": "investigacion/resultados_juicios_locales_2026.json",
           "estado": "activo_local"
-        },
-        {
-          "destino": "investigacion/continuacion_ciencias_20261021.md",
-          "estado": "versionado"
         }
       ]
     },
@@ -4694,10 +3681,6 @@
           "estado": "activo_local"
         }
       ]
-    },
-    {
-      "archivo": "prompts/00_montar_proyecto.md",
-      "enlaces": []
     },
     {
       "archivo": "prompts/alinear_bachillerato_auss.md",
@@ -4736,43 +3719,11 @@
       "enlaces": []
     },
     {
-      "archivo": "prompts/subagentes/README.md",
-      "enlaces": []
-    },
-    {
-      "archivo": "prompts/subagentes/msg_quitar_conceptos.md",
-      "enlaces": []
-    },
-    {
-      "archivo": "prompts/subagentes/msg_v2.md",
-      "enlaces": []
-    },
-    {
-      "archivo": "prompts/subagentes/msg_v3_japon.md",
-      "enlaces": []
-    },
-    {
-      "archivo": "prompts/subagentes/msg_v_triaje_bachillerato.md",
-      "enlaces": []
-    },
-    {
       "archivo": "prompts/subagentes/prompt_comunidades.md",
       "enlaces": []
     },
     {
-      "archivo": "prompts/subagentes/prompt_etiquetar.md",
-      "enlaces": []
-    },
-    {
       "archivo": "prompts/subagentes/prompt_paises.md",
-      "enlaces": []
-    },
-    {
-      "archivo": "prompts/subagentes/prompt_prerreq.md",
-      "enlaces": []
-    },
-    {
-      "archivo": "prompts/subagentes/prompt_propuesta.md",
       "enlaces": []
     },
     {
@@ -5148,7 +4099,7 @@
       "archivo": "specs/16_producto_v4.md",
       "enlaces": [
         {
-          "destino": "../docs/ROADMAP.md",
+          "destino": "../HANDOFF.md",
           "estado": "versionado"
         }
       ]
@@ -5176,15 +4127,16 @@
     },
     {
       "archivo": "specs/19_guiones_completos_v4.md",
-      "enlaces": []
+      "enlaces": [
+        {
+          "destino": "../docs/CLASES_V4.md",
+          "estado": "versionado"
+        }
+      ]
     },
     {
       "archivo": "specs/README.md",
       "enlaces": [
-        {
-          "destino": "../docs/ROADMAP.md",
-          "estado": "versionado"
-        },
         {
           "destino": "../docs/ARQUITECTURA.md",
           "estado": "versionado"

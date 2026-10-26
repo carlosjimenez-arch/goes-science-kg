@@ -129,9 +129,9 @@ archivo `alineaciones.json` y mantiene lectura de `producto-2`. Su grafo vincula
 local mediante tipos propios. `FuentesConAlineaciones` relee la extracción con el perfil original;
 `BuscadorProducto` limita sus páginas a la fila admitida. El contexto reserva esas páginas y al menos un
 fragmento de cada una, contando su lectura completa. Presupuesto insuficiente produce abstención.
-[Contrato y pruebas](investigacion/integracion_alineaciones_v4.md).
+Contrato y pruebas: registro histórico en el historial de Git (commit `022efed`).
 
-La API fija un grafo por instancia y comprueba publicaciones de derivados por artículo. Los generadores registran sus entradas y salidas; el lector rechaza una procedencia ausente o archivos mutados. El [contrato de publicación](investigacion/coherencia_api.md) explicita disponibilidad, regeneración y costo de E/S.
+La API fija un grafo por instancia y comprueba publicaciones de derivados por artículo. Los generadores registran sus entradas y salidas; el lector rechaza una procedencia ausente o archivos mutados. El contrato de publicación explicita disponibilidad, regeneración y costo de E/S (registro histórico en el historial de Git, commit `022efed`).
 
 ## Harness independiente del editor
 
@@ -142,7 +142,7 @@ prioridad curricular y presupuesto completo de JSON. Las alertas científicas do
 revalidan por fuente y ancla y bloquean propuestas cuando sus filas forman parte del contexto.
 El explorador conserva las filas bloqueadas, pendientes o fuera de alcance para hacerlas revisables.
 
-El [candidato agentic](investigacion/agentic_v4.md) admite una reformulación y una búsqueda adicional,
+El candidato agentic (registro histórico en el historial de Git, commit `022efed`) admite una reformulación y una búsqueda adicional,
 con filtros fijos y sin herramientas abiertas. Está separado del runtime predeterminado hasta superar
 el gate de calidad por grado, coste y latencia; implementarlo no demuestra que mejore la recuperación.
 
@@ -203,7 +203,13 @@ verifican todas las celdas/estilos después. El runtime no indexa las propuestas
 por cada escritura. Crea objetos nuevos, fija generaciones y verifica sus SHA mediante descarga.
 `datos_externos.py` restaura el corpus por inventario. `presupuestos_restaurados.py` migra sólo la identidad
 física de los vínculos a ledgers íntegros; no borra llamadas ni reinicia reservas. No hay infraestructura
-nueva, IAM modificado ni CI. [Procedimiento](DATOS_EXTERNOS.md), [resultados](CURRICULARIZACION_V4.md).
+nueva, IAM modificado ni CI. [Procedimiento](DATOS_EXTERNOS.md).
+
+Resultado de la campaña cerrada: **108 unidades y 1.013 filas de Ciencias con propuestas respaldadas** sobre
+1.020 filas originales; las siete fuera de alcance se conservan y 30 filas originales mantienen su alerta
+científica. P6 resolvió diez incidencias y P7 rectificó un falso positivo (Biotecnología microbiana de 11.º).
+El contador quedó en 668 invocaciones (633 completadas, 35 fallidas) y USD 731,1485125 de reserva, dentro de
+1.100/USD 1.200. Snapshot `e92bc700…`. El informe completo de P1–P7 está en el historial de Git (commit `022efed`).
 
 
 La rectificación científica documentada se registra en `producto/rectificacion_mejoras.py`: conserva el

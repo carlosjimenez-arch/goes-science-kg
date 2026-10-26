@@ -51,7 +51,7 @@ Las regresiones JavaScript se ejecutan con `make pruebas-js` (Node.js 24) y cubr
 HTTP fuera de orden: HTML y datos se confirman juntos tras verificar la navegación activa.
 La configuración también recoge ramas; el badge de cobertura informa explícitamente líneas.
 
-La segunda revisión independiente comprueba también la compilación de briefs frente a cambios de
+Las regresiones comprueban también la compilación de briefs frente a cambios de
 formato, selección y navegación, la restauración íntegra de assets y herramientas de calidad, y la
 igualdad de bytes de las exportaciones Excel. Todas las hojas tratan los textos como texto, incluida
 la metadata de control. Una base alternativa resuelve sus alertas derivadas desde su propio `config/`.
@@ -84,9 +84,15 @@ pertenecía al entregable V3 desconectado. Las exportaciones V4 activas usan
 revisiones, fuentes ni corpus. `cli/__main__.py` se conserva como entrada pública aunque un análisis
 estático no encuentre imports entrantes.
 
-Los documentos de investigación y las especificaciones antiguas son antecedentes auditables. Se
-rotulan como históricos y se enlazan al estado vigente; una fecha antigua o ausencia de enlaces no
-demuestra que sean prescindibles. [Índice documental](README.md).
+El 26 de octubre de 2026 se retiraron los informes de investigación, cierre y continuidad ya superados;
+siguen en el historial de Git (commit `022efed`). Se conservan las especificaciones y las auditorías de
+fuentes que la configuración cita. [Índice documental](README.md).
+
+## Auditorías
+
+El 22 de octubre de 2026 hubo tres barridos QA de la API (revisión inicial, QA independiente y segunda
+revisión); sus informes y evidencias están en el historial de Git (commit `022efed`). La auditoría vigente es
+[QA de producto 2026-10-25](auditoria/QA_PRODUCTO_20261025.md).
 
 ## Versionado y observabilidad
 

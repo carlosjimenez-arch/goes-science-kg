@@ -57,10 +57,14 @@ al bucket. Si `gcloud storage` falla con Python 3.14, el código elige un Python
 respeta `CLOUDSDK_PYTHON`.
 
 ```bash
-make producto                          # uv sync + descarga desde GCS de lo que falte + servicio en :8010
-uv run --frozen gskg datos estado      # qué está al día frente a los recibos
-uv run --frozen gskg datos verificar   # cotejo por SHA contra el inventario remoto
+uv sync --frozen --all-extras
+uv run --frozen gskg datos sincronizar # trae del bucket lo que falte según config/*.lock.json
+uv run --frozen gskg servir            # aplicación y API en 127.0.0.1:8010
 ```
+
+`make producto` hace los tres pasos (`gskg servir --sincronizar`). `gskg datos estado` muestra qué está al día
+frente a los recibos y `gskg datos verificar` coteja por SHA con el inventario remoto. El servicio sólo escucha
+en loopback; `--permitir-red` lo expone, pero la API no autentica y debe ir detrás de un proxy con acceso.
 
 Abrir [la aplicación](http://127.0.0.1:8010/app/) o [OpenAPI](http://127.0.0.1:8010/docs). La consulta,
 exportación y compilación de briefs no invocan modelos. Sin corpus se puede abrir la aplicación y comprobar
@@ -78,9 +82,9 @@ El repositorio no contiene matrices, PDF, snapshots, SQLite ni resultados: todo 
 | `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
 | `config/materiales_preparaciones.lock.json` | Biblioteca base que fijan las preparaciones; necesaria sólo para recompilar guiones |
 
-El recibo vigente se restauró en un checkout limpio y la aplicación completa funcionó con esos datos.
-[Restauración y límites](docs/DATOS_EXTERNOS.md) · [verificación GCS](docs/VERIFICACION_GCS.md) ·
-[alcance de publicación](docs/PUBLICACION.md).
+El recibo vigente se restauró en un checkout limpio y la aplicación completa funcionó con esos datos. Todo dato
+nuevo se publica con `gskg datos publicar --trabajo <carpeta fuera del repositorio>` y se adopta su recibo.
+[Datos, publicación y límites](docs/DATOS_EXTERNOS.md) · [verificación GCS](docs/VERIFICACION_GCS.md).
 
 ## Aplicación y API
 
@@ -170,11 +174,8 @@ respaldos, conservando visibles el código, los contratos, los recibos de restau
 ## Documentación y contribución
 
 [Índice vigente](docs/README.md) · [Guía de contribución](CONTRIBUTING.md) ·
-[Auditoría de producto 2026-10-25](docs/auditoria/QA_PRODUCTO_20261025.md) ·
-[Auditoría de la API](docs/auditoria/REVISION_API_2026.md) · [Especificaciones](specs/README.md).
-El [QA posterior independiente](docs/auditoria/QA_SEGUNDA_REVISION.md) documenta los fallos
-reproducidos, sus correcciones y los límites de la revisión.
-Los informes históricos conservan sus fechas, cifras y decisiones; no sustituyen el estado actual.
+[Auditoría de producto 2026-10-25](docs/auditoria/QA_PRODUCTO_20261025.md) · [Especificaciones](specs/README.md) ·
+[Continuidad](HANDOFF.md). Los informes de investigación, cierre y QA anteriores están en el historial de Git.
 
 El código pertenece al equipo GOEs. Los documentos originales pertenecen a sus autores y conservan
 sus condiciones de uso. [Fuentes y atribuciones](NOTICE).

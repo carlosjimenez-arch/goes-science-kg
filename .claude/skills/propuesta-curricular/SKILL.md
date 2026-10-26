@@ -17,7 +17,7 @@ description: Produce la propuesta de malla mejorada de una asignatura (mantener,
 > simular y `asignaturas/PROPUESTAS.md` lista la conciliación.
 
 Especificación completa: `specs/06_propuesta_curricular.md`. Trabajo previo útil:
-`reportes/cobertura_curricular/data/referencia/presupuesto_candidatos.json` y `prompts/presupuesto_lote.md`.
+`reportes/cobertura_curricular/data/referencia/presupuesto_candidatos.json` y `reportes/cobertura_curricular/prompts/presupuesto_lote.md`.
 
 1. Lee `asignaturas/<x>/brechas/brechas.json` y el DAG de la asignatura.
 2. Genera los candidatos con un script, no a mano:

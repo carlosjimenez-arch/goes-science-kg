@@ -14,8 +14,9 @@ declarados sin guion liberado, cada uno con su motivo. Entrega `e4b3278681cddc14
 | Revisión directa de los 872 restantes (109 revisores, 8 casos cada uno) | 760 liberables y 112 bloqueados (12,8 %) |
 | Total de la cohorte publicada sólo con lectores automáticos | 132 de 968 con defecto material (13,6 %); por estrato entre 7 % (2.º–4.º) y 19 % (Biología 10.º–11.º) |
 | Retiro | Los 132 se declaran `bloqueado_revision_directa`, anclados al SHA exacto del guion revisado |
-| Corrección editorial R23 | 39 objetivos (los 19 pendientes y los 20 de la muestra): 34 correcciones con revisión directa favorable, 2 bloqueadas y 3 imposibles sin fuentes que no están en el corpus |
-| Cuatro lecturas de R23 | **No ejecutadas.** La cota (29 lotes, 145–290 llamadas) no cabe en las 106 restantes y el usuario decidió no ampliar el tope |
+| Corrección editorial R23 | 151 objetivos (19 pendientes, 20 bloqueados de la muestra y 112 del resto): **132 correcciones con revisión directa independiente favorable**, 3 bloqueadas y 16 imposibles sin fuentes que no están en el corpus |
+| Bloqueados del resto (112) | 98 corregidos y liberables, 1 bloqueado (cobertura del suelo sin datos del país) y 13 sin fuente registrada |
+| Cuatro lecturas de R23 | **No ejecutadas.** La cota (63 lotes, 315–630 llamadas, hasta USD 758) no cabe en las 106 restantes; el usuario decidió dejarlo así |
 
 Protocolo, diseño y expedientes: `data/clases_v4/revision_especialistas/` (`PROTOCOLO_REVISION_DIRECTA.md`,
 `muestra_20261025.json`, `expedientes_*`) y los consolidados `data/clases_v4/auditoria_contenido/revision_directa_muestra_20261025.json`
@@ -34,59 +35,30 @@ sólo escribe texto literal (ninguna celda se interpreta como fórmula).
 
 Las correcciones R23 (`data/clases_v4/ediciones_editoriales/r23/`, estado en `estado_r23.json`) son parches
 editoriales sobre la última versión válida. Cada una tiene su expediente, su versión materializada y su revisión
-directa. Para publicarlas hace falta autorizar la ampliación del tope: `ensamblar_r23.py --escribir` prepara
-parches, preparaciones y plan con su cota, y la campaña se ejecuta con el protocolo `clases-p11-editorial-r23-001`.
+directa independiente, anclada al SHA-256 de la versión exacta (`revision_directa/grupo_*.json`). Las 98
+correcciones de los bloqueados del resto las redactaron 29 editores por disciplina y las revisaron 15 revisores
+distintos; una versión bloqueada se corrigió de nuevo y volvió a revisarse. Para publicarlas hace falta autorizar
+la ampliación del tope: `ensamblar_r23.py --escribir` agrupa por biblioteca, snapshot y escenario, prepara parches,
+preparaciones y plan con su cota, y la campaña se ejecuta con el protocolo `clases-p11-editorial-r23-001`.
 
-## Entrega anterior · 994 guiones (25 de octubre de 2026, reemplazada)
+Objetivos que necesitan una fuente nueva registrada antes de corregirse: legislación minera y yacimientos del país,
+mapa oficial de suelos (MAG/MARN), plantas del corredor seco, presión por estación del MARN, inventarios de carbono
+en manglares, balance global de carbono, Guías Alimentarias y datos del MINSAL/OPS, documentos de la OMS sobre
+priones y sobre diagnóstico bacteriológico, SGA y fichas de datos de seguridad, sueño e inmunidad, y riesgos del
+carburo de calcio en alimentos.
 
-**994 guiones de clase y 108 guiones de unidad publicados**, con 19 objetivos declarados sin guion
-liberado. Entrega `9d949257f6752960333349a56cfad4f2da855041f45a97470655226b06ed493d`
-(`config/clases_ciencias.lock.json`) y biblioteca ampliada `5b80b556…` con 3.969 registros
-(`config/materiales_ciencias.lock.json`), ambas en el bucket y restauradas desde él.
+## Antecedentes
 
-| Paso | Resultado |
-|---|---|
-| Autorización | El usuario amplió el tope acumulado a 4.400 llamadas con USD 3.500 sin cambio (recibo literal anclado por SHA en `config/presupuesto_clases_v4.json`) |
-| R21 (plan congelado de 45 pendientes) | 283 llamadas: 34 respaldados, 6 vetos y 5 abstenciones |
-| R22 (12: los 11 negativos y el caso estelar bloqueado por revisión directa) | 70 llamadas: 8 respaldados, 3 vetos y 1 abstención |
-| Consumo acumulado | 4.294 llamadas y USD 3.219,5365 de reserva; contador sin reinicio |
-| Revisión directa de las 41 versiones recuperadas | 26 aprobadas y 15 bloqueadas por defectos materiales |
-| Compilación | 409 resultados cotejados con el ledger; ningún guion liberado tiene un bloqueo conocido |
-
-La revisión directa la hicieron agentes revisores independientes de sólo lectura, que recalcularon cifras y
-contrastaron afirmaciones con las fuentes (`data/clases_v4/auditoria_contenido/revision_directa_*`). Los 15
-bloqueos incluyen datos reales erróneos (temperatura a 100 km, «694 veces» la distancia a Plutón), una cita
-oficial inventada, afirmaciones falsas heredadas literalmente de OpenStax convertidas en criterio evaluado
-(sin PSII no hay ATP, la codeína como anestésico local) y cláusulas del objetivo sin enseñar. **El respaldo de
-cuatro lectores automáticos no basta para liberar sin revisión:** en esta cohorte de recuperación el 37 % tenía
-un defecto material. Cada guion liberado declara `revision_directa`: «aprobada» (26) o «no_realizada» (968,
-respaldados por cuatro lectores en P5–P11; la muestra de 32 y sus seguimientos están en el expediente).
-
-Los 19 objetivos sin guion conservan su preparación por objetivo, su último resultado y su motivo; su unidad se
-marca `completa: false`. Una tercera ronda no cabía en el tope autorizado (quedan 106 llamadas).
-
-Dos correcciones de ingeniería, en módulos sin huella de protocolo: la auditoría admite la familia
-`clases-p11-recuperacion-rNN` y verifica el parche del editor con el esquema que envía el código P11 (el
-esquema archivado en su ZIP difiere; la clave recalculada coincide con el ledger). La compilación acepta
-objetivos declarados sin guion, siempre anclados a su resultado real o a la revisión que los bloqueó.
-
-## Estado de la ampliación al 23 de octubre (antecedente)
-
-El alcance son los 1.013 objetivos de Ciencias del snapshot producto-4, agrupados en 108 unidades.
-Los siete registros fuera de Ciencias se conservan fuera de generación. El corte de la campaña P11
-del 23 de octubre registra 968 guiones respaldados automáticamente, 27 con veto y 18 con abstención,
-sin objetivos pendientes de primera generación. El denominador permanece en 1.013. El inventario privado
-`data/clases_v4/auditoria_contenido/inventario_trabajo.json` fija el orden de versiones y conserva el
-último resultado incluso si es desfavorable; no elige retrospectivamente el voto más favorable.
-
-Se completó la lectura directa de los 32 casos de la muestra. Los hallazgos conocidos bloquean las
-versiones afectadas aunque tengan cuatro votos favorables. La entrega completa exige cobertura
-exacta, resolución de todos los hallazgos y cuatro lecturas reales sobre cada versión seleccionada.
-No se presenta la biblioteca de preparaciones ya publicada como esta entrega nueva.
-
-La biblioteca anterior contiene 2.867 registros y 316 originales. Sus 1.013 `paquete_objetivo` y
-108 `paquete_unidad` son preparaciones curriculares. Las clases nuevas usan los tipos `guion_clase`
-y `guion_unidad`, conservando los materiales anteriores, sus revisiones y sus pendientes históricos.
+El alcance son los 1.013 objetivos de Ciencias de `producto-4`, agrupados en 108 unidades; los siete registros
+fuera de Ciencias no se generan. Las campañas P1–P11 (22–23 de octubre) dejaron 968 guiones respaldados por
+cuatro lectores automáticos, 27 vetos y 18 abstenciones; P9 introdujo parches editoriales con SHA del antecedente
+y cuatro lecturas nuevas, P10 separó alertas e historial del contexto de los agentes y P11 amplió las fuentes
+congeladas. La muestra de desarrollo de 32 casos (semilla 20261022) y sus seguimientos bloquearon versiones con
+defectos aunque tuvieran cuatro votos favorables. Tras ampliar el tope a 4.400 llamadas, R21 y R22 obtuvieron 42
+respaldos automáticos nuevos y una entrega intermedia publicó 994 guiones (`9d949257…`), reemplazada por la vigente cuando la revisión
+directa integral retiró 132. La biblioteca de preparaciones (2.867 registros: 1.013 `paquete_objetivo`, 108
+`paquete_unidad` y material histórico) sigue separada de la biblioteca vigente. El detalle de cada corte, con sus
+cifras y expedientes, está en el historial de Git (commit `022efed`) y en los protocolos de `data/clases_v4/`.
 
 ## Contenido utilizable en clase
 
@@ -145,36 +117,6 @@ detectaron cuatro defectos concretos de contenido conservando dos casos sin defe
 Son controles de desarrollo conocidos, sin independencia respecto al diseño de los prompts;
 no estiman precisión poblacional ni eficacia educativa.
 
-## Auditoría del contenido y cierre de defectos
-
-El plan privado `data/clases_v4/auditoria_contenido/plan.json` fija 32 casos con semilla 20261022:
-dos por estrato de grado/asignatura y cuatro casos dirigidos. Es una muestra de desarrollo asistida
-por Codex; no estima una tasa poblacional de precisión ni demuestra eficacia en aula. Se revisan
-explicaciones, sesiones, datos de tareas, soluciones, apoyos y límites de ejecución.
-
-Los hallazgos incluyen confundir concentración final de animales con movimiento dirigido,
-carga iónica con número de oxidación y ácido carbónico con bicarbonato; también se comprobaron
-conclusiones causales que excedían los datos. Se conserva el guion observado con su SHA. La
-revisión no cambia sus cuatro dictámenes anteriores ni los presenta como una norma oficial.
-
-La compilación completa exige los 32 casos revisados. Cada defecto necesita contenido distinto,
-cuatro revisiones reales y una resolución que identifique el resultado, su SHA y los hallazgos
-atendidos. Cambiar sólo el título, conservar el contenido señalado o cambiar después una versión
-revisada bloquea la entrega. El expediente completo se incorpora al paquete descargable.
-`seguimiento.json` conserva hallazgos adicionales sobre versiones corregidas y otros objetivos
-revisados de forma dirigida. También retiene esas versiones aunque sus cuatro lectores anteriores
-hayan sido positivos. Una corrección no se considera resuelta sólo por cambiar el texto.
-
-La recuperación documental reforzada limita libros por disciplina, descarta preguntas aisladas y
-combina la consulta completa con su concepto principal. Es un control de selección de contexto;
-el puntaje léxico no demuestra que un pasaje respalde una afirmación. Ese respaldo se debe revisar.
-El selector documental ofrece hasta dos decisiones; la campaña R4 se limitó a una por lote y
-127 llamadas en total. Busca pasajes completos, devuelve sus identidades y declara lagunas.
-Una segunda búsqueda requiere evidencia nueva. La conciliación R4 releyó las respuestas del ledger
-sin llamadas adicionales: recuperó 210 selecciones y conservó 223 objetivos con lagunas. Una
-referencia inválida se rechaza por fila y se conserva la respuesta original; no invalida las otras
-filas ni convierte una abstención en una clase lista para impartir.
-
 ## Flujo y controles de ingeniería
 
 `clases/` separa contratos, fuentes, consultas, preparaciones, proveedor, grafo, validación,
@@ -214,58 +156,42 @@ y de estudiante, además de comprobar que cada objetivo aparece exactamente en s
 
 ## Presupuesto y reanudación
 
-Autorización del 22 de octubre: máximo acumulado de 4.000 invocaciones y USD 3.500 de reserva
-conservadora. Las 668 llamadas anteriores y su reserva de USD 731,1485125 se mantienen. El recibo
-literal es `data/operaciones/clases_v4_20261022/autorizacion.json`; la configuración versionada está
-en `config/presupuesto_clases_v4.json`. Se comprueban las 668 filas históricas completas por hash
-antes de usar el proveedor. No se admite un ledger vacío o reiniciado.
+El tope acumulado es de **4.400 invocaciones y USD 3.500 de reserva conservadora**, incluidas las 668 previas
+(recibos literales anclados por SHA en `config/presupuesto_clases_v4.json`). El ledger registra 4.294 llamadas y
+USD 3.219,54 de reserva: quedan 106 llamadas y el usuario no autorizó otra ampliación. Antes de usar el proveedor
+se comprueban por hash las filas históricas y el punto mínimo de consumo; no se admite un ledger vacío, reiniciado
+o restaurado desde un respaldo anterior. La reserva no es una factura de Google.
 
-El preflight cubre dos rondas para todo lo pendiente; cada llamada hace una reserva atómica en
-el mismo ledger. No hay reintentos del SDK. Los terminales se verifican y reutilizan sin gasto.
-La reserva no es una factura de Google. El proyecto, identidad y modelos siguen siendo los
-autorizados de GOES; no se incluyen datos de estudiantes ni credenciales.
-
-El orden inicial está congelado en `data/clases_v4/protocolos/completo_p5.json`. Tras dos bloques
-de 24, la continuación fija sólo los lotes aún sin terminal en `completo_p5_continuacion.json`,
-con bloques de 96 para reducir esperas. El control cambia concurrencia entre bloques cerrados; no cambia
-los modelos, el contenido, los checkpoints ni los dictámenes.
+El preflight cubre dos rondas para todo lo pendiente; cada llamada hace una reserva atómica en el mismo ledger. No
+hay reintentos del SDK y los terminales se verifican y reutilizan sin gasto.
 
 ```bash
-uv sync --python 3.13 --extra dev --extra motor --extra api
-uv run gskg clases campana data/clases_v4/preparaciones \
-  --plan data/clases_v4/protocolos/completo_p5_continuacion.json \
-  --destino data/clases_v4/ejecuciones/completo_p5_continuacion \
-  --control data/clases_v4/control_completo_p5_continuacion.json
-# El comando anterior sólo calcula la cota. Añadir --confirmar ejecuta la autorización vigente.
+uv run --frozen gskg clases campana data/clases_v4/preparaciones \
+  --plan <protocolo.json> --destino <ejecucion> --control <control.json>
+# Sólo calcula la cota. Añadir --confirmar ejecuta dentro de la autorización vigente.
 ```
 
-Para un bloque concreto se usa `clases ejecutar` con `--plan` apuntando a su `protocolo.json`,
-el mismo `--protocolo`, directorio y preparaciones. No se crean nombres nuevos para repetir votos.
-Los logs están en `data/operaciones/clases_v4_20261022/` y conservan los estados VERDE, AMARILLO
-y ROJO; la campaña diferencia lotes terminados de objetivos respaldados.
-P1–P11 son protocolos del flujo de generación; el currículo sigue siendo V4. Los comentarios de
-un juez no crean una norma institucional ni una equivalencia de grados sin una fuente oficial.
+Para un bloque concreto se usa `clases ejecutar` con el mismo `--protocolo`, directorio y preparaciones. No se
+crean nombres nuevos para repetir votos. Los logs conservan los estados VERDE, AMARILLO y ROJO. P1–P11 y R21–R23
+son protocolos del flujo de generación; el currículo sigue siendo V4.
 
 ## Publicación y consumo
 
-La publicación completa añadirá un recibo `config/clases_ciencias.lock.json` para el ZIP y actualizará
-`config/materiales_ciencias.lock.json` para la biblioteca ampliada. Hasta que se verifique ese hito,
-los comandos de descarga siguientes describen el contrato de entrega, no una publicación terminada.
+La entrega vigente está fijada en `config/clases_ciencias.lock.json` y la biblioteca en
+`config/materiales_ciencias.lock.json`; `gskg datos sincronizar` trae ambas desde el bucket.
 
 ```bash
 # JSON, Markdown docente/estudiante, catálogo, fuentes y auditorías en un directorio nuevo:
-uv run gskg clases descargar --destino data/descargas/clases-v4
-# Biblioteca SQLite indexada para consumir mediante API, sin restaurar todo el corpus:
-uv run gskg materiales restaurar
-uv run gskg materiales validar
-uv run gskg servir --puerto 8011
+uv run --frozen gskg clases descargar --destino data/descargas/clases-v4
+# Sólo la biblioteca SQLite indexada, sin el corpus completo:
+uv run --frozen gskg materiales restaurar
+uv run --frozen gskg materiales validar
 ```
 
-Los objetos estarán bajo `gs://goes-ai-kg-artefactos/ciencias/v4/clases/<entrega_id>/` y
-`ciencias/v4/materiales/<biblioteca_id>/`. Se crean objetos nuevos y se relee cada generación.
-Cada escritura verifica identidad, proyecto, UBLA y PAP efectiva; la heredada requiere enforced.
-No se cambia IAM. La restauración verifica generación, SHA e inventario, y sólo habilita el
-directorio cuando todos los archivos están verificados. Nunca sobrescribe una carpeta en servicio.
+Los objetos están bajo `gs://goes-ai-kg-artefactos/ciencias/v4/clases/<entrega_id>/` y
+`ciencias/v4/materiales/<biblioteca_id>/`. Cada escritura crea objetos nuevos, verifica identidad, proyecto, UBLA
+y prevención pública efectiva, y relee la generación; no cambia IAM. La restauración verifica generación, SHA e
+inventario y nunca sobrescribe una carpeta en servicio.
 
 ```http
 GET /api/v4/materiales?tipo=guion_clase&grado=10
@@ -277,13 +203,6 @@ GET /api/v4/materiales/archivos/{sha256}
 ```
 
 La hoja de estudiante requiere `guion_clase` y Markdown. Las peticiones no llaman a Vertex.
-El respaldo final del corpus debe incluir el ledger actualizado y los checkpoints; restaurar un
-respaldo anterior no recupera el consumo posterior. La biblioteca anterior sigue siendo histórica.
-
-El respaldo completo admite una cota explícita de hasta 8 GiB sin comprimir, fijada en su recibo;
-las entregas anteriores conservan su cota de 2 GiB. La migración de vínculos de presupuesto usa
-copias verificadas y reversión, sin adjuntar todas las bases a una sola conexión SQLite. Se probaron
-20 checkpoints, fallos de instalación e interrupciones; el ledger y los estados se conservan.
 
 ## Referencias técnicas
 
@@ -292,96 +211,3 @@ complejidad de los esquemas y que algunos límites de cadenas no se aplican en l
 [salida estructurada](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/control-generated-output)
 y [subconjunto de JSON Schema](https://ai.google.dev/gemini-api/docs/structured-output).
 Licencias: [información oficial de OpenStax](https://help.openstax.org/s/article/Licensing-information-of-OpenStax-textbooks).
-
-## Verificación del flujo de lectura por capítulos
-
-El piloto documental de cuatro objetivos obtuvo cuatro respaldos automáticos, pero la lectura
-directa señaló tres casos con dimensiones ambiguas o afirmaciones específicas sin respaldo
-en el contexto entregado. No se amplía ese piloto con base sólo en sus votos favorables.
-Los cuatro expedientes, los hallazgos y las versiones señaladas permanecen en la auditoría.
-La prueba completa de ingeniería pasó 1.581 casos (265,52 s); Ruff pasó sobre `src` y `tests`.
-Estas comprobaciones no miden exactitud científica poblacional.
-
-## Correcciones editoriales y contexto de trabajo
-
-P9 introduce parches explícitos: SHA del antecedente, valores completos antes/después y motivo.
-Conserva el objetivo literal y todas las partes sin cambio; no edita resultados ni dictámenes antiguos.
-El candidato requiere cuatro lecturas nuevas y una resolución posterior de los hallazgos. El control
-real de análisis dimensional obtuvo cuatro lecturas nuevas con cero redacciones de Vertex en la
-primera ronda. La revisión directa comprobó SI, equivalencia comercial redondeada, datos simulados y
-soluciones. No se declara eficacia en aula ni aprobación institucional.
-
-P10 separa alertas, justificaciones y búsquedas históricas del contexto de los agentes. Mantiene íntegros
-objetivo, indicador, criterios, apoyos, seguridad, datos contextualizados y pasajes científicos. El
-historial sigue en la preparación inmutable. Las auditorías reconstruyen el contexto histórico de
-P2–P9 y el contexto filtrado de P10; no recalculan votos antiguos con el contexto nuevo.
-
-La lectura por capítulos tiene controles de desarrollo, no una validación de eficacia. El primer piloto
-dio cuatro votos favorables por objetivo y la revisión directa encontró tres defectos; no se amplió
-sobre esos votos. El experimento adicional de fundamentación acertó cinco de ocho controles conocidos
-y dejó `safe_to_expand=false`, incluido un error no detectado de masa. No es un gate de liberación.
-Las respuestas inválidas y el único intento documental incompleto se conservan. La conciliación de
-frases de búsqueda recuperó una respuesta real del ledger sin nuevas llamadas ni supresión de datos.
-
-El extractor de párrafos distingue `<p/>` de un párrafo abierto y conserva rangos literales verificables.
-Las ampliaciones incorporan textos de Siyavula con licencia expresa y fuentes específicas de salud y
-seguridad con su propia atribución; no se copian imágenes. Un pasaje de una fuente registrada también
-puede contener errores: la revisión científica sigue siendo necesaria. El cargador comparte corpus
-aditivos sólo tras verificar metadatos, rangos, bytes y manifests de todas las versiones; ante conflictos
-reconstruye la colección separada. No se elimina evidencia histórica para ahorrar memoria.
-
-## Fuentes ampliadas y revisión P11
-
-P11 conserva el código del flujo por SHA y los contextos completos usados en cada voto. La curación
-documental combina consultas, elimina redundancia y conserva pasajes enteros dentro de la cota;
-el agrupador mide el contexto que reciben los agentes. Esos controles no acreditan suficiencia
-científica. Una salida truncada no se reconstruye como si hubiera sido un guion válido. La edición
-de una ronda tipada sin terminal conserva su antecedente y exige cuatro lecturas nuevas.
-
-La campaña de 57 lotes cubrió 202 objetivos: 157 respaldados, 27 con veto y 18 con abstención.
-Con las versiones anteriores, los 1.013 objetivos tienen un resultado. Los 45 negativos conservan
-sus hallazgos y no se sustituyen por un resultado favorable anterior. La recuperación R21 congela
-45 preparaciones con fuentes ampliadas: mínimo 225 llamadas, máximo 450 con una reparación por
-lote y reserva máxima USD 548,04604. El plan V2 añade también los hallazgos directos previos
-del caso estelar y conserva íntegro el plan anterior. No cabe en el saldo autorizado de 4.000 llamadas; la
-ampliación solicitada a 4.400 sigue pendiente y no habilita ejecución.
-
-Las versiones documentales conservan las tablas literales de equilibrio ácido-base, CDC y EPA
-para aire e higiene, UniProt y MeSH para catalasa, NIST para dispersión, USGS y NASA para geología,
-NHC para escala de viento, cono y registros históricos de Dora, y NASA para datos planetarios y
-evolución estelar. Son fuentes congeladas con sus condiciones, fechas y licencias propias.
-La versión R20 corrige de forma aditiva 98 títulos de Siyavula cuyo extractor había incluido cuerpo
-del documento; no reescribe las referencias históricas ni declara infalible su contenido.
-
-El informe MARN 2017 autoriza reproducción educativa o no comercial con atribución. Sus nueve
-parámetros y usos diferenciados se recuperan del PDF; los cinco rangos ICA se cotejaron en la
-leyenda del mapa de la página 8 y se conserva el facsímil y una transcripción visual identificada.
-Los porcentajes de sitios de la tabla próxima no son rangos ICA. Un ICA general no certifica
-potabilidad ni autoriza un uso concreto del agua. Los textos CDC, NOAA y NRCS recuperados mediante
-navegación cuando falló HTTP se identifican como capturas textuales, con localizadores propios.
-
-La revisión directa de los cuatro guiones de lagunas detectó nuevos defectos en tres versiones:
-textura mineral frente a humus, cociente muestral frente a parámetros Poisson y una constante
-antigua de K-40 añadida como dato actual. Las tres correcciones obtuvieron cuatro lecturas nuevas
-y resolución exacta tras comprobar que la salida coincidía con el borrador editorial revisado.
-Se conservan 34 expedientes de resolución y todos los seguimientos; su número no es una tasa de
-precisión. La precisión de dilución conserva el veto a su alternativa sin calculadora y una única
-reparación posterior, con cuatro nuevas lecturas y revisión directa de los cambios.
-
-El corte final local conserva 3.941 llamadas y USD 2.912,1834795 de reserva: quedan 59 llamadas.
-Se verificaron 2.060 trazas en 369 resultados seleccionados. El único caso de la revisión directa
-que sigue sin resolución es el estelar, incluido en los 45 negativos; esto no elimina los demás
-vetos. La solicitud de 4.400 llamadas sigue pendiente. El plan de recuperación no se ha ejecutado.
-
-## Respaldo de continuidad verificado
-
-El respaldo P11 del 23 de octubre fijaba 13.762 archivos y 41 SQLite (el recibo vigente, del 25 de octubre, fija 13.919 y los incluye), incluidos ledger,
-checkpoints, originales, respuestas y archivos de código de los protocolos. Se restauró desde GCS,
-se comprobaron 2.295 trazas históricas y se recuperaron 32 terminales sin generación. El respaldo
-fija 3.941 llamadas/USD 2.912,1834795 de reserva. El punto mínimo de continuidad tiene hash por cada
-llamada: rechaza restauraciones que pierdan consumo posterior a las 668 iniciales. Su incorporación
-no amplía ni reinicia el presupuesto. El cliente del corpus usa una cota explícita de lectura de
-hasta 8 GiB; se validan tamaño antes de subir, generación y SHA. El intento inicial de este respaldo
-quedó en un objeto creado pero sin recibo por la antigua cota de 1 GiB: se recuperó por relectura
-exacta, sin sobrescribirlo. Las operaciones posteriores requieren un nuevo respaldo al cierre.
-[Recibo, generaciones y reproducción](VERIFICACION_GCS.md).

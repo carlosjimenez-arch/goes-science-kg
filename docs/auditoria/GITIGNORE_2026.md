@@ -48,14 +48,8 @@ La huella de métricas incluye `.gitignore`, `Makefile` y el workflow además de
 dependencias. Un cambio de política invalida su correspondencia con una medición anterior.
 Resultados vigentes: [medicion.json](../badges/medicion.json).
 
-## Validación de esta revisión
+## Validación
 
-La suite integral pasó **1.462 pruebas**, sin fallos, omisiones ni advertencias, en 276,75 s.
-La cobertura de líneas es **79,40 %** (15.711 / 19.787). La copia sin corpus aprobó **205 contratos**;
-registró una advertencia de deprecación del SDK Google sobre Python 3.17. Las seis regresiones
-JavaScript pasan. Ruff y formato comprueban 296 archivos Python.
-
-Las consultas reales conservaron las 1.020 filas, 1.013 propuestas, 108 unidades y 35 documentos del
-snapshot `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`. El ledger mantuvo
-SHA `3ad9b798421a8b463f8d3dd924498330b42ddbd483ca4f774c5386bb74f722ae`. Los dos extractores
-y el CSS principal conservan sus bytes. No se ejecutaron modelos, restauraciones o servicios cloud.
+Los escenarios de `tests/test_gitignore.py` forman parte de la suite integral; sus resultados vigentes
+están en [medicion.json](../badges/medicion.json). La revisión no ejecutó modelos, restauraciones ni servicios
+cloud y conservó los bytes de los dos extractores, el CSS principal, el snapshot y el ledger.

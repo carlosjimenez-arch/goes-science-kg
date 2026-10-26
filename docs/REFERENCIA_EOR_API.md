@@ -50,4 +50,4 @@ La correlación incluye los errores documentados de ausencia de datos; no acredi
 o eficacia educativa.
 
 [Auditoría de versionado](auditoria/GITIGNORE_2026.md) ·
-[Auditoría general](auditoria/REVISION_API_2026.md) · [API de Ciencias](APLICACION_CIENCIAS.md).
+[Auditoría de producto](auditoria/QA_PRODUCTO_20261025.md) · [API de Ciencias](APLICACION_CIENCIAS.md).

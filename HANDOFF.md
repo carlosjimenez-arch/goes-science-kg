@@ -38,8 +38,9 @@ Las copias de bibliotecas y SQLite reemplazadas también están en el bucket
 
 Campaña `ciencias_v4_curricularizacion_20261022`: tope acumulado ampliado por el usuario el 25 de octubre a
 4.400 llamadas con USD 3.500 (recibo literal anclado por SHA). Consumo: **4.294 llamadas y USD 3.219,5365** de
-reserva (no factura). Quedan 106 llamadas. El 25 de octubre el usuario decidió no ampliar el tope: las 34
-correcciones R23 listas (cota de 145 a 290 llamadas) esperan esa autorización.
+reserva (no factura). Quedan 106 llamadas. El usuario decidió no ampliar el tope ni buscar una vía más barata: las
+132 correcciones R23 listas (63 lotes, cota de 315 a 630 llamadas y hasta USD 758 de reserva) quedan así hasta una
+autorización explícita.
 `clases/` mantiene bytes congelados en sus módulos con huella; los módulos sin huella se corrigieron
 (ver [Calidad](docs/CALIDAD.md)).
 
@@ -49,8 +50,9 @@ correcciones R23 listas (cota de 145 a 290 llamadas) esperan esa autorización.
    `data/clases_v4/revision_especialistas/revision_especialistas_guiones_ciencias_20261026.xlsx` (incluye el texto
    íntegro de cada guion; lo genera `libro_especialistas_escritorio_20261026.py`) para calibrar la revisión asistida
    (la muestra dio 22 %; el resto, 12,8 %).
-2. Autorizar o no las cuatro lecturas de las 34 correcciones R23 (ver `docs/CLASES_V4.md`). Los 112 bloqueados del
-   resto aún no tienen corrección preparada; 5 objetivos requieren registrar fuentes nuevas.
+2. R23 (ver `docs/CLASES_V4.md`): 132 correcciones con revisión directa favorable esperan, si algún día se
+   autorizan, sus cuatro lecturas. 16 objetivos necesitan registrar fuentes oficiales salvadoreñas o sanitarias que
+   el corpus no tiene (MARN, MINSAL, MAG, OMS, SGA, ley minera) y 3 correcciones quedaron bloqueadas.
 3. Revisión experta del triaje de prerrequisitos y de las observaciones de fuente para el MINED.
 4. Vocabulario: 173 conceptos propuestos y el reparto de `configuracion-electronica`.
 5. Identidad y control de acceso si la aplicación deja de ser local.

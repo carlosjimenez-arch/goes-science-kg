@@ -7,15 +7,16 @@ al grafo y sus expedientes. [Contrato de la aplicación](../specs/17_aplicacion_
 ## Iniciar
 
 ```bash
-uv sync --extra dev --extra pdf --extra rag --extra api --extra motor
-uv run gskg datos restaurar --en-repo  # sólo si el corpus no está repuesto
-uv run gskg materiales restaurar       # biblioteca docente, desde su recibo propio
-uv run gskg servir --puerto 8010
+uv sync --frozen --all-extras
+uv run --frozen gskg servir --puerto 8010 --sincronizar   # equivale a `make producto`
 ```
 
-Abrir `http://127.0.0.1:8010/app/`. OpenAPI: `http://127.0.0.1:8010/docs`.
-La restauración rechaza raíces que ya existen; no repetirla sobre el corpus repuesto.
-La aplicación no necesita claves nuevas ni llama a Vertex para consultar, exportar o compilar briefs.
+`--sincronizar` descarga desde GCS lo que falte según los recibos (corpus, biblioteca docente y entrega de
+guiones) y nunca sobrescribe datos existentes; también puede ejecutarse aparte con `gskg datos sincronizar`.
+Abrir `http://127.0.0.1:8010/app/`. OpenAPI: `http://127.0.0.1:8010/docs`. El servicio sólo escucha en
+loopback; `--permitir-red` lo expone fuera de la máquina, pero la API no autentica y en ese caso debe ir
+detrás de un proxy con control de acceso. La aplicación no necesita claves nuevas ni llama a Vertex para
+consultar, exportar o compilar briefs. [Datos en GCS](DATOS_EXTERNOS.md).
 
 ## Recorrido
 
@@ -72,47 +73,10 @@ Las respuestas gestionadas incluyen `X-Request-ID` y el tiempo hasta iniciar la 
 `Server-Timing`. Los eventos del middleware GOEs usan plantillas de ruta, estado y duración sin
 incorporar valores de consulta, cuerpos o datos de usuario. Se emiten al logging local existente.
 
-La medición vigente pasó **1.462 pruebas Python** sin advertencias; la cobertura de líneas es
-**79,40 %**. El informe fechado se publica en [medicion.json](badges/medicion.json).
-La CI ejecuta contratos portables en Python 3.11 y 3.14; su estado remoto se consulta en el badge
-del README. El informe siguiente conserva la verificación de la entrega anterior.
+Las pruebas y la cobertura vigentes se publican en [medicion.json](badges/medicion.json) y en los badges del
+README. La CI ejecuta contratos portables en Python 3.11 y 3.14; su estado remoto se consulta en el badge
+del README.
 
-## Verificación anterior de entrega · 22 de octubre de 2026
-
-La versión final pasó **1.387 pruebas en 266,07 segundos**, incluidas 27 pruebas nuevas para la
-aplicación y sus límites. Ruff comprobó `src`, `tests` y `.claude/hooks`. Los 18 controles de calidad y
-determinismo del grafo volvieron a pasar. Los módulos JavaScript superaron la comprobación de sintaxis.
-
-Por HTTP contra el servidor real se cotejaron las **1.020 filas** con el JSON curricular del snapshot:
-identidades, objetivos originales y grados coinciden. Se preservan **1.013 propuestas de Ciencias**,
-**siete filas fuera de alcance** y **treinta alertas científicas del original**. Las 35 fuentes tienen
-35 SHA distintos, ninguno ausente. El subgrafo inicial contiene 260 nodos y 633 relaciones reales,
-con extremos presentes, incluidos temas, unidades y propuestas. No se inventaron prerrequisitos.
-
-Se comprobó la rectificación K41 de Biología 11, con su alerta y enmienda, y la compilación de un brief
-de cinco fases. El Excel descargado por HTTP tiene 1.021 filas con encabezado, ninguna fórmula
-procedente de contenido y la misma identidad del snapshot. OpenAPI incluye el contrato de briefs.
-
-Se recorrieron las ocho pantallas en navegador. Se comprobaron el filtro por grado, el detalle
-original/propuesta con alerta y la selección/compilación de un brief. La interfaz conserva un modo
-oscuro local, menú adaptable, foco del modal y alternativa tabular al canvas. La revisión visual se
-realizó en escritorio; no se presenta como una auditoría completa de accesibilidad o de dispositivos.
-
-Antes y después de las consultas, exportación y compilación de briefs, el ledger conservó **668
-invocaciones** y exactamente el mismo SHA-256:
-`3ad9b798421a8b463f8d3dd924498330b42ddbd483ca4f774c5386bb74f722ae`.
-No hubo nuevas llamadas a Vertex ni modificaciones del snapshot o sus originales.
-
-El wheel final contiene **206 archivos**, incluidos todos los assets y la licencia de Inter, sin PDF,
-Excel, SQLite ni credenciales. SHA-256:
-`4e642c89e1ee9cf154f8eb4faac573316d0ca5e0d5c33e27d67768e655151eba`.
-Los datos restaurados para ejecutar la aplicación permanecen ignorados por Git y son recuperables
-desde la generación institucional fijada; el nuevo commit distribuye únicamente código y documentación.
-
-
-La entrega posterior de biblioteca docente conserva 2.867 registros, incluidos 1.013 paquetes
-V4 por objetivo, 108 por unidad y el material histórico sin migrar sus dictámenes.
-Restaurar con `gskg materiales restaurar`; consultar `/api/v4/materiales` y su OpenAPI.
-La preparación reutiliza textos revisados y no consume Vertex. Son materiales para montar
-clases; no se presentan como guiones completos nuevos para todos los objetivos.
-[Detalle, almacenamiento y pruebas](MATERIALES_DOCENTES.md).
+La biblioteca docente vigente tiene 3.837 registros (guiones publicados, preparaciones por objetivo y por
+unidad, y material histórico sin migrar sus dictámenes); se consulta en `/api/v4/materiales` y su OpenAPI.
+Consultarla no consume Vertex. [Detalle, almacenamiento y pruebas](MATERIALES_DOCENTES.md).

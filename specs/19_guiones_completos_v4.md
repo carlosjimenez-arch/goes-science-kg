@@ -1,5 +1,8 @@
 # 19 · Guiones completos de clase V4
 
+**Estado (25 de octubre de 2026):** 862 guiones publicados, todos con revisión directa aprobada, y 151 objetivos
+declarados sin guion; las 132 correcciones R23 con revisión directa favorable no se ejecutan sin autorización para sus cuatro lecturas. [Detalle](../docs/CLASES_V4.md).
+
 Petición del 22 de octubre de 2026: completar todos los paquetes, publicar en GCS y documentar descarga.
 El usuario autorizó el máximo acumulado de 4.000 invocaciones y USD 3.500 de reserva conservadora,
 conservando las 668 llamadas anteriores, el mismo ledger, proyecto y modelos. No hay reinicio ni

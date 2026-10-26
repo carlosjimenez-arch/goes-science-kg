@@ -28,6 +28,6 @@ partículas», «circuito en serie»). No es un tema ni una actividad.
    ≥2 fuentes, o 1 fuente y 1 marco (regla 4 de la spec 02).
 4. **Prácticas**: TIMSS Investigations, PISA PR1–PR8 y EP1–EP20, y las 8 prácticas de NGSS
    (`data/fuentes/mined/Fuentes/Standars…NGSS…pdf`, con página). Id `PRAC:<slug>`.
-5. Implementa `grafo/conceptos.py`: lee los archivos consolidados y agrega los nodos y las aristas TRABAJA
-   (`metodo = ia`). Agrega pruebas: cada tema con al menos 1 concepto y sin conceptos huérfanos.
+5. La unión de salidas está en `src/goes_science_kg/conceptos.py` y `src/goes_science_kg/grafo/construir.py` lee
+   los archivos consolidados y agrega los nodos y las aristas TRABAJA (`metodo = ia`). Agrega pruebas: cada tema con al menos 1 concepto y sin conceptos huérfanos.
 6. Reconstruye, valida y muestra al usuario los 10 conceptos con más fuentes por asignatura.

@@ -89,19 +89,19 @@ guardado. La configuración reutiliza `motor/ejecuciones.py` y `Registro`; no ha
 
 ```bash
 # Preparar un caso real sin SDK, ADC, ledger ni llamadas a modelos:
-uv run gskg producto juicios evaluar CANDIDATO_V4:7e7bc57c33959776aea27726c158470d8f2d070d652c30459819863abdda0471 --salida /tmp/expediente.json
+uv run gskg producto juicios evaluar CANDIDATO_V4:7e7bc57c33959776aea27726c158470d8f2d070d652c30459819863abdda0471 --salida <temporal>/expediente.json
 
 # Sólo cuando el corpus/destino/gasto de este flujo tenga autorización:
-uv run gskg producto juicios evaluar <candidato-id> --soportes /tmp/soportes.json --ejecutar --ejecucion conocimiento-001 --salida /tmp/resultado.json
+uv run gskg producto juicios evaluar <candidato-id> --soportes <temporal>/soportes.json --ejecutar --ejecucion conocimiento-001 --salida <temporal>/resultado.json
 
 # Revalidación local de los resultados completos indicados:
-uv run gskg producto juicios consolidar /tmp/resultado.json /tmp/otro-resultado.json --soportes /tmp/soportes.json --salida /tmp/coleccion.json
+uv run gskg producto juicios consolidar <temporal>/resultado.json <temporal>/otro-resultado.json --soportes <temporal>/soportes.json --salida <temporal>/coleccion.json
 
 # Medición estructural del contexto, sin proveedores ni gold:
-uv run gskg producto juicios medir-contexto --salida /tmp/presupuesto-contexto.json
+uv run gskg producto juicios medir-contexto --salida <temporal>/presupuesto-contexto.json
 
 # Incorporación opcional a una generación local; exige catálogo completo:
-uv run gskg producto construir --conocimiento /tmp/coleccion.json
+uv run gskg producto construir --conocimiento <temporal>/coleccion.json
 ```
 
 Los cuatro lectores usan los modelos definidos por rol en `motor.yaml`, proyecto institucional y región
@@ -155,7 +155,7 @@ abstenciones. `conocimiento-publicado-2` conserva tres cohortes originales compl
 la vista de consulta deduplica evidencia. Componer rechaza candidatos repetidos y reconstruye los
 cierres y ciclos del conjunto. No admite seleccionar sólo los casos favorables de una cohorte ni
 reemplazar un voto anterior por otro ensayo. No hay prerrequisitos respaldados ni progresión verificada.
-[Resultados actuales](investigacion/continuacion_ciencias_20261021.md).
+Resultados del corte del 21 de octubre: registro histórico en el historial de Git (commit `022efed`).
 
 Las pruebas usan libros/PDF sintéticos, lectores simulados y SQLite real: vetos por cada rol, criterios
 insuficientes, citas ajenas, celdas omitidas, fuente cambiada, alertas, terminales falsificados, reanudación,

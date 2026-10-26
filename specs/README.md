@@ -1,7 +1,7 @@
 # Specs
 
-La reconstrucción sobre V4 se rige por [`docs/ROADMAP.md`](../docs/ROADMAP.md) y
-[`docs/ARQUITECTURA.md`](../docs/ARQUITECTURA.md). Las specs 00–15 documentan el pipeline y las entregas
+La reconstrucción sobre V4 se rige por [`docs/ARQUITECTURA.md`](../docs/ARQUITECTURA.md) y las specs 16–19.
+Las specs 00–15 documentan el pipeline y las entregas
 anteriores; sus cifras y referencias V1/V2/V3 conservan su contexto histórico y no describen una V4 ya migrada.
 
 Especificación del proyecto. Claude Code las lee en este orden antes de implementar.
@@ -26,7 +26,6 @@ Especificación del proyecto. Claude Code las lee en este orden antes de impleme
 | 15 | [refuerzo_v3](15_refuerzo_v3.md) | Entrega V3 del MINED y refuerzo de cada tema con evidencia |
 | 16 | [producto_v4](16_producto_v4.md) | Ingesta rica, clasificación, snapshots, fuentes, vista y runtime V4 |
 | 17 | [aplicacion_curricular](17_aplicacion_curricular.md) | Interfaz GOES y API sobre los datos reales de Ciencias |
-
 | 18 | [materiales_docentes](18_materiales_docentes.md) | Biblioteca docente versionada, API y publicación privada verificable |
 | 19 | [guiones_completos_v4](19_guiones_completos_v4.md) | Guiones nuevos por objetivo, cuatro revisiones reales, presupuesto acumulado y entrega completa |
 
