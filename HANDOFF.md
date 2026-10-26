@@ -45,9 +45,10 @@ correcciones R23 listas (cota de 145 a 290 llamadas) esperan esa autorización.
 
 ## Pendientes
 
-1. Contraste humano: especialistas del MINED revisan la muestra de 96
-   (`data/clases_v4/revision_especialistas/revision_especialistas_muestra_20261025.xlsx`) para calibrar la revisión
-   asistida (la muestra dio 22 %; el resto, 12,8 %).
+1. Contraste humano: especialistas del MINED revisan la muestra de 96 en el libro autónomo
+   `data/clases_v4/revision_especialistas/revision_especialistas_guiones_ciencias_20261026.xlsx` (incluye el texto
+   íntegro de cada guion; lo genera `libro_especialistas_escritorio_20261026.py`) para calibrar la revisión asistida
+   (la muestra dio 22 %; el resto, 12,8 %).
 2. Autorizar o no las cuatro lecturas de las 34 correcciones R23 (ver `docs/CLASES_V4.md`). Los 112 bloqueados del
    resto aún no tienen corrección preparada; 5 objetivos requieren registrar fuentes nuevas.
 3. Revisión experta del triaje de prerrequisitos y de las observaciones de fuente para el MINED.

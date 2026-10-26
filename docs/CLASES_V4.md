@@ -26,9 +26,11 @@ inventados (boletines del MARN, datos de OMI/NOAA), cláusulas del criterio sin 
 
 **Límites.** Es una revisión asistida por IA, con un solo revisor por guion. La muestra (22 %) y el resto (12,8 %)
 dieron tasas distintas: la diferencia sugiere variación entre revisores, así que el 12,8 % puede subestimar los
-defectos. La validación de especialistas del MINED sigue pendiente: el libro
-`data/clases_v4/revision_especialistas/revision_especialistas_muestra_20261025.xlsx` contiene la muestra con el
-dictamen asistido, para contrastarlo.
+defectos. La validación de especialistas del MINED sigue pendiente. El libro autónomo
+`data/clases_v4/revision_especialistas/revision_especialistas_guiones_ciencias_20261026.xlsx` contiene la muestra,
+el dictamen asistido y el texto docente íntegro de cada guion (verificado por SHA-256 contra la entrega de 994), de
+modo que los especialistas no necesitan descargar la entrega. Lo genera `libro_especialistas_escritorio_20261026.py`;
+sólo escribe texto literal (ninguna celda se interpreta como fórmula).
 
 Las correcciones R23 (`data/clases_v4/ediciones_editoriales/r23/`, estado en `estado_r23.json`) son parches
 editoriales sobre la última versión válida. Cada una tiene su expediente, su versión materializada y su revisión
