@@ -21,7 +21,7 @@ from goes_science_kg.aprendizaje.estudiante import Almacen, Perfil
 from goes_science_kg.aprendizaje.evaluador import Evaluador
 from goes_science_kg.aprendizaje.llm import ModeloGuion
 from goes_science_kg.aprendizaje.pedagogia import Pedagogia, navegador_compartido
-from goes_science_kg.aprendizaje.relaciones import Navegador, confianza
+from goes_science_kg.aprendizaje.relaciones import Navegador
 from goes_science_kg.aprendizaje.sesion import Guion, Sesion
 from goes_science_kg.aprendizaje.tutor import Tutor
 from goes_science_kg.config import cargar, relativa, ruta
@@ -407,14 +407,3 @@ def escribir_recorridos(destino: Path | None = None) -> list[str]:
             perfiles[rec["id"]] = {"resumen": resumen, "perfil": asdict(sesion.perfil)}
     (d / "recorridos.json").write_text(json.dumps(perfiles, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return [*escritos, relativa(d / "recorridos.json")]
-
-
-def resumen_inversas() -> dict:
-    """Count relationships verified in both navigation directions."""
-    nav = navegador_compartido()
-    pre = [a for a in nav.aristas if a.tipo == TipoArista.PRERREQUISITO_DE]
-    return {
-        "prerrequisitos": len(pre),
-        "por_confianza": {c: sum(confianza(a) == c for a in pre) for c in ("alta", "media", "baja")},
-        "incoherencias": len(errores_inversas(nav)),
-    }

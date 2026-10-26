@@ -132,24 +132,3 @@ def cargar_referencias_historicas(directorio: Path) -> ReferenciasProducto:
             "limite": "Red histórica sin revalidar: no acredita vínculos de las nuevas filas V4",
         },
     )
-
-
-def combinar_referencias(*referencias: ReferenciasProducto) -> ReferenciasProducto:
-    """Combine explicit reference sets only after resolving identity collisions."""
-    nodos, aristas = [], []
-    vistos = set()
-    for referencia in referencias:
-        for nodo in referencia.nodos:
-            if nodo.id in vistos:
-                raise ValueError("Referencias con identidad superpuesta; resuelva la colisión explícitamente")
-            vistos.add(nodo.id)
-            nodos.append(nodo)
-        aristas.extend(referencia.aristas)
-    return ReferenciasProducto(
-        nodos=tuple(nodos),
-        aristas=tuple(aristas),
-        procedencia={
-            "clase": "combinada",
-            "conjuntos": [r.procedencia for r in referencias],
-        },
-    )

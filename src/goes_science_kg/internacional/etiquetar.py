@@ -261,17 +261,6 @@ def items_malla_v2(grado_min: int = 9) -> dict[str, list[dict]]:
     return grupos
 
 
-def etiquetar_malla_v2(asignaturas: list[str] | None = None) -> list[dict]:
-    """Tag senior V2 topics with both subject-specific and complete vocabularies."""
-
-    # Implementation notes:
-    # (`malla_v2_<asig>_completo`). La V2 reparte Tierra y Espacio entre Biología, Química y Física de Bachillerato
-    # (p. ej. el cambio climático está en Biología 11.°), y con un solo vocabulario esos temas no reciben su concepto.
-    # El contraste toma la UNIÓN de los dos etiquetados: afirmar que a El Salvador le falta algo exige que ninguno de
-    # los dos lo encuentre (cada etiquetado tiene ~20 % de variación en conceptos individuales).
-    return [etiquetar(*g) for g in grupos_malla_v2(asignaturas)]
-
-
 def grupos_malla_v2(asignaturas: list[str] | None = None) -> list[Grupo]:
     """Prepare V2 tagging groups and the earlier-grade reference context."""
     grupos: list[Grupo] = []
@@ -285,9 +274,3 @@ def grupos_malla_v2(asignaturas: list[str] | None = None) -> list[Grupo]:
         antecedente = [i for i in items_malla_v2(grado_min=2)["ciencias"] if int(i["id"][1:3]) <= 8]
         grupos.append((antecedente, "ciencias", "malla_v2_g02_08"))
     return grupos
-
-
-def etiquetar_malla_v2_antecedente() -> dict:
-    """Tag earlier V2 topics used as historical contrast evidence."""
-    items = [i for i in items_malla_v2(grado_min=2)["ciencias"] if int(i["id"][1:3]) <= 8]
-    return etiquetar(items, "ciencias", "malla_v2_g02_08")

@@ -63,11 +63,6 @@ def _objetivos(clave: str) -> tuple[dict, ...]:
     return tuple(sorted(filas, key=lambda o: o["id"]))
 
 
-def etiquetar_paises(solo: list[str] | None = None) -> list[dict]:
-    """Tag each country's objectives using the registered grouping rules."""
-    return [etiquetar.etiquetar(*g) for g in grupos_paises(solo)]
-
-
 def grupos_paises(solo: list[str] | None = None) -> list[etiquetar.Grupo]:
     """Group country objectives by their explicit subject metadata."""
 

@@ -44,7 +44,6 @@ SIMPLES = (
     "README.md",
     "CLAUDE.md",
     "HANDOFF.md",
-    "HANDOFF_INTERNACIONAL.md",
     "CONTRIBUTING.md",
     "NOTICE",
     ".gitignore",
