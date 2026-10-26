@@ -1,6 +1,41 @@
 # Guiones completos de Ciencias V4
 
-## Entrega publicada · 25 de octubre de 2026
+## Entrega vigente · revisión directa integral (25 de octubre de 2026)
+
+**862 guiones de clase y 108 guiones de unidad publicados, todos con revisión directa aprobada**; 151 objetivos
+declarados sin guion liberado, cada uno con su motivo. Entrega `e4b3278681cddc144d457dc7774f54a07a8721e72673d9564d2ed24add694de6`
+(`config/clases_ciencias.lock.json`) y biblioteca `8af1b65d…` con 3.837 registros
+(`config/materiales_ciencias.lock.json`), publicadas en el bucket y descargadas desde él con `gskg datos sincronizar`.
+70 de las 108 unidades quedan marcadas `completa: false`.
+
+| Paso | Resultado |
+|---|---|
+| Muestra estratificada de los 968 guiones sin revisión directa (16 por estrato, semilla = id de la entrega) | 96 revisados: 20 bloqueados; tasa ponderada 22 % ± 8 % |
+| Revisión directa de los 872 restantes (109 revisores, 8 casos cada uno) | 760 liberables y 112 bloqueados (12,8 %) |
+| Total de la cohorte publicada sólo con lectores automáticos | 132 de 968 con defecto material (13,6 %); por estrato entre 7 % (2.º–4.º) y 19 % (Biología 10.º–11.º) |
+| Retiro | Los 132 se declaran `bloqueado_revision_directa`, anclados al SHA exacto del guion revisado |
+| Corrección editorial R23 | 39 objetivos (los 19 pendientes y los 20 de la muestra): 34 correcciones con revisión directa favorable, 2 bloqueadas y 3 imposibles sin fuentes que no están en el corpus |
+| Cuatro lecturas de R23 | **No ejecutadas.** La cota (29 lotes, 145–290 llamadas) no cabe en las 106 restantes y el usuario decidió no ampliar el tope |
+
+Protocolo, diseño y expedientes: `data/clases_v4/revision_especialistas/` (`PROTOCOLO_REVISION_DIRECTA.md`,
+`muestra_20261025.json`, `expedientes_*`) y los consolidados `data/clases_v4/auditoria_contenido/revision_directa_muestra_20261025.json`
+y `revision_directa_resto_20261025.json`. Defectos típicos: atribuciones históricas erróneas (teoría celular),
+vectores virales mal descritos (adenovirus en ADA-SCID, error que viene de OpenStax), datos institucionales
+inventados (boletines del MARN, datos de OMI/NOAA), cláusulas del criterio sin enseñar, errores conceptuales
+(paralaje, glucagón en el músculo, polos magnéticos) y datos simulados incoherentes con la termodinámica.
+
+**Límites.** Es una revisión asistida por IA, con un solo revisor por guion. La muestra (22 %) y el resto (12,8 %)
+dieron tasas distintas: la diferencia sugiere variación entre revisores, así que el 12,8 % puede subestimar los
+defectos. La validación de especialistas del MINED sigue pendiente: el libro
+`data/clases_v4/revision_especialistas/revision_especialistas_muestra_20261025.xlsx` contiene la muestra con el
+dictamen asistido, para contrastarlo.
+
+Las correcciones R23 (`data/clases_v4/ediciones_editoriales/r23/`, estado en `estado_r23.json`) son parches
+editoriales sobre la última versión válida. Cada una tiene su expediente, su versión materializada y su revisión
+directa. Para publicarlas hace falta autorizar la ampliación del tope: `ensamblar_r23.py --escribir` prepara
+parches, preparaciones y plan con su cota, y la campaña se ejecuta con el protocolo `clases-p11-editorial-r23-001`.
+
+## Entrega anterior · 994 guiones (25 de octubre de 2026, reemplazada)
 
 **994 guiones de clase y 108 guiones de unidad publicados**, con 19 objetivos declarados sin guion
 liberado. Entrega `9d949257f6752960333349a56cfad4f2da855041f45a97470655226b06ed493d`

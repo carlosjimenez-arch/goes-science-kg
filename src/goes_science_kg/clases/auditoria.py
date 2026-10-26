@@ -52,7 +52,7 @@ def protocolo_congelado(base, archivo_resultado, preparacion, resultado):
     m = re.fullmatch(
         r"clases-p([2-9]|1[01])"
         r"(?:-(?:masivo|seguimiento|r10-correcciones|lagunas-r16|recuperacion-r[0-9]{2}"
-        r"|editorial(?:-(?:criticas|segunda|tercera))?)"
+        r"|editorial(?:-(?:criticas|segunda|tercera|r[0-9]{2}))?)"
         r"-[0-9]{3})?",
         ref["protocolo"],
     )

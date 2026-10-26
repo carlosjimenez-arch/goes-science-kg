@@ -22,6 +22,8 @@ import openpyxl
 from openpyxl.utils import get_column_letter
 from pydantic import BaseModel, ConfigDict, Field
 
+from goes_science_kg.config import relativa
+
 LOGGER = logging.getLogger(__name__)
 FORMATOS_ADMITIDOS = {".xlsx", ".xlsm", ".xltx", ".xltm"}
 FORMATOS_NO_ADMITIDOS = {".xls", ".xlsb", ".xlt"}
@@ -289,7 +291,7 @@ def inventariar(directorio: Path, version: str) -> InventarioCurricular:
     LOGGER.info("Inventario %s: %d libros, estado=%s", version.strip(), len(archivos), estado)
     return InventarioCurricular(
         version_declarada=version.strip(),
-        directorio=str(base),
+        directorio=relativa(base),
         estado=estado,
         huella_contenido=huella,
         archivos=archivos,

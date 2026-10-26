@@ -12,6 +12,7 @@ from collections import Counter
 from contextlib import closing
 from pathlib import Path
 
+from goes_science_kg.config import relativa
 from goes_science_kg.motor.contratos import ResultadoMotor, huella
 from goes_science_kg.motor.ejecuciones import ejecutar_durable
 from goes_science_kg.motor.flujo import Motor
@@ -198,7 +199,7 @@ def recuperar_unidad_sin_respuesta(
             consumo_despues=despues,
             consumo_incremental={k: despues[k] - consumo[k] for k in ("llamadas", "reserva_usd")},
             limites_presupuesto=original.limites_presupuesto,
-            checkpoints=str(archivo),
+            checkpoints=relativa(archivo),
         )
     finally:
         os.close(descriptor)

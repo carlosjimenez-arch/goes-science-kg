@@ -12,6 +12,7 @@ import zipfile
 from contextlib import closing
 from pathlib import Path
 
+from goes_science_kg.motor.ejecuciones import identidad_ledger
 from goes_science_kg.operacion.respaldo import crear_paquete, nombre_seguro, restaurar_paquete
 
 VERSION = "datos-ciencias-1"
@@ -34,15 +35,6 @@ def digest(archivo: Path) -> str:
 
     with archivo.open("rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
-
-
-def identidad_ledger(archivo: Path) -> dict | None:
-    """Record a ledger's physical identity without opening or modifying its data."""
-
-    if not archivo.exists():
-        return None
-    estado = archivo.stat()
-    return {"ruta": str(archivo.resolve()), "dispositivo": estado.st_dev, "inodo": estado.st_ino}
 
 
 def _transitorio(archivo: Path) -> bool:

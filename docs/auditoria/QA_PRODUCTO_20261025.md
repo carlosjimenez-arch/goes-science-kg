@@ -134,11 +134,26 @@ defectos materiales. Se publicaron **994 guiones y 108 unidades** con 19 objetiv
 | Producto local | 10 vistas sin errores en 390 y 1440 px; 1.200 peticiones concurrentes sin error (p95 217 ms) |
 | Auditoría de guiones | 409 resultados cotejados con el ledger tras corregir el esquema del editor P11 |
 
+## 8. Tercera fase: revisión directa integral y producto sin rutas locales
+
+| Control | Resultado |
+|---|---|
+| Muestra estratificada de 96 guiones (16 por estrato) | 20 con defecto material: 22 % ± 8 % ponderado |
+| Revisión de los 872 restantes (109 revisores independientes) | 112 bloqueados (12,8 %); por estrato de 7,1 % a 19,0 % |
+| Entrega vigente | 862 guiones y 108 unidades, **todos con revisión directa aprobada**; 151 objetivos declarados sin guion |
+| Correcciones R23 | 34 de 39 listas con revisión directa favorable; sin ejecutar por decisión de no ampliar el tope |
+| Rutas de la estación | Ninguna en archivos versionados ni en recibos (prueba `test_sin_rutas_locales.py`); identidad del ledger sin ruta; 14 registros operativos saneados con su bitácora; 7 evidencias ancladas por SHA se conservan intactas |
+| Respaldos externos | Las copias que estaban fuera del repositorio se publicaron en `respaldos/` del bucket |
+| Corpus vigente | `20c6e813…`, 29.086 archivos, restaurado y comparado antes de adoptar el recibo |
+
+La diferencia entre la tasa de la muestra (22 %) y la del resto (12,8 %) indica variación entre revisores. Por
+eso el contraste con especialistas del MINED (libro Excel de la muestra) es la siguiente calibración.
+
 ## Riesgos y decisiones pendientes
 
-1. **Guiones de clase:** 994 publicados; 968 sólo tienen respaldo de cuatro lectores automáticos. Dado el 37 %
-   de defectos materiales en la cohorte recuperada, conviene una revisión de especialistas por muestreo antes
-   del piloto en aula. 19 objetivos siguen sin guion (106 llamadas disponibles en el tope).
+1. **Guiones de clase:** 862 publicados con revisión directa asistida y 151 objetivos sin guion. Falta el
+   contraste con especialistas del MINED y decidir el presupuesto para las cuatro lecturas de las 34
+   correcciones R23 (106 llamadas disponibles; cota 145–290).
 2. **Aprobación institucional:** dictámenes automáticos y verificaciones por agentes no equivalen a una
    revisión del MINED ni a evidencia de aprendizaje. El piloto con usuarios es un proceso aparte.
 3. **Despliegue:** la aplicación es de uso local, sin autenticación. Exponerla a usuarios reales fuera del

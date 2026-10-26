@@ -228,8 +228,8 @@ La API fija y verifica el grafo por instancia. Los generadores `grados construir
 Agregar `--ejecutar` llama a Vertex. `--ejecucion <id>` permite reanudar la misma solicitud con checkpoints y presupuesto persistentes. Si cambian corpus, modelos, prompts, contratos o configuración, no se continúa esa ejecución. Un resultado completado se devuelve sin repetir el trabajo. Los estados de abstención usan código de salida 2.
 
 El ejecutor común mantiene un bloqueo por thread para impedir duplicar el mismo trabajo; threads distintos
-conservan paralelismo. Si el proveedor expone Registro, vincula el ID a la ruta e identidad física del
-ledger y rechaza su sustitución. La alineación rehidrata fuentes antes de cerrar, reanudar o mostrar un
+conservan paralelismo. Si el proveedor expone Registro, vincula el ID a la identidad física del
+ledger (nombre, dispositivo e inodo; nunca una ruta de la máquina) y rechaza su sustitución. La alineación rehidrata fuentes antes de cerrar, reanudar o mostrar un
 terminal. Los otros motores deben comprobar sus fuentes antes de invocar el helper; la CLI y las unidades
 lo hacen en su preparación. Un checkpoint no convierte sus propios bytes en evidencia verificada.
 

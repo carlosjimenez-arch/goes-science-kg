@@ -34,15 +34,16 @@ def leer_propio(base: Path, nombre: str) -> Path:
 
 
 def cargar_revisiones_directas(base: Path, rutas) -> dict:
-    """Load direct-review files, keyed by objective, with the exact script hash each verdict applies to."""
+    """Load direct-review files keyed by (objective, exact script hash): a verdict applies to one version only."""
     revisiones = {}
     for ruta in rutas:
         raw = leer_propio(base, ruta).read_bytes()
         documento = json.loads(raw)
         for r in documento["revisiones"]:
-            if r["veredicto"] not in {"liberable", "bloquear"} or r["fila_id"] in revisiones:
+            clave = (r["fila_id"], r["guion_sha256"])
+            if r["veredicto"] not in {"liberable", "bloquear"} or clave in revisiones:
                 raise ValueError("Revisión directa con veredicto desconocido o duplicada")
-            revisiones[r["fila_id"]] = r | {"expediente": ruta, "expediente_sha256": sha(raw)}
+            revisiones[clave] = r | {"expediente": ruta, "expediente_sha256": sha(raw)}
     return revisiones
 
 
@@ -52,13 +53,9 @@ def _pendiente_verificado(base: Path, id_: str, declarado: dict, revisiones: dic
     raw = leer_propio(base, expediente.get("resultado", "")).read_bytes()
     final = json.loads(raw)["filas"].get(id_)
     if declarado.get("estado") == "bloqueado_revision_directa":
-        revision = revisiones.get(id_) or {}
-        if (
-            not final
-            or final["estado"] != "respaldado_automaticamente"
-            or revision.get("veredicto") != "bloquear"
-            or revision.get("guion_sha256") != sha(serializar(final["guion"]))
-        ):
+        revision = revisiones.get((id_, sha(serializar(final["guion"])))) if final and final["guion"] else None
+        bloqueado = (revision or {}).get("veredicto") == "bloquear"
+        if not final or final["estado"] != "respaldado_automaticamente" or not bloqueado:
             raise ValueError("Un bloqueo por revisión directa debe corresponder al guion exacto revisado")
     elif not final or final["estado"] == "respaldado_automaticamente" or final["estado"] != declarado.get("estado"):
         raise ValueError("Un objetivo sin guion debe apuntar a su último resultado negativo real")
@@ -168,9 +165,7 @@ def compilar(
         if final["estado"] != "respaldado_automaticamente":
             raise ValueError("No se libera una clase vetada o abstención como lista para impartir")
         g = GuionClase.model_validate(final["guion"])
-        revision = revisiones_directas.get(id_)
-        if revision and revision["guion_sha256"] != sha(serializar(final["guion"])):
-            revision = None  # La revisión corresponde a otra versión del guion.
+        revision = revisiones_directas.get((id_, sha(serializar(final["guion"]))))
         if revision and revision["veredicto"] == "bloquear":
             raise ValueError("No se libera un guion bloqueado por revisión directa")
         revision_directa = (

@@ -22,7 +22,9 @@ COBERTURA_V4 = {"guion_clase": 1013, "guion_unidad": 108}
 
 
 # Una entrega puede declarar pocos objetivos sin guion liberado; nunca los omite ni los presenta como listos.
-MAX_SIN_GUION = 20
+# Revisión directa integral (25-10-2026): los guiones con defecto material se retiran y se declaran sin guion.
+# La cota impide publicar como entrega una biblioteca mayoritariamente vacía.
+MAX_SIN_GUION = 400
 ESTADOS_SIN_GUION = frozenset({"no_respaldado", "abstencion", "bloqueado_revision_directa"})
 
 
@@ -39,7 +41,7 @@ def sin_guion_declarados(procedencia) -> list:
 def validar_cobertura_publicable(por_tipo, sin_guion=0):
     """Require all 108 units and every objective either released or explicitly declared without a script."""
     if type(sin_guion) is not int or not 0 <= sin_guion <= MAX_SIN_GUION:
-        raise ValueError("La entrega admite como máximo 20 objetivos declarados sin guion liberado")
+        raise ValueError(f"La entrega admite como máximo {MAX_SIN_GUION} objetivos declarados sin guion liberado")
     esperado = {"guion_clase": COBERTURA_V4["guion_clase"] - sin_guion, "guion_unidad": COBERTURA_V4["guion_unidad"]}
     if any(por_tipo.get(tipo, 0) != cantidad for tipo, cantidad in esperado.items()):
         raise ValueError(

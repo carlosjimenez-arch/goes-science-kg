@@ -220,7 +220,10 @@ def test_presupuestos_restaurados_conservan_reservas_y_solo_migran_el_vinculo(tm
             max_llamadas=1,
             max_usd=2,
         )
-    assert json.loads(Path(migracion["auditoria"]).read_bytes())["estado"] == "completado"
+    auditoria = json.loads((destino / migracion["auditoria"]).read_bytes())
+    assert auditoria["estado"] == "completado"
+    # Ni el vínculo ni la auditoría conservan rutas de la máquina que restauró.
+    assert str(tmp_path) not in json.dumps(auditoria) and "ruta" not in auditoria["identidad_nueva"]
     with pytest.raises(ValueError, match="SQLite cambió"):
         migrar_presupuestos(destino, recibo, restauracion["sqlite_verificados"])
 

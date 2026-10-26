@@ -1,6 +1,28 @@
 # Verificación de recuperación de Ciencias V4
 
-## Respaldo vigente: producto con guiones publicados, 25 de octubre de 2026
+## Respaldo vigente: revisión directa integral y rutas retiradas, 25 de octubre de 2026
+
+Generación publicada con `gskg datos publicar` (empaqueta, sube, restaura en una carpeta de trabajo y compara
+antes de adoptar el recibo). Agrega la revisión directa de los 968 guiones, las correcciones R23, el libro para
+especialistas, los checkpoints revinculados a la identidad del ledger sin ruta y los registros operativos con
+rutas de la estación sustituidas por rutas del repositorio (`data/operaciones/redaccion_rutas_locales_20261025.json`).
+
+| Elemento | Identidad comprobada |
+|---|---|
+| Archivos / bases SQLite | 29.086 / 44 |
+| Bytes originales / comprimidos | 4.530.002.344 / 1.604.162.276 |
+| SHA del ZIP | `20c6e813fc23ff123387c08a4525fbaff8b63071b144510297956cfe129bda81` |
+| Generaciones ZIP / inventario / descriptor | `1792987241757698` / `1792987298254823` / `1792987307641831` |
+| Huella del inventario | `e9e75a3fcb13a53860d179343f0ac903da79aefc7d88cf1df09e1dbd44d48ddb` |
+| Identidad del ledger en el recibo | nombre, dispositivo e inodo; sin ruta |
+
+Recibos complementarios: biblioteca `8af1b65d…` (3.837 registros), entrega de guiones `e4b32786…` (862 guiones
+y 108 unidades, todos con revisión directa aprobada) y biblioteca de preparaciones `5b64ee…`. Las copias
+locales de la biblioteca y la entrega se retiraron y se descargaron del bucket con `gskg datos sincronizar`.
+Las copias de bibliotecas y SQLite reemplazadas que estaban fuera del repositorio se subieron como
+`respaldos/65f4ebeb….zip`; su manifiesto se verificó tras descargarlo.
+
+## Antecedente: producto con 994 guiones, 25 de octubre de 2026
 
 Generación publicada con `gskg datos publicar`, que empaqueta, sube, restaura desde GCS en una carpeta de
 trabajo, compara y sólo entonces adopta el recibo. Incluye el ledger con las campañas R21 y R22, sus

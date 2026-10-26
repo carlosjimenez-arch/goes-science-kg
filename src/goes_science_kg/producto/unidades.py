@@ -25,7 +25,7 @@ from uuid import uuid4
 from pydantic import Field, field_validator
 
 from goes_science_kg.archivos import PROTEGIDAS
-from goes_science_kg.config import ruta
+from goes_science_kg.config import relativa, ruta
 from goes_science_kg.curriculo.catalogacion import DECLARADAS, CatalogoDisciplinas, ClasificacionFila
 from goes_science_kg.curriculo.contexto_fuentes import documento_de_fila
 from goes_science_kg.curriculo.contratos import FASES, ContratoCurricular, Curriculo, FilaCurricular, FuenteCurricular
@@ -667,7 +667,7 @@ def exportar_unidad(paquete: PaqueteUnidad, destino: Path, *, resultado: Resulta
     return {
         "paquete_id": paquete.id,
         "estado": paquete.estado,
-        "directorio": str(base),
+        "directorio": relativa(base),
         "sha256": huellas,
         "llamadas_preparacion": 0,
     }

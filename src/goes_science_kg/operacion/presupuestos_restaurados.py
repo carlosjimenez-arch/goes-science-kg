@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 import shutil
@@ -62,13 +63,14 @@ def migrar_presupuestos(raiz: Path, recibo: dict, sqlites: dict[str, str], *, su
         if filas:
             cambios.append({"archivo": rel, "ejecuciones": [p[0] for p in filas]})
     auditoria = {
-        "version": "migracion-presupuestos-restaurados-1",
+        "version": "migracion-presupuestos-restaurados-2",
         "estado": "preparado",
         "metodo": "copias_verificadas_con_reversion",
         "paquete_sha256": recibo["paquete"]["sha256"],
         "huella_inventario": recibo["huella_inventario"],
         "sqlite_verificados": sqlites,
-        "identidad_anterior": json.loads(anterior),
+        # La identidad anterior puede contener una ruta de otra máquina: sólo se conserva su huella.
+        "huella_identidad_anterior": hashlib.sha256(anterior.encode()).hexdigest(),
         "identidad_nueva": json.loads(nueva),
         "reservas_por_ejecucion": [{"ejecucion": e, "llamadas": n, "reserva_usd": r} for e, n, r in resumen],
         "vinculos": cambios,
@@ -112,7 +114,7 @@ def migrar_presupuestos(raiz: Path, recibo: dict, sqlites: dict[str, str], *, su
         preservar = bool(errores)
         auditoria["estado"] = "reversion_pendiente" if errores else "revertido"
         if errores:
-            auditoria["copias_para_recuperar"] = str(staging)
+            auditoria["copias_para_recuperar"] = staging.relative_to(raiz).as_posix()
             auditoria["reversion_pendiente"] = errores
         raise
     finally:
@@ -121,4 +123,7 @@ def migrar_presupuestos(raiz: Path, recibo: dict, sqlites: dict[str, str], *, su
         temporal.replace(salida)
         if not preservar:
             shutil.rmtree(staging)
-    return {"vinculos_actualizados": sum(len(c["ejecuciones"]) for c in cambios), "auditoria": str(salida)}
+    return {
+        "vinculos_actualizados": sum(len(c["ejecuciones"]) for c in cambios),
+        "auditoria": salida.relative_to(raiz).as_posix(),
+    }

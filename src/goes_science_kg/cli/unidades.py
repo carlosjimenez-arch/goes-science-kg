@@ -12,7 +12,7 @@ from uuid import uuid4
 import typer
 
 from goes_science_kg.archivos import destino_generado
-from goes_science_kg.config import cargar, ruta
+from goes_science_kg.config import cargar, relativa, ruta
 
 app = typer.Typer(help="Unidades V4: objetivos, aula, evidencia y sesiones", no_args_is_help=True)
 
@@ -290,7 +290,7 @@ def recuperar_transporte(
         )
         archivos = exportar_unidad(paquete, destino, resultado=resultado)
         recibo = {
-            "original": str(archivo.resolve()),
+            "original": relativa(archivo),
             "original_sha256": hashlib.sha256(archivo.read_bytes()).hexdigest(),
             "ejecucion_id": original.ejecucion_id,
             "limites": original.limites_presupuesto,

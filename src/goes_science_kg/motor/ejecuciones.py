@@ -21,6 +21,16 @@ class MotorPersistible(Protocol):
         """Compile a workflow without invoking models."""
 
 
+def identidad_ledger(archivo: Path) -> dict | None:
+    """Identify a ledger by file name, device, and inode, never by a machine-specific path."""
+
+    archivo = Path(archivo).resolve()
+    if not archivo.exists():
+        return None
+    estado = archivo.stat()
+    return {"nombre": archivo.name, "dispositivo": estado.st_dev, "inodo": estado.st_ino}
+
+
 def _identidad_presupuesto(motor: MotorPersistible, ejecucion_id: str) -> str | None:
     modelo = getattr(motor, "modelo", None)
     if hasattr(modelo, "ejecucion_id") and modelo.ejecucion_id != ejecucion_id:
@@ -28,11 +38,7 @@ def _identidad_presupuesto(motor: MotorPersistible, ejecucion_id: str) -> str | 
     registro = getattr(modelo, "registro", None)
     if registro is None:
         return None
-    archivo = Path(registro.archivo).resolve()
-    identidad: dict = {"ruta": str(archivo)}
-    if archivo.exists():
-        estado = archivo.stat()
-        identidad.update({"dispositivo": estado.st_dev, "inodo": estado.st_ino})
+    identidad = identidad_ledger(Path(registro.archivo)) or {"nombre": Path(registro.archivo).name}
     return json.dumps(identidad, sort_keys=True)
 
 

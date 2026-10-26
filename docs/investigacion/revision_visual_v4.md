@@ -23,7 +23,7 @@ Captura móvil: `data/producto/revision_visual/movil_cua_2026-10-21.jpg`, **40.2
 `d4f88f1836bb6d676a32b91a7641eadde4e7dcd5310aceef175041208aff8578`.
 
 El clic de `Exportar selección · MD` volvió a agotar la espera del evento de descarga a los 15 segundos;
-la ruta conocida `~/Downloads/GOES-curriculo-8-filas.md` no estaba presente. La descarga real sigue sin
+el archivo `GOES-curriculo-8-filas.md` no apareció en la carpeta de descargas del navegador. La descarga real sigue sin
 confirmar; tampoco se atribuye la incidencia al contenido de exportación sin evidencia suficiente.
 No se repitió la llamada nativa de Chrome que se había bloqueado. Se restauró el viewport y se detuvo
 el servidor al cerrar la revisión.
@@ -34,9 +34,9 @@ Las secciones siguientes conservan la primera revisión de escritorio y sus lím
 
 ## Artefacto y entorno
 
-Se generó el HTML con la API final `vista(...)`, el currículo de 1.020 filas, las cinco alertas documentales y el catálogo **piloto** de `/tmp/goes-v4-piloto-low.json`, campo `catalogo`. El piloto contiene 384 asignaciones declaradas, 23 coincidencias automáticas y 613 abstenciones. No se ejecutó catalogación ni se consultó la reserva educativa.
+Se generó el HTML con la API final `vista(...)`, el currículo de 1.020 filas, las cinco alertas documentales y el catálogo **piloto** `goes-v4-piloto-low.json` (archivo temporal, no conservado), campo `catalogo`. El piloto contiene 384 asignaciones declaradas, 23 coincidencias automáticas y 613 abstenciones. No se ejecutó catalogación ni se consultó la reserva educativa.
 
-El archivo revisado, `/private/tmp/goes_v4_revision_visual/index.html`, tiene **6.917.839 bytes**.
+El archivo revisado, un `index.html` temporal de la revisión, tiene **6.917.839 bytes**.
 La captura revisada conserva esta identidad:
 
 `SHA-256 064f07fd9509f7a076210e08a04aee7423fdf4985a0463b2ec91004ee7799ae3`.

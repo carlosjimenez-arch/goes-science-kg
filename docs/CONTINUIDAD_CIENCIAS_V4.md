@@ -155,7 +155,7 @@ USD 1.200. El consumo real de reservas del piloto es considerablemente menor; no
 
 Durante el traslado no se inician nuevas generaciones ni escrituras en datos. Se continúa con código y
 pruebas sintéticas. La restauración debe conservar rutas y archivos normales: los lectores rechazan enlaces
-simbólicos. La tabla `checkpoint_presupuestos` vincula el registro a ruta, dispositivo e inodo; restaurar
+simbólicos. La tabla `checkpoint_presupuestos` vincula el registro a su nombre, dispositivo e inodo (sin rutas de la máquina); restaurar
 requiere migrar explícitamente esa identidad sólo después de verificar el inventario y la conservación
 íntegra de llamadas y reservas. No se borra la tabla ni se cambia el ID para sortear el control.
 

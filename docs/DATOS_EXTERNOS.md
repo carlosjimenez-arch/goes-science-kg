@@ -62,9 +62,11 @@ a las rutas originales y vuelven a funcionar después de `--en-repo`.
 
 ## Respaldo vigente · 25 de octubre de 2026
 
-El recibo fija **28.330 archivos** (4.396.168.714 bytes originales), ZIP `d812b22d…`, generación
-`1792967167842706`. Incluye el ledger tras las campañas R21 y R22 (4.294 llamadas), las bibliotecas y la
-entrega de guiones. Se publicó con `gskg datos publicar` y se restauró desde GCS en un checkout limpio.
+El recibo fija **29.086 archivos** (4.530.002.344 bytes originales), ZIP `20c6e813…`, generación
+`1792987241757698`. Incluye el ledger (4.294 llamadas, sin cambio), la revisión directa integral de los guiones,
+las correcciones R23, las bibliotecas y la entrega. La identidad del ledger ya no contiene rutas (nombre,
+dispositivo e inodo); los checkpoints se revincularon con la migración verificada. La generación anterior
+`d812b22d…` sigue en el bucket. Se publicó con `gskg datos publicar` y se restauró desde GCS en un checkout limpio.
 [Identidades y prueba del consumidor](VERIFICACION_GCS.md). Las generaciones anteriores (`06398b9e…`,
 `59151f1e…`, `a61846aa…`) siguen en el bucket por su generación; no se sobrescriben.
 
