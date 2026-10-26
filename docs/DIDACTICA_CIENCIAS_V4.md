@@ -207,3 +207,37 @@ paquetes únicos. La biblioteca histórica conserva su ID original.
 Las pruebas verifican ingeniería, procedencia y cálculos seleccionados de las claves; no prueban
 alineación semántica completa, seguridad de prácticas ni aprendizaje. Las evidencias están en
 `data/didactica_ciencias_20261026/verificacion_*.json`, con recibos privados y respaldo complementario.
+
+La API se probó además por HTTP real en `http://127.0.0.1:8011`: los 14 casos devuelven sus claves
+docentes y la captura anterior conserva su identidad. Treinta consultas locales de habilidades con
+el proceso caliente dieron mediana 3.79 ms y p95 5.35 ms, sin concurrencia.
+Es una observación local, no una garantía de latencia bajo carga. El ledger permaneció idéntico.
+
+El respaldo complementario está fijado en `config/expediente_didactica_ciencias.lock.json`: 564 archivos,
+31245359 bytes comprimidos, generación `1793049309059416`, SHA
+`c3be65724cb9e644fe1bf7cffef64e86f1b354973e4092ed81022db0b3f9ca11`. Conserva el código del commit `c22d052`, fuentes,
+muestras, pruebas, recibos y una copia consistente del ledger. Se descargó y restauró en un destino
+independiente; el inventario y los 3.941 consumos coinciden. El apéndice documental y el propio
+recibo se registran después en Git; no se afirma que el ZIP se contenga a sí mismo.
+
+Recuperar ese expediente, además de los paquetes:
+
+```python
+import json
+from pathlib import Path
+from goes_science_kg.cli.materiales import _almacen
+from goes_science_kg.operacion.respaldo import restaurar_paquete
+
+recibo = json.loads(Path("config/expediente_didactica_ciencias.lock.json").read_bytes())
+archivo = Path("/tmp/ciencias-didactica-expediente.zip")
+_almacen().descargar(recibo["objeto"], archivo)
+restaurar_paquete(
+    archivo,
+    Path("/tmp/ciencias-didactica-expediente"),
+    sha256=recibo["objeto"]["sha256"],
+    max_bytes=256 * 1024**2,
+)
+```
+
+Usar destinos nuevos. La recuperación comprueba los bytes de la generación GCS y después el
+inventario interno; no cambia permisos ni invoca modelos.

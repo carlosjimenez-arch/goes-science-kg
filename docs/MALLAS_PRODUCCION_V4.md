@@ -1,4 +1,4 @@
-# Paquetes de las mallas finales · 26 de octubre de 2026
+# Entrega base de las mallas finales · 26 de octubre de 2026
 
 > Actualización posterior del 26 de octubre: la entrega seleccionada ahora incluye diseño didáctico,
 > criterios y 14 casos, con revisión independiente pendiente y cero llamadas nuevas. Los recibos
@@ -48,10 +48,12 @@ Requiere acceso GOES a `gs://goes-ai-kg-artefactos/ciencias/v4/`.
 
 ```bash
 uv sync --extra api
-uv run gskg produccion descargar --destino /tmp/paquetes-mallas-finales
+uv run gskg produccion descargar \
+  --recibo config/paquetes_produccion_ciencias_bases.lock.json \
+  --destino /tmp/paquetes-mallas-finales
 ```
 
-El destino debe ser nuevo. El comando usa `config/paquetes_produccion_ciencias.lock.json`, descarga
+El destino debe ser nuevo. El comando usa `config/paquetes_produccion_ciencias_bases.lock.json`, descarga
 las generaciones fijadas y comprueba tamaño y SHA-256. Son 14 ZIP: Ciencias de 2.º a 9.º y Biología,
 Física y Química de 10.º y 11.º. Cada `manifest.json` verifica los JSON, Markdown y Excel del ZIP.
 El orden es documental, sin afirmar una secuencia pedagógica validada.
@@ -60,7 +62,7 @@ Para consultar o descargar paquetes individuales:
 
 ```bash
 uv run gskg materiales restaurar \
-  --recibo config/materiales_produccion_ciencias.lock.json \
+  --recibo config/materiales_produccion_ciencias_bases.lock.json \
   --destino data/materiales_produccion_v4
 uv run gskg servir --puerto 8010
 curl 'http://127.0.0.1:8010/api/v4/produccion/materiales/salud'
@@ -106,7 +108,7 @@ El 26 de octubre de 2026 el operador respondió a la solicitud de ampliación a 
 
 > Conservar el límite actual y entregar las bases con revisión pendiente
 
-La decisión mantiene el máximo acumulado de **4.000 invocaciones/USD 3.500** y fija la entrega actual
+La decisión mantiene el máximo acumulado de **4.000 invocaciones/USD 3.500** y fijó aquella entrega
 en los **1.128 paquetes base**, con revisión de contenido pendiente. No queda una solicitud de
 ampliación esperando respuesta. La nueva campaña de catalogación, redacción y cuatro revisiones
 no se inicia. Su eventual ejecución requerirá una nueva instrucción y presupuesto suficiente.
@@ -132,7 +134,7 @@ procedencia; no convierten los paquetes base en propuestas mejoradas revisadas.
 También se recuperaron los 14 ZIP y su índice directamente de GCS: los quince archivos coinciden
 byte a byte. Una segunda compilación desde los insumos produjo el mismo ID y SHA de biblioteca.
 
-La biblioteca final es `9a697bdbdab8f6f044254d399a8ace06d9b9b7430dfbede695f38cae95daceae`.
+La biblioteca base previa es `9a697bdbdab8f6f044254d399a8ace06d9b9b7430dfbede695f38cae95daceae`.
 Su SQLite tiene SHA `13670275b08013ad583cfd9b1346d4c1b0b1906b8dc3ac0f208914ccec4c0058`,
 64.839.680 bytes y generación GCS `1793045084985593`. El manifiesto tiene SHA
 `2ae66b4904f8f5f2decf2dceab105616fec45994b4bfb2b10bc2de8472cdb494` y generación

@@ -20,7 +20,8 @@ No son un plan ejecutable. La primera pasada requiere 540 invocaciones, más la 
 quedan 59 bajo el máximo acumulado vigente. No se hicieron nuevas llamadas. El 26 de octubre de 2026,
 ante la propuesta de ampliar a 5.200 llamadas/USD 5.500, el operador eligió literalmente:
 «Conservar el límite actual y entregar las bases con revisión pendiente».
-La entrega vigente son los 1.128 paquetes base ya publicados, con revisión de contenido pendiente.
+Esa entrega fijó los 1.128 paquetes base publicados, con revisión de contenido pendiente. La solicitud
+posterior mejora su diseño didáctico sin nuevas llamadas; el estado actual está en la nota superior.
 Se mantiene el máximo acumulado de 4.000 llamadas/USD 3.500 y no se inicia la nueva campaña.
 La solicitud de ampliación está resuelta; no debe seguir tratándose como una respuesta pendiente.
 [Estado exacto, incidencias y descarga](MALLAS_PRODUCCION_V4.md).
