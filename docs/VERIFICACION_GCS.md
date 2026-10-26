@@ -22,6 +22,10 @@ locales de la biblioteca y la entrega se retiraron y se descargaron del bucket c
 Las copias de bibliotecas y SQLite reemplazadas que estaban fuera del repositorio se subieron como
 `respaldos/65f4ebeb….zip`; su manifiesto se verificó tras descargarlo.
 
+**Consumidor nuevo (commit `6fd6be2`).** En un `git worktree` limpio sin datos, `gskg datos sincronizar` bajó todo
+del bucket en 67 s; `gskg datos verificar` dio 29.044 archivos idénticos por SHA y 42 SQLite operativos, sin
+diferencias. La suite completa pasó **1.705 pruebas sin omisiones**.
+
 ## Antecedente: producto con 994 guiones, 25 de octubre de 2026
 
 Generación publicada con `gskg datos publicar`, que empaqueta, sube, restaura desde GCS en una carpeta de
