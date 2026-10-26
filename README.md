@@ -96,7 +96,8 @@ El máximo autorizado sigue siendo acumulado: 4.000 invocaciones/USD 3.500 de re
 vigente conserva 3.941 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
 Incluye las fuentes, los resultados y los checkpoints de este corte. El plan documental de
 los 45 pendientes necesita hasta 450 llamadas; su preflight queda bloqueado por el límite vigente.
-La solicitud de ampliación a 4.400 llamadas está pendiente: no constituye autorización para ejecutarlo.
+La solicitud anterior de 4.400 llamadas para P11 quedó pendiente; no autoriza reanudarlo.
+Las mallas finales tienen su propio preflight y una nueva solicitud de presupuesto, también pendiente.
 El cierre local conserva 3.941 llamadas, sin reinicio; 34 resoluciones exactas y 2.060 trazas verificadas
 en 369 resultados seleccionados. El caso estelar de la muestra sigue bloqueado dentro de los 45 pendientes.
 Los borradores conservan tareas, soluciones y expedientes de desarrollo; los resultados pendientes no son

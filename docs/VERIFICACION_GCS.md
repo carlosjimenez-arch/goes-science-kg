@@ -14,6 +14,12 @@ identidad, incidencias, preflight y descarga están en [mallas finales](MALLAS_P
 El respaldo integral descrito abajo no incluye esta entrega posterior; restaurar también sus
 recibos específicos para disponer de ambas ediciones.
 
+Los 14 ZIP y su índice se descargaron a
+`/private/tmp/ciencias-mallas-finales-zips-restaurados-20261026` y coincidieron byte a byte.
+El expediente de `config/expediente_mallas_produccion_ciencias.lock.json` conserva 158 archivos de
+insumos, preparaciones, código y pruebas; se restauró y verificó desde la generación `1793045562009144`.
+El SHA es `f37ac4c44356c064e1892e024571b15b1bacd1bbf84e94797ba23be95fc5e841`.
+
 ## Respaldo vigente P11: 23 de octubre de 2026
 
 El recibo actual `config/datos_ciencias.lock.json` fija el corte de desarrollo completo en el mismo

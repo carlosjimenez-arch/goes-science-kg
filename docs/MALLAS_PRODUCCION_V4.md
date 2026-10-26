@@ -127,3 +127,10 @@ Su SQLite tiene SHA `13670275b08013ad583cfd9b1346d4c1b0b1906b8dc3ac0f208914ccec4
 `2ae66b4904f8f5f2decf2dceab105616fec45994b4bfb2b10bc2de8472cdb494` y generación
 `1793045098167779`. La huella del currículo final es
 `0b92f8016bdae2b12a687bd5b3384c4c8ab9bde538fb5b475fcb3fecb926a78f`.
+
+El expediente adicional conserva los once insumos, las 108 preparaciones, el preflight, el código
+del commit `78f8acb`, los recibos y las evidencias de prueba. Se restauró desde GCS y se verificaron
+sus **158 archivos**, incluyendo los manifiestos internos. Está fijado en
+`config/expediente_mallas_produccion_ciencias.lock.json`: ZIP de 4.433.830 bytes, generación
+`1793045562009144`, SHA `f37ac4c44356c064e1892e024571b15b1bacd1bbf84e94797ba23be95fc5e841`.
+La documentación del expediente conserva su estado de revisión pendiente.
