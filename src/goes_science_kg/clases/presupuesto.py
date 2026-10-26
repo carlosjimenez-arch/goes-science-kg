@@ -67,7 +67,31 @@ def comprobar_continuidad(archivo: Path, cfg=None):
             )
         ):
             raise ValueError("El ledger retrocede o altera consumo posterior al presupuesto inicial")
+    _verificar_ampliaciones(cfg)
     return {"llamadas": total, "reserva_usd": reserva, "baseline_verificado": True}
+
+
+def _verificar_ampliaciones(cfg):
+    """Tie the effective cap to the last authorized extension and its private literal receipt."""
+    ampliaciones = cfg.get("ampliaciones") or []
+    if not ampliaciones:
+        return
+    vigente = ampliaciones[-1]
+    if (cfg["max_llamadas_acumuladas"], cfg["max_reserva_usd_acumulada"]) != (
+        vigente["max_llamadas_acumuladas"],
+        vigente["max_reserva_usd_acumulada"],
+    ):
+        raise ValueError("El tope vigente no coincide con la última ampliación autorizada")
+    base = ruta(".").resolve()
+    for ampliacion in ampliaciones:
+        recibo = base / ampliacion["recibo_literal_privado"]
+        if (
+            recibo.is_symlink()
+            or not recibo.resolve().is_relative_to(base)
+            or not recibo.is_file()
+            or hashlib.sha256(recibo.read_bytes()).hexdigest() != ampliacion["recibo_sha256"]
+        ):
+            raise ValueError("El recibo de una ampliación de presupuesto falta o cambió")
 
 
 def fijar_punto(archivo: Path, salida: Path, *, cfg=None):

@@ -47,10 +47,10 @@ def revisar(comando: str) -> None:
         ):
             decidir("deny", f"{ruta} es de solo lectura (CLAUDE.md): no se modifica.")
     # 3. Gasto en Vertex: lo aprueba el usuario.
+    # Todo comando gskg de pago exige --confirmar o --ejecutar (clases, lotes, mejoras, motor, juicios, unidades...).
     if (
-        re.search(r"gskg\s+internacional\b.*\b(extraer|etiquetar)\b.*--confirmar", comando)
+        re.search(r"gskg\b[^;&|]*\s--(confirmar|ejecutar)\b", comando)
         or re.search(r"gskg\s+internacional\b.*\bcongelar-catalogo\b", comando)
-        or re.search(r"gskg\s+tutor\b.*--confirmar", comando)
         or re.search(r"make\s+internacional-ia\b.*CONFIRMAR=\S+", comando)
     ):
         decidir(

@@ -187,10 +187,11 @@ class Biblioteca:
         if q.strip():
             filtros.append("instr(texto_busqueda,?)>0")
             valores.append(normalizar(q).strip())
+        # Sólo se concatenan fragmentos SQL constantes; todo valor del usuario va como parámetro «?».
         condicion = " AND ".join(filtros)
         with closing(_conectar(self.base)) as db:
-            total = db.execute("SELECT COUNT(*) FROM materiales WHERE " + condicion, valores).fetchone()[0]
-            registros = db.execute(
+            total = db.execute("SELECT COUNT(*) FROM materiales WHERE " + condicion, valores).fetchone()[0]  # nosec B608
+            registros = db.execute(  # nosec B608
                 "SELECT "
                 + COLUMNAS
                 + " FROM materiales WHERE "
@@ -213,7 +214,7 @@ class Biblioteca:
         """Return one material with its full document and provenance."""
         self.comprobar()
         with closing(_conectar(self.base)) as db:
-            r = db.execute("SELECT " + COLUMNAS + ",documento FROM materiales WHERE id=?", (id_,)).fetchone()
+            r = db.execute("SELECT " + COLUMNAS + ",documento FROM materiales WHERE id=?", (id_,)).fetchone()  # nosec B608
             if r is None:
                 raise KeyError(id_)
             d = self._ficha(db, r)
@@ -243,7 +244,7 @@ class Biblioteca:
         self.validar()
         with closing(_conectar(self.base)) as db:
             registros = []
-            for fila in db.execute("SELECT " + COLUMNAS + ",documento FROM materiales ORDER BY id"):
+            for fila in db.execute("SELECT " + COLUMNAS + ",documento FROM materiales ORDER BY id"):  # nosec B608
                 r = self._ficha(db, fila)
                 r["documento"] = json.loads(r["documento"])
                 registros.append(r)

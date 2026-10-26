@@ -98,10 +98,21 @@ def servir(
     puerto: int = 8010,
     host: str = "127.0.0.1",
     sincronizar: bool = typer.Option(False, help="Descarga desde GCS los datos fijados que falten antes de servir"),
+    permitir_red: bool = typer.Option(
+        False, help="Escuchar fuera de loopback; la API no autentica y debe ir detrás de un proxy con acceso"
+    ),
 ) -> None:
     """Serve the local read API and OpenAPI documentation through Uvicorn."""
+    import ipaddress
+
     import uvicorn
 
+    try:
+        loopback = host == "localhost" or ipaddress.ip_address(host).is_loopback
+    except ValueError:
+        loopback = False
+    if not loopback and not permitir_red:
+        raise typer.BadParameter("La API no tiene autenticación: para escuchar en la red use --permitir-red")
     if sincronizar:
         from goes_science_kg.cli.datos import _sincronizador
 
@@ -110,7 +121,8 @@ def servir(
         except ValueError as error:
             raise typer.BadParameter(str(error)) from error
         typer.echo(json.dumps({"sincronizado": sorted(acciones) or "sin cambios"}, ensure_ascii=False))
-    uvicorn.run("goes_science_kg.api:app", host=host, port=puerto)
+    # El access log de uvicorn registraría rutas con valores de consulta; la observabilidad propia no los guarda.
+    uvicorn.run("goes_science_kg.api:app", host=host, port=puerto, access_log=False)
 
 
 @app.command()

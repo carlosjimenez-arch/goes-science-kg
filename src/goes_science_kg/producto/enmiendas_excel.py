@@ -63,10 +63,12 @@ def exportar_enmiendas(curriculo, archivo, *, raiz_v4: Path, destino: Path) -> d
         from io import BytesIO
 
         salida = BytesIO()
+        # nosec B314: el XML sale del Excel original verificado por SHA-256, no de una petición HTTP.
         with zipfile.ZipFile(BytesIO(contenido)) as z, zipfile.ZipFile(salida, "w") as nuevo:
-            libro = ET.fromstring(z.read("xl/workbook.xml"))
+            libro = ET.fromstring(z.read("xl/workbook.xml"))  # nosec B314
             relaciones = {
-                r.attrib["Id"]: r.attrib["Target"] for r in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))
+                r.attrib["Id"]: r.attrib["Target"]
+                for r in ET.fromstring(z.read("xl/_rels/workbook.xml.rels"))  # nosec B314
             }
             hojas = {
                 s.attrib["name"]: posixpath.normpath("xl/" + relaciones[s.attrib[f"{{{REL}}}id"]])
@@ -78,7 +80,7 @@ def exportar_enmiendas(curriculo, archivo, *, raiz_v4: Path, destino: Path) -> d
             for e in cambios:
                 ruta = hojas[e["hoja"]]
                 if ruta not in xml:
-                    xml[ruta] = ET.fromstring(z.read(ruta))
+                    xml[ruta] = ET.fromstring(z.read(ruta))  # nosec B314
                 celda = xml[ruta].find(f".//s:c[@r='{e['celda_ancla']}']", NS)
                 if celda is None:
                     raise ValueError("La celda enmendada no existe físicamente")

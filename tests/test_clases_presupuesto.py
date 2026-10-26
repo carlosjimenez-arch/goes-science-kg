@@ -88,3 +88,29 @@ def test_no_fija_llamadas_pendientes_ni_sobrescribe_punto(consumo, tmp_path):
     with pytest.raises(ValueError, match="pendientes"):
         fijar_punto(registro.archivo, tmp_path / "nuevo.json", cfg=cfg)
     assert not (tmp_path / "nuevo.json").exists()
+
+
+def test_ampliacion_exige_su_recibo_literal_y_el_tope_vigente(consumo, tmp_path):
+    registro, cfg, _, _, _ = consumo
+    recibo = tmp_path / "data/autorizacion_ampliacion.json"
+    recibo.write_bytes(b'{"tope": 20}\n')
+    cfg |= {
+        "max_llamadas_acumuladas": 20,
+        "max_reserva_usd_acumulada": 15,
+        "ampliaciones": [
+            {
+                "max_llamadas_acumuladas": 20,
+                "max_reserva_usd_acumulada": 15,
+                "recibo_literal_privado": "data/autorizacion_ampliacion.json",
+                "recibo_sha256": sha(recibo.read_bytes()),
+            }
+        ],
+    }
+    assert comprobar_continuidad(registro.archivo, cfg)["baseline_verificado"]
+    cfg["max_llamadas_acumuladas"] = 40  # Editar el JSON público no amplía el tope sin una ampliación nueva.
+    with pytest.raises(ValueError, match="última ampliación"):
+        comprobar_continuidad(registro.archivo, cfg)
+    cfg["max_llamadas_acumuladas"] = 20
+    recibo.write_bytes(b'{"tope": 40}\n')
+    with pytest.raises(ValueError, match="recibo de una ampliación"):
+        comprobar_continuidad(registro.archivo, cfg)

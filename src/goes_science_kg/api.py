@@ -254,9 +254,9 @@ def crear_app(base: Path | None = None) -> FastAPI:
 
     @aplicacion.get("/api/rag")
     def rag(
-        q: str = Query(..., min_length=3),
+        q: str = Query(..., min_length=3, max_length=200),
         grado: int | None = Query(None, ge=2, le=11),
-        asignatura: str | None = None,
+        asignatura: str | None = Query(None, max_length=70),
         k: int = Query(20, ge=1, le=60),
     ) -> dict:
         por_id, _, recuperador = lectura().grafo()
@@ -286,7 +286,9 @@ def crear_app(base: Path | None = None) -> FastAPI:
         }
 
     @aplicacion.get("/api/rag/global")
-    def rag_global(q: str = Query(..., min_length=3), grado: int = Query(..., ge=2, le=11)) -> list[dict]:
+    def rag_global(
+        q: str = Query(..., min_length=3, max_length=200), grado: int = Query(..., ge=2, le=11)
+    ) -> list[dict]:
         """Search only the communities captured in the verified grade article."""
         bloques = grado_publicado(grado)[1]
         try:

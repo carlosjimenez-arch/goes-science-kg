@@ -213,6 +213,7 @@ def test_generar_json_no_altera_el_esquema(monkeypatch, tmp_path):
     original = _copy.deepcopy(esquema)
     monkeypatch.setattr(vertex, "_cliente", lambda: Cliente())
     monkeypatch.setattr(vertex, "DIR_CACHE", str(tmp_path))
+    monkeypatch.setenv("VERTEX_MAX_CALLS", "1")
     assert vertex.generar_json("p", modelo="m", esquema=esquema) == {"ok": True}
     assert esquema == original
     clave = vertex._clave("m", "", "p", original, [])
