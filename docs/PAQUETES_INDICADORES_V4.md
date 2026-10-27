@@ -118,3 +118,9 @@ La compilación inicial tomó 5,894 s. Una segunda compilación en una raíz nue
 corpus adicional, produjo SQLite y 14 colecciones con bytes idénticos. Se restauraron por separado
 desde GCS la biblioteca y todas las colecciones, y se comprobó cobertura, hashes y enlaces.
 El orden de consulta es documental; no define una nueva secuencia pedagógica validada.
+
+La [evidencia estructurada](verificacion_indicadores_v4.json) fija las comprobaciones. El informe
+privado completo está en GCS por el recibo `config/verificacion_indicadores_ciencias.lock.json`;
+se releyó por generación y se volvió a descargar independientemente. Conserva el commit fuente
+`04d144f846e37cc31ee13d8d0c52beb9a04ad15a`, los hashes de cada ZIP probado por HTTP, las restauraciones
+y el ledger sin consumo nuevo. El recibo y esta síntesis se versionan después del informe.
