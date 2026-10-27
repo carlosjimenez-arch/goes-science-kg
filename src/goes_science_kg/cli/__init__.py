@@ -15,6 +15,7 @@ from goes_science_kg.cli import (
     datos,
     grados,
     grafo,
+    indicadores,
     internacional,
     investigacion,
     juicios,
@@ -41,6 +42,7 @@ app.add_typer(artefactos.app, name="artefactos")
 app.add_typer(datos.app, name="datos")
 app.add_typer(materiales.app, name="materiales")
 app.add_typer(produccion.app, name="produccion")
+app.add_typer(indicadores.app, name="indicadores")
 app.add_typer(clases.app, name="clases")
 app.add_typer(refuerzo.app, name="refuerzo")
 app.add_typer(catalogo.app, name="catalogo")

@@ -8,6 +8,21 @@ Los datos, PDF y entregables se recuperan desde el bucket institucional con
 `uv run gskg datos restaurar --en-repo`. Sus rutas están ignoradas por Git.
 [Restauración, inventario y migración verificable](docs/DATOS_EXTERNOS.md).
 
+## Paquetes por indicador de logro
+
+Disponibles **1.019 ZIP individuales**, agrupados también en **14 colecciones por grado/asignatura**.
+Cubren las 1.020 filas: un indicador repetido conserva las dos preparaciones asociadas. Los ocho
+códigos ambiguos se mantienen separados por texto y ámbito. Hay 1.011 paquetes con contextos completos y
+ocho con pendientes; el reagrupamiento no añade revisión ni consume Vertex.
+
+```bash
+uv run gskg indicadores descargar --destino /private/tmp/ciencias-indicadores-v4
+```
+
+Consulta: `/api/v4/produccion/indicadores/indice`. Descarga individual:
+`/api/v4/produccion/indicadores/descarga/{id}?formato=zip`.
+[Contenido, filtros, restauración y ejemplo real](docs/PAQUETES_INDICADORES_V4.md).
+
 ## Preparaciones de las mallas finales · 26 de octubre de 2026
 
 La entrega V3 contiene **1.128 paquetes: 1.020 objetivos y 108 unidades**, agrupados en **14 ZIP**.

@@ -19,6 +19,7 @@ Version = Literal["V4", "V3", "historico"]
 Tipo = Literal[
     "paquete_objetivo",
     "paquete_unidad",
+    "paquete_indicador",
     "fila_fuera_alcance",
     "paquete_historico",
     "actividad",
@@ -146,14 +147,27 @@ def crear_router_materiales(
             ".cnxml": "application/xml",
             ".zip": "application/zip",
             ".txt": "text/plain",
+            ".csv": "text/csv",
         }.get(extension, "application/octet-stream")
         return descarga(contenido, tipo, digest + extension)
 
     @router.get("/descarga/{id_:path}")
     def descargar(
-        id_: str, formato: Literal["json", "md"] = "json", audiencia: Literal["docente", "estudiante"] = "docente"
+        id_: str,
+        formato: Literal["json", "md", "zip"] = "json",
+        audiencia: Literal["docente", "estudiante"] = "docente",
     ):
         d = obtener(id_)
+        if formato == "zip":
+            if d["tipo"] != "paquete_indicador" or audiencia != "docente":
+                raise HTTPException(422, "El ZIP individual requiere un paquete por indicador y audiencia docente")
+            b = leer()
+            ruta = "indicadores/" + sha(id_.encode()) + ".zip"
+            ref = b.manifest["originales"].get(ruta)
+            if ref is None:
+                raise HTTPException(503, "El paquete por indicador no tiene un ZIP verificable")
+            contenido, _ = consultar(lambda b: b.archivo(ref["sha256"]))
+            return descarga(contenido, "application/zip", ref["sha256"] + ".zip")
         if audiencia == "estudiante":
             if formato != "md" or d["tipo"] != "guion_clase":
                 raise HTTPException(422, "La hoja de estudiante requiere un guion_clase y formato md")

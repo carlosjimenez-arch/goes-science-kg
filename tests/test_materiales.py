@@ -116,6 +116,10 @@ def test_api_acota_entradas(cliente, consulta):
     assert cliente.get("/api/v4/materiales" + consulta).status_code == 422
 
 
+def test_zip_individual_no_se_ofrece_para_materiales_de_otro_tipo(cliente):
+    assert cliente.get("/api/v4/materiales/descarga/fila-v4?formato=zip").status_code == 422
+
+
 def test_detalle_con_slash_y_archivos_por_sha_sin_acceso_a_rutas(cliente, biblioteca):
     r = cliente.get("/api/v4/materiales/detalle/ACT:historica/obj-1")
     assert r.status_code == 200 and r.json()["material"]["estado"] == "propuesta_pendiente"

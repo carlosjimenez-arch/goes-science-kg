@@ -1,5 +1,9 @@
 # Biblioteca docente de Ciencias
 
+Los [paquetes por indicador de logro](PAQUETES_INDICADORES_V4.md) tienen biblioteca y API propias:
+1.019 ZIP individuales, con todas las preparaciones asociadas y sus pendientes, sin votos nuevos.
+
+
 > Estado vigente: la revisión y entrega V3 de las preparaciones finales se documenta en
 > [Revisión científica y pedagógica](REVISION_DOCENTE_CIENCIAS_V4.md). Esta página conserva
 > los cortes anteriores y sus contadores históricos; no habilitan gasto ni describen la biblioteca
