@@ -19,6 +19,22 @@ LOGGER = logging.getLogger(__name__)
 T = TypeVar("T", bound=BaseModel)
 
 
+def clave_solicitud(cfg, *, rol, sistema, mensaje, esquema, modelo=None):
+    """Identidad única del contenido y controles enviados, compartida con la auditoría y reanudación."""
+    contenido = [
+        cfg.proyecto,
+        cfg.region,
+        modelo if modelo is not None else cfg.modelos[rol],
+        sistema,
+        mensaje,
+        esquema.model_json_schema(),
+        cfg.max_salida_tokens,
+    ]
+    if nivel := cfg.niveles_razonamiento.get(rol):
+        contenido.append({"thinking_level": nivel})
+    return hashlib.sha256(json.dumps(contenido, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+
+
 def _validar_salida(esquema: type[T], texto: str) -> T:
     try:
         return esquema.model_validate_json(texto)
@@ -53,7 +69,7 @@ class ConfiguracionVertex(Contrato):
     max_llamadas: int = Field(default=24, ge=1, le=10000)
     max_usd: float = Field(default=3.0, gt=0)
     max_salida_tokens: int = Field(default=4096, ge=256, le=65536)
-    timeout_segundos: int = Field(default=60, ge=5, le=600)
+    timeout_segundos: int = Field(default=60, ge=5, le=1200)
     reintentos: int = Field(default=1, ge=0, le=3)
     niveles_razonamiento: dict[str, Literal["LOW", "MEDIUM", "HIGH"]] = Field(default_factory=dict)
 
@@ -93,19 +109,8 @@ class Vertex:
         cfg = self.configuracion
         modelo = self.nombre_modelo(rol)
         tarifa = cfg.tarifas[modelo]
-        contenido_clave = [
-            cfg.proyecto,
-            cfg.region,
-            modelo,
-            sistema,
-            mensaje,
-            esquema.model_json_schema(),
-            cfg.max_salida_tokens,
-        ]
         nivel = cfg.niveles_razonamiento.get(rol)
-        if nivel is not None:
-            contenido_clave.append({"thinking_level": nivel})
-        clave = hashlib.sha256(json.dumps(contenido_clave, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
+        clave = clave_solicitud(cfg, rol=rol, sistema=sistema, mensaje=mensaje, esquema=esquema, modelo=modelo)
         if respuesta := self.registro.cache(clave):
             LOGGER.info("VERDE %s: respuesta recuperada de caché", rol)
             return esquema.model_validate(respuesta)

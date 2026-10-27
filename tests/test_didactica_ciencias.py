@@ -136,7 +136,7 @@ def nueva_entrega():
         pytest.skip("Restaurar biblioteca de producción")
     b = Biblioteca(p)
     if b.manifest["procedencia"].get("version_diseno") != "preparacion-malla-final-2":
-        p = BASE / "data/materiales_produccion_v4_didactica_entrega"
+        p = BASE / "data/materiales_produccion_v4_didactica_v2"
         if not p.exists():
             pytest.skip("Construir la edición de diseño didáctico")
         b = Biblioteca(p)

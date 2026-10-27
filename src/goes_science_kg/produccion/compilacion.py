@@ -244,6 +244,10 @@ def exportar(
     for grado, asignatura in grupos:
         seleccion = [r for r in registros if r["grados"] == [grado] and r["asignatura"] == asignatura]
         archivos = {"informe.json": serializar(informe), **(archivos_comunes or {})}
+        if version == "preparacion-malla-final-3":
+            from goes_science_kg.produccion.revision_docente.lectura import indice_grupo
+
+            archivos["LEEME.md"] = indice_grupo(seleccion).encode()
         usados = set()
         for r in seleccion:
             nombre = sha(r["id"].encode())

@@ -225,6 +225,10 @@ def compilar_historicos(archivos):
 def markdown(material: dict) -> str:
     """Exportación legible sin ejecutar HTML, código ni instrucciones de documentos fuente."""
     d = material["documento"]
+    if d.get("version_contenido") == "preparacion-malla-final-3":
+        from goes_science_kg.produccion.revision_docente.lectura import markdown_revision
+
+        return markdown_revision(material)
     if d.get("version_contenido") == "preparacion-malla-final-2":
         from goes_science_kg.produccion.didactica.lectura import markdown_didactica
 

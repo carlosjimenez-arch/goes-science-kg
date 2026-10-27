@@ -1,5 +1,9 @@
 # Diseño didáctico de Ciencias sobre las mallas finales
 
+> Antecedente histórico. Consultar el [estado vigente de preparaciones V3](REVISION_DOCENTE_CIENCIAS_V4.md)
+> antes de restaurar datos o evaluar el saldo. La campaña de guiones completos descrita aquí no
+> equivale a las preparaciones revisadas de las mallas finales.
+
 Edición del 26 de octubre de 2026. Responde a la solicitud de criticar y mejorar los paquetes en
 ciencia, contexto, transposición didáctica, macro/microhabilidades y aplicación. La decisión vigente
 conserva el máximo de 4.000 invocaciones/USD 3.500. Este trabajo usa **cero invocaciones adicionales**:

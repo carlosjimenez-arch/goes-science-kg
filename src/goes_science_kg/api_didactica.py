@@ -52,6 +52,8 @@ def crear_router_didactica(base: Path):
         macro: Macro | None = None,
         grado: Annotated[int | None, Query(ge=2, le=11)] = None,
         asignatura: Annotated[str | None, Query(max_length=100)] = None,
+        estado_revision: Annotated[str | None, Query(max_length=100)] = None,
+        completacion_derivada: bool | None = None,
         limite: Annotated[int, Query(ge=1, le=200)] = 40,
         offset: Annotated[int, Query(ge=0, le=100000)] = 0,
     ):
@@ -63,6 +65,11 @@ def crear_router_didactica(base: Path):
             and (macro is None or macro in f["macrohabilidades"])
             and (grado is None or grado == f["grado"])
             and (asignatura is None or asignatura == f["asignatura"])
+            and (
+                estado_revision is None
+                or estado_revision == f.get("estado_revision", "propuesta_didactica_pendiente_revision")
+            )
+            and (completacion_derivada is None or completacion_derivada == f.get("completacion_derivada", False))
         ]
         return {
             "biblioteca_id": id_,
@@ -71,9 +78,27 @@ def crear_router_didactica(base: Path):
             "limite": limite,
             "filas": filas[offset : offset + limite],
             "alcance": i["limite"],
-            "estado_revision": "propuesta_didactica_pendiente_revision",
+            "estado_revision": i.get("estado_revision", "propuesta_didactica_pendiente_revision"),
+            "estado_revision_biblioteca": i.get("estado_revision", "propuesta_didactica_pendiente_revision"),
+            "filtros": {"estado_revision": estado_revision, "completacion_derivada": completacion_derivada},
             "dominio_observado": None,
             "llamadas_modelos": 0,
+        }
+
+    @router.get("/revision")
+    def revision():
+        id_, _, a = leer()
+        return {
+            "biblioteca_id": id_,
+            "por_estado": a.get("por_estado", {}),
+            "por_tipo_y_estado": a.get("por_tipo_y_estado", {}),
+            "completaciones_derivadas": a.get("completaciones_derivadas", []),
+            "ajustes_editoriales_sin_relectura": a.get("ajustes_editoriales_sin_relectura", []),
+            "controles_negativos_por_lote": a.get("controles_negativos_por_lote", {}),
+            "originales_modificados": a.get("originales_modificados", 0),
+            "eficacia_observada": None,
+            "llamadas_modelos_por_peticion": 0,
+            "alcance": a.get("limite", a.get("interpretacion")),
         }
 
     @router.get("/macrohabilidades")

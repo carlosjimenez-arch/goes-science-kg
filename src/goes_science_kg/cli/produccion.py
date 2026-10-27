@@ -281,3 +281,116 @@ def descargar(
 
     resultado = recuperar(json.loads(ruta(recibo).read_bytes()), ruta(destino), _almacen())
     typer.echo(json.dumps({"estado": "integridad_verificada", "exportaciones": len(resultado["paquetes"])}))
+
+
+@app.command("revision-preparar")
+def revision_preparar(destino: Annotated[Path, typer.Option()]):
+    """Congela la edición derivada, fuentes y presupuesto; no consume Vertex."""
+    from goes_science_kg.archivos import destino_generado
+    from goes_science_kg.produccion.revision_docente.preparacion import preparar
+
+    destino = ruta(destino)
+    destino_generado(destino / "preflight.json")
+    if destino.exists():
+        raise typer.BadParameter("Seleccione una captura nueva; no sobrescriba contextos ni votos")
+    typer.echo(json.dumps(preparar(ruta("."), destino), ensure_ascii=False, indent=2))
+
+
+@app.command("revision-ejecutar")
+def revision_ejecutar(
+    campana: Annotated[Path, typer.Option()],
+    ronda: Annotated[int, typer.Option(min=1, max=2)] = 1,
+    concurrencia: Annotated[int, typer.Option(min=1, max=4)] = 2,
+):
+    """Cuatro lectores con evidencia seleccionada; reanuda exactamente los checkpoints existentes."""
+    from goes_science_kg.observabilidad import configurar_logging
+    from goes_science_kg.produccion.revision_docente.ejecucion import ejecutar
+
+    configurar_logging()
+    destino = ruta(campana)
+    solicitudes = json.loads((destino / f"ronda_{ronda}.json").read_bytes())
+    errores = ejecutar(
+        solicitudes, destino, ruta("data/operaciones/registro.sqlite"), ronda=ronda, concurrencia=concurrencia
+    )
+    typer.echo(json.dumps({"errores": errores}, ensure_ascii=False, indent=2))
+    if errores:
+        raise typer.Exit(1)
+
+
+@app.command("revision-reparar")
+def revision_reparar(campana: Annotated[Path, typer.Option()]):
+    """Propone una única reparación derivada y exige cuatro lecturas nuevas sobre el resultado."""
+    from goes_science_kg.materiales.compilacion import serializar, sha
+    from goes_science_kg.produccion.revision_docente.correcciones import reparar
+    from goes_science_kg.produccion.revision_docente.fuentes import complementarias
+    from goes_science_kg.produccion.revision_docente.preparacion import biblioteca_origen
+
+    destino = ruta(campana)
+    biblioteca = biblioteca_origen(ruta("."))
+    _, archivos = biblioteca.exportar()
+    reglas = yaml.safe_load(archivos["didactica/reglas.yaml"])
+    editorial = yaml.safe_load(ruta("config/enmiendas_revision_docente.yaml").read_bytes())
+    registros = json.loads((destino / "candidato_1.json").read_bytes())
+    por_id = {r["id"]: r["documento"]["edicion_docente"] for r in registros}
+    if editorial["huella_curriculo"] != biblioteca.manifest["procedencia"]["snapshot_id"]:
+        raise ValueError("Las enmiendas editoriales pertenecen a otra malla")
+    if any(sha(serializar(por_id[e["item_id"]])) != e["edicion_base_sha256"] for e in editorial["enmiendas"]):
+        raise ValueError("La enmienda editorial no corresponde al contenido inicial exacto")
+    resoluciones = {e["item_id"] + "#" + e["ruta"]: e["texto"] for e in editorial["enmiendas"]}
+    if len(resoluciones) != len(editorial["enmiendas"]):
+        raise ValueError("Hay enmiendas repetidas para el mismo campo")
+    _, solicitudes, cambios, conflictos = reparar(
+        registros,
+        json.loads((destino / "ronda_1.json").read_bytes()),
+        destino,
+        reglas,
+        resoluciones=resoluciones,
+        fuentes_adicionales=complementarias(ruta(".")),
+    )
+    from goes_science_kg.produccion.revision_docente.ejecucion import guardar
+
+    guardar(destino / "enmiendas_editoriales.json", editorial)
+    typer.echo(
+        json.dumps(
+            {"lotes_relectura": len(solicitudes), "cambios": len(cambios), "conflictos_conservados": len(conflictos)},
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
+
+
+@app.command("revision-compilar")
+def revision_compilar(
+    campana: Annotated[Path, typer.Option()],
+    destino: Annotated[Path, typer.Option()],
+    exportaciones: Annotated[Path, typer.Option()],
+):
+    """Construye SQLite y ZIP nuevos con votos exactos y pendientes visibles; sin gasto de modelos."""
+    from goes_science_kg.archivos import destino_generado
+    from goes_science_kg.produccion.revision_docente.entrega import guardar_entrega
+
+    campana, destino, exportaciones = ruta(campana), ruta(destino), ruta(exportaciones)
+    for p in (destino, exportaciones):
+        destino_generado(p / "manifest.json")
+    if destino == exportaciones or destino in exportaciones.parents or exportaciones in destino.parents:
+        raise typer.BadParameter("Los destinos deben ser independientes")
+    candidato = campana / ("candidato_2.json" if (campana / "candidato_2.json").exists() else "candidato_1.json")
+    m, r = guardar_entrega(ruta("."), campana, json.loads(candidato.read_bytes()), destino, exportaciones)
+    typer.echo(json.dumps({"biblioteca_id": m["id"], "por_estado": r["por_estado"]}, ensure_ascii=False, indent=2))
+
+
+@app.command("revision-recuperar-parcial")
+def revision_recuperar_parcial(
+    campana: Annotated[Path, typer.Option()],
+    lote: Annotated[int, typer.Option(min=0, max=99)],
+    rol: Annotated[str, typer.Option()],
+    ronda: Annotated[int, typer.Option(min=1, max=2)] = 1,
+):
+    """Extrae sólo decisiones JSON completas de una respuesta truncada ya recibida; cero Vertex."""
+    from goes_science_kg.produccion.revision_docente.contratos import ROLES
+    from goes_science_kg.produccion.revision_docente.recuperacion import recuperar
+
+    if rol not in ROLES:
+        raise typer.BadParameter("El rol debe pertenecer al protocolo de cuatro lectores")
+    r = recuperar(ruta(campana), ruta("data/operaciones/registro.sqlite"), ronda=ronda, lote=lote, rol=rol)
+    typer.echo(json.dumps(r, ensure_ascii=False, indent=2))

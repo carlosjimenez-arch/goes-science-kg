@@ -8,29 +8,58 @@ Los datos, PDF y entregables se recuperan desde el bucket institucional con
 `uv run gskg datos restaurar --en-repo`. Sus rutas están ignoradas por Git.
 [Restauración, inventario y migración verificable](docs/DATOS_EXTERNOS.md).
 
-## Mallas finales · 26 de octubre de 2026
+## Preparaciones de las mallas finales · 26 de octubre de 2026
 
-La entrega actual mejora **1.020 paquetes por objetivo y 108 por unidad**, en **14 ZIP**. Añade
-4.880 actividades con procedencia, 4.457 grupos de criterios, apoyos y retirada gradual, aplicación,
-notas científicas y **14 casos resueltos**: uno por grupo de grado/asignatura. Preserva los once Excel
-finales y todos los originales. **Revisión científica y pedagógica independiente pendiente**; no se
-heredan votos ni se atribuyen resultados de aprendizaje. Una fila del insumo sigue sin fases ni evidencia.
-[Crítica, mejoras, fuentes y límites](docs/DIDACTICA_CIENCIAS_V4.md).
-[Ingesta y comparación de las mallas finales](docs/MALLAS_PRODUCCION_V4.md).
+La entrega V3 contiene **1.128 paquetes: 1.020 objetivos y 108 unidades**, agrupados en **14 ZIP**.
+Incluye 4.892 actividades derivadas, criterios, apoyos, aplicación y 14 casos trabajados. Tras cuatro
+perspectivas de revisión y una reparación, **1.113 paquetes tienen cuatro lecturas automáticas
+favorables y 15 siguen pendientes**: ocho objetivos y siete unidades. El estado se consulta por paquete;
+no equivale a eficacia en aula ni aprobación institucional. Son preparaciones, no guiones cronometrados.
 
-Descargarlos del bucket privado con `uv run gskg produccion descargar --destino /tmp/ciencias-didactica-v4`.
-El destino debe ser nuevo. Para la API, restaurar la biblioteca con
-`uv run gskg materiales restaurar --recibo config/materiales_produccion_ciencias.lock.json --destino data/materiales_produccion_v4`.
-Las rutas son `/api/v4/produccion/materiales` y `/api/v4/produccion/didactica/habilidades`.
-Los comandos verifican generación, tamaño y SHA. Los recibos con sufijo `_bases.lock.json` conservan
-la edición base anterior. Reiniciar un servidor ya abierto para cargar código y biblioteca nuevos.
+La fila de separación de mezclas de 3.º está completada en `edicion_docente`, con fuente MINED,
+actividades y criterios específicos; pasó las cuatro lecturas. Los once Excel, sus celdas y los
+campos `original` permanecen intactos. [Resultados, crítica y pendientes de cierre](docs/REVISION_DOCENTE_CIENCIAS_V4.md).
 
-El operador decidió **conservar el límite actual y entregar las bases con revisión pendiente** y después
-pidió mejorar su diseño didáctico. Se mantienen 4.000 llamadas/USD 3.500 de máximo acumulado, con
-3.941 llamadas ya registradas. La campaña de nuevos jueces no se inicia; la mejora consume **cero
-invocaciones adicionales** y mantiene sus propuestas pendientes de revisión.
-Los resultados del 22–23 de octubre descritos
-abajo corresponden a la **captura anterior**, que continúa disponible por separado.
+Para descargar todos los paquetes del bucket privado aprobado:
+
+```bash
+uv sync --extra api
+uv run gskg produccion descargar \
+  --recibo config/paquetes_produccion_ciencias.lock.json \
+  --destino /private/tmp/ciencias-preparaciones-v3
+```
+
+El destino debe ser nuevo. Cada ZIP tiene un **LEEME.md** con enlaces a las guías por unidad y objetivo,
+JSON de procedencia, Excel original y manifiesto SHA-256. El comando verifica todas las generaciones,
+tamaños y SHA; los objetos están en `gs://goes-ai-kg-artefactos/ciencias/v4/`. Requiere acceso GOES.
+
+Para servirlos por API, restaurar en un proyecto sin biblioteca seleccionada:
+
+```bash
+uv run gskg materiales restaurar \
+  --recibo config/materiales_produccion_ciencias.lock.json \
+  --destino data/materiales_produccion_v4
+uv run gskg servir --puerto 8011
+curl 'http://127.0.0.1:8011/api/v4/produccion/didactica/revision'
+curl 'http://127.0.0.1:8011/api/v4/produccion/didactica/habilidades?estado_revision=revision_automatica_completa'
+curl 'http://127.0.0.1:8011/api/v4/produccion/didactica/habilidades?completacion_derivada=true'
+```
+
+Si ya existe esa carpeta, conservarla con otro nombre antes de restaurar y reiniciar el servidor.
+La consulta y las descargas consumen **cero llamadas a modelos**. Detalle JSON, Markdown y ZIP por SHA:
+`/api/v4/produccion/materiales`. El contrato está en `/docs`.
+Los recibos `_bases.lock.json` y `_didactica_v2.lock.json` conservan las entregas anteriores.
+
+El máximo autorizado sigue en **4.000 llamadas / USD 3.500 de reserva conservadora acumulada**.
+El contador vigente es **3.999 / USD 3.275,614266**; queda una llamada, insuficiente para otra revisión
+completa. El expediente privado de esta revisión conserva el ledger actualizado y su nuevo punto de
+continuidad. Restaurar sólo el corpus histórico recupera un contador anterior y **no habilita gasto**.
+No se autorizó la ampliación a 5.200. [Operación y recuperación de V3](docs/REVISION_DOCENTE_CIENCIAS_V4.md).
+
+Validación V3: **1.675 pruebas aprobadas**, Ruff y recuperación independiente desde GCS. Se verificaron
+las 26 consultas HTTP y la reanudación de los 20 checkpoints sin llamadas nuevas.
+
+Los resultados descritos a continuación son antecedentes con sus propios insumos y contadores.
 
 ## Producto V4 · 22 de octubre de 2026
 
@@ -101,13 +130,13 @@ acceso GOES al bucket `gs://goes-ai-kg-artefactos/ciencias/v4/`. Usar una carpet
 las rutas del proyecto vacío, usar `uv run gskg datos restaurar --en-repo`.
 
 El máximo autorizado sigue siendo acumulado: 4.000 invocaciones/USD 3.500 de reserva. El respaldo
-vigente conserva 3.941 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
+histórico de P11 conserva 3.941 llamadas y un punto mínimo verificable de consumo; no reinicia el contador.
 Incluye las fuentes, los resultados y los checkpoints de este corte. El plan documental de
 los 45 pendientes necesita hasta 450 llamadas; su preflight queda bloqueado por el límite vigente.
 La solicitud anterior de 4.400 llamadas para P11 no amplió el límite ni autoriza reanudarlo.
 El 26 de octubre se resolvió conservar el límite actual y entregar las bases de las mallas finales
 con revisión pendiente; la ampliación propuesta a 5.200 llamadas/USD 5.500 no fue autorizada.
-El cierre local conserva 3.941 llamadas, sin reinicio; 34 resoluciones exactas y 2.060 trazas verificadas
+El corte histórico de P11 conserva 3.941 llamadas, sin reinicio; 34 resoluciones exactas y 2.060 trazas verificadas
 en 369 resultados seleccionados. El caso estelar de la muestra sigue bloqueado dentro de los 45 pendientes.
 Los borradores conservan tareas, soluciones y expedientes de desarrollo; los resultados pendientes no son
 clases liberadas. El recibo del ZIP docente completo se añadirá después de cubrir todos los objetivos y

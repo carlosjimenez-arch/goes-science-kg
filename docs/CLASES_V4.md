@@ -1,5 +1,9 @@
 # Guiones completos de Ciencias V4
 
+> Antecedente histórico. Consultar el [estado vigente de preparaciones V3](REVISION_DOCENTE_CIENCIAS_V4.md)
+> antes de restaurar datos o evaluar el saldo. La campaña de guiones completos descrita aquí no
+> equivale a las preparaciones revisadas de las mallas finales.
+
 ## Estado de esta ampliación
 
 El alcance son los 1.013 objetivos de Ciencias del snapshot producto-4, agrupados en 108 unidades.

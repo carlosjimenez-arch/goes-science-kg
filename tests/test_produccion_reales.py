@@ -65,14 +65,24 @@ def test_todas_las_celdas_y_fases_corresponden_a_bytes_originales(entrega_final)
         ids = [f for u in unidades for f in u["documento"]["filas_ids"]]
         assert len(ids) == len(set(ids)) == 1020
         assert set(ids) == set(por_id)
-        enriquecida = b.manifest["procedencia"].get("version_diseno") == "preparacion-malla-final-2"
+        version = b.manifest["procedencia"].get("version_diseno")
+        enriquecida = version in {"preparacion-malla-final-2", "preparacion-malla-final-3"}
         informe = json.loads(archivos["edicion_base/informe.json" if enriquecida else "informe.json"])
         assert informe["objetivos_identicos"] == 1020
         assert informe["filas_con_cambios_logicos"] >= 884
         assert informe["filas_sin_paquete"] == []
-        assert b.manifest["procedencia"]["estado_revision"] == (
-            "propuesta_didactica_pendiente_revision" if enriquecida else "pendiente_revision_nueva_edicion"
-        )
+        if version == "preparacion-malla-final-3":
+            estados = {r["documento"]["estado_revision"] for r in registros}
+            assert estados <= {"revision_automatica_completa", "revision_automatica_con_pendientes"}
+            assert b.manifest["procedencia"]["estado_revision"] == (
+                "revision_automatica_con_pendientes"
+                if "revision_automatica_con_pendientes" in estados
+                else "revision_automatica_completa"
+            )
+        else:
+            assert b.manifest["procedencia"]["estado_revision"] == (
+                "propuesta_didactica_pendiente_revision" if enriquecida else "pendiente_revision_nueva_edicion"
+            )
     finally:
         for libro in libros.values():
             libro.close()
@@ -94,7 +104,11 @@ def test_catorce_zip_cubren_todos_los_paquetes_sin_duplicados(entrega_final):
                 if nombre.startswith(("paquete_objetivo/", "paquete_unidad/")) and nombre.endswith(".json"):
                     d = json.loads(contenido)
                     ids.append(d["id"])
-                    assert "pendiente" in d["documento"]["estado_revision"]
+                    documento = d["documento"]
+                    if documento["version_contenido"] == "preparacion-malla-final-3":
+                        assert documento["estado_revision"] == documento["revision_docente"]["estado"]
+                    else:
+                        assert "pendiente" in documento["estado_revision"]
     assert len(ids) == len(set(ids)) == len(registros) == 1128
 
 
@@ -115,7 +129,16 @@ def test_api_final_descarga_todos_los_json_markdown_y_originales(entrega_final):
         id_ = r["id"]
         assert c.get(prefix + "/descarga/" + id_).json()["documento"] == r["documento"]
         md = c.get(prefix + "/descarga/" + id_ + "?formato=md")
-        assert md.status_code == 200 and "pendiente" in md.text.lower()
+        assert md.status_code == 200
+        if r["documento"]["version_contenido"] == "preparacion-malla-final-3":
+            esperado = (
+                "Cuatro lecturas automáticas favorables"
+                if r["estado"] == "revision_automatica_completa"
+                else "Revisión automática con pendientes"
+            )
+            assert esperado in md.text
+        else:
+            assert "pendiente" in md.text.lower()
     for _, raw in archivos.items():
         respuesta = c.get(prefix + "/archivos/" + sha(raw))
         assert respuesta.status_code == 200 and respuesta.content == raw
