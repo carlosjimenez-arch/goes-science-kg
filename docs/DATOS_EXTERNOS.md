@@ -1,5 +1,12 @@
 # Datos de Ciencias en GCS
 
+> Actualización del 26 de octubre: este corpus base conserva el corte histórico de 3.941 llamadas.
+> La revisión posterior termina en **3.999** y requiere también el expediente
+> `config/expediente_revision_docente_ciencias.lock.json`. El nuevo punto mínimo impide operar
+> con el ledger anterior. [Recuperación y estado vigente](REVISION_DOCENTE_CIENCIAS_V4.md).
+> La biblioteca V3 y los 14 ZIP se restauran por sus recibos propios; no están dentro del corpus base.
+
+
 El corpus, los PDF, las matrices, los grafos, los resultados de investigación, los checkpoints y
 las entregas se conservan en `gs://goes-ai-kg-artefactos/ciencias/v4/repositorio/`. El código,
 la configuración, las pruebas y la documentación de trabajo permanecen en Git. El `.env` sigue
@@ -73,7 +80,7 @@ El inventario deja recuperar la procedencia exacta, pero no equivale a aprobaci�
 Retirar estos archivos del checkout y del siguiente commit no borra los objetos de commits
 anteriores. Esta migración no reescribe el historial de Git ni fuerza un push.
 
-## Respaldo vigente de clases
+## Respaldo base histórico de clases
 
 El recibo actual fija **13.762 archivos y 41 SQLite**, con 3.293.032.617 bytes originales y
 1.154.109.631 comprimidos. SHA del ZIP:

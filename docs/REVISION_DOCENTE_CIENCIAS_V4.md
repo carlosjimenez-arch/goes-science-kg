@@ -221,3 +221,16 @@ Resultado de la suite sobre la entrega V3: **1.675 pruebas aprobadas, sin omisio
 Ruff pasó en `src` y `tests`. Las pruebas de artefactos usan la biblioteca publicada y verifican
 los 1.128 originales, los votos reproducidos, el grafo y todos los enlaces de los ZIP. Se hicieron
 26 consultas HTTP reales y se reanudaron 20 checkpoints sin nuevas invocaciones.
+
+La [evidencia estructurada de entrega](verificacion_revision_docente_v3.json) fija los resultados
+y referencias. La restauración independiente verificó 1.128 registros y 172 archivos de biblioteca,
+2.312 archivos y 2.148 enlaces internos de los 14 ZIP, y los 655 archivos del expediente incremental.
+Se comprobó además el descriptor remoto y el mínimo de continuidad de las 3.999 llamadas restauradas.
+La copia consistente de SQLite puede tener otro SHA físico que el archivo fuente; sus 3.999 filas
+se verifican individualmente con el punto mínimo y el SHA propio del inventario restaurado.
+
+El expediente tiene 166.960.146 bytes comprimidos, SHA-256
+`0d38c529ca987acf5d90fcf6ff17abb8ad090a36002d048f25f7c96ebdc697a4`, generación
+`1793064052369724`, y fija el commit fuente `7065ec5b07b6db83b64b8df4b15d32d9d54a519f`.
+El recibo, esta evidencia final y el aviso del corpus base se versionan después del archivo; no
+están incluidos en él. Las evidencias individuales anteriores sí se encuentran en el expediente.
