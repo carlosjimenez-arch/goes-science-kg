@@ -1,22 +1,23 @@
 {
-  "archivos_inspeccionados": 560,
+  "archivos_inspeccionados": 566,
   "conteos": {
     "AsyncFunctionDef": 4,
     "AsyncFunctionDef_documentados": 2,
-    "ClassDef": 297,
-    "ClassDef_documentados": 253,
-    "FunctionDef": 1664,
-    "FunctionDef_documentados": 1024,
-    "Module": 235,
-    "Module_documentados": 235,
-    "lineas_python": 48662,
-    "modulos_python": 235
+    "ClassDef": 314,
+    "ClassDef_documentados": 256,
+    "FunctionDef": 1699,
+    "FunctionDef_documentados": 1042,
+    "Module": 239,
+    "Module_documentados": 239,
+    "lineas_python": 49603,
+    "modulos_python": 239
   },
   "consumidores_estaticos": {
     "src/goes_science_kg/__init__.py": [
       "src/goes_science_kg/agentes_vertex.py",
       "src/goes_science_kg/alineacion.py",
       "src/goes_science_kg/api.py",
+      "src/goes_science_kg/api_complementos.py",
       "src/goes_science_kg/api_interfaz.py",
       "src/goes_science_kg/api_materiales.py",
       "src/goes_science_kg/api_mejoras.py",
@@ -39,6 +40,9 @@
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria.py",
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
+      "src/goes_science_kg/clases/complementaria_revision.py",
       "src/goes_science_kg/clases/complementos.py",
       "src/goes_science_kg/clases/consultas.py",
       "src/goes_science_kg/clases/contexto.py",
@@ -240,6 +244,8 @@
       "tests/test_catalogacion_v4.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
+      "tests/test_clases_complementaria.py",
+      "tests/test_clases_complementaria_publicacion.py",
       "tests/test_clases_complementos.py",
       "tests/test_clases_contexto.py",
       "tests/test_clases_contexto_agente.py",
@@ -352,6 +358,10 @@
       "tests/test_api_publicacion.py",
       "tests/test_observabilidad_http.py",
       "tests/test_producto_alineaciones.py"
+    ],
+    "src/goes_science_kg/api_complementos.py": [
+      "src/goes_science_kg/api.py",
+      "tests/test_clases_complementaria_publicacion.py"
     ],
     "src/goes_science_kg/api_interfaz.py": [
       "src/goes_science_kg/api.py",
@@ -513,10 +523,14 @@
       "tests/test_bucle.py"
     ],
     "src/goes_science_kg/clases/__init__.py": [
+      "src/goes_science_kg/api_complementos.py",
       "src/goes_science_kg/api_materiales.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria.py",
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
+      "src/goes_science_kg/clases/complementaria_revision.py",
       "src/goes_science_kg/clases/complementos.py",
       "src/goes_science_kg/clases/contexto.py",
       "src/goes_science_kg/clases/contexto_agente.py",
@@ -542,6 +556,8 @@
       "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
+      "tests/test_clases_complementaria.py",
+      "tests/test_clases_complementaria_publicacion.py",
       "tests/test_clases_complementos.py",
       "tests/test_clases_contexto.py",
       "tests/test_clases_contexto_agente.py",
@@ -556,7 +572,8 @@
       "tests/test_clases_reales.py",
       "tests/test_clases_recuperacion.py",
       "tests/test_clases_revision_contenido.py",
-      "tests/test_materiales_reales.py"
+      "tests/test_materiales_reales.py",
+      "tests/test_sincronizacion.py"
     ],
     "src/goes_science_kg/clases/auditoria.py": [
       "src/goes_science_kg/clases/compilacion.py",
@@ -578,6 +595,23 @@
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_entrega_parcial.py"
     ],
+    "src/goes_science_kg/clases/complementaria.py": [
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
+      "tests/test_clases_complementaria.py"
+    ],
+    "src/goes_science_kg/clases/complementaria_publicacion.py": [
+      "src/goes_science_kg/api_complementos.py",
+      "src/goes_science_kg/clases/complementaria_revision.py",
+      "src/goes_science_kg/cli/clases.py",
+      "src/goes_science_kg/operacion/sincronizacion.py",
+      "tests/test_clases_complementaria_publicacion.py",
+      "tests/test_sincronizacion.py"
+    ],
+    "src/goes_science_kg/clases/complementaria_revision.py": [
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
+      "src/goes_science_kg/cli/clases.py",
+      "tests/test_clases_complementaria_publicacion.py"
+    ],
     "src/goes_science_kg/clases/complementos.py": [
       "src/goes_science_kg/clases/corpora.py",
       "tests/test_clases_complementos.py"
@@ -597,6 +631,8 @@
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria.py",
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
       "src/goes_science_kg/clases/contexto_agente.py",
       "src/goes_science_kg/clases/edicion.py",
       "src/goes_science_kg/clases/editorial.py",
@@ -726,6 +762,7 @@
     "src/goes_science_kg/clases/validacion.py": [
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria.py",
       "src/goes_science_kg/clases/editorial.py",
       "src/goes_science_kg/clases/motor.py",
       "src/goes_science_kg/clases/operacion.py",
@@ -1543,6 +1580,7 @@
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
       "src/goes_science_kg/clases/consultas.py",
       "src/goes_science_kg/clases/contexto_agente.py",
       "src/goes_science_kg/clases/corpora.py",
@@ -1573,7 +1611,8 @@
       "tests/test_clases_presupuesto.py",
       "tests/test_clases_revision_contenido.py",
       "tests/test_materiales.py",
-      "tests/test_materiales_reales.py"
+      "tests/test_materiales_reales.py",
+      "tests/test_sincronizacion.py"
     ],
     "src/goes_science_kg/materiales/almacen.py": [
       "src/goes_science_kg/api_materiales.py",
@@ -1592,6 +1631,7 @@
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria_publicacion.py",
       "src/goes_science_kg/clases/consultas.py",
       "src/goes_science_kg/clases/contexto_agente.py",
       "src/goes_science_kg/clases/corpora.py",
@@ -1621,7 +1661,8 @@
       "tests/test_clases_presupuesto.py",
       "tests/test_clases_revision_contenido.py",
       "tests/test_materiales.py",
-      "tests/test_materiales_reales.py"
+      "tests/test_materiales_reales.py",
+      "tests/test_sincronizacion.py"
     ],
     "src/goes_science_kg/materiales/publicacion.py": [
       "src/goes_science_kg/cli/materiales.py",
@@ -1695,6 +1736,7 @@
       "src/goes_science_kg/api_producto.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria.py",
       "src/goes_science_kg/clases/complementos.py",
       "src/goes_science_kg/clases/consultas.py",
       "src/goes_science_kg/clases/contexto_agente.py",
@@ -1863,6 +1905,7 @@
       "src/goes_science_kg/api_producto.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/compilacion.py",
+      "src/goes_science_kg/clases/complementaria.py",
       "src/goes_science_kg/clases/complementos.py",
       "src/goes_science_kg/clases/consultas.py",
       "src/goes_science_kg/clases/contexto_agente.py",

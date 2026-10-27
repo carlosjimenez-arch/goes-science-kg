@@ -204,9 +204,9 @@ class EvaluacionUnidad(Contrato):
         if len({i.id for i in self.items}) != len(self.items):
             raise ValueError("Los ítems no pueden repetir identificador")
         dominios = [i.dominio for i in self.items]
-        if dominios.count("razonar") < max(1, round(0.2 * len(dominios))):
+        if dominios.count("razonar") * 5 < len(dominios):
             raise ValueError("Al menos 20 % de los ítems evalúa razonamiento")
-        if dominios.count("conocer") > round(0.4 * len(dominios)):
+        if dominios.count("conocer") * 5 > 2 * len(dominios):
             raise ValueError("Como máximo 40 % de los ítems evalúa sólo conocimiento")
         if not any(i.formato == "respuesta_construida" for i in self.items):
             raise ValueError("La evaluación incluye al menos un ítem de respuesta construida")

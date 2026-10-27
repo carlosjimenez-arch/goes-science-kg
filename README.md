@@ -112,6 +112,7 @@ nuevo se publica con `gskg datos publicar --trabajo <carpeta fuera del repositor
 | POST | `/api/v4/interfaz/briefs` | Briefs documentales de 1–20 objetivos |
 | GET | `/api/v4/interfaz/exportaciones/matriz.xlsx` | Matriz completa original/propuesta |
 | GET | `/api/v4/materiales[/detalle/{id}][/descarga/{id}]` | Biblioteca docente de sólo lectura |
+| GET | `/api/v4/complementos`, `/api/v4/complementos/clases[/{fila_id}]`, `/api/v4/complementos/unidades/{unidad_id}`, `/api/v4/complementos/fuentes` | Anexos y evaluaciones con aprobación verificable |
 
 Los filtros inválidos reciben 422; una identidad ajena, 404; una publicación incompatible, 409; la ausencia o
 alteración de evidencia, 503. [Contrato completo](specs/17_aplicacion_curricular.md) ·

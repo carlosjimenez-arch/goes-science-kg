@@ -94,6 +94,44 @@ class Sincronizador:
         archivo = self.raiz / rel
         return json.loads(archivo.read_bytes()) if archivo.is_file() else None
 
+    def _estado_complementos(self) -> dict:
+        from goes_science_kg.clases.complementaria_publicacion import RECIBO, leer_publicada
+
+        recibo = self._recibo(RECIBO.as_posix())
+        if not recibo:
+            return {"recibo": None, "estado": "sin_recibo"}
+        try:
+            leer_publicada(self.raiz)
+            estado = "vigente"
+        except FileNotFoundError:
+            estado = "ausente"
+        except (OSError, ValueError, KeyError, TypeError):
+            estado = "distinto"
+        return {"recibo": recibo.get("id"), "estado": estado}
+
+    def _restaurar_complementos(self) -> dict:
+        from goes_science_kg.clases.complementaria_publicacion import CARPETA, RECIBO, leer_publicada
+
+        recibo = self._recibo(RECIBO.as_posix())
+        corpus = self._recibo(RECIBO_CORPUS)
+        if not corpus:
+            raise ValueError("Falta el recibo del corpus que contiene los complementos")
+        rel = Path(recibo["ruta"])
+        if rel.is_absolute() or ".." in rel.parts or rel.parent != CARPETA / "publicacion":
+            raise ValueError("Ruta inválida de la publicación complementaria")
+        with tempfile.TemporaryDirectory(prefix="goes-complementos-gcs-") as temporal:
+            restaurado = Path(temporal) / "corpus"
+            descargar_corpus(self.almacen, corpus, restaurado)
+            _guardar(restaurado / RECIBO, recibo)
+            documento = leer_publicada(restaurado)
+            destino = self.raiz / rel
+            if not destino.resolve().is_relative_to((self.raiz / CARPETA).resolve()):
+                raise ValueError("La publicación complementaria sale de su carpeta")
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            with destino.open("xb") as stream:
+                stream.write((restaurado / rel).read_bytes())
+        return {"id": documento["id"], "clases": len(documento["clases"]), "unidades": len(documento["unidades"])}
+
     def estado(self) -> dict:
         """Report, without downloading packages, which components are present, missing, or partial."""
         corpus = self._recibo(RECIBO_CORPUS)
@@ -149,6 +187,7 @@ class Sincronizador:
                 if (self.raiz / DIR_CLASES).exists()
                 else "ausente",
             },
+            "complementos": self._estado_complementos(),
         }
 
     def verificar_corpus(self) -> dict:
@@ -213,6 +252,10 @@ class Sincronizador:
 
             m = descargar_clases(self._recibo(RECIBO_CLASES), self.raiz / DIR_CLASES, self.almacen)
             acciones["clases"] = {"entrega_id": m["id"], "por_tipo": m["por_tipo"]}
+        if estado["complementos"]["estado"] == "distinto":
+            raise ValueError("Los complementos locales no coinciden con su recibo; no se sobrescriben")
+        if estado["complementos"]["estado"] == "ausente":
+            acciones["complementos"] = self._restaurar_complementos()
         return {"acciones": acciones, "estado": self.estado()}
 
     def publicar_corpus(self, configuracion: dict, trabajo: Path) -> dict:

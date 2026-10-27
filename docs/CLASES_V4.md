@@ -47,6 +47,98 @@ en manglares, balance global de carbono, Guías Alimentarias y datos del MINSAL/
 priones y sobre diagnóstico bacteriológico, SGA y fichas de datos de seguridad, sueño e inmunidad, y riesgos del
 carburo de calcio en alimentos.
 
+## Capa complementaria de implementación (26 de octubre de 2026)
+
+Sin modificar ningún guion liberado (eso exigiría cuatro lecturas nuevas), cada clase publicada recibe un **anexo de
+implementación** y cada unidad una **evaluación**. Ambos se anclan al SHA-256 del guion exacto
+(`src/goes_science_kg/clases/complementaria.py`).
+
+| Componente | Qué aporta | Control determinista |
+|---|---|---|
+| Recursos | Nivel (sin materiales, caseros, laboratorio), sustitutos caseros, requisitos de agua, electricidad, exterior y conectividad | Sin materiales imprescindibles en clases «sin materiales» |
+| Versión mínima | 30–50 minutos efectivos por sesión: conservar, acortar u omitir cada bloque, con compensación | Decide sobre cada bloque, suma exacta de minutos, conserva explicación y exploración o indagación |
+| Progresión | Ideas previas de grados anteriores y continuidad, con cómo usarlas | Sólo enlaces `(concepto, fila)` registrados en la capa de progresión 2.º–11.º |
+| Inclusión | Ajustes para discapacidad visual, auditiva, motora y dificultad lectora; multigrado; escuela rural; hoja en lectura fácil | Las cuatro discapacidades básicas son obligatorias |
+| Indagación | Paso hacia indagación más abierta: preguntas propias, variables, diseño, error y repetición | No reduce la autonomía del guion |
+| Contexto nacional | Datos salvadoreños parafraseados de pasajes literales oficiales | Sólo cita pasajes registrados para el grado |
+| Evaluación de unidad | 6–24 ítems tipo TIMSS/PISA, distractores ligados a concepciones alternativas, rúbricas | ≥20 % razonar, ≤40 % conocer, un ítem por objetivo, cálculos recomputados |
+
+**Fuentes nacionales.** Con aprobación del usuario se descargaron 14 documentos oficiales (Asamblea Legislativa,
+MARN, INS/MINSAL, OPS, FAO, OMS, ONU-SGA, USGS y programas de estudio del MINED). Se registraron con SHA-256, URL e
+institución en `data/clases_v4/complementaria/fuentes_nacionales/registro.json`, junto con su texto por página. De
+ellos se extrajeron 177 pasajes literales verificados contra su página
+(`data/clases_v4/complementaria/pasajes.py validar`). Los sitios del MINSAL rechazan la descarga automática, y
+faltan fuentes oficiales para yacimientos, taxonomía de suelos, cultivos del corredor seco y carburo de calcio.
+
+**Proceso.** Un piloto de 6 unidades (una por estrato) se redactó y se revisó con independencia. Bloqueó 5 de 42
+anexos y 2 de 6 evaluaciones. Las fallas repetidas pasaron a ser reglas de redacción y de revisión
+(`INSTRUCCIONES_REDACTOR.md`, `PROTOCOLO_REVISION.md`):
+
+- lo reducido no recorta lo evaluado;
+- la inclusión no relaja la seguridad;
+- la indagación debe ser físicamente realizable;
+- los dominios declarados deben ser honestos;
+- los distractores deben ser inequívocos.
+
+Las 108 unidades completaron la revisión inicial independiente; 105 necesitaron una pasada acotada de
+corrección y una revisión final por otro agente. No quedan revisiones pendientes. Los defectos persistentes
+se retienen con su motivo; no se repiten rondas hasta obtener aprobación.
+
+**Continuidad del 27 de octubre.** Al retomar el trabajo ya existían los 862 anexos y las 108 evaluaciones.
+El estado de éxito del workflow anterior no acreditaba la revisión: había resultados vacíos contabilizados
+como terminados. Se conserva una copia de los 970 originales y sus hashes en `continuidad/`, y el avance se
+reconstruye desde los archivos y dictámenes. No se regeneran los guiones publicados ni se reinicia el ledger.
+
+Cada revisión nueva declara el SHA del expediente, de todos los anexos y de la evaluación. Una corrección
+conserva los hashes anterior y posterior y el dictamen que la motivó; su revisión final exige un revisor distinto
+del corrector. Hay una pasada de corrección y una revisión final independiente: un defecto que persiste queda
+retenido con su motivo. Los dominios se contrastan también con ejercicios, ampliaciones e indagaciones ya
+enseñados; los porcentajes se comprueban sin redondear. Cambiar los archivos revisados invalida la aprobación.
+
+```bash
+uv run --frozen gskg clases complementaria-estado
+uv run --frozen gskg clases complementaria-informe
+uv run --frozen gskg clases complementaria
+```
+
+El informe reúne las observaciones sobre guiones originales de todas las rondas, con archivo y SHA de cada
+evidencia; sólo une textos idénticos normalizados por unidad. Se mantienen como posibles defectos pendientes
+de contraste, sin modificar esos guiones. Los dictámenes y el informe completos permanecen fuera de Git y se
+incluyen en el respaldo de corpus. La revisión asistida por agentes distintos no da independencia estadística
+ni sustituye la revisión de especialistas del MINED.
+
+**Publicación.** `gskg clases complementaria` compila sólo lo que supera la validación y cuya última revisión aplicable es
+liberable; un anexo omitido en el dictamen o sin aprobación explícita también queda retenido. La compilación
+verifica las huellas de revisión, la trazabilidad de correcciones y los pasajes y metadatos exactos citados.
+Lo demás queda retenido con su motivo. Escribe la publicación con identidad SHA-256 y su recibo
+`config/complementos_ciencias.lock.json`. La API la sirve en `/api/v4/complementos` (resumen, `/clases`,
+`/clases/{fila_id}`, `/unidades/{unidad_id}`, `/fuentes`) y responde «No hay datos disponibles» si falta o fue
+alterada. Es una propuesta asistida por IA: no es aprobación del MINED ni evidencia de eficacia en aula.
+
+<!-- inicio-cierre-local -->
+**Cierre local verificado · 27 de octubre.** Se compilaron **819 anexos y 97 evaluaciones**; quedaron retenidos
+43 anexos y 11 evaluaciones con sus dictámenes. Las 108 unidades tienen revisión aplicable verificable:
+105 finales y tres iniciales sin corrección necesaria. Setenta unidades tienen todas sus piezas liberables;
+38 conservan alguna pieza retenida. Los 862 guiones publicados y los 108 expedientes conservaron su identidad.
+
+La compilación local es `f69e7739d570ecedda8d412ad7dece0b24311ac7abec56493e373dfed8b6c2ce`, con 123 pasajes
+citados. La auditoría completa verificó los 14 documentos y 177 pasajes registrados, la trazabilidad de las
+105 correcciones y los 970 originales archivados. El informe conserva 713 observaciones de todas las rondas,
+con sus evidencias; son posibles defectos pendientes de contraste, no 713 errores distintos confirmados.
+
+La suite completa pasó **1.740 pruebas sin fallos ni omisiones**, además de Ruff, auditoría y seis pruebas
+JavaScript. Otra auditoría confirmó que la compilación coincide exactamente con los dictámenes y sus SHA.
+El paquete local contiene 30.956 archivos (4.699.352.020 bytes; ZIP de 1.710.639.459 bytes), SHA
+`2ceaf1f0541f09ae4749cc76c89578072dabb34e55d169d79c81b63d71cbdf56`; restauró sus 30.956 archivos con
+huella de inventario `64e02c763887f1cce7ac216f87fbdeee8bae94633a8351234e95e35a20350a85`.
+
+**Publicación pendiente.** La revisión automática bloqueó la transferencia del corpus completo y requiere
+autorización explícita del usuario para ese payload y `gs://goes-ai-kg-artefactos/ciencias/v4/`. No se subió el
+paquete ni se reemplazó el recibo vigente de GCS. El recibo de complementos permanece local hasta publicar,
+restaurar desde el bucket y verificar un consumidor sin datos. Las correcciones R23 y sus cuatro lecturas
+conservan el estado y presupuesto descritos arriba; no hubo nuevas llamadas a Vertex en esta continuidad.
+<!-- fin-cierre-local -->
+
 ## Antecedentes
 
 El alcance son los 1.013 objetivos de Ciencias de `producto-4`, agrupados en 108 unidades; los siete registros

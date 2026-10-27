@@ -9,6 +9,8 @@ from types import SimpleNamespace
 
 import pytest
 
+from goes_science_kg.clases.complementaria_publicacion import RECIBO as RECIBO_COMPLEMENTOS
+from goes_science_kg.materiales.compilacion import serializar, sha
 from goes_science_kg.operacion.sincronizacion import RECIBO_CORPUS, Sincronizador
 
 CONFIGURACION = {"rutas": ["data", "insumos"], "patrones": [], "max_bytes_sin_comprimir": 2 * 1024**3}
@@ -108,3 +110,35 @@ def test_publicar_exige_una_carpeta_de_trabajo_nueva(tmp_path):
     (trabajo / "otro.zip").write_text("x")
     with pytest.raises(ValueError, match="nueva o estar vacía"):
         Sincronizador(origen, AlmacenMemoria()).publicar_corpus(CONFIGURACION, trabajo)
+
+
+def test_recupera_complementos_faltantes_en_un_consumidor_con_corpus_existente(tmp_path):
+    almacen = AlmacenMemoria()
+    origen = _repo(tmp_path / "origen")
+    doc = {"version": "complementos-ciencias-1", "clases": {}, "unidades": {}, "retenidos": []}
+    doc["id"] = sha(serializar(doc))
+    rel = "data/clases_v4/complementaria/publicacion/complementos-prueba.json"
+    archivo = origen / rel
+    archivo.parent.mkdir(parents=True)
+    archivo.write_bytes(serializar(doc))
+    recibo = {"ruta": rel, "sha256": sha(archivo.read_bytes()), "id": doc["id"]}
+    (origen / RECIBO_COMPLEMENTOS).write_text(json.dumps(recibo))
+    Sincronizador(origen, almacen).publicar_corpus(CONFIGURACION, tmp_path / "trabajo")
+
+    consumidor = _repo(tmp_path / "consumidor")
+    for recibo_rel in (RECIBO_CORPUS, RECIBO_COMPLEMENTOS):
+        (consumidor / recibo_rel).write_bytes((origen / recibo_rel).read_bytes())
+    local = consumidor / "data/producto/actual.json"
+    local.write_text('{"snapshot_id": "conservar-local"}')
+    sync = Sincronizador(consumidor, almacen)
+    assert sync.estado()["corpus"]["estado"] == "completo"
+    assert sync.estado()["complementos"]["estado"] == "ausente"
+    resultado = sync.sincronizar()
+    assert resultado["acciones"]["complementos"]["id"] == doc["id"]
+    assert resultado["estado"]["complementos"]["estado"] == "vigente"
+    assert local.read_text() == '{"snapshot_id": "conservar-local"}'
+    (consumidor / rel).write_text("alterado")
+    assert sync.estado()["complementos"]["estado"] == "distinto"
+    with pytest.raises(ValueError, match="complementos locales"):
+        sync.sincronizar()
+    assert (consumidor / rel).read_text() == "alterado"

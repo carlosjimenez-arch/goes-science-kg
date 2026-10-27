@@ -15,21 +15,13 @@ from goes_science_kg.clases.complementaria import (
     validar_anexo,
     validar_evaluacion,
 )
+from goes_science_kg.clases.complementaria_revision import leer_revision, validar_revision
 from goes_science_kg.clases.contratos import GuionClase
 from goes_science_kg.materiales.compilacion import serializar, sha
 
 VERSION = "complementos-ciencias-1"
 CARPETA = Path("data/clases_v4/complementaria")
 RECIBO = Path("config/complementos_ciencias.lock.json")
-
-
-def _revision_final(carpeta: Path, unidad: str) -> dict | None:
-    """Prefer the re-review after corrections, then the pilot second review, then the first review."""
-    for nombre in (f"{unidad}_final.json", f"{unidad}_r2.json", f"{unidad}.json"):
-        archivo = carpeta / "revision" / nombre
-        if archivo.is_file():
-            return json.loads(archivo.read_bytes()) | {"archivo": nombre}
-    return None
 
 
 def markdown_evaluacion(evaluacion: dict, titulo: str) -> str:
@@ -61,12 +53,29 @@ def compilar(raiz: Path) -> dict:
     for archivo in sorted((carpeta / "expedientes").glob("*.json")):
         exp = json.loads(archivo.read_bytes())
         unidad = exp["corto"]
-        revision = _revision_final(carpeta, unidad)
+        revision = leer_revision(carpeta, unidad)
         if revision is None:
             retenidos.append({"tipo": "unidad", "id": exp["unidad_id"], "motivo": "Sin revisión independiente"})
             continue
-        bloqueados = {a["fila_corta"] for a in revision.get("anexos", []) if a.get("veredicto") != "liberable"}
+        errores_revision = validar_revision(carpeta, exp, revision)
+        if errores_revision:
+            retenidos.append({
+                "tipo": "unidad", "id": exp["unidad_id"], "motivo": "Revisión no verificable",
+                "detalles": errores_revision, "revision": revision["archivo"],
+            })
+            continue
+        dictamen = revision["datos"]
+        aprobados = {a["fila_corta"] for a in dictamen["anexos"] if a["veredicto"] == "liberable"}
         fuentes = {x["id"] for x in exp["fuentes_nacionales"]}
+        fuentes_alteradas = set()
+        for snapshot in exp["fuentes_nacionales"]:
+            pasaje = pasajes.get(snapshot["id"], {})
+            documento = registro.get(pasaje.get("documento"), {})
+            if (
+                any(pasaje.get(k) != snapshot.get(k) for k in ("pagina", "texto"))
+                or any(documento.get(k) != snapshot.get(k) for k in ("institucion", "titulo", "anio"))
+            ):
+                fuentes_alteradas.add(snapshot["id"])
         for c in exp["clases"]:
             corto = c["fila_id"][-10:]
             ruta = carpeta / "anexos" / unidad / f"{corto}.json"
@@ -78,10 +87,12 @@ def compilar(raiz: Path) -> dict:
                     "fuentes": fuentes,
                 }
                 errores = validar_anexo(anexo, GuionClase.model_validate(c["guion"]), c["guion_sha256"], candidatos)
+                if any(i in fuentes_alteradas for a in anexo.contexto_nacional.afirmaciones for i in a.fuentes_ids):
+                    errores.append("La fuente publicada cambió respecto al expediente revisado")
             except (OSError, ValidationError) as error:
                 errores = [type(error).__name__]
-            if errores or corto in bloqueados:
-                motivo = "Bloqueado en revisión independiente" if corto in bloqueados else "No supera la validación"
+            if errores or corto not in aprobados:
+                motivo = "Bloqueado en revisión independiente" if corto not in aprobados else "No supera la validación"
                 retenidos.append({"tipo": "anexo", "id": c["fila_id"], "motivo": motivo})
                 continue
             datos = anexo.model_dump(mode="json")
@@ -94,6 +105,8 @@ def compilar(raiz: Path) -> dict:
                 "anexo": datos,
                 "markdown": markdown_anexo(datos, c["titulo"]),
                 "revision": revision["archivo"],
+                "revision_sha256": revision["sha256"],
+                "anexo_sha256": next(a["sha256"] for a in dictamen["anexos"] if a["fila_corta"] == corto),
             }
         ruta = carpeta / "evaluaciones" / f"{unidad}.json"
         try:
@@ -101,7 +114,7 @@ def compilar(raiz: Path) -> dict:
             errores = validar_evaluacion(evaluacion, exp["unidad_id"], {c["fila_id"] for c in exp["clases"]})
         except (OSError, ValidationError) as error:
             errores = [type(error).__name__]
-        if errores or (revision.get("evaluacion") or {}).get("veredicto") != "liberable":
+        if errores or dictamen["evaluacion"]["veredicto"] != "liberable":
             retenidos.append({"tipo": "evaluacion", "id": exp["unidad_id"], "motivo": "Bloqueada o inválida"})
         else:
             datos = evaluacion.model_dump(mode="json")
@@ -112,6 +125,8 @@ def compilar(raiz: Path) -> dict:
                 "evaluacion": datos,
                 "markdown": markdown_evaluacion(datos, exp["unidad"]),
                 "revision": revision["archivo"],
+                "revision_sha256": revision["sha256"],
+                "evaluacion_sha256": dictamen["evaluacion"]["sha256"],
             }
     fuentes_publicadas = {
         i: {k: pasajes[i][k] for k in ("documento", "pagina", "texto")}

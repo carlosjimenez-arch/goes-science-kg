@@ -176,3 +176,11 @@ def test_distractor_sin_concepcion_alternativa_se_rechaza():
     malo["opciones"][1]["concepcion_que_detecta"] = None
     with pytest.raises(ValidationError, match="concepción alternativa"):
         evaluacion([malo] + [item(f"I0{i}", "razonar", "respuesta_construida") for i in range(2, 7)])
+
+
+def test_los_porcentajes_no_se_redondean_para_aceptar_una_evaluacion():
+    with pytest.raises(ValidationError, match="razonamiento"):
+        evaluacion([item(f"I{i:02d}", "razonar" if i <= 3 else "aplicar") for i in range(1, 17)])
+    with pytest.raises(ValidationError, match="conocimiento"):
+        dominios = ["conocer"] * 3 + ["aplicar"] * 2 + ["razonar"] * 2
+        evaluacion([item(f"I{i:02d}", d) for i, d in enumerate(dominios, 1)])

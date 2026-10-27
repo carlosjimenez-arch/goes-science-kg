@@ -15,6 +15,7 @@ Cada componente se fija con un recibo versionado que declara URI, generación y 
 | `config/datos_ciencias.lock.json` | Corpus completo: fuentes, publicación `producto-4`, campañas, ledgers, checkpoints y progresión |
 | `config/materiales_ciencias.lock.json` | Biblioteca docente vigente (3.837 registros) que sirve la aplicación |
 | `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
+| `config/complementos_ciencias.lock.json` | Recibo preparado localmente; se versionará tras publicar y verificar el JSON de anexos y evaluaciones dentro del corpus fijado |
 | `config/materiales_preparaciones.lock.json` | Biblioteca de preparaciones (2.867 registros); sólo para recompilar guiones |
 
 El paquete del corpus conserva las rutas originales y un manifiesto con tamaño y SHA-256 de cada archivo; en
@@ -26,7 +27,7 @@ como archivos sueltos. Identidades del corte vigente: [verificación GCS](VERIFI
 
 | Comando | Efecto |
 |---|---|
-| `gskg datos estado` | Compara corpus, bibliotecas y entrega de guiones con sus recibos, sin descargar |
+| `gskg datos estado` | Compara corpus, bibliotecas, guiones y complementos con sus recibos, sin descargar |
 | `gskg datos sincronizar` | Descarga lo que falte de cada componente fijado; rechaza estados parciales o divergentes en vez de sobrescribir |
 | `gskg datos verificar` | Coteja por SHA el corpus local con el inventario remoto (código 1 si algo difiere o falta) |
 | `gskg datos inventario` | Lee el inventario remoto (ruta, tamaño y SHA) sin descargar el corpus |
@@ -36,6 +37,12 @@ como archivos sueltos. Identidades del corte vigente: [verificación GCS](VERIFI
 
 `gskg datos restaurar --en-repo | --destino <carpeta>` restaura una generación exacta; `preparar` y `subir` son
 los pasos sueltos que `publicar` encadena. Ninguno de estos comandos invoca modelos.
+
+Los complementos se compilan con `gskg clases complementaria`, que fija el SHA del JSON publicado en su recibo.
+Si un consumidor ya tiene el corpus anterior y le falta ese JSON, `datos sincronizar` recupera únicamente el
+archivo aprobado desde una restauración aislada del corpus vigente y comprueba su SHA. Conserva los demás
+datos locales; rechaza un JSON existente divergente y las rutas que salgan de `complementaria/publicacion/`.
+El recibo de complementos debe acompañar al recibo de corpus que contiene ese archivo.
 
 ## Consumidor nuevo
 

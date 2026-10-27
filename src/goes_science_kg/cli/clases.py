@@ -262,5 +262,34 @@ def complementaria() -> None:
     from goes_science_kg.clases.complementaria_publicacion import RECIBO, publicar
 
     recibo = publicar(ruta("."))
-    ruta(RECIBO.as_posix()).write_text(json.dumps(recibo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    destino = ruta(RECIBO.as_posix())
+    temporal = destino.with_suffix(".tmp")
+    temporal.write_text(json.dumps(recibo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temporal.replace(destino)
     typer.echo(json.dumps(recibo, ensure_ascii=False))
+
+
+@app.command("complementaria-estado")
+def complementaria_estado() -> None:
+    """Report pending, blocked, and approved units from verified on-disk reviews without model calls."""
+    from goes_science_kg.clases.complementaria_revision import estado_revisiones
+
+    typer.echo(json.dumps(estado_revisiones(ruta(".")), ensure_ascii=False, indent=2))
+
+
+@app.command("complementaria-informe")
+def complementaria_informe() -> None:
+    """Consolidate potential original-script defects from every preserved independent review round."""
+    from goes_science_kg.clases.complementaria_revision import CARPETA, informe_observaciones
+
+    informe = informe_observaciones(ruta("."))
+    destino = ruta((CARPETA / "informes/observaciones_guiones.json").as_posix())
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    destino.write_text(json.dumps(informe, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    lineas = ["# Observaciones sobre guiones publicados", "", informe["limite"], "", informe["deduplicacion"], ""]
+    for i, obs in enumerate(informe["observaciones"], 1):
+        lineas += [f"## {i}. Unidad {obs['unidad']}", "", obs["observacion"], "", "Estado: pendiente de contraste.", ""]
+        lineas += [f"- {e['revision']} · SHA-256 `{e['sha256']}`" for e in obs["evidencias"]]
+        lineas.append("")
+    destino.with_suffix(".md").write_text("\n".join(lineas), encoding="utf-8")
+    typer.echo(json.dumps({"observaciones": len(informe["observaciones"]), "ruta": str(destino)}))
