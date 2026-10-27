@@ -106,6 +106,11 @@ retira los votos actuales y conserva los anteriores como antecedente; no se here
 
 ## Los 15 pendientes y el cierre
 
+El [diagnóstico del 27 de octubre](CIERRE_INDICADORES_V4.md) distingue los códigos de indicador
+de los números de objetivo, prepara la aclaración de metrología y calcula una campaña nueva.
+No se consumieron llamadas ni se modificaron las bibliotecas publicadas. La ampliación de
+4.000 a 4.010 llamadas sigue pendiente de autorización; el tope monetario actual alcanza.
+
 Los ocho objetivos pendientes se distribuyen así:
 
 - **Seis ediciones corregidas después de la relectura:** cinco ajustes sólo de separador decimal,

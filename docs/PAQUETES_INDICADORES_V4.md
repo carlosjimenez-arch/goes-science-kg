@@ -42,6 +42,10 @@ criterios completos para no inventar correspondencias específicas. No hay desem
 eficacia en aula ni aprobación institucional. La compilación y las consultas consumen cero modelos;
 el contador acumulado permanece en 3.999 llamadas.
 
+La [preparación de cierre del 27 de octubre](CIERRE_INDICADORES_V4.md) identifica los ocho casos,
+sus siete unidades y el presupuesto necesario. No añade votos ni cambia las entregas publicadas;
+el preflight queda bloqueado hasta autorizar la ampliación de llamadas propuesta.
+
 ## Descarga privada desde GCS
 
 La biblioteca es `86119d8c1cc5732bdc3d31bb55a5c38184a68b34fcefc4a82d9fdcaa0b03fdb0`.

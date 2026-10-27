@@ -23,6 +23,10 @@ Consulta: `/api/v4/produccion/indicadores/indice`. Descarga individual:
 `/api/v4/produccion/indicadores/descarga/{id}?formato=zip`.
 [Contenido, filtros, restauración y ejemplo real](docs/PAQUETES_INDICADORES_V4.md).
 
+El [diagnóstico de los ocho pendientes](docs/CIERRE_INDICADORES_V4.md) prepara una revisión acotada
+sin consumir Vertex. Requiere autorización para elevar el máximo acumulado de 4.000 a 4.010
+llamadas; el tope monetario de USD 3.500 alcanza. Esa ampliación aún no está autorizada.
+
 ## Preparaciones de las mallas finales · 26 de octubre de 2026
 
 La entrega V3 contiene **1.128 paquetes: 1.020 objetivos y 108 unidades**, agrupados en **14 ZIP**.

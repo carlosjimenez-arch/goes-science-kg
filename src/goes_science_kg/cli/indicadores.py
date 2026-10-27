@@ -13,6 +13,18 @@ from goes_science_kg.config import ruta
 app = typer.Typer(help="Paquetes por indicador de las mallas finales", no_args_is_help=True)
 
 
+@app.command("cierre-preparar")
+def cierre_preparar(
+    destino: Annotated[Path, typer.Option()],
+    referencias: Annotated[Path, typer.Option()] = Path("data/cierre_indicadores_20261027/fuentes"),
+):
+    """Audita los pendientes y calcula la ampliación necesaria; no ejecuta Vertex."""
+    from goes_science_kg.produccion.indicadores.cierre import preparar
+
+    plan = preparar(ruta("."), ruta(destino), ruta(referencias))
+    typer.echo(json.dumps(plan, ensure_ascii=False, indent=2))
+
+
 @app.command("construir")
 def construir(
     origen: Annotated[Path, typer.Option()] = Path("data/materiales_produccion_v4"),
