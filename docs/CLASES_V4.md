@@ -131,6 +131,8 @@ JavaScript. Otra auditoría confirmó que la compilación coincide exactamente c
 El paquete local contiene 30.956 archivos (4.699.352.020 bytes; ZIP de 1.710.639.459 bytes), SHA
 `2ceaf1f0541f09ae4749cc76c89578072dabb34e55d169d79c81b63d71cbdf56`; restauró sus 30.956 archivos con
 huella de inventario `64e02c763887f1cce7ac216f87fbdeee8bae94633a8351234e95e35a20350a85`.
+La API sobre esa restauración local verificó salud, resumen, lista y fuentes; sirvió los 916 detalles aprobados
+con código 200 y rechazó los 54 retenidos con 404, sin invocar modelos. No fue una restauración desde GCS.
 
 **Publicación pendiente.** La revisión automática bloqueó la transferencia del corpus completo y requiere
 autorización explícita del usuario para ese payload y `gs://goes-ai-kg-artefactos/ciencias/v4/`. No se subió el

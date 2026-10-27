@@ -44,6 +44,8 @@ y continuidad están en `continuidad/`. Los guiones originales no se modificaron
 
 La suite completa pasó 1.740 pruebas sin omisiones. El paquete preparado reúne 30.956 archivos; su restauración
 local verificó el inventario íntegro. SHA del ZIP: `2ceaf1f0541f09ae4749cc76c89578072dabb34e55d169d79c81b63d71cbdf56`.
+Sobre esa restauración local, salud, resumen, lista y fuentes respondieron 200; los 916 detalles aprobados
+respondieron 200 y los 54 retenidos, 404. Este ensayo no descargó datos de GCS ni invocó modelos.
 La revisión automática rechazó la subida del corpus completo por autorización insuficientemente explícita
 del payload y el destino. Se solicitó al usuario autorizar `gs://goes-ai-kg-artefactos/ciencias/v4/`; hasta entonces
 el recibo de corpus anterior sigue vigente y el recibo nuevo de complementos sólo existe localmente.
