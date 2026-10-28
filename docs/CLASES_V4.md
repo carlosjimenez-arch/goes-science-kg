@@ -14,7 +14,7 @@ declarados sin guion liberado, cada uno con su motivo. Entrega `e4b3278681cddc14
 | Revisión directa de los 872 restantes (109 revisores, 8 casos cada uno) | 760 liberables y 112 bloqueados (12,8 %) |
 | Total de la cohorte publicada sólo con lectores automáticos | 132 de 968 con defecto material (13,6 %); por estrato entre 7 % (2.º–4.º) y 19 % (Biología 10.º–11.º) |
 | Retiro | Los 132 se declaran `bloqueado_revision_directa`, anclados al SHA exacto del guion revisado |
-| Corrección editorial R23 | 151 objetivos (19 pendientes, 20 bloqueados de la muestra y 112 del resto): **132 correcciones con revisión directa independiente favorable**, 3 bloqueadas y 16 imposibles sin fuentes que no están en el corpus |
+| Corrección editorial R23 | 151 objetivos (19 pendientes, 20 bloqueados de la muestra y 112 del resto): **132 correcciones con revisión directa independiente favorable**, 3 bloqueadas y 16 imposibles sin fuentes que no están en el corpus fijado para R23 |
 | Bloqueados del resto (112) | 98 corregidos y liberables, 1 bloqueado (cobertura del suelo sin datos del país) y 13 sin fuente registrada |
 | Cuatro lecturas de R23 | **No ejecutadas.** La cota (63 lotes, 315–630 llamadas, hasta USD 758) no cabe en las 106 restantes; el usuario decidió dejarlo así |
 
@@ -47,10 +47,10 @@ en manglares, balance global de carbono, Guías Alimentarias y datos del MINSAL/
 priones y sobre diagnóstico bacteriológico, SGA y fichas de datos de seguridad, sueño e inmunidad, y riesgos del
 carburo de calcio en alimentos.
 
-## Capa complementaria de implementación (26 de octubre de 2026)
+## Capa complementaria de implementación · cierre del 27 de octubre de 2026
 
-Sin modificar ningún guion liberado (eso exigiría cuatro lecturas nuevas), cada clase publicada recibe un **anexo de
-implementación** y cada unidad una **evaluación**. Ambos se anclan al SHA-256 del guion exacto
+Sin modificar ningún guion liberado (eso exigiría cuatro lecturas nuevas), se redactaron **862 anexos de
+implementación** y **108 evaluaciones de unidad**. Su revisión se ancla a los guiones exactos mediante SHA-256
 (`src/goes_science_kg/clases/complementaria.py`).
 
 | Componente | Qué aporta | Control determinista |
@@ -115,31 +115,31 @@ Lo demás queda retenido con su motivo. Escribe la publicación con identidad SH
 `/clases/{fila_id}`, `/unidades/{unidad_id}`, `/fuentes`) y responde «No hay datos disponibles» si falta o fue
 alterada. Es una propuesta asistida por IA: no es aprobación del MINED ni evidencia de eficacia en aula.
 
-<!-- inicio-cierre-local -->
-**Cierre local verificado · 27 de octubre.** Se compilaron **819 anexos y 97 evaluaciones**; quedaron retenidos
-43 anexos y 11 evaluaciones con sus dictámenes. Las 108 unidades tienen revisión aplicable verificable:
-105 finales y tres iniciales sin corrección necesaria. Setenta unidades tienen todas sus piezas liberables;
-38 conservan alguna pieza retenida. Los 862 guiones publicados y los 108 expedientes conservaron su identidad.
+**Resultado publicado.** Compilación `f69e7739d570ecedda8d412ad7dece0b24311ac7abec56493e373dfed8b6c2ce`, recibo
+`config/complementos_ciencias.lock.json`. Restaurada desde el bucket y comprobada mediante la API en un
+consumidor aislado que comenzó sin datos.
 
-La compilación local es `f69e7739d570ecedda8d412ad7dece0b24311ac7abec56493e373dfed8b6c2ce`, con 123 pasajes
-citados. La auditoría completa verificó los 14 documentos y 177 pasajes registrados, la trazabilidad de las
-105 correcciones y los 970 originales archivados. El informe conserva 713 observaciones de todas las rondas,
-con sus evidencias; son posibles defectos pendientes de contraste, no 713 errores distintos confirmados.
+| Control de cierre | Resultado |
+|---|---|
+| Expedientes y guiones originales | 108 expedientes y 862 guiones conservados; auditoría exacta contra la entrega vigente |
+| Originales complementarios archivados | 862 anexos + 108 evaluaciones; 970 archivos con SHA anterior preservado |
+| Revisión aplicable verificable | 108 unidades; 105 finales y 3 iniciales sin corrección necesaria |
+| Publicados | 819 anexos y 97 evaluaciones |
+| Retenidos | 43 anexos y 11 evaluaciones; identidad y motivo en `retenidos` del JSON publicado |
+| Unidades | 70 con todas sus piezas liberables; 38 con alguna pieza retenida |
+| Fuentes verificadas | 14 documentos con SHA y 177 pasajes literales contra su página |
+| Observaciones conservadas de todas las rondas | 713; sólo se deduplica texto idéntico normalizado por unidad |
 
-La suite completa pasó **1.740 pruebas sin fallos ni omisiones**, además de Ruff, auditoría y seis pruebas
-JavaScript. Otra auditoría confirmó que la compilación coincide exactamente con los dictámenes y sus SHA.
-El paquete local contiene 30.956 archivos (4.699.352.020 bytes; ZIP de 1.710.639.459 bytes), SHA
-`2ceaf1f0541f09ae4749cc76c89578072dabb34e55d169d79c81b63d71cbdf56`; restauró sus 30.956 archivos con
-huella de inventario `64e02c763887f1cce7ac216f87fbdeee8bae94633a8351234e95e35a20350a85`.
-La API sobre esa restauración local verificó salud, resumen, lista y fuentes; sirvió los 916 detalles aprobados
-con código 200 y rechazó los 54 retenidos con 404, sin invocar modelos. No fue una restauración desde GCS.
+Los motivos retenidos incluyen contradicciones no resueltas del guion original, afirmaciones o fuentes
+insuficientes, recursos incompatibles con la implementación y defectos de evaluación. Un anexo retenido no
+se sirve como aprobado; su evaluación de unidad puede publicarse si fue aprobada por separado. La misma
+separación se aplica a evaluaciones retenidas con anexos aprobados. Las correcciones R23 y sus cuatro lecturas
+siguen teniendo el estado y presupuesto descritos arriba.
 
-**Publicación pendiente.** La revisión automática bloqueó la transferencia del corpus completo y requiere
-autorización explícita del usuario para ese payload y `gs://goes-ai-kg-artefactos/ciencias/v4/`. No se subió el
-paquete ni se reemplazó el recibo vigente de GCS. El recibo de complementos permanece local hasta publicar,
-restaurar desde el bucket y verificar un consumidor sin datos. Las correcciones R23 y sus cuatro lecturas
-conservan el estado y presupuesto descritos arriba; no hubo nuevas llamadas a Vertex en esta continuidad.
-<!-- fin-cierre-local -->
+La auditoría final y los dictámenes están en `data/clases_v4/complementaria/continuidad/` y `revision/`, dentro
+del respaldo de corpus. El informe está en `informes/observaciones_guiones.json` y `.md`. Conserva referencias
+y SHA de cada evidencia; 713 observaciones no equivalen a 713 errores distintos confirmados.
+[Restauración y controles de ingeniería](VERIFICACION_GCS.md).
 
 ## Antecedentes
 

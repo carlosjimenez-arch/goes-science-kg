@@ -40,6 +40,7 @@ Publicación `producto-4`, snapshot `e92bc700d78f0f559671acc62f559f9e5176b09c334
 | Grafo publicado | 2.327 nodos y 7.304 relaciones con fuente verificable |
 | Progresión 2.º–11.º | 1.314 etiquetas de concepto con evidencia literal, 468 trayectorias, triaje de prerrequisitos verificado |
 | Guiones de clase | **862 guiones y 108 guiones de unidad publicados, todos con revisión directa aprobada**; 151 objetivos declarados sin guion con su motivo |
+| Complementos de implementación | **819 anexos y 97 evaluaciones publicados**; 43 anexos y 11 evaluaciones retenidos tras revisión independiente |
 | Biblioteca docente | 3.837 registros: guiones, preparaciones por objetivo (1.013) y por unidad (108), paquetes V3 y bancos históricos |
 
 Hallazgos principales de la progresión: el refuerzo es mayoritariamente **intermitente** (202 de 468
@@ -77,12 +78,14 @@ El repositorio no contiene matrices, PDF, snapshots, SQLite ni resultados: todo 
 
 | Recibo | Contenido |
 |---|---|
-| `config/datos_ciencias.lock.json` | Corpus completo: 29.415 archivos, incluidos fuentes, publicación, campañas de guiones, ledgers y progresión |
+| `config/datos_ciencias.lock.json` | Corpus completo: 30.956 archivos, incluidos fuentes, publicación, campañas de guiones, ledgers y progresión |
 | `config/materiales_ciencias.lock.json` | Biblioteca docente ampliada con los guiones, para la aplicación |
 | `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
+| `config/complementos_ciencias.lock.json` | Anexos y evaluaciones aprobados, con dictámenes y correcciones fijados por SHA |
 | `config/materiales_preparaciones.lock.json` | Biblioteca base que fijan las preparaciones; necesaria sólo para recompilar guiones |
 
-El recibo vigente se restauró en un checkout limpio y la aplicación completa funcionó con esos datos. Todo dato
+El recibo vigente se restauró desde GCS en un consumidor aislado sin datos: inventario sin diferencias ni
+faltantes, salud y API de complementos verificadas. Todo dato
 nuevo se publica con `gskg datos publicar --trabajo <carpeta fuera del repositorio>` y se adopta su recibo.
 [Datos, publicación y límites](docs/DATOS_EXTERNOS.md) · [verificación GCS](docs/VERIFICACION_GCS.md).
 

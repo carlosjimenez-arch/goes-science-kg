@@ -15,7 +15,7 @@ Cada componente se fija con un recibo versionado que declara URI, generación y 
 | `config/datos_ciencias.lock.json` | Corpus completo: fuentes, publicación `producto-4`, campañas, ledgers, checkpoints y progresión |
 | `config/materiales_ciencias.lock.json` | Biblioteca docente vigente (3.837 registros) que sirve la aplicación |
 | `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
-| `config/complementos_ciencias.lock.json` | Recibo preparado localmente; se versionará tras publicar y verificar el JSON de anexos y evaluaciones dentro del corpus fijado |
+| `config/complementos_ciencias.lock.json` | Publicación aprobada de anexos y evaluaciones; su JSON se recupera del corpus fijado |
 | `config/materiales_preparaciones.lock.json` | Biblioteca de preparaciones (2.867 registros); sólo para recompilar guiones |
 
 El paquete del corpus conserva las rutas originales y un manifiesto con tamaño y SHA-256 de cada archivo; en
