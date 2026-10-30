@@ -1,50 +1,51 @@
-"""Función de planificación del refuerzo (spec 13): qué refuerzo, cuándo, con qué límites y cuándo se vuelve.
+"""Schedule bounded reinforcement and subsequent assessment."""
 
-Momentos:
-- previo: antes del objetivo, solo para bases que la MALLA enseña después (o en el mismo tema). Es una activación
-  breve por la secuencia de la malla, no un diagnóstico de déficit del estudiante (a lo sumo `max_previos`).
-- durante: tras confirmar una hipótesis (una base, o una dificultad en el concepto evaluado).
-- posterior: repaso espaciado del objetivo y transferencia con otra actividad.
-
-Límites (config/aprendizaje.yaml, refuerzo): profundidad, refuerzos por sesión, minutos por refuerzo y por sesión,
-intentos. Al tocar un límite se vuelve al objetivo y se deja una nota para el docente.
-"""
+# Historical implementation notes:
+# Momentos:
+# - previo: antes del objetivo, solo para bases que la MALLA enseña después (o en el mismo tema). Es una activación
+#   breve por la secuencia de la malla, no un diagnóstico de déficit del estudiante (a lo sumo `max_previos`).
+# - durante: tras confirmar una hipótesis (una base, o una dificultad en el concepto evaluado).
+# - posterior: repaso espaciado del objetivo y transferencia con otra actividad.
+#
+# Límites (config/aprendizaje.yaml, refuerzo): profundidad, refuerzos por sesión, minutos por refuerzo y por sesión,
+# intentos. Al tocar un límite se vuelve al objetivo y se deja una nota para el docente.
 
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from goes_science_kg.aprendizaje.estudiante import Intervencion, Perfil
+from goes_science_kg.aprendizaje.pedagogia import Pedagogia, proponer
+from goes_science_kg.aprendizaje.relaciones import CONFIANZA_ORDEN, Base, Navegador, orden_tema
 from goes_science_kg.config import cargar
-
-from .estudiante import Intervencion, Perfil
-from .pedagogia import Pedagogia, proponer
-from .relaciones import CONFIANZA_ORDEN, Base, Navegador, orden_tema
 
 
 def config() -> dict:
+    """Load bounded reinforcement and scheduling configuration."""
+
     return cargar("aprendizaje")
 
 
 @dataclass
 class Presupuesto:
-    """Lo que lleva gastado una sesión en desvíos (se comprueba antes de cada refuerzo)."""
+    """Track a session's reinforcement spending before admitting another intervention."""
 
     refuerzos: int = 0
     minutos: int = 0
     notas_docente: list[str] = field(default_factory=list)
     propuestas: list[dict] = field(default_factory=list)
-    cola: Path | None = None   # cola de propuestas (None: la de config/aprendizaje.yaml)
-    grado: int | None = None   # para los límites propios del tramo (refuerzo.por_tramo)
+    cola: Path | None = None  # cola de propuestas (None: la de config/aprendizaje.yaml)
+    grado: int | None = None  # para los límites propios del tramo (refuerzo.por_tramo)
 
     def limites(self) -> dict:
-        """Los límites de refuerzo del grado: los generales y, encima, los de su tramo si los tiene."""
+        """Merge general and grade-band reinforcement limits."""
         r = config()["refuerzo"]
         tramo = next((k for k, t in config()["adaptacion"].items() if self.grado in t["grados"]), None)
         return {**r, **(r.get("por_tramo") or {}).get(tramo, {})}
 
     def admite(self, minutos: int, profundidad: int) -> str | None:
-        """None si cabe; si no, el límite que se tocaría."""
+        """Return the limit that would be exceeded, or None when the intervention fits."""
         r = self.limites()
         if minutos > r["minutos_max_por_refuerzo"]:
             return f"refuerzo de {minutos} min > {r['minutos_max_por_refuerzo']} min en este grado"
@@ -58,23 +59,40 @@ class Presupuesto:
 
 
 def bases_previas(nav: Navegador, objetivo: str) -> list[Base]:
-    """Bases de profundidad 1 que la malla no enseña antes del objetivo, la más cercana al objetivo primero."""
+    """List immediate prerequisite gaps in order of proximity to the objective."""
     huecos = [b for b in nav.bases(objetivo, profundidad=1) if not b.antes_del_objetivo]
-    return sorted(huecos, key=lambda b: (-CONFIANZA_ORDEN[b.confianza], orden_tema(b.primer_tema or "") or (99, "", 0),
-                                         b.concepto))[:config()["refuerzo"]["max_previos"]]
+    return sorted(
+        huecos,
+        key=lambda b: (-CONFIANZA_ORDEN[b.confianza], orden_tema(b.primer_tema or "") or (99, "", 0), b.concepto),
+    )[: config()["refuerzo"]["max_previos"]]
 
 
-def refuerzo(perfil: Perfil, nav: Navegador, ped: Pedagogia, objetivo: str, concepto: str, momento: str,
-             motivo: str, profundidad: int, presupuesto: Presupuesto) -> Intervencion | None:
-    """Arma el refuerzo de un concepto para un objetivo, o None si no hay microtema o se toca un límite (y deja la
-    nota o la propuesta correspondiente). No modifica la capa pedagógica: un microtema que falta va a la cola."""
+def refuerzo(
+    perfil: Perfil,
+    nav: Navegador,
+    ped: Pedagogia,
+    objetivo: str,
+    concepto: str,
+    momento: str,
+    motivo: str,
+    profundidad: int,
+    presupuesto: Presupuesto,
+) -> Intervencion | None:
+    """Prepare reinforcement or return None when content or budget is insufficient."""
+
+    # Implementation notes:
+    # nota o la propuesta correspondiente). No modifica la capa pedagógica: un microtema que falta va a la cola.
     mt = ped.es_reforzado_por(concepto, perfil.grado)
     nombre = nav.por_id[concepto].etiqueta
     if mt is None:
-        presupuesto.propuestas.append(proponer(
-            "microtema_faltante", {"concepto": concepto, "grado": perfil.grado, "objetivo": objetivo},
-            f"se necesitó reforzar «{nombre}» para {objetivo.removeprefix('TEMA:')} y no hay microtema",
-            presupuesto.cola))
+        presupuesto.propuestas.append(
+            proponer(
+                "microtema_faltante",
+                {"concepto": concepto, "grado": perfil.grado, "objetivo": objetivo},
+                f"se necesitó reforzar «{nombre}» para {objetivo.removeprefix('TEMA:')} y no hay microtema",
+                presupuesto.cola,
+            )
+        )
         presupuesto.notas_docente.append(f"Sin microtema para «{nombre}» ({perfil.grado}.°): propuesto a revisión.")
         return None
     if limite := presupuesto.admite(mt["duracion_min"], profundidad):
@@ -85,11 +103,21 @@ def refuerzo(perfil: Perfil, nav: Navegador, ped: Pedagogia, objetivo: str, conc
     presupuesto.minutos += mt["duracion_min"]
     fuentes = [f"concepto {concepto} (definición del vocabulario)"] + list(mt.get("fuentes") or [])
     i = Intervencion(
-        id=f"I{len(perfil.intervenciones) + 1}", momento=momento, objetivo=objetivo, concepto=concepto,
-        motivo=motivo, recurso=mt["id"], estado_recurso=mt["estado"], fuentes=fuentes,
-        duracion_min=mt["duracion_min"], criterio=f"{mt['criterio']} (actividad {mt['comprobacion']})",
-        condicion_regreso=(f"criterio cumplido, {r['intentos_por_refuerzo']} intentos o {mt['duracion_min']} min "
-                           f"→ volver a {objetivo.removeprefix('TEMA:')}"),
-        profundidad=profundidad)
+        id=f"I{len(perfil.intervenciones) + 1}",
+        momento=momento,
+        objetivo=objetivo,
+        concepto=concepto,
+        motivo=motivo,
+        recurso=mt["id"],
+        estado_recurso=mt["estado"],
+        fuentes=fuentes,
+        duracion_min=mt["duracion_min"],
+        criterio=f"{mt['criterio']} (actividad {mt['comprobacion']})",
+        condicion_regreso=(
+            f"criterio cumplido, {r['intentos_por_refuerzo']} intentos o {mt['duracion_min']} min "
+            f"→ volver a {objetivo.removeprefix('TEMA:')}"
+        ),
+        profundidad=profundidad,
+    )
     perfil.intervenciones.append(i)
     return i

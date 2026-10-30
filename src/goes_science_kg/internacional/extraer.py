@@ -1,14 +1,14 @@
-"""Extrae y valida los objetivos de aprendizaje de los currículos de países (spec 11).
+"""Extract and validate country curriculum learning objectives."""
 
-Cada documento de `config/internacional.yaml` se recorre en ventanas de pocas páginas. Gemini lee el PDF de la
-ventana directamente, lo que funciona igual en japonés, coreano, chino o con tablas, y devuelve los objetivos
-con su página. Un segundo modelo, distinto del primero, revisa cada objetivo contra las mismas páginas:
-- «no_fiel»: se descarta.
-- «parcial»: se conserva marcado para revisión humana.
-
-Los HTML (ACARA, Ontario) se convierten a texto y se parten en secciones del mismo tamaño.
-Salida: data/interim/internacional/objetivos/<pais>.json, ordenada y con ids estables.
-"""
+# Historical implementation notes:
+# Cada documento de `config/internacional.yaml` se recorre en ventanas de pocas páginas. Gemini lee el PDF de la
+# ventana directamente, lo que funciona igual en japonés, coreano, chino o con tablas, y devuelve los objetivos
+# con su página. Un segundo modelo, distinto del primero, revisa cada objetivo contra las mismas páginas:
+# - «no_fiel»: se descarta.
+# - «parcial»: se conserva marcado para revisión humana.
+#
+# Los HTML (ACARA, Ontario) se convierten a texto y se parten en secciones del mismo tamaño.
+# Salida: data/interim/internacional/objetivos/<pais>.json, ordenada y con ids estables.
 
 from __future__ import annotations
 
@@ -26,8 +26,13 @@ from goes_science_kg.internacional import tramo, vertex
 VERSION = "internacional-v1"
 VENTANA = 2
 CARACTERES_SECCION = 12000
-CODIGO_ASIG = {"fisica": "FIS", "quimica": "QUI", "biologia": "BIO", "tierra_espacio": "TYE",
-               "ciencias_integradas": "CIN"}
+CODIGO_ASIG = {
+    "fisica": "FIS",
+    "quimica": "QUI",
+    "biologia": "BIO",
+    "tierra_espacio": "TYE",
+    "ciencias_integradas": "CIN",
+}
 
 SISTEMA = (
     "Eres un especialista en currículo de ciencias. Extraes objetivos de aprendizaje de documentos curriculares "
@@ -36,60 +41,73 @@ SISTEMA = (
 
 ESQUEMA_EXTRAER = {
     "type": "OBJECT",
-    "properties": {"objetivos": {"type": "ARRAY", "items": {
-        "type": "OBJECT",
-        "properties": {
-            "pagina": {"type": "INTEGER"},
-            "eje": {"type": "STRING"},
-            "grado_pais": {"type": "STRING"},
-            "tipo": {"type": "STRING", "enum": ["conocimiento", "practica", "aplicacion"]},
-            "demanda": {"type": "STRING", "enum": ["recordar", "aplicar", "razonar"]},
-            "asignatura": {"type": "STRING", "enum": ["fisica", "quimica", "biologia", "tierra_espacio"]},
-            "texto": {"type": "STRING"},
-            "cita": {"type": "STRING"},
-        },
-        "required": ["pagina", "eje", "tipo", "demanda", "asignatura", "texto", "cita"],
-    }}},
+    "properties": {
+        "objetivos": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "properties": {
+                    "pagina": {"type": "INTEGER"},
+                    "eje": {"type": "STRING"},
+                    "grado_pais": {"type": "STRING"},
+                    "tipo": {"type": "STRING", "enum": ["conocimiento", "practica", "aplicacion"]},
+                    "demanda": {"type": "STRING", "enum": ["recordar", "aplicar", "razonar"]},
+                    "asignatura": {"type": "STRING", "enum": ["fisica", "quimica", "biologia", "tierra_espacio"]},
+                    "texto": {"type": "STRING"},
+                    "cita": {"type": "STRING"},
+                },
+                "required": ["pagina", "eje", "tipo", "demanda", "asignatura", "texto", "cita"],
+            },
+        }
+    },
     "required": ["objetivos"],
 }
 
 ESQUEMA_VALIDAR = {
     "type": "OBJECT",
-    "properties": {"juicios": {"type": "ARRAY", "items": {
-        "type": "OBJECT",
-        "properties": {
-            "n": {"type": "INTEGER"},
-            "veredicto": {"type": "STRING", "enum": ["fiel", "parcial", "no_fiel"]},
-            "motivo": {"type": "STRING"},
-        },
-        "required": ["n", "veredicto", "motivo"],
-    }},
-        "omitidos": {"type": "ARRAY", "items": {
-            "type": "OBJECT",
-            "properties": {
-                "pagina": {"type": "INTEGER"},
-                "eje": {"type": "STRING"},
-                "tipo": {"type": "STRING", "enum": ["conocimiento", "practica", "aplicacion"]},
-                "demanda": {"type": "STRING", "enum": ["recordar", "aplicar", "razonar"]},
-                "asignatura": {"type": "STRING", "enum": ["fisica", "quimica", "biologia", "tierra_espacio"]},
-                "texto": {"type": "STRING"},
-                "cita": {"type": "STRING"},
+    "properties": {
+        "juicios": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "properties": {
+                    "n": {"type": "INTEGER"},
+                    "veredicto": {"type": "STRING", "enum": ["fiel", "parcial", "no_fiel"]},
+                    "motivo": {"type": "STRING"},
+                },
+                "required": ["n", "veredicto", "motivo"],
             },
-            "required": ["pagina", "eje", "tipo", "demanda", "asignatura", "texto", "cita"],
-        }}},
+        },
+        "omitidos": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "properties": {
+                    "pagina": {"type": "INTEGER"},
+                    "eje": {"type": "STRING"},
+                    "tipo": {"type": "STRING", "enum": ["conocimiento", "practica", "aplicacion"]},
+                    "demanda": {"type": "STRING", "enum": ["recordar", "aplicar", "razonar"]},
+                    "asignatura": {"type": "STRING", "enum": ["fisica", "quimica", "biologia", "tierra_espacio"]},
+                    "texto": {"type": "STRING"},
+                    "cita": {"type": "STRING"},
+                },
+                "required": ["pagina", "eje", "tipo", "demanda", "asignatura", "texto", "cita"],
+            },
+        },
+    },
     "required": ["juicios", "omitidos"],
 }
 
 
 @dataclass
 class Ventana:
-    """Tramo de un documento que va en una sola llamada al modelo: páginas de un PDF (adjuntas) o una sección HTML."""
+    """Represent one bounded PDF or HTML document window sent to a model."""
 
     doc: dict
-    paginas: list[int]            # números de página del documento (1 = primera página del archivo)
+    paginas: list[int]  # números de página del documento (1 = primera página del archivo)
     adjuntos: list[tuple[bytes, str]]
-    texto: str                    # solo para HTML: la sección en texto plano
-    etiqueta: str                 # «p. 12–15» o «sección 3»
+    texto: str  # solo para HTML: la sección en texto plano
+    etiqueta: str  # «p. 12–15» o «sección 3»
 
 
 def _ventanas_pdf(doc: dict) -> Iterator[Ventana]:
@@ -97,7 +115,7 @@ def _ventanas_pdf(doc: dict) -> Iterator[Ventana]:
 
     lector = PdfReader(ruta(doc["archivo"]))
     rangos = doc.get("paginas") or [1, len(lector.pages)]
-    if isinstance(rangos[0], int):   # un solo rango [p0, p1] o varios [[p0, p1], …]
+    if isinstance(rangos[0], int):  # un solo rango [p0, p1] o varios [[p0, p1], …]
         rangos = [rangos]
     for p0, p1 in rangos:
         fin = min(p1, len(lector.pages))
@@ -121,7 +139,7 @@ def _texto_html(h: str) -> str:
 def _ventanas_html(doc: dict) -> Iterator[Ventana]:
     texto = _texto_html(ruta(doc["archivo"]).read_text(encoding="utf-8", errors="replace"))
     if marca := doc.get("desde_texto"):
-        texto = texto[max(0, texto.find(marca)):]
+        texto = texto[max(0, texto.find(marca)) :]
     secciones, actual = [], ""
     for linea in texto.split("\n"):
         if len(actual) + len(linea) > CARACTERES_SECCION and actual:
@@ -135,7 +153,7 @@ def _ventanas_html(doc: dict) -> Iterator[Ventana]:
 
 
 def ventanas(doc: dict) -> Iterator[Ventana]:
-    """Tramos de `doc`: secciones de texto si es HTML; si no, grupos de VENTANA páginas dentro de sus rangos del PDF."""
+    """Split documents into configured PDF-page groups or native HTML sections."""
     return _ventanas_html(doc) if doc["archivo"].endswith((".html", ".htm")) else _ventanas_pdf(doc)
 
 
@@ -145,14 +163,17 @@ def _seccion(v: Ventana) -> str:
 
 def _prompt_extraer(v: Ventana) -> str:
     d = v.doc
-    donde = (f"el PDF adjunto ({len(v.paginas)} páginas). En «pagina» pon la POSICIÓN de la página dentro del "
-             f"adjunto (1 a {len(v.paginas)}), no el número impreso en la página"
-             if v.adjuntos else "la sección del documento copiada abajo; usa «pagina»: 1")
+    donde = (
+        f"el PDF adjunto ({len(v.paginas)} páginas). En «pagina» pon la POSICIÓN de la página dentro del "
+        f"adjunto (1 a {len(v.paginas)}), no el número impreso en la página"
+        if v.adjuntos
+        else "la sección del documento copiada abajo; usa «pagina»: 1"
+    )
     grados = d.get("grados_pais") or {}
-    return f"""Documento: {d['titulo']} ({d['pais_nombre']}). Curso: {d['curso']}. Asignatura: {d['asignatura']}.
+    return f"""Documento: {d["titulo"]} ({d["pais_nombre"]}). Curso: {d["curso"]}. Asignatura: {d["asignatura"]}.
 Lee {donde}.
 
-Extrae TODOS los objetivos de aprendizaje de ciencias DEL CURSO «{d['curso']}» que el documento enumere en este
+Extrae TODOS los objetivos de aprendizaje de ciencias DEL CURSO «{d["curso"]}» que el documento enumere en este
 tramo (si en el tramo aparecen objetivos de otro curso o de otra asignatura no científica, ignóralos): cada resultado
 de aprendizaje, descripción de contenido o enunciado de «los estudiantes deben…» es un objetivo. Reglas:
 - Un objetivo = la unidad mínima evaluable que el documento enumera. No partas oraciones ni juntes viñetas.
@@ -166,7 +187,7 @@ de aprendizaje, descripción de contenido o enunciado de «los estudiantes deben
   ecuaciones, ejemplos exigidos).
 - «cita»: fragmento literal del original, de 20 palabras como máximo, que permita ubicar el objetivo.
 - «eje»: el tema o unidad del documento al que pertenece, traducido al español.
-- «grado_pais»: el año o grado si el documento lo indica para ese objetivo ({', '.join(grados) or 'p. ej. Year 11'});
+- «grado_pais»: el año o grado si el documento lo indica para ese objetivo ({", ".join(grados) or "p. ej. Year 11"});
   si no lo indica, deja una cadena vacía.
 - «asignatura»: la disciplina del objetivo (fisica, quimica, biologia o tierra_espacio). En un curso integrado,
   decide por el contenido; las prácticas generales van en la disciplina de la unidad donde aparecen.
@@ -176,10 +197,11 @@ de aprendizaje, descripción de contenido o enunciado de «los estudiantes deben
 
 
 def _prompt_validar(v: Ventana, objetivos: list[dict]) -> str:
-    lista = "\n".join(f"{i}. [posición {o['pagina']}] {o['texto']} || cita: {o['cita']}"
-                      for i, o in enumerate(objetivos))
+    lista = "\n".join(
+        f"{i}. [posición {o['pagina']}] {o['texto']} || cita: {o['cita']}" for i, o in enumerate(objetivos)
+    )
     return f"""Eres auditor de fidelidad. Abajo hay objetivos que otro modelo extrajo de {v.etiqueta} del documento
-«{v.doc['titulo']}» (curso {v.doc['curso']}). Compara cada uno con el documento.
+«{v.doc["titulo"]}» (curso {v.doc["curso"]}). Compara cada uno con el documento.
 - fiel: el documento dice eso, con la misma profundidad, y la cita existe en el tramo.
 - parcial: el sentido es correcto pero agrega, omite o exagera algo.
 La «cita» se recortó a propósito a 20 palabras: no la penalices por incompleta. Una paráfrasis puede unir el
@@ -188,7 +210,7 @@ verbo y su complemento aunque estén en oraciones contiguas.
 la numeración impresa y no juzgues el número de página.)
 - no_fiel: el documento no dice eso, no es un objetivo de aprendizaje o no es de ciencias.
 «motivo»: 15 palabras como máximo.
-Luego revisa la COMPLETITUD: en «omitidos» lista los objetivos de aprendizaje del curso «{v.doc['curso']}» que
+Luego revisa la COMPLETITUD: en «omitidos» lista los objetivos de aprendizaje del curso «{v.doc["curso"]}» que
 están en el tramo y faltan en la lista (mismas reglas: un ítem hoja por objetivo, paráfrasis en español de ≤30
 palabras, cita literal de ≤20 palabras, «pagina» = posición dentro del adjunto). NO cuentes como omitidos los
 fines u objetivos generales del curso o de la asignatura (actitudes, «fomentar…», «cultivar…»), introducciones,
@@ -200,13 +222,15 @@ OBJETIVOS:
 
 
 def _procesar(v: Ventana) -> list[dict]:
-    r = vertex.generar_json(_prompt_extraer(v), modelo=vertex.MODELO_EXTRAER, sistema=SISTEMA,
-                            esquema=ESQUEMA_EXTRAER, adjuntos=v.adjuntos)
+    r = vertex.generar_json(
+        _prompt_extraer(v), modelo=vertex.MODELO_EXTRAER, sistema=SISTEMA, esquema=ESQUEMA_EXTRAER, adjuntos=v.adjuntos
+    )
     objetivos = [o for o in r.get("objetivos", []) if o.get("texto")]
     if not objetivos:
         return []
-    j = vertex.generar_json(_prompt_validar(v, objetivos), modelo=vertex.MODELO_VALIDAR,
-                            esquema=ESQUEMA_VALIDAR, adjuntos=v.adjuntos)
+    j = vertex.generar_json(
+        _prompt_validar(v, objetivos), modelo=vertex.MODELO_VALIDAR, esquema=ESQUEMA_VALIDAR, adjuntos=v.adjuntos
+    )
     juicios = {x["n"]: x for x in j.get("juicios", [])}
     for i, o in enumerate(objetivos):
         x = juicios.get(i, {"veredicto": "parcial", "motivo": "sin juicio del validador"})
@@ -215,10 +239,13 @@ def _procesar(v: Ventana) -> list[dict]:
     for o in j.get("omitidos", []):
         if not o.get("texto"):
             continue
-        o["validacion"] = {"veredicto": "parcial", "motivo": "agregado por el validador (completitud)",
-                           "modelo": vertex.MODELO_VALIDAR}
+        o["validacion"] = {
+            "veredicto": "parcial",
+            "motivo": "agregado por el validador (completitud)",
+            "modelo": vertex.MODELO_VALIDAR,
+        }
         objetivos.append(o)
-    for o in objetivos:   # posición dentro del adjunto → página del documento
+    for o in objetivos:  # posición dentro del adjunto → página del documento
         pos = o["pagina"]
         if not 1 <= pos <= len(v.paginas):
             o["nota_pagina"] = f"el modelo dio la posición {pos}"
@@ -228,28 +255,38 @@ def _procesar(v: Ventana) -> list[dict]:
 
 
 def llamadas_pendientes(pais: str) -> int:
-    """Llamadas a Vertex que costaría extraer el país (cota inferior: una ventana sin extracción en caché cuenta 2,
-    extraer y validar)."""
+    """Estimate uncached country-objective extraction and validation calls."""
+
+    # Implementation notes:
+    # extraer y validar).
     cfg = cargar(tramo.actual().config)
-    docs = [{**d, "pais": pais, "pais_nombre": cfg["paises"][pais]["nombre"]} for d in cfg["documentos"]
-            if d["pais"] == pais]
+    docs = [
+        {**d, "pais": pais, "pais_nombre": cfg["paises"][pais]["nombre"]}
+        for d in cfg["documentos"]
+        if d["pais"] == pais
+    ]
     total = 0
     for v in (v for d in docs for v in ventanas(d)):
-        clave = {"modelo": vertex.MODELO_EXTRAER, "sistema": SISTEMA, "esquema": ESQUEMA_EXTRAER,
-                 "adjuntos": v.adjuntos}
+        clave = {
+            "modelo": vertex.MODELO_EXTRAER,
+            "sistema": SISTEMA,
+            "esquema": ESQUEMA_EXTRAER,
+            "adjuntos": v.adjuntos,
+        }
         if not vertex.en_cache(_prompt_extraer(v), **clave):
             total += 2
             continue
-        r = vertex.generar_json(_prompt_extraer(v), **clave)   # en caché: no llama a Vertex
+        r = vertex.generar_json(_prompt_extraer(v), **clave)  # en caché: no llama a Vertex
         objetivos = [o for o in r.get("objetivos", []) if o.get("texto")]
-        if objetivos and not vertex.en_cache(_prompt_validar(v, objetivos), modelo=vertex.MODELO_VALIDAR,
-                                             esquema=ESQUEMA_VALIDAR, adjuntos=v.adjuntos):
+        if objetivos and not vertex.en_cache(
+            _prompt_validar(v, objetivos), modelo=vertex.MODELO_VALIDAR, esquema=ESQUEMA_VALIDAR, adjuntos=v.adjuntos
+        ):
             total += 1
     return total
 
 
 def _importados(pais: str) -> list[dict]:
-    """Objetivos de sesiones anteriores que se reutilizan tal cual (config: importar)."""
+    """Load explicitly reusable objectives from earlier extraction sessions."""
     tipos = {"Práctica": "practica", "Conocimiento": "conocimiento", "Aplicación": "aplicacion"}
     salida = []
     for imp in cargar(tramo.actual().config).get("importar", []):
@@ -258,24 +295,46 @@ def _importados(pais: str) -> list[dict]:
         for o in json.loads(ruta(imp["archivo"]).read_text(encoding="utf-8")):
             if o["grado_min"] not in imp["grados_sv"]:
                 continue
-            salida.append({
-                "id": f"{pais}-IMP-{o['id']}", "pais": pais, "documento": imp["documento"], "archivo": o["documento"],
-                "pagina": o.get("pagina"), "localizador": o.get("localizador"), "curso": imp["curso"],
-                "nivel": imp["nivel"], "asignatura": None, "grado_pais": o.get("grado_o_tramo", ""),
-                "grado_sv_min": o["grado_min"], "grado_sv_max": o["grado_max"], "eje": o.get("eje", ""),
-                "tipo": tipos.get(o.get("tipo"), "conocimiento"), "demanda": None, "texto": o["texto"], "cita": "",
-                "validacion": {"veredicto": "fiel", "motivo": "importado de una extracción anterior", "modelo": None},
-                "modelo": None, "version": "importado",
-            })
+            salida.append(
+                {
+                    "id": f"{pais}-IMP-{o['id']}",
+                    "pais": pais,
+                    "documento": imp["documento"],
+                    "archivo": o["documento"],
+                    "pagina": o.get("pagina"),
+                    "localizador": o.get("localizador"),
+                    "curso": imp["curso"],
+                    "nivel": imp["nivel"],
+                    "asignatura": None,
+                    "grado_pais": o.get("grado_o_tramo", ""),
+                    "grado_sv_min": o["grado_min"],
+                    "grado_sv_max": o["grado_max"],
+                    "eje": o.get("eje", ""),
+                    "tipo": tipos.get(o.get("tipo"), "conocimiento"),
+                    "demanda": None,
+                    "texto": o["texto"],
+                    "cita": "",
+                    "validacion": {
+                        "veredicto": "fiel",
+                        "motivo": "importado de una extracción anterior",
+                        "modelo": None,
+                    },
+                    "modelo": None,
+                    "version": "importado",
+                }
+            )
     return salida
 
 
 def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> dict:
-    """Extrae y valida los documentos del país (o solo los ids de `solo`). Devuelve conteos."""
+    """Extract and validate the selected country's configured source documents."""
     cfg = cargar(tramo.actual().config)
     info = cfg["paises"][pais]
-    docs = [{**d, "pais": pais, "pais_nombre": info["nombre"]} for d in cfg["documentos"]
-            if d["pais"] == pais and (not solo or d["id"] in solo)]
+    docs = [
+        {**d, "pais": pais, "pais_nombre": info["nombre"]}
+        for d in cfg["documentos"]
+        if d["pais"] == pais and (not solo or d["id"] in solo)
+    ]
     vs = [v for d in docs for v in ventanas(d)]
     with ThreadPoolExecutor(hilos) as ex:
         resultados = list(ex.map(_procesar, vs))
@@ -285,13 +344,25 @@ def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> di
             d = v.doc
             g0, g1 = grados_sv(d, o.get("grado_pais", ""))
             fila = {
-                "pais": pais, "documento": d["id"], "archivo": d["archivo"], "pagina": o["pagina"],
-                "curso": d["curso"], "nivel": d["nivel"],
+                "pais": pais,
+                "documento": d["id"],
+                "archivo": d["archivo"],
+                "pagina": o["pagina"],
+                "curso": d["curso"],
+                "nivel": d["nivel"],
                 "asignatura": o["asignatura"] if d["asignatura"] == "ciencias_integradas" else d["asignatura"],
-                "grado_pais": o.get("grado_pais", ""), "grado_sv_min": g0, "grado_sv_max": g1,
-                "eje": o["eje"], "tipo": o["tipo"], "demanda": o["demanda"], "texto": o["texto"],
-                "cita": o["cita"], "validacion": o["validacion"], "modelo": vertex.MODELO_EXTRAER,
-                "version": VERSION, **({"nota_pagina": o["nota_pagina"]} if "nota_pagina" in o else {}),
+                "grado_pais": o.get("grado_pais", ""),
+                "grado_sv_min": g0,
+                "grado_sv_max": g1,
+                "eje": o["eje"],
+                "tipo": o["tipo"],
+                "demanda": o["demanda"],
+                "texto": o["texto"],
+                "cita": o["cita"],
+                "validacion": o["validacion"],
+                "modelo": vertex.MODELO_EXTRAER,
+                "version": VERSION,
+                **({"nota_pagina": o["nota_pagina"]} if "nota_pagina" in o else {}),
             }
             (descartados if o["validacion"]["veredicto"] == "no_fiel" else salida).append(fila)
     _asignar_ids(salida)
@@ -300,24 +371,39 @@ def extraer_pais(pais: str, hilos: int = 6, solo: list[str] | None = None) -> di
     base.mkdir(parents=True, exist_ok=True)
     (base / f"{pais}.json").write_text(json.dumps(salida, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (base / f"{pais}_descartados.json").write_text(
-        json.dumps(descartados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        json.dumps(descartados, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
+    )
     parciales = sum(o["validacion"]["veredicto"] == "parcial" for o in salida)
-    return {"pais": pais, "ventanas": len(vs), "objetivos": len(salida), "parciales": parciales,
-            "descartados": len(descartados), "llamadas": vertex.llamadas()}
+    return {
+        "pais": pais,
+        "ventanas": len(vs),
+        "objetivos": len(salida),
+        "parciales": parciales,
+        "descartados": len(descartados),
+        "llamadas": vertex.llamadas(),
+    }
 
 
 def grados_sv(d: dict, grado_pais: str) -> tuple[float, float]:
-    """Rango de grados SV de un objetivo según `grados_pais` del documento (un grado o un rango [g0, g1] por clave).
-    Sin distinguir mayúsculas («First school stage»), y si el grado del país nombra varias claves («P4-P6») o lleva un
-    agregado («P5 Foundation»), el rango que las cubre. Sin coincidencia, el rango del documento."""
+    """Map a country objective to the explicitly configured Salvadoran grade range."""
+
+    # Implementation notes:
+    # Sin distinguir mayúsculas («First school stage»), y si el grado del país nombra varias claves («P4-P6») o lleva un
+    # agregado («P5 Foundation»), el rango que las cubre. Sin coincidencia, el rango del documento.
     mapa = {k.lower(): v for k, v in (d.get("grados_pais") or {}).items()}
     gp = (grado_pais or "").strip().lower()
     # «Units 1 and 2», «Unit 3 & 4» → «unit 1 unit 2»: listas de números tras una palabra de las claves.
     for palabra in {k.rsplit(" ", 1)[0] for k in mapa if re.fullmatch(r"\w+ \d+", k)}:
-        gp = re.sub(rf"\b{palabra}s?\s+(\d+(?:\s*(?:,|&|and|y)\s*(?:{palabra}\s+)?\d+)+)",
-                    lambda m, w=palabra: " ".join(f"{w} {n}" for n in re.findall(r"\d+", m.group(1))), gp)
-    valores = [mapa[gp]] if gp in mapa else [v for k, v in mapa.items() if gp and re.search(
-        rf"(?<![\w]){re.escape(k)}(?![\w])", gp)]
+        gp = re.sub(
+            rf"\b{palabra}s?\s+(\d+(?:\s*(?:,|&|and|y)\s*(?:{palabra}\s+)?\d+)+)",
+            lambda m, w=palabra: " ".join(f"{w} {n}" for n in re.findall(r"\d+", m.group(1))),
+            gp,
+        )
+    valores = (
+        [mapa[gp]]
+        if gp in mapa
+        else [v for k, v in mapa.items() if gp and re.search(rf"(?<![\w]){re.escape(k)}(?![\w])", gp)]
+    )
     if not valores:
         return tuple(d["grado_sv"])
     planos = [x for v in valores for x in (v if isinstance(v, list) else [v])]
@@ -329,8 +415,10 @@ def _norma_cita(s: str) -> str:
 
 
 def _texto_en_cursiva(archivo: str, pagina: int) -> str:
-    """Texto en cursiva de una página del PDF (normalizado). La cursiva se reconoce por el nombre de la fuente o por
-    el nombre que trae la fuente incrustada («Italic», «Cursiva», «Kursiv»), porque el PDF de HK oculta los nombres."""
+    """Read normalized italic text using PDF font metadata."""
+
+    # Implementation notes:
+    # el nombre que trae la fuente incrustada («Italic», «Cursiva», «Kursiv»), porque el PDF de HK oculta los nombres.
     from pypdf import PdfReader
 
     pag = PdfReader(ruta(archivo)).pages[pagina - 1]
@@ -346,8 +434,11 @@ def _texto_en_cursiva(archivo: str, pagina: int) -> str:
         if re.search(r"Italic|Oblique", base) or re.search(rb"Italic|Cursiva|Kursiv|kursyw|Oblique", datos):
             cursivas.add(base)
     trozos: list[str] = []
-    pag.extract_text(visitor_text=lambda t, cm, tm, font, size: trozos.append(t)
-                     if font is not None and str(font.get("/BaseFont", "")) in cursivas else None)
+    pag.extract_text(
+        visitor_text=lambda t, cm, tm, font, size: (
+            trozos.append(t) if font is not None and str(font.get("/BaseFont", "")) in cursivas else None
+        )
+    )
     return _norma_cita(" ".join(trozos))
 
 
@@ -357,23 +448,25 @@ FRASES_OPCIONALES = ("teachersmayfurther", "teachersmayalso", "teachersmay", "ma
 
 
 def _sugerido_al_docente(archivo: str, pagina: int, cita: str) -> bool:
-    """La cita aparece en la página justo después de una frase opcional («Teachers may further guide students to…»)."""
+    """Check whether a quotation belongs to optional teacher guidance."""
     from pypdf import PdfReader
 
     texto = _norma_cita(PdfReader(ruta(archivo)).pages[pagina - 1].extract_text() or "")
     i = texto.find(_norma_cita(cita)[:40])
-    return i > 0 and any(f in texto[max(0, i - 60):i] for f in FRASES_OPCIONALES)
+    return i > 0 and any(f in texto[max(0, i - 60) : i] for f in FRASES_OPCIONALES)
 
 
 def corregir_metadatos() -> dict:
-    """Corrige, sin llamar a Vertex, los metadatos de los objetivos ya extraídos del tramo activo (los ids no cambian):
-    - grados SV con grados_sv() y el catálogo vigente (la verificación de 2.°–8.° encontró las etapas de Estonia y los
-      «P5 Foundation» de Singapur con el rango del documento entero);
-    - nivel «especializacion» para lo que un documento de `extension_en_cursiva` (config del tramo) imprime en
-      cursiva: la Extension Part de HK S1–3 es ampliación, no núcleo («blue italics», p. 27 del documento);
-    - y, en esos mismos documentos, para lo que el resumen de la unidad presenta como sugerencia opcional al docente
-      («Teachers may further guide students to…»)
-    Devuelve los cambios por documento."""
+    """Correct stored objective metadata without invoking Vertex or changing identities."""
+
+    # Implementation notes:
+    # - grados SV con grados_sv() y el catálogo vigente (la verificación de 2.°–8.° encontró las etapas de Estonia y los
+    #   «P5 Foundation» de Singapur con el rango del documento entero);
+    # - nivel «especializacion» para lo que un documento de `extension_en_cursiva` (config del tramo) imprime en
+    #   cursiva: la Extension Part de HK S1–3 es ampliación, no núcleo («blue italics», p. 27 del documento);
+    # - y, en esos mismos documentos, para lo que el resumen de la unidad presenta como sugerencia opcional al docente
+    #   («Teachers may further guide students to…»)
+    # Devuelve los cambios por documento.
     cfg = cargar(tramo.actual().config)
     docs = {d["id"]: d for d in cfg["documentos"]}
     extension = set(cfg.get("extension_en_cursiva") or [])
@@ -386,10 +479,10 @@ def corregir_metadatos() -> dict:
         for o in objs:
             d = docs.get(o["documento"])
             if not d:
-                continue   # importados del grafo principal: traen su grado y su nivel
+                continue  # importados del grafo principal: traen su grado y su nivel
             antes = (o["grado_sv_min"], o["grado_sv_max"], o["nivel"])
             o["grado_sv_min"], o["grado_sv_max"] = grados_sv(d, o.get("grado_pais", ""))
-            if d.get("nivel") == "nucleo_parcial" and o["nivel"] == "nucleo":   # lo cursa la mayoría, no todos
+            if d.get("nivel") == "nucleo_parcial" and o["nivel"] == "nucleo":  # lo cursa la mayoría, no todos
                 o["nivel"], o["nota_nivel"] = "nucleo_parcial", "núcleo parcial: el estudiante elige entre ciencias"
             elif d.get("nivel") == "nucleo" and o["nivel"] == "nucleo_parcial":
                 o["nivel"] = "nucleo"

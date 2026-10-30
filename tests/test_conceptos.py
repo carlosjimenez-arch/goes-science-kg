@@ -30,7 +30,7 @@ def test_trabaja_es_trazable(grafo):
 
 
 def test_lotes_de_paises_no_reutilizan_numeros():
-    """Regresión: al sumar objetivos de un país ya etiquetado, preparar-paises reiniciaba en _1 y pisaba lotes."""
+    """Continue country-batch numbering rather than overwriting completed tagging batches."""
     import json
 
     from goes_science_kg.config import ruta
@@ -54,6 +54,9 @@ def test_triaje_suma_conceptos_nuevos_y_los_aplica_a_los_temas():
 
     from goes_science_kg.config import ruta
 
-    bajas = [t for t in json.loads(ruta("data/interim/conceptos/triaje_propuestos.json").read_text(encoding="utf-8"))
-             if t.get("confianza") == "baja"]
+    bajas = [
+        t
+        for t in json.loads(ruta("data/interim/conceptos/triaje_propuestos.json").read_text(encoding="utf-8"))
+        if t.get("confianza") == "baja"
+    ]
     assert not {t["propuesto"] for t in bajas} & set(cp.mapa_triaje())

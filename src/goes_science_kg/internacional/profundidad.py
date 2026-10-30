@@ -1,13 +1,14 @@
-"""Profundidad (demanda cognitiva) y prácticas científicas: malla V2 frente al núcleo de los países, en el tramo
-activo (spec 11, puntos 5 y 6; spec 12).
+"""Compare cognitive demand and scientific practices across curricula and grade bands."""
 
-Demanda: la V2 no la declara y la de los países la puso Gemini, así que comparar esas dos fuentes mezclaría
-métodos. Se usa el MISMO clasificador determinista en los dos lados: los verbos del enunciado (indicador de la V2,
-paráfrasis en español del país) en la escala de TIMSS. Un enunciado con varios verbos toma la demanda más alta,
-como un ítem de TIMSS. «Explicar» es aplicar en TIMSS, no razonar. Sin verbo reconocible: «sin_verbo».
-
-Prácticas: las etiquetas `PRAC:` del etiquetado (mismo modelo y catálogo en los dos lados), en tres familias.
-"""
+# Historical implementation notes:
+# activo (spec 11, puntos 5 y 6; spec 12).
+#
+# Demanda: la V2 no la declara y la de los países la puso Gemini, así que comparar esas dos fuentes mezclaría
+# métodos. Se usa el MISMO clasificador determinista en los dos lados: los verbos del enunciado (indicador de la V2,
+# paráfrasis en español del país) en la escala de TIMSS. Un enunciado con varios verbos toma la demanda más alta,
+# como un ítem de TIMSS. «Explicar» es aplicar en TIMSS, no razonar. Sin verbo reconocible: «sin_verbo».
+#
+# Prácticas: las etiquetas `PRAC:` del etiquetado (mismo modelo y catálogo en los dos lados), en tres familias.
 
 from __future__ import annotations
 
@@ -22,24 +23,40 @@ from goes_science_kg.internacional.consenso import ensenados, objetivos, paises
 NIVELES = ("recordar", "aplicar", "razonar")
 _LEMAS = {
     "recordar": "identificar reconocer nombrar enumerar listar definir describir mencionar conocer indicar señalar "
-                "enunciar recordar citar ubicar localizar",
+    "enunciar recordar citar ubicar localizar",
     "aplicar": "calcular aplicar usar utilizar resolver determinar medir clasificar comparar relacionar representar "
-               "interpretar graficar realizar convertir balancear construir elaborar distinguir diferenciar estimar "
-               "demostrar ilustrar asociar organizar ordenar registrar preparar seleccionar observar experimentar "
-               "simular explicar",
+    "interpretar graficar realizar convertir balancear construir elaborar distinguir diferenciar estimar "
+    "demostrar ilustrar asociar organizar ordenar registrar preparar seleccionar observar experimentar "
+    "simular explicar",
     "razonar": "analizar evaluar argumentar justificar diseñar investigar predecir deducir inferir formular proponer "
-               "modelar modelizar valorar discutir plantear sintetizar criticar indagar integrar generalizar debatir "
-               "fundamentar concluir",
+    "modelar modelizar valorar discutir plantear sintetizar criticar indagar integrar generalizar debatir "
+    "fundamentar concluir",
 }
-_IRREGULARES = {"resuelve": "resolver", "resuelven": "resolver", "mide": "medir", "miden": "medir",
-                "construye": "construir", "construyen": "construir", "predice": "predecir", "predicen": "predecir",
-                "infiere": "inferir", "infieren": "inferir", "propone": "proponer", "proponen": "proponer",
-                "concluye": "concluir", "concluyen": "concluir", "distingue": "distinguir", "distinguen": "distinguir"}
+_IRREGULARES = {
+    "resuelve": "resolver",
+    "resuelven": "resolver",
+    "mide": "medir",
+    "miden": "medir",
+    "construye": "construir",
+    "construyen": "construir",
+    "predice": "predecir",
+    "predicen": "predecir",
+    "infiere": "inferir",
+    "infieren": "inferir",
+    "propone": "proponer",
+    "proponen": "proponer",
+    "concluye": "concluir",
+    "concluyen": "concluir",
+    "distingue": "distinguir",
+    "distinguen": "distinguir",
+}
 
 
 def _formas() -> dict[str, str]:
-    """Forma verbal → nivel. Infinitivo y presente de 3.ª persona (singular y plural), que es como se redactan los
-    indicadores de la V2 y las paráfrasis de los países."""
+    """Map supported verb forms to their registered cognitive-demand levels."""
+
+    # Implementation notes:
+    # indicadores de la V2 y las paráfrasis de los países.
     formas: dict[str, str] = {}
     for nivel, lemas in _LEMAS.items():
         for lema in lemas.split():
@@ -56,28 +73,46 @@ _FORMAS = _formas()
 
 
 def demanda(texto: str) -> str:
-    """Nivel más alto entre los verbos del enunciado; «sin_verbo» si no reconoce ninguno."""
+    """Return the highest recognized verb demand or an explicit unrecognized state."""
     niveles = {_FORMAS[p] for p in re.findall(r"[a-záéíóúñü]+", texto.lower()) if p in _FORMAS}
     return next((n for n in reversed(NIVELES) if n in niveles), "sin_verbo")
 
 
 FAMILIAS = {
-    "indagacion": ["formular-preguntas-investigables", "formular-hipotesis-y-predicciones",
-                   "planificar-investigaciones", "controlar-variables", "medir-con-instrumentos",
-                   "repetir-mediciones-y-estimar-error",
-                   "observar-y-registrar", "analizar-datos-con-estadistica", "interpretar-datos-y-concluir",
-                   "representar-datos", "evaluar-disenos-de-investigacion"],
-    "modelacion": ["desarrollar-y-usar-modelos", "evaluar-modelos-y-limitaciones", "transformar-representaciones",
-                   "usar-matematicas-en-ciencias", "usar-pensamiento-computacional-y-simulaciones"],
-    "argumentacion": ["argumentar-con-evidencia", "construir-explicaciones-con-evidencia",
-                      "evaluar-afirmaciones-y-argumentos", "evaluar-fuentes-de-informacion",
-                      "distinguir-correlacion-y-causalidad", "distinguir-observacion-e-inferencia"],
+    "indagacion": [
+        "formular-preguntas-investigables",
+        "formular-hipotesis-y-predicciones",
+        "planificar-investigaciones",
+        "controlar-variables",
+        "medir-con-instrumentos",
+        "repetir-mediciones-y-estimar-error",
+        "observar-y-registrar",
+        "analizar-datos-con-estadistica",
+        "interpretar-datos-y-concluir",
+        "representar-datos",
+        "evaluar-disenos-de-investigacion",
+    ],
+    "modelacion": [
+        "desarrollar-y-usar-modelos",
+        "evaluar-modelos-y-limitaciones",
+        "transformar-representaciones",
+        "usar-matematicas-en-ciencias",
+        "usar-pensamiento-computacional-y-simulaciones",
+    ],
+    "argumentacion": [
+        "argumentar-con-evidencia",
+        "construir-explicaciones-con-evidencia",
+        "evaluar-afirmaciones-y-argumentos",
+        "evaluar-fuentes-de-informacion",
+        "distinguir-correlacion-y-causalidad",
+        "distinguir-observacion-e-inferencia",
+    ],
 }
 FAMILIA_DE = {f"PRAC:{p}": fam for fam, ps in FAMILIAS.items() for p in ps}
 
 
 def _asignatura_tema(t: dict, e: dict, voc: dict) -> str | None:
-    """Asignatura de un tema de la V2. En 9.° («ciencias») decide el concepto principal."""
+    """Determine a V2 topic's subject from its principal concept where necessary."""
     if t["asignatura"] != "ciencias":
         return t["asignatura"]
     for c in e["principales"] + e["secundarios"]:
@@ -88,7 +123,7 @@ def _asignatura_tema(t: dict, e: dict, voc: dict) -> str | None:
 
 
 def _unidades() -> dict[str, dict[str, list[dict]]]:
-    """asignatura → {'SV': [enunciados], '<país>': [enunciados del núcleo en el tramo]} con texto y prácticas."""
+    """Group local and country-core statements and practices by subject."""
     t_activo = tramo.actual()
 
     voc = conceptos.vocabulario()
@@ -104,22 +139,32 @@ def _unidades() -> dict[str, dict[str, list[dict]]]:
         ficha = t.dict()
         asig = _asignatura_tema(ficha, etq_sv[t.id], voc)
         if asig:
-            salida[asig]["SV"].append({"id": t.id, "texto": ficha["indicador"] or ficha["procedimental"],
-                                       "practicas": etq_sv[t.id]["practicas"]})
+            salida[asig]["SV"].append(
+                {
+                    "id": t.id,
+                    "texto": ficha["indicador"] or ficha["procedimental"],
+                    "practicas": etq_sv[t.id]["practicas"],
+                }
+            )
     etq = etiquetar.cargar_etiquetas("pais_")
     for o in objetivos():
-        if (o["nivel"] != "nucleo" or not t_activo.contiene(o["grado_sv_min"], o["grado_sv_max"])
-                or o["id"] not in etq or not o["asignatura"]):
+        if (
+            o["nivel"] != "nucleo"
+            or not t_activo.contiene(o["grado_sv_min"], o["grado_sv_max"])
+            or o["id"] not in etq
+            or not o["asignatura"]
+        ):
             continue
         if not ensenados(etq[o["id"]]) and not etq[o["id"]]["practicas"]:
             continue
-        salida[o["asignatura"]][o["pais"]].append({"id": o["id"], "texto": o["texto"], "demanda_ia": o["demanda"],
-                                                   "practicas": etq[o["id"]]["practicas"]})
+        salida[o["asignatura"]][o["pais"]].append(
+            {"id": o["id"], "texto": o["texto"], "demanda_ia": o["demanda"], "practicas": etq[o["id"]]["practicas"]}
+        )
     return salida
 
 
 def analizar() -> dict:
-    """Por asignatura: distribución de demanda y presencia de familias y prácticas, V2 frente a cada país."""
+    """Compare cognitive demand and scientific-practice distributions by subject and country."""
     unidades = _unidades()
     resultado = {}
     acuerdo, total = 0, 0
@@ -127,12 +172,16 @@ def analizar() -> dict:
         filas = {}
         for quien, items in sorted(grupos.items()):
             dem = Counter(demanda(i["texto"]) for i in items)
-            fam = Counter(f for i in items
-                          for f in {FAMILIA_DE.get(p, "naturaleza_y_contexto") for p in i["practicas"]})
-            filas[quien] = {"n": len(items), "demanda": dict(sorted(dem.items())),
-                            "familias": dict(sorted(fam.items())),
-                            "practicas": sorted({p for i in items for p in i["practicas"]}),
-                            "con_practica": sum(bool(i["practicas"]) for i in items)}
+            fam = Counter(
+                f for i in items for f in {FAMILIA_DE.get(p, "naturaleza_y_contexto") for p in i["practicas"]}
+            )
+            filas[quien] = {
+                "n": len(items),
+                "demanda": dict(sorted(dem.items())),
+                "familias": dict(sorted(fam.items())),
+                "practicas": sorted({p for i in items for p in i["practicas"]}),
+                "con_practica": sum(bool(i["practicas"]) for i in items),
+            }
             for i in items:
                 if i.get("demanda_ia") and (d := demanda(i["texto"])) != "sin_verbo":
                     total += 1
@@ -141,8 +190,13 @@ def analizar() -> dict:
         # Prácticas que exige el núcleo de ≥ 5 países en la asignatura y que la V2 no etiqueta en el tramo.
         cuenta = Counter(p for q in paises_n for p in filas[q]["practicas"])
         sv_prac = set(filas.get("SV", {}).get("practicas", []))
-        resultado[asig] = {"filas": filas, "paises": paises_n,
-                           "practicas_ausentes": sorted(p for p, n in cuenta.items() if n >= 5 and p not in sv_prac),
-                           "cuenta_practicas": dict(sorted(cuenta.items()))}
-    return {"asignaturas": resultado,
-            "acuerdo_con_ia": {"coinciden": acuerdo, "total": total, "proporcion": round(acuerdo / max(1, total), 3)}}
+        resultado[asig] = {
+            "filas": filas,
+            "paises": paises_n,
+            "practicas_ausentes": sorted(p for p, n in cuenta.items() if n >= 5 and p not in sv_prac),
+            "cuenta_practicas": dict(sorted(cuenta.items())),
+        }
+    return {
+        "asignaturas": resultado,
+        "acuerdo_con_ia": {"coinciden": acuerdo, "total": total, "proporcion": round(acuerdo / max(1, total), 3)},
+    }

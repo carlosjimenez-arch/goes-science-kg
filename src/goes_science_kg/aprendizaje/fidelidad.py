@@ -1,16 +1,16 @@
-"""Control de fidelidad científica del tutor (spec 13 y 14).
+"""Check the scientific fidelity of tutor responses against graph evidence."""
 
-La prueba de humo con Vertex mostró que un turno puede pasar todas las guardas de forma y aun así decir algo
-científicamente impreciso (en 7.°: «el gen es el color»). Este control usa la misma idea que el evaluador: un modelo
-separado propone y el código decide con citas literales.
-- El verificador lista cada afirmación científica del turno, copiada del turno, y para cada una copia del contexto
-  revisado el fragmento que la respalda, o dice que no hay respaldo o que el contexto la contradice.
-- El código exige que cada afirmación esté de verdad en el turno y cada respaldo de verdad en el contexto. Una
-  afirmación sin respaldo o contradicha descarta el turno. Un turno con contenido (más de PALABRAS_SIN_AFIRMACION
-  palabras) sin ninguna afirmación también se descarta: el verificador no puede no ver nada.
-El contexto revisado es lo que la capa pedagógica y el vocabulario dicen del concepto: la definición, el microtema
-(explicación, ejemplo y criterio) y el indicador del objetivo. Cuesta una llamada más por turno.
-"""
+# Historical implementation notes:
+# La prueba de humo con Vertex mostró que un turno puede pasar todas las guardas de forma y aun así decir algo
+# científicamente impreciso (en 7.°: «el gen es el color»). Este control usa la misma idea que el evaluador: un modelo
+# separado propone y el código decide con citas literales.
+# - El verificador lista cada afirmación científica del turno, copiada del turno, y para cada una copia del contexto
+#   revisado el fragmento que la respalda, o dice que no hay respaldo o que el contexto la contradice.
+# - El código exige que cada afirmación esté de verdad en el turno y cada respaldo de verdad en el contexto. Una
+#   afirmación sin respaldo o contradicha descarta el turno. Un turno con contenido (más de PALABRAS_SIN_AFIRMACION
+#   palabras) sin ninguna afirmación también se descarta: el verificador no puede no ver nada.
+# El contexto revisado es lo que la capa pedagógica y el vocabulario dicen del concepto: la definición, el microtema
+# (explicación, ejemplo y criterio) y el indicador del objetivo. Cuesta una llamada más por turno.
 
 from __future__ import annotations
 
@@ -23,10 +23,18 @@ PALABRAS_SIN_AFIRMACION = 25
 ESQUEMA = {
     "type": "OBJECT",
     "properties": {
-        "afirmaciones": {"type": "ARRAY", "items": {"type": "OBJECT", "properties": {
-            "turno": {"type": "STRING"}, "contexto": {"type": "STRING"},
-            "estado": {"type": "STRING", "enum": ["respaldada", "sin_respaldo", "contradice"]}},
-            "required": ["turno", "contexto", "estado"]}},
+        "afirmaciones": {
+            "type": "ARRAY",
+            "items": {
+                "type": "OBJECT",
+                "properties": {
+                    "turno": {"type": "STRING"},
+                    "contexto": {"type": "STRING"},
+                    "estado": {"type": "STRING", "enum": ["respaldada", "sin_respaldo", "contradice"]},
+                },
+                "required": ["turno", "contexto", "estado"],
+            },
+        },
     },
     "required": ["afirmaciones"],
 }
@@ -49,17 +57,22 @@ def _norma(s: str) -> str:
 
 
 def contexto(paq: dict, microtema: dict | None) -> str:
-    """El contexto revisado contra el que se verifica un turno."""
-    partes = [f"Concepto: {paq['foco']['nombre']}. Definición: {paq['foco']['definicion']}",
-              f"Objetivo: {paq['objetivo']['indicador']}"]
+    """Build the reviewed evidence context for checking a tutor turn."""
+    partes = [
+        f"Concepto: {paq['foco']['nombre']}. Definición: {paq['foco']['definicion']}",
+        f"Objetivo: {paq['objetivo']['indicador']}",
+    ]
     if microtema:
-        partes += [f"Explicación: {microtema['explicacion']}", f"Ejemplo: {microtema['ejemplo']}",
-                   f"Criterio: {microtema['criterio']}"]
+        partes += [
+            f"Explicación: {microtema['explicacion']}",
+            f"Ejemplo: {microtema['ejemplo']}",
+            f"Criterio: {microtema['criterio']}",
+        ]
     return "\n".join(partes)
 
 
 def errores(salida: dict, turno: str, ctx: str) -> list[str]:
-    """Decide con citas literales (docstring del módulo). Lista vacía: el turno es fiel al contexto."""
+    """Return scientific-fidelity errors grounded in literal evidence quotations."""
     e = []
     afirmaciones = salida.get("afirmaciones") or []
     t, c = _norma(turno), _norma(ctx)
@@ -80,12 +93,14 @@ def errores(salida: dict, turno: str, ctx: str) -> list[str]:
 
 
 class Verificador:
-    """Verificador de fidelidad con `modelo` (llm.py), separado del tutor y del evaluador."""
+    """Verify fidelity independently from the tutor and response evaluator."""
 
     def __init__(self, modelo):
         self.modelo = modelo
 
     def revisar(self, turno: str, paq: dict, microtema: dict | None) -> list[str]:
+        """Review a tutor turn against its verified source context."""
+
         ctx = contexto(paq, microtema)
         prompt = f"CONTEXTO REVISADO:\n{ctx}\n\nTURNO DEL TUTOR:\n{turno}"
         try:

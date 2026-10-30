@@ -27,12 +27,14 @@ def test_lee_la_version_3():
     assert cargar("mallas")["directorio"].endswith("Mallas sugeridas v3")
     assert cargar("mallas_v2")["directorio"].endswith("Mallas sugeridas v2")
     rutas_v1 = {t.ruta for t in extraer("mallas_v1") if t.grado in (2, 3, 4)}
-    assert all("(1)" in r for r in rutas_v1)   # la V1 conserva sus versiones fijadas de 2.°–4.°
+    assert all("(1)" in r for r in rutas_v1)  # la V1 conserva sus versiones fijadas de 2.°–4.°
 
 
 def test_la_v2_contiene_la_v1_sin_cambios():
-    """Las etiquetas, revisiones, propuestas y preguntas de evaluación usan ids de la V1: siguen valiendo solo si la
-    V2 conserva cada tema con el mismo id, ubicación y texto."""
+    """Retain V1 identities only while their original curriculum text remains unchanged in V2."""
+
+    # Historical test notes:
+    # V2 conserva cada tema con el mismo id, ubicación y texto.
     v2 = {t.id: t for t in extraer("mallas_v2")}
     v1 = extraer("mallas_v1")
     assert len(v2) == 1307 and len(v1) == 1260
@@ -42,8 +44,10 @@ def test_la_v2_contiene_la_v1_sin_cambios():
 
 
 def test_la_v3_conserva_los_ids_de_la_v2():
-    """Spec 15: un tema idéntico o parecido conserva el id de su par en la V2 (y su llave de clasificación); uno nuevo
-    nunca toma un id que existió en la V2 para otro tema."""
+    """Preserve matched V2 identities in V3 and create distinct identities for new topics."""
+
+    # Historical test notes:
+    # nunca toma un id que existió en la V2 para otro tema.
     v2 = {t.id: t for t in extraer("mallas_v2")}
     ts = extraer()
     assert Counter(t.origen for t in ts) == {"identico": 819, "parecido": 21, "ampliado": 75, "nuevo": 20}
@@ -57,7 +61,7 @@ def test_la_v3_conserva_los_ids_de_la_v2():
 
 
 def test_la_correspondencia_guardada_esta_al_dia():
-    """data/interim/mallas/v2_a_v3.json es lo que calcula correspondencia() sobre las fuentes (determinista)."""
+    """Keep persisted V2-to-V3 correspondence consistent with deterministic source comparison."""
     import json
 
     from goes_science_kg.config import ruta
@@ -70,20 +74,22 @@ def test_la_correspondencia_guardada_esta_al_dia():
 
 
 def test_lo_movido_de_grado_no_es_quitado():
-    """La V3 pasó de 7.° a 9.° temas de genética con el mismo texto: quedan como «movido_a», no como quitados."""
+    """Distinguish moved curriculum topics from removed topics."""
     import json
 
     from goes_science_kg.config import ruta
 
     d = json.loads(ruta(cargar("mallas")["correspondencia"]).read_text(encoding="utf-8"))
     movidos = {x["id"]: x["movido_a"] for x in d["sin_par"] if x["movido_a"]}
-    assert movidos["G07-CIE-U2-2.15"] == "G09-CIE-U9-9.3-v3"   # resistencia bacteriana
+    assert movidos["G07-CIE-U2-2.15"] == "G09-CIE-U9-9.3-v3"  # resistencia bacteriana
     assert d["resumen"]["movidos_de_grado"] == len(movidos) == 5
 
 
 def test_vigente_de_traduce_lo_absorbido():
-    """La V3 fusionó 9.° 3.6 de la V2 (representar la constante de equilibrio) en 3.3: las capas que citan 3.6 se
-    leen en 3.3. Un tema que sigue en la malla es él mismo; uno sin rastro, None."""
+    """Resolve explicitly absorbed historical topics to their current curriculum identities."""
+
+    # Historical test notes:
+    # leen en 3.3. Un tema que sigue en la malla es él mismo; uno sin rastro, None.
     from goes_science_kg.ingesta.mallas import vigente_de
 
     assert vigente_de("TEMA:G09-CIE-U3-3.6") == "TEMA:G09-CIE-U3-3.3"
@@ -92,8 +98,10 @@ def test_vigente_de_traduce_lo_absorbido():
 
 
 def test_clasificaciones_previas_llegan_a_la_v3():
-    """Las clasificaciones previas usan el nombre del libro en la V1; `legado` lo traduce a la llave de la V2, que
-    heredan los temas de la V3 con par."""
+    """Carry historical classifications through the documented source-location correspondence."""
+
+    # Historical test notes:
+    # heredan los temas de la V3 con par.
     ct, cp = legado.clasificacion_timss(), legado.clasificacion_pisa()
     v1 = {t.id for t in extraer("mallas_v1")}
     previos = [t for t in extraer() if t.id in v1 and t.origen == "identico"]

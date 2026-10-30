@@ -1,134 +1,176 @@
-# Traspaso para la próxima sesión de Claude Code
+# Continuidad · GOEs AI · feat/api
 
-> Sesión del 2026-10-05 (14:10–17:35; commits a las 14:59, 15:37, 16:25, 17:07, 17:25, 17:29 y 17:35). Rol: experto en educación científica e ingeniero de IA, grafos y GraphRAG.
-> Objetivo de la sesión: construir los **grafos por grado** (lo que pidió el MINED) y dejar el proyecto listo para
-> proponer una curricularización mejor, anclada en marcos internacionales y países de alto desempeño.
+Corte: 29 de octubre de 2026. Estado vigente en [README](README.md), [documentación](docs/README.md) y la
+[auditoría integral de producto](docs/auditoria/QA_PRODUCTO_20261025.md).
 
-## Cómo retomar (5 minutos)
-```bash
-uv sync --extra dev --extra pdf --extra rag --extra api
-uv run make todo        # grafo → validar → fichas → grados → brechas → pruebas → lint (todo en verde)
-uv run make propuestas  # simula las 11 propuestas sobre el grafo actual y rehace PROPUESTAS.md
-uv run gskg evaluar-rag # MRR y recall@k de GraphRAG
-```
-Lee, en orden: `CLAUDE.md` → este archivo → `specs/08_plan_de_implementacion.md` → `specs/09` y `specs/10`.
+## Qué es la entrega
 
-## Qué existe hoy
-| Pieza | Dónde | Estado |
-|---|---|---|
-| Grafo completo | `data/grafo/` (JSONL + manifest) | 1.260 temas · 512 conceptos (14 del triaje) · 30 prácticas · 493 objetivos de marco · 1.265 objetivos de 6 países · 829 prerrequisitos (DAG) |
-| **Grafos por grado** | `grados/` (index.html, G02…G11 con ficha.md + grafo.html) y `data/grafo/grados/` | Diagnóstico, bloques temáticos con resumen y visor interactivo |
-| Países | `data/interim/paises/` (ENG, AU, JP) + legado (UY, CO, SG) | Inglaterra (KS1–KS4), Australia y Japón extraídos, etiquetados y alineados (Japón desde el texto oficial del MEXT, en japonés); desempeño TIMSS 2023 verificado y citado en `config/referentes.yaml` |
-| GraphRAG | `src/goes_science_kg/rag.py`, `gskg rag` | Local y citado; `--global` (bloques); `--responder` (Claude, probado con un cliente simulado, nunca contra la API real). Ajuste (60 preguntas): MRR 0,85. Prueba 1 (16): 0,66. **Prueba ciega 2 de prerrequisitos (12): 0,26 → 0,55** respecto a antes de la sesión (ver `data/evaluacion/resultados.md`); la intención de país reconoce nombres y gentilicios |
-| API de lectura | `src/goes_science_kg/api.py`, `gskg servir` | FastAPI: grados, conceptos, propuestas, rag |
-| Mapas de progresión | `asignaturas/<x>/progresion.html` | Concepto × grado: SV frente a países, ordenado por el grafo de prerrequisitos |
-| Brechas | `asignaturas/<x>/brechas/` | md + json + csv + Excel con fórmulas; mediana de todos los países y solo de los de alto desempeño (AU, ENG, JP, SG) |
-| Propuestas | `asignaturas/<x>/propuesta/`, resumen en `asignaturas/PROPUESTAS.md` | 11 borradores 2.°–11.° (Química 2.°–4.° v1 es mínima) verificados con el simulador: errores de secuencia de confianza alta 54 → 3. Los 3 dependen de aristas discutibles: Catalizadores → Enzimas, Ondas sísmicas → Precursores de sismos, Efecto Doppler → Big Bang; decidir con el MINED si se mantienen |
-| Revisión humana | `asignaturas/<x>/revision/` + `gskg revision exportar/importar` | CSV listos para el MINED (no se han devuelto) |
-| Revisiones aplicadas | `data/interim/revisiones/` | 19 temas reasignados de asignatura (revisión experta, pendiente de validación del MINED) |
+`feat/api` es **un solo producto local**: currículo V4 `producto-4` con propuestas revisadas, grafo con
+progresión 2.º–11.º, biblioteca docente con **862 guiones de clase (todos con revisión directa) y 108 de unidad**, API y aplicación de diez
+secciones. Integra `feat/ciencias-v4` (merge `ef411f3`); no queda otra línea de producto pendiente.
 
-## Hallazgos curriculares más fuertes (para conversar con el MINED)
-Conceptos que al menos dos países de alto desempeño (SG, ENG, AU, JP) enseñan 4 o más grados antes que El Salvador
-(grado SV equivalente por edad; dependen de etiquetas de IA por validar). Hay 34 con 3 o más grados de diferencia;
-los principales:
-| Concepto | Primer grado en SV | Mediana de alto desempeño | Países |
-|---|---|---|---|
-| Gravedad: atracción hacia la Tierra | nunca como concepto | 3.° | AU 3, ENG 3, SG 6 |
-| Nutrición mineral de las plantas | 11.° | 3.° | ENG 2, JP 4 |
-| Conductores y aislantes eléctricos | 11.° | 3,5 | ENG 2, JP 2, AU 5, SG 5 |
-| Adaptaciones conductuales | 11.° | 4.° | JP 3, AU 4, SG 6 |
-| Fricción y resistencia del aire | 10.° | 3.° | ENG 2, AU 3, SG 6 |
-| Reflexión de la luz | 10.° | 3.° | ENG 2, JP 2, AU 4, SG 4 |
-| Calor y equilibrio térmico | 9.°–10.° | 4.°–5.° | AU, ENG, SG |
-| Herencia de rasgos | 10.° | 5.° | ENG 4, SG 5, JP 8 |
-| Tiempo atmosférico | 7.° | 2.° | AU 2, ENG 2, JP 3 |
-Varios ya tienen acción en las propuestas (circuitos y conductores en Física 2.°–4.°, tiempo atmosférico en Tierra y
-Espacio, herencia en Biología 5.°–8.°). Gravedad: Física 2.°–4.° (v5) la introduce de forma cualitativa en 3.°
-(G03-1.4, AU 3 y ENG 3) y recupera «Masa y peso» en 3.° justo después (G03-1.5). Lista completa: `asignaturas/<x>/brechas/` y
-`grados/HALLAZGOS.md`.
+- Snapshot `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`: 1.020 originales, 1.013
+  propuestas de Ciencias, 7 fuera de alcance, 108 unidades y 30 alertas que las propuestas no levantan.
+- Progresión: [método, resultados y límites](docs/PROGRESION_2_11.md); sus listas son triaje para expertos.
+- Guiones: [entrega, revisión directa integral y pendientes](docs/CLASES_V4.md). 151 objetivos declarados sin guion:
+  los 19 anteriores y 132 retirados por defectos materiales hallados al revisar los 968 sin revisión directa.
+- Complementos: **819 anexos y 97 evaluaciones aprobados y publicados**; 43 anexos y 11
+  evaluaciones retenidos con motivo. Las 108 unidades tienen revisión verificable; 105 recibieron una
+  corrección y revisión final por otro agente. Informe de 713 observaciones sobre guiones, pendientes de contraste,
+  en `data/clases_v4/complementaria/informes/observaciones_guiones.json` y `.md`. No se modificaron los guiones
+  publicados ni se invocó Vertex para esta continuidad. [Cierre y límites](docs/CLASES_V4.md).
 
-## Decisiones tomadas en esta sesión (y por qué)
-1. **Conceptos con vocabulario por asignatura, derivado de los marcos** (TIMSS/PISA/ACARA) y completado con la malla. Así los conceptos tienen granularidad comparable entre países.
-2. **Primer grado en El Salvador** = grado mínimo donde el concepto es principal, o secundario con confianza alta o media. Usar cualquier etiqueta inflaba falsos errores de secuencia; exigir confianza alta dejaba fuera temas reales (p. ej. G02-2.6, calentamiento).
-3. **Conceptos equivalentes entre asignaturas** (11 pares revisados) comparten el primer grado.
-4. **Países: etiquetado directo** de sus objetivos con conceptos. La herencia vía el objetivo TIMSS era demasiado gruesa (ej.: atribuía «herencia mendeliana» a 5.°).
-5. **Equivalencia de grados por edad de ingreso** (`config/referentes.yaml`) y **punto medio** para objetivos por banda (KS3, Estándares de Colombia).
-6. **Revisiones ganan sobre IA** (`revisiones.py`). Los archivos se nombran con fecha y gana el último.
-7. **Resúmenes de bloques** ligados a sus conceptos con tolerancia Jaccard ≥ 0,75, porque Louvain cambia un poco cuando el grafo cambia.
-8. **Simulador de propuestas**: cada propuesta se aplica al grafo y se mide antes y después. Gracias a él, la propuesta de Biología 5.°–8.° v1 se corrigió porque creaba 4 errores de secuencia nuevos. Cualquier acción puede llevar `quitar_conceptos` para retirar una etiqueta mal puesta. **Límite:** cada simulación aplica solo la propuesta de su asignatura; un cambio en Biología que arregla una secuencia de Química no se ve en la simulación de Química (próximo paso: simulación conjunta por ciclo).
-9. **Capas sobre la IA**: revisiones (`data/interim/revisiones/`), triaje de conceptos (`triaje_propuestos.json`) y etiquetado de países del triaje se aplican al cargar; volver a correr `unir-*` no las borra.
-10. **GraphRAG**: la intención de país reconoce nombres y gentilicios; sin intención de país, los objetivos de país pesan ×0,8; ante una consulta de prerrequisitos (léxico amplio: «se apoya en», «base conceptual», «haberse trabajado»…), los conceptos pesan ×1,6 (ablaciones y pruebas ciegas en `data/evaluacion/resultados.md`).
+## Datos: todo desde el bucket
 
-## Revisión de código de esta sesión (17:15) y correcciones
-Un agente revisó `git diff 166852b..HEAD -- src tests`. Se corrigieron los 10 hallazgos (agrupados):
-1. **Simulador:** las quitas de otras asignaturas ya no contaminan el reporte con nombres sin resolver. Se aplican todas
-   las que resuelven; solo se listan las que tocan conceptos de la asignatura o sus equivalentes.
-2. **Simulador:** los nombres repetidos entre asignaturas («Cambios de estado») se resuelven prefiriendo la asignatura
-   que propone la acción.
-3. **GraphRAG:** una consulta con marco y países sin nombrarlos ya no penaliza a los objetivos de país.
-4. **GraphRAG:** las intenciones usan palabras completas («compartimentos», «paisaje» y «en inglés» ya no son país;
-   «australianos» es país y no el marco ACARA).
-5. **Lotes de países:** `preparar-paises` es idempotente (no repite objetivos que ya están en un lote) y la
-   regeneración completa borra los lotes viejos del país.
-6. **Triaje:** las aristas del triaje que repitan un par o cierren un ciclo se descartan al cargar.
-7. **Resúmenes de bloques:** conservan el conjunto de conceptos para el que se escribieron, así que no derivan entre
-   reconstrucciones.
-8. **Cachés:** se limpian tras reescribir el vocabulario y los etiquetados.
-9. **Pruebas:** verifican el camino real del código (`etiquetas_retiradas` en la simulación, regex con límites de
-   palabra).
+`gs://goes-ai-kg-artefactos/ciencias/v4/`, fuera de Git, con cinco recibos:
 
-## Qué sigue (en orden de valor)
-1. **Revisión del MINED.** Enviar `asignaturas/*/revision/*.csv`, `asignaturas/PROPUESTAS.md` y los informes. Al recibirlos: `gskg revision importar <csv>` → `make todo` → volver a simular las propuestas.
-2. **Más países de alto desempeño.**
-   - ✅ **Japón** (188 objetivos, 2.°–8.° SV). Fuente: `jp-cos` (github.com/jp-cos/jp-cos.github.io), el texto oficial del
-     Course of Study 2017 como datos enlazados, ítem por ítem, con código MEXT (`localizador`) y página del comentario oficial.
-     Ciencias = carpetas `826` (primaria) y `836` (secundaria baja); copia local en `data/fuentes/externos/paises/japon/` con
-     `manifest_jpcos.json` (sha256). Insumo intermedio: `data/interim/paises_insumos/japon.json`. En secundaria baja el
-     contenido real está en las hojas ㋐㋑… de los .ttl, no en los encabezados (ア)(イ).
-   - Corea (2.° en 4.° grado): sin traducción oficial encontrada.
-   - Finlandia (6.° en 8.° grado): ePerusteet solo está en finés y sueco y por bandas (1–2, 3–6, 7–9); se descartó por ahora.
-   - Flujo probado: skill `fuentes-descargar` → `pais-extraer-objetivos` → `gskg conceptos preparar-paises` (solo pendientes) → etiquetar con `prompts/subagentes/prompt_paises.md` → alinear con `reportes/cobertura_curricular/prompts/alinear_paises.md` → `unir-paises` → `make todo`.
-3. **PISA 2022 Vol. I (OCDE)** para completar la evidencia de desempeño en `referentes.yaml`. El sitio de la OCDE
-   devuelve 403 a `curl`/WebFetch. En el navegador el anexo B1 sí carga (…/full-report/component-25.html), pero la
-   tabla I.B1.2.3 viene plegada como imagen: descargar su Excel desde el enlace «Statlink» de la tabla (lo hace una
-   persona; requiere aprobar la descarga) o usar el PISA Data Explorer.
-4. **Calidad de datos.**
-   - 630 aristas de confianza baja (ver `gskg grafo validar`); van a revisión humana en los CSV de `asignaturas/*/revision/`.
-   - 292 conceptos propuestos por el etiquetado: ✅ triados en `data/interim/conceptos/triaje_propuestos.json`
-     (84 sinónimos de conceptos existentes, 167 descartes con motivo, 41 propuestas agrupadas en 15 conceptos nuevos:
-     14 de Biología, p. ej. niveles de organización ecológica, tejidos animales, grupos de plantas, selección
-     artificial; 1 de Física). **Ya aplicado como capa** (`conceptos.triaje()`): los 14 conceptos de confianza media o
-     alta entran al vocabulario, 142 temas suman el concepto que propusieron y 32 prerrequisitos sugeridos entran con
-     confianza media. Un especialista buscó esos 14 conceptos en los objetivos de los 6 países
-     (`etiquetado_paises_triaje.json`, 32 objetivos); 4 no aparecen en ningún país (conservación de alimentos,
-     eutrofización, genética humana, MCUA).
-     Efecto: subieron los errores de secuencia de Física y Química 10.°–11.°; ✅ ya resueltos en sus propuestas v2
-     (y la de Biología 10.°–11.° v2, que retira etiquetas de Química de los temas de biomoléculas).
-   - **Decidir si el triaje entra al vocabulario base** (hoy es una capa). Si el MINED lo valida, mover los 14 conceptos a
-     `vocabulario.json` y borrar la capa; si no, basta con borrar `triaje_propuestos.json`.
-   - Algunos conceptos amplios mezclan niveles, por ejemplo «Ondas sísmicas, magnitud e intensidad»; conviene dividirlos.
-5. **GraphRAG.**
-   - **Evaluación honesta.** Hay tres conjuntos en `data/evaluacion/`: ajuste (60 preguntas, MRR 0,85), prueba 1
-     (16 preguntas, MRR 0,66; ya contaminada para el léxico) y prueba ciega 2 (12 preguntas de prerrequisitos: MRR
-     0,26 antes de la sesión → 0,55 hoy) y prueba ciega 3 (12 de marco: 0,74 → 0,73), cada una medida una sola vez.
-     Ver `resultados.md`.
-   - Marco: en la prueba ciega 3 (12 preguntas) la MRR es 0,73, mejor de lo que sugería la prueba 1 (0,49). Se probó
-     garantizar objetivos del marco nombrado (`GARANTIA_MARCO`) y no cambió nada, así que quedó desactivado. Ya se
-     usaron los conjuntos ciegos 2 y 3: cualquier mejora nueva necesita un conjunto ciego **nuevo**. El siguiente paso
-     de más valor es la generación con Claude (`--responder`) evaluada por fidelidad de las citas.
-   - Hueco del léxico de prerrequisitos: «¿de qué depende…?».
-   - Hoy, por tipo: comparación 0,82, local 0,89, marco 0,85, prerrequisito 0,81 (en esta sesión: marco 0,71 → 0,85 al
-     separar «currículo australiano» del país; prerrequisito 0,62 → 0,81). El conjunto es «plata» (60 preguntas): ampliar
-     antes de seguir ajustando pesos.
-   - Búsqueda densa para sinónimos.
-   - Pasar el conjunto de evaluación de «plata» a «oro» con el equipo de Ciencias.
-   - Panel docente sobre la API de lectura que ya existe (`gskg servir`).
-6. ✅ **Excel.** Los 15 libros (`Brechas_*.xlsx` y `Propuesta_*.xlsx`) se recalcularon con Numbers (osascript, copias en el scratchpad; última vez el 2026-10-05 a las 17:25): 0 errores y 173 fórmulas con valor. Repetir tras regenerar los libros.
-7. **Bachillerato.** Las propuestas de 10.°–11.° no tienen comparación con países. Por edad, el KS4 inglés (ya en el grafo) equivale a 8.°–9.°, no a Bachillerato; 10.°–11.° (16–18 años) corresponde a A-level, que no es currículo nacional, y a Senior Secondary de Australia, que ya es el pivote (AUSS). Para comparar habría que sumar otro país con currículo nacional de 16–18 años (p. ej., Singapur H2, si el SEAB vuelve a publicar sus programas).
+| Recibo | Identidad |
+|---|---|
+| `config/datos_ciencias.lock.json` | Corpus `2ceaf1f0…`, 30.956 archivos |
+| `config/materiales_ciencias.lock.json` | Biblioteca `8af1b65d…`, 3.837 registros |
+| `config/clases_ciencias.lock.json` | Entrega de guiones `e4b32786…` (862 + 108) |
+| `config/complementos_ciencias.lock.json` | Complementos `f69e7739…` (819 anexos + 97 evaluaciones) |
+| `config/materiales_preparaciones.lock.json` | Biblioteca base `5b64ee…` que fijan las preparaciones |
 
-## Cuidado con
-- `reportes/cobertura_curricular/` no se toca. Sus fuentes son enlaces simbólicos a `data/fuentes/`.
-- Las propuestas son **borradores**. Ninguna quita temas; quitar requiere preguntar al usuario.
-- Git tiene `core.autocrlf=input`. Las fuentes y los reportes se guardan byte a byte (`.gitattributes`). Los CSV generados usan LF.
-- El sitio v8 de ACARA es muy lento (errores 524). La unidad 4 de Senior Secondary salió del Internet Archive.
-- Los subagentes comparten el scratchpad. Pídeles subcarpetas únicas.
+`make producto` instala, sincroniza lo que falte y sirve. `gskg datos estado|verificar|sincronizar|publicar`
+gestionan el ciclo; `publicar` sólo adopta un recibo tras restaurar y comparar. Un consumidor aislado sin datos restauró
+el recibo vigente desde GCS y verificó el inventario, la salud y los complementos; la suite local completa pasó
+1.740 pruebas sin omisiones. [Evidencia de recuperación](docs/VERIFICACION_GCS.md). Las generaciones anteriores siguen en el bucket.
+Ningún archivo versionado ni recibo guarda rutas de una estación de trabajo (`tests/test_sin_rutas_locales.py`);
+la identidad del ledger es nombre, dispositivo e inodo.
+Las copias de bibliotecas y SQLite reemplazadas también están en el bucket
+(`respaldos/65f4ebeb….zip`, recibo `data/operaciones/respaldos/respaldos_locales_20261025.json`).
+
+## Presupuestos
+
+### Continuidad local · 29 de octubre de 2026
+
+Se completó la [edición didáctica sucesora local](docs/ENTREGA_DIDACTICA_V2.md): R1–R5 con diagnóstico,
+refuerzo y comprobación reservada en cuatro hojas, dos guiones de amenazas/vulnerabilidad corregidos,
+un módulo de medición honesta y la evaluación de unidad revisada. Dictámenes asistidos finales favorables
+anclados a los nueve JSON efectivos; sin aprobación institucional ni eficacia/carga cognitiva medidas.
+La edición local conserva rúbricas completas, faltantes visibles y destinos de progresión navegables.
+El alcance confirmado fue los cinco recorridos y casos identificados, sin producir 1.013 recorridos nuevos.
+Suite final: 1.795 aprobadas, ninguna omitida; cobertura 79,81 %. Ruff, seis pruebas JavaScript y auditoría
+independiente del ZIP aprobados. Se comprobaron 4.909 archivos, nueve JSON revisados, 949 criterios completos
+y 4.816 enlaces internos. El detalle, las identidades y los límites están en el informe de la edición.
+
+Artefactos en `data/clases_v4/mejora_didactica_20261029/`; entrada `entrega_final/INDICE.md` y ZIP
+`ciencias_v4_mejora_didactica_final.zip`. Se mantienen los cinco recibos y las publicaciones anteriores.
+No se usó Vertex ni se escribió en GCS. Las 713 observaciones, 54 retenidos y 151 objetivos sin guion
+conservan sus estados; los otros 860 guiones reciben apoyos de diseño, sin declararlos revisados de nuevo.
+
+**Destino de las entregas.** El usuario pide dejar todos los paquetes finales en su Escritorio.
+`AGENTS.md` y `CONTRIBUTING.md` fijan el estándar para futuras salidas; `gskg entrega despachar` exige
+edición/ZIP/dictámenes exactos, auditoría independiente y medición vigente de toda la suite antes de copiar.
+Destino de esta edición: `$HOME/Desktop/Ciencias_V4_Entrega_20261029/`, con índice, materiales completos,
+ZIP, evidencias y recibo verificable. [Procedimiento y controles](docs/DESPACHO_CIENCIAS_V4.md).
+La suite con la capa de despacho pasó 1.819 pruebas sin omisiones; cobertura 79,83 %. La edición conserva
+su identidad `1960ed24…` y el ZIP `a85d8250…`; no se modificaron guiones publicados ni presupuesto.
+
+### Piloto de ampliación Vertex · 29 de octubre de 2026
+
+El usuario amplió el horizonte a todos los objetivos y unidades, con autoría Vertex y verificación
+por Codex/agentes. Autorizó un piloto separado de **18 llamadas y USD 40 de reserva**, con nueve
+guiones candidatos y tres controles negativos sin llamada. Recibo literal, inventario de 1.013/108,
+contextos, fuentes curadas y registros en `data/clases_v4/ampliacion_vertex_20261029/`.
+[Método, límites y comandos](docs/AMPLIACION_VERTEX_CIENCIAS_V4.md).
+
+Las dos primeras solicitudes recibieron `400 INVALID_ARGUMENT`; se conservaron consumo y fallos.
+El transporte sucesor compacto conserva los validadores locales y las plazas restantes explícitas.
+Las respuestas nuevas se revisan por SHA y no heredan aprobación. El piloto consumió las 18
+solicitudes y USD 29,661560 de reserva conservadora, sin factura verificada. Produjo dieciséis
+respuestas: ocho borradores y ocho correcciones. La selección revisada contiene ocho guiones de
+seis unidades: dos respuestas finales Vertex íntegras y seis sucesores editoriales Codex con
+dictamen independiente de sus bytes. Contiene 21 tareas, 54 criterios de rúbrica de tres niveles
+y 88 comprobaciones aritméticas declaradas recalculadas. No son aún nuevos anexos, recorridos
+de cuatro hojas ni guías/evaluaciones de unidad.
+
+El caso municipal da854ca155 permanece retenido por materiales insuficientes; la existencia de
+mapas oficiales no completa por sí sola el criterio. Tres controles negativos siguen bloqueados
+sin llamada. La práctica química está condicionada a FDS vigente del producto real y protocolo
+institucional revisado. El piloto no crea todavía 1.013 paquetes completos ni publica en GCS.
+
+La suite del código de ampliación pasó **1.908 pruebas**, sin fallos ni omisiones; cobertura **79,93 %**.
+Esa evidencia comprueba código y guardas, sin acreditar corrección científica ni aprendizaje de los guiones.
+Los módulos congelados, los cinco recibos, los guiones publicados y el presupuesto histórico se conservan.
+
+**Despacho cerrado del piloto.** Copia efectiva en
+`$HOME/Desktop/Ciencias_V4_Piloto_Vertex_20261029/`, entrada `LEEME.md`: 296 archivos, incluidos
+271 de materiales, ZIP, diagnóstico, pruebas y dictámenes. Verificación física independiente
+favorable sin errores; los 4.923 archivos de la entrega anterior permanecen intactos.
+Manifest `8b6b301a…006606`, ZIP `d5933d57…197f7e9`, recibo `c94b3346…90e9c10`.
+La selección vigente es `catalogo_aprobado_002.json`; conserva como antecedentes los catálogos,
+respuestas y dictámenes anteriores. Se cerraron el reparto por etapas de la predicción de suelo
+y la representación gráfica reservada de resonancia. El navegador bloqueó `file://`; se revisaron
+localmente HTML/Markdown/CSS, sin afirmar inspección visual ni paginación impresa.
+Evidencia: `revision/verificacion_escritorio_piloto_independiente.json` dentro de la raíz privada
+del piloto. El presupuesto de 18 llamadas está consumido; cualquier fase posterior exige su propia
+autorización, sin reutilizar la reserva sobrante ni las plazas de la campaña histórica.
+
+### Segunda fase autorizada · anexos y recorridos de ocho bases
+
+El usuario autorizó después **hasta USD 70 de reserva y 32 llamadas adicionales**, para ocho
+anexos docentes y ocho recorridos cerrados de cuatro hojas escritos por Vertex sobre las ocho
+bases exactas entregadas. No incluye nuevas unidades, reescritura de guiones ni publicación en GCS.
+La autorización literal está en
+`data/clases_v4/ampliacion_vertex_20261029/fase2_ejecucion/autorizacion_usuario_global.json`.
+Plan vigente `fase2_propuesta/plan.json`, SHA `82e22e61…09632`; preflight local de 16 componentes,
+reserva conservadora calculada USD 66,494308 y revisión técnica independiente favorable003.
+
+Se empieza con un anexo y un recorrido de vulnerabilidad de 4.º. La aceptación de API, identidad,
+contrato y contenido se comprueba antes de continuar con el resto; cada fallo consume una plaza.
+No se cambia la campaña histórica ni se transfieren las reservas sobrantes del piloto.
+El ejecutor privado exigirá continuidad del historial, topes globales, máximo dos plazas por
+componente, revisión de su versión exacta y guardas adicionales de identidad antes de caché.
+Los resultados, correcciones, dictámenes y despacho de esta fase se registrarán en su carpeta nueva;
+la entrega del piloto y la anterior del Escritorio permanecen como snapshots íntegros.
+
+El primer par recibió dos respuestas con terminación STOP y consumió dos plazas/USD 3,101984 de
+reserva. Ambas quedaron retenidas: el anexo excede cuatro campos y contradice su clasificación de
+recursos; también faltan dos adaptaciones de acceso y hay ayudas que no deben llegar a la comprobación.
+El recorrido trae `soluciones_docente={}` para cuatro ítems, sin respuestas, explicaciones ni rúbricas;
+la validación semántica lo rechazó. El mapa vacío es legal en el esquema remoto elegido: no se demostró
+que la API ignorase `additionalProperties`. Dictámenes y devolución conjunta en
+`fase2_ejecucion/revision/feedback_unificado_d602c19904_ronda0.json`.
+
+Se cierra el perfil inicial `82e22e61…09632`/ejecutor `78b6b837…8ac904` sin más llamadas. La corrección
+técnica autorizada conserva el contrato de negocio y transporta las soluciones como una lista tipada,
+con conversión local biyectiva a mapa y raw intacto. Requiere nuevas regresiones y revisión antes de usarla.
+El sucesor se prepara en `fase2_sucesion_001/`: máximo **30 plazas y USD 66,898016**, más el consumo
+anterior, siempre dentro de las 32/USD70 originales. A los dos componentes de 4.º les queda una plaza
+global cada uno; a los otros catorce, dos. Los dos intentos anteriores y su autorización no se reinician
+ni modifican. No hay todavía contenido aprobado ni entrega de materiales de fase 2.
+
+El núcleo de transporte revisado pasó **1.937 pruebas**, cero fallos/errores/omisiones, con cobertura
+**80,0237085 %**. Huella de código/políticas `697849dd…a7bb45`, medición UTC 30 de octubre 00:07
+(29 de octubre local). Se añadieron 29 regresiones del formato y la conservación; el contrato de
+negocio de los cinco tipos quedó idéntico. Las pruebas privadas del ejecutor/perfil se mantienen
+fuera de ese denominador. La medición de 1.908 del piloto es su snapshot anterior, no la del código
+sucesor. La revisión del nuevo ejecutor y su recibo operativo siguen siendo necesarios antes de API.
+
+### Campaña existente
+
+Campaña `ciencias_v4_curricularizacion_20261022`: tope acumulado ampliado por el usuario el 25 de octubre a
+4.400 llamadas con USD 3.500 (recibo literal anclado por SHA). Consumo: **4.294 llamadas y USD 3.219,5365** de
+reserva (no factura). Quedan 106 llamadas. El usuario decidió no ampliar el tope ni buscar una vía más barata: las
+132 correcciones R23 listas (63 lotes, cota de 315 a 630 llamadas y hasta USD 758 de reserva) quedan así hasta una
+autorización explícita.
+`clases/` mantiene bytes congelados en sus módulos con huella; los módulos sin huella se corrigieron
+(ver [Calidad](docs/CALIDAD.md)).
+
+## Pendientes
+
+1. Contraste humano: especialistas del MINED revisan la muestra de 96 en el libro autónomo
+   `data/clases_v4/revision_especialistas/revision_especialistas_guiones_ciencias_20261026.xlsx` (incluye el texto
+   íntegro de cada guion; lo genera `libro_especialistas_escritorio_20261026.py`) para calibrar la revisión asistida
+   (la muestra dio 22 %; el resto, 12,8 %).
+2. R23 (ver `docs/CLASES_V4.md`): 132 correcciones con revisión directa favorable esperan, si algún día se
+   autorizan, sus cuatro lecturas. 16 objetivos necesitan registrar fuentes oficiales salvadoreñas o sanitarias que
+   el corpus fijado para R23 no tiene (MARN, MINSAL, MAG, OMS, SGA, ley minera) y 3 correcciones quedaron bloqueadas.
+3. Revisión experta del triaje de prerrequisitos y de las observaciones de fuente para el MINED, incluido el
+   informe de 713 observaciones de la capa complementaria. Son posibles defectos, no errores confirmados.
+4. Vocabulario: 173 conceptos propuestos y el reparto de `configuracion-electronica`.
+5. Identidad y control de acceso si la aplicación deja de ser local.
+
+La aprobación del MINED, el piloto con usuarios y la eficacia de aprendizaje son procesos separados.

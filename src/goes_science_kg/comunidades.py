@@ -1,13 +1,13 @@
-"""Comunidades de conceptos por grado (capa «global» de GraphRAG; spec 10).
+"""Build grade-specific concept communities for global GraphRAG retrieval."""
 
-Para cada grado se arma un grafo concepto–concepto:
-- peso += 1 por cada tema del grado que trabaja ambos conceptos (co-ocurrencia);
-- peso += 1 si hay una arista PRERREQUISITO_DE entre ellos.
-Se detectan comunidades con Louvain (semilla fija → resultado reproducible). Cada comunidad es un
-«bloque temático» del grado; su resumen determinista (conceptos centrales, unidades, asignaturas, objetivos
-de marco) sirve para la búsqueda global y para la ficha del grado. Un resumen redactado con Claude puede
-agregarse después sin cambiar la estructura (campo `resumen_ia`).
-"""
+# Historical implementation notes:
+# Para cada grado se arma un grafo concepto–concepto:
+# - peso += 1 por cada tema del grado que trabaja ambos conceptos (co-ocurrencia);
+# - peso += 1 si hay una arista PRERREQUISITO_DE entre ellos.
+# Se detectan comunidades con Louvain (semilla fija → resultado reproducible). Cada comunidad es un
+# «bloque temático» del grado; su resumen determinista (conceptos centrales, unidades, asignaturas, objetivos
+# de marco) sirve para la búsqueda global y para la ficha del grado. Un resumen redactado con Claude puede
+# agregarse después sin cambiar la estructura (campo `resumen_ia`).
 
 from __future__ import annotations
 
@@ -32,22 +32,24 @@ UMBRAL_JACCARD = 0.75  # un resumen sigue vigente si el bloque conserva ≥75 % 
 def _jaccard(a: Iterable[str], b: Iterable[str]) -> float:
     a, b = set(a), set(b)
     return len(a & b) / max(1, len(a | b))
+
+
 RESUMENES = "data/interim/comunidades/resumenes.json"
 
 
 @cache
 def resumenes() -> dict[str, dict]:
-    """Títulos y resúmenes redactados por un especialista, ligados al conjunto exacto de conceptos del bloque."""
+    """Load specialist summaries bound to each thematic block's exact concept set."""
     p = ruta(RESUMENES)
     return {r["id"]: r for r in json.loads(p.read_text(encoding="utf-8"))} if p.exists() else {}
 
 
 def resumen_para(g: int, miembros: Iterable[str]) -> dict | None:
-    """El resumen del grado cuyo bloque original más se parece a este (Jaccard ≥ umbral).
+    """Find the most similar original block summary above the Jaccard threshold."""
 
-    Louvain puede renumerar los bloques al cambiar el grafo; por eso se empareja por conceptos y no por id.
-    Con un umbral mayor que 0,5, dos bloques disjuntos nunca reclaman el mismo resumen.
-    """
+    # Implementation notes:
+    # Louvain puede renumerar los bloques al cambiar el grafo; por eso se empareja por conceptos y no por id.
+    # Con un umbral mayor que 0,5, dos bloques disjuntos nunca reclaman el mismo resumen.
     pref = f"COM:G{g:02d}-"
     candidatos = [(_jaccard(r["conceptos"], miembros), i) for i, r in resumenes().items() if i.startswith(pref)]
     j, i = max(candidatos, key=lambda x: (x[0], x[1]), default=(0, None))
@@ -55,12 +57,20 @@ def resumen_para(g: int, miembros: Iterable[str]) -> dict | None:
 
 
 def errores_resumenes(lote: list[dict], salida: list[dict]) -> list[str]:
-    """Errores de la salida de un lote de bloques (prompts/subagentes/prompt_comunidades.md): cada id una vez,
-    título de 8 palabras como máximo y resumen de 70. Lo revisa `gskg lotes validar` al terminar redactor-bloques."""
+    """Validate one complete summary per requested thematic-block identity."""
+
+    # Implementation notes:
+    # título de 8 palabras como máximo y resumen de 70. Lo revisa `gskg lotes validar` al terminar redactor-bloques.
     ids, vistos = [b["id"] for b in lote], [r.get("id") for r in salida]
-    errores = [] if sorted(ids) == sorted(vistos) else [f"ids distintos del lote: faltan "
-                                                         f"{sorted(set(ids) - set(vistos))[:3]}, sobran "
-                                                         f"{sorted(set(vistos) - set(ids))[:3]}"]
+    errores = (
+        []
+        if sorted(ids) == sorted(vistos)
+        else [
+            f"ids distintos del lote: faltan "
+            f"{sorted(set(ids) - set(vistos))[:3]}, sobran "
+            f"{sorted(set(vistos) - set(ids))[:3]}"
+        ]
+    )
     for r in salida:
         if not r.get("titulo") or len(r["titulo"].split()) > 8:
             errores.append(f"{r.get('id')}: título vacío o de más de 8 palabras")
@@ -70,11 +80,11 @@ def errores_resumenes(lote: list[dict], salida: list[dict]) -> list[str]:
 
 
 def consolidar_resumenes() -> dict:
-    """Une resúmenes vigentes y salidas nuevas de subagentes → resumenes.json.
+    """Merge existing summaries and validated new batch outputs."""
 
-    Un resumen solo se acepta si los conceptos del bloque para el que se escribió (lote_*.json, por nombre) son
-    exactamente los del bloque actual con ese id; así un id reutilizado tras reconstruir no hereda un texto ajeno.
-    """
+    # Implementation notes:
+    # Un resumen solo se acepta si los conceptos del bloque para el que se escribió (lote_*.json, por nombre) son
+    # exactamente los del bloque actual con ese id; así un id reutilizado tras reconstruir no hereda un texto ajeno.
     actuales = {}
     for p in sorted(ruta("data/grafo/grados").glob("G*/comunidades.json")):
         for c in json.loads(p.read_text(encoding="utf-8")):
@@ -97,18 +107,27 @@ def consolidar_resumenes() -> dict:
             c = actuales.get(r["id"])
             actuales_nombres = [nombres.get(x, x) for x in c["conceptos"]] if c else []
             if c and _jaccard(lote[r["id"]]["conceptos"], actuales_nombres) >= UMBRAL_JACCARD:
-                vigentes[r["id"]] = {"id": r["id"], "conceptos": sorted(c["conceptos"]), "titulo": r["titulo"],
-                                     "resumen_ia": r["resumen"], "version": "comunidades-v1"}
-    ruta(RESUMENES).write_text(json.dumps(sorted(vigentes.values(), key=lambda f: f["id"]), ensure_ascii=False,
-                                          indent=1) + "\n", encoding="utf-8")
+                vigentes[r["id"]] = {
+                    "id": r["id"],
+                    "conceptos": sorted(c["conceptos"]),
+                    "titulo": r["titulo"],
+                    "resumen_ia": r["resumen"],
+                    "version": "comunidades-v1",
+                }
+    ruta(RESUMENES).write_text(
+        json.dumps(sorted(vigentes.values(), key=lambda f: f["id"]), ensure_ascii=False, indent=1) + "\n",
+        encoding="utf-8",
+    )
     resumenes.cache_clear()
     sin = [i for i, c in actuales.items() if len(c["conceptos"]) >= 2 and i not in vigentes]
     return {"resumenes_vigentes": len(vigentes), "bloques_sin_resumen": len(sin)}
 
 
 def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[dict]:
-    """Bloques temáticos del grado `g`: comunidades Louvain del grafo concepto–concepto, de mayor a menor, con su
-    resumen determinista y, si sigue vigente, el título y el resumen del especialista."""
+    """Build grade-specific Louvain concept communities in stable size order."""
+
+    # Implementation notes:
+    # resumen determinista y, si sigue vigente, el título y el resumen del especialista.
     por_id = {n.id: n for n in nodos}
     temas = {n.id for n in nodos if n.tipo == TipoNodo.TEMA and n.grado == g and n.asignatura}
     conceptos_de_tema, cubre_de_tema = defaultdict(list), defaultdict(set)
@@ -144,19 +163,25 @@ def comunidades_grado(g: int, nodos: list[Nodo], aristas: list[Arista]) -> list[
         cid = f"COM:G{g:02d}-{i + 1:02d}"
         r = resumen_para(g, miembros)
         vigente = r is not None
-        resultado.append({
-            "id": cid,
-            "titulo": r["titulo"] if vigente else None,
-            "resumen_ia": r["resumen_ia"] if vigente else None,
-            "grado": g,
-            "nombre": " · ".join(por_id[c].etiqueta for c in centrales[:3]),
-            "conceptos": centrales,
-            "temas": temas_c,
-            "asignaturas": {k: asignaturas[k] for k in top(asignaturas, 99)},
-            "unidades": top(unidades, 5),
-            "objetivos_marco": [o.removeprefix("OBJ:") for o in top(objetivos, 8)],
-            "resumen": (f"{len(miembros)} conceptos y {len(temas_c)} temas; centro en "
-                        + ", ".join(por_id[c].etiqueta for c in centrales[:5])
-                        + ". Unidades: " + "; ".join(u for u in top(unidades, 3) if u) + "."),
-        })
+        resultado.append(
+            {
+                "id": cid,
+                "titulo": r["titulo"] if vigente else None,
+                "resumen_ia": r["resumen_ia"] if vigente else None,
+                "grado": g,
+                "nombre": " · ".join(por_id[c].etiqueta for c in centrales[:3]),
+                "conceptos": centrales,
+                "temas": temas_c,
+                "asignaturas": {k: asignaturas[k] for k in top(asignaturas, 99)},
+                "unidades": top(unidades, 5),
+                "objetivos_marco": [o.removeprefix("OBJ:") for o in top(objetivos, 8)],
+                "resumen": (
+                    f"{len(miembros)} conceptos y {len(temas_c)} temas; centro en "
+                    + ", ".join(por_id[c].etiqueta for c in centrales[:5])
+                    + ". Unidades: "
+                    + "; ".join(u for u in top(unidades, 3) if u)
+                    + "."
+                ),
+            }
+        )
     return resultado

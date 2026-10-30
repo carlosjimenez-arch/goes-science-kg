@@ -1,7 +1,7 @@
-"""Invariantes del grafo (specs/07_calidad_y_gobernanza.md).
+"""Validate the documented graph invariants and report actionable findings."""
 
-ERRORES bloquean (la CLI sale con código 1); AVISOS se reportan para revisión humana.
-"""
+# Historical implementation notes:
+# ERRORES bloquean (la CLI sale con código 1); AVISOS se reportan para revisión humana.
 
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ MAX_PALABRAS_JUSTIFICACION = 15
 
 @dataclass
 class Reporte:
-    """Resultado de `validar`: errores que bloquean, avisos para revisión humana y métricas."""
+    """Collect blocking errors, human-review warnings, and graph metrics."""
 
     errores: list[str] = field(default_factory=list)
     avisos: list[str] = field(default_factory=list)
@@ -25,13 +25,15 @@ class Reporte:
 
     @property
     def ok(self) -> bool:
-        """Verdadero si no hay errores."""
+        """Return whether validation completed without blocking errors."""
         return not self.errores
 
 
 def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
-    """Revisa los invariantes del grafo (ids, extremos, trazabilidad de inferencias, fuentes, ciclos de
-    prerrequisitos) y reúne avisos y métricas."""
+    """Validate graph identities, endpoints, provenance, sources, and prerequisite invariants."""
+
+    # Implementation notes:
+    # prerrequisitos) y reúne avisos y métricas.
     r = Reporte()
     ids = Counter(n.id for n in nodos)
     r.errores += [f"id duplicado: {i}" for i, k in ids.items() if k > 1]
@@ -49,13 +51,18 @@ def validar(nodos: list[Nodo], aristas: list[Arista]) -> Reporte:
             r.errores.append(f"{n.id}: tema sin hoja/fila de la malla")
         if n.tipo == TipoNodo.OBJETIVO_PAIS and not (n.fuente and (n.fuente.pagina or n.fuente.localizador)):
             r.errores.append(f"{n.id}: objetivo de país sin página ni localizador")
-        if (n.tipo == TipoNodo.OBJETIVO_MARCO and n.props.get("marco") in ("T4_27", "T8_27", "PISA25")
-                and not (n.fuente and n.fuente.pagina)):
+        if (
+            n.tipo == TipoNodo.OBJETIVO_MARCO
+            and n.props.get("marco") in ("T4_27", "T8_27", "PISA25")
+            and not (n.fuente and n.fuente.pagina)
+        ):
             r.errores.append(f"{n.id}: objetivo de marco sin página")
-        if (n.tipo == TipoNodo.OBJETIVO_MARCO and n.props.get("marco") == "AUSS"
-                and not (n.fuente and n.fuente.localizador)):
+        if (
+            n.tipo == TipoNodo.OBJETIVO_MARCO
+            and n.props.get("marco") == "AUSS"
+            and not (n.fuente and n.fuente.localizador)
+        ):
             r.errores.append(f"{n.id}: objetivo AUSS sin código localizador")
-
 
     dag = nx.DiGraph([(a.origen, a.destino) for a in aristas if a.tipo == TipoArista.PRERREQUISITO_DE])
     if not nx.is_directed_acyclic_graph(dag):

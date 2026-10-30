@@ -1,13 +1,13 @@
-"""Validación de los lotes de subagentes (harness de agentes: .claude/agents y .claude/hooks/validar_lotes.py).
+"""Validate agent batch outputs against their registered contracts."""
 
-Cada tarea de IA del proyecto sigue el mismo circuito: un comando «preparar» escribe `lote_<x>.json`, un subagente
-escribe `salida_<x>.json` en la misma carpeta y un comando «unir» valida y consolida. Este módulo reúne, por tipo de
-lote, la función que valida UNA salida contra su lote, la misma que usa la unión correspondiente. Así un subagente
-del proyecto no puede terminar con una salida que la unión rechazaría: el hook SubagentStop corre
-`gskg lotes validar --agente <nombre>` y, si hay errores, lo devuelve a corregirlos.
-
-Las salidas que todavía no existen no son error (otro subagente puede estar trabajando en ellas).
-"""
+# Historical implementation notes:
+# Cada tarea de IA del proyecto sigue el mismo circuito: un comando «preparar» escribe `lote_<x>.json`, un subagente
+# escribe `salida_<x>.json` en la misma carpeta y un comando «unir» valida y consolida. Este módulo reúne, por tipo de
+# lote, la función que valida UNA salida contra su lote, la misma que usa la unión correspondiente. Así un subagente
+# del proyecto no puede terminar con una salida que la unión rechazaría: el hook SubagentStop corre
+# `gskg lotes validar --agente <nombre>` y, si hay errores, lo devuelve a corregirlos.
+#
+# Las salidas que todavía no existen no son error (otro subagente puede estar trabajando en ellas).
 
 from __future__ import annotations
 
@@ -21,33 +21,53 @@ from goes_science_kg.config import relativa, ruta
 
 @dataclass(frozen=True)
 class TipoLote:
-    carpeta: str                                   # donde viven lote_*.json y salida_*.json
+    """Register a batch directory with its validator and consolidation command."""
+
+    carpeta: str  # donde viven lote_*.json y salida_*.json
     validar: Callable[[object, list[dict]], list[str]]
-    unir: str                                      # comando que consolida (para el mensaje al subagente)
+    unir: str  # comando que consolida (para el mensaje al subagente)
 
 
 def _tipos() -> dict[str, list[TipoLote]]:
     from goes_science_kg import alineacion, bucle, comunidades, conceptos, panel, prerrequisitos, propuesta, refuerzo
     from goes_science_kg.aprendizaje import pedagogia
+    from goes_science_kg.producto import conceptos_v4
 
     return {
-        "alineacion": [TipoLote("data/interim/alineaciones/lotes", alineacion.errores_lote,
-                                "gskg alinear unir-bachillerato | unir-temas")],
-        "etiquetado": [TipoLote("data/interim/conceptos/lotes", conceptos.errores_lote_temas,
-                                "gskg conceptos unir-etiquetado"),
-                       TipoLote("data/interim/conceptos/lotes_paises", conceptos.errores_lote_paises,
-                                "gskg conceptos unir-paises")],
-        "prerrequisitos": [TipoLote("data/interim/prerrequisitos/lotes",
-                                    lambda _lote, salida: prerrequisitos.errores_salida(salida),
-                                    "gskg conceptos unir-prerrequisitos")],
+        "alineacion": [
+            TipoLote(
+                "data/interim/alineaciones/lotes",
+                alineacion.errores_lote,
+                "gskg alinear unir-bachillerato | unir-temas",
+            )
+        ],
+        "etiquetado": [
+            TipoLote("data/interim/conceptos/lotes", conceptos.errores_lote_temas, "gskg conceptos unir-etiquetado"),
+            TipoLote(
+                "data/interim/conceptos/lotes_paises", conceptos.errores_lote_paises, "gskg conceptos unir-paises"
+            ),
+            TipoLote(conceptos_v4.DIR_LOTES, conceptos_v4.errores_lote_v4, "gskg producto unir-conceptos"),
+        ],
+        "prerrequisitos": [
+            TipoLote(
+                "data/interim/prerrequisitos/lotes",
+                lambda _lote, salida: prerrequisitos.errores_salida(salida),
+                "gskg conceptos unir-prerrequisitos",
+            )
+        ],
         "bloques": [TipoLote("data/interim/comunidades", comunidades.errores_resumenes, "gskg grados resumenes")],
-        "adopcion": [TipoLote("data/interim/propuestas", propuesta.errores_adopcion,
-                              "gskg propuesta unir-adopcion")],
+        "adopcion": [TipoLote("data/interim/propuestas", propuesta.errores_adopcion, "gskg propuesta unir-adopcion")],
         "pedagogia": [TipoLote("data/pedagogia/lotes", pedagogia.errores_lote, "gskg tutor unir-actividades")],
-        "panel": [TipoLote("data/interim/panel/lotes", panel.errores_lote,
-                           "gskg panel consolidar --ronda <n> | gskg bucle cerrar-impugnacion | cerrar-replica")],
-        "bucle": [TipoLote("data/interim/panel/bucle/lotes", bucle.errores_lote,
-                           "gskg bucle cerrar-impugnacion --vuelta <k>")],
+        "panel": [
+            TipoLote(
+                "data/interim/panel/lotes",
+                panel.errores_lote,
+                "gskg panel consolidar --ronda <n> | gskg bucle cerrar-impugnacion | cerrar-replica",
+            )
+        ],
+        "bucle": [
+            TipoLote("data/interim/panel/bucle/lotes", bucle.errores_lote, "gskg bucle cerrar-impugnacion --vuelta <k>")
+        ],
         "refuerzo": [TipoLote("data/interim/refuerzo_v3/lotes", refuerzo.errores_lote, "gskg refuerzo unir")],
     }
 
@@ -71,7 +91,7 @@ AGENTES = {
 
 
 def validar_par(tipo: TipoLote, p_lote: Path) -> list[str] | None:
-    """Errores de la salida de un lote; None si la salida aún no existe."""
+    """Return batch-output errors or None when the output does not yet exist."""
     p_sal = p_lote.with_name(p_lote.name.replace("lote_", "salida_", 1))
     if not p_sal.exists():
         return None
@@ -86,8 +106,10 @@ def validar_par(tipo: TipoLote, p_lote: Path) -> list[str] | None:
 
 
 def validar(nombre: str | None = None, base: Path | None = None) -> dict[str, list[str]]:
-    """Errores por archivo de salida (ruta relativa → errores) de un tipo de lote, o de todos si `nombre` es None.
-    Solo incluye las salidas con errores. `base` reemplaza la raíz del repo (pruebas)."""
+    """Collect validation errors by output file for selected batch types."""
+
+    # Implementation notes:
+    # Solo incluye las salidas con errores. `base` reemplaza la raíz del repo (pruebas).
     tipos = _tipos()
     if nombre is not None and nombre not in tipos:
         raise ValueError(f"Tipo de lote desconocido {nombre!r}; opciones: {', '.join(tipos)}")
@@ -103,10 +125,10 @@ def validar(nombre: str | None = None, base: Path | None = None) -> dict[str, li
 
 
 def tipo_de_agente(agente: str) -> str | None:
-    """Tipo de lote que valida el hook al terminar ese subagente (None: no es un subagente de lotes)."""
+    """Resolve the registered batch-agent type or return None for other agents."""
     return AGENTES.get(agente)
 
 
 def comando_union(nombre: str) -> str:
-    """Los comandos que consolidan ese tipo de lote."""
+    """Return the consolidation commands for a registered batch type."""
     return " · ".join(t.unir for t in _tipos()[nombre])

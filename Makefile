@@ -1,8 +1,18 @@
 .PHONY: instalar temas grafo validar fichas exportar pruebas lint grados evaluar brechas todo progresion propuestas \
-	internacional internacional-ia
+	internacional internacional-ia v4-insumo v4-vista v4-validar
 
 instalar:
-	uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex
+	uv sync --extra dev --extra pdf --extra rag --extra api --extra vertex --extra motor
+
+# Preparación V4 local; no llama a Vertex ni activa la malla histórica.
+v4-insumo:
+	uv run gskg producto insumo
+
+v4-vista:
+	uv run gskg producto explorar
+
+v4-validar:
+	uv run gskg producto validar
 
 temas:
 	uv run gskg temas
@@ -23,7 +33,37 @@ pruebas:
 	uv run pytest -q
 
 lint:
-	uv run ruff check src tests .claude/hooks
+	uv run --frozen ruff check src tests scripts .claude/hooks
+	uv run --frozen ruff format --check src tests scripts .claude/hooks --output-format concise
+
+.PHONY: formato cobertura auditoria api pruebas-js producto datos-estado datos-verificar
+
+pruebas-js:
+	node --test tests/js/*.test.cjs
+
+formato:
+	uv run --frozen ruff format src tests scripts .claude/hooks
+
+cobertura:
+	uv run --frozen pytest -q --cov=goes_science_kg --cov-report=xml:coverage.xml --junitxml=junit.xml
+	uv run --frozen python scripts/generar_badges.py --junit junit.xml --cobertura coverage.xml
+
+auditoria:
+	uv run --frozen python scripts/auditar_repo.py --salida docs/auditoria/inventario.json
+
+api:
+	uv run --frozen gskg servir --puerto 8010
+
+# Producto local en una máquina nueva: dependencias, datos desde GCS (sólo lo que falte) y servicio.
+producto:
+	uv sync --frozen --all-extras
+	uv run --frozen gskg servir --puerto 8010 --sincronizar
+
+datos-estado:
+	uv run --frozen gskg datos estado
+
+datos-verificar:
+	uv run --frozen gskg datos verificar
 
 grados:
 	uv run gskg grados construir

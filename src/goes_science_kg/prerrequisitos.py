@@ -1,16 +1,16 @@
-"""Prerrequisitos entre conceptos: un DAG por asignatura (skill grafo-prerrequisitos).
+"""Maintain subject-specific directed acyclic graphs of concept prerequisites."""
 
-Evidencia que se le entrega al subagente (calculada aquí, de forma determinista):
-- primer grado en que El Salvador trabaja el concepto (temas → TRABAJA → concepto);
-- primer grado en que lo trabaja cada país de referencia: DIRECTO si los objetivos de país están etiquetados
-  con conceptos (objetivo de país → TRABAJA → concepto); si no, VÍA EL PIVOTE
-  (objetivo de país → ALINEA_CON → objetivo de marco → TRABAJA → concepto), que es más grueso;
-- nivel del marco que lo pide (TIMSS 4.° = 4, TIMSS 8.° = 8, PISA = 9, ACARA Senior / TIMSS Advanced = 11).
-
-El subagente propone aristas A → B («A es prerrequisito de B») con tipo de evidencia
-(declarada | orden_observado | logica), confianza y justificación. `unir()` valida, rompe ciclos quitando
-la arista de menor confianza y elimina redundancias transitivas que no tengan evidencia declarada.
-"""
+# Historical implementation notes:
+# Evidencia que se le entrega al subagente (calculada aquí, de forma determinista):
+# - primer grado en que El Salvador trabaja el concepto (temas → TRABAJA → concepto);
+# - primer grado en que lo trabaja cada país de referencia: DIRECTO si los objetivos de país están etiquetados
+#   con conceptos (objetivo de país → TRABAJA → concepto); si no, VÍA EL PIVOTE
+#   (objetivo de país → ALINEA_CON → objetivo de marco → TRABAJA → concepto), que es más grueso;
+# - nivel del marco que lo pide (TIMSS 4.° = 4, TIMSS 8.° = 8, PISA = 9, ACARA Senior / TIMSS Advanced = 11).
+#
+# El subagente propone aristas A → B («A es prerrequisito de B») con tipo de evidencia
+# (declarada | orden_observado | logica), confianza y justificación. `unir()` valida, rompe ciclos quitando
+# la arista de menor confianza y elimina redundancias transitivas que no tengan evidencia declarada.
 
 from __future__ import annotations
 
@@ -33,8 +33,10 @@ from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
 DIR = "data/interim/prerrequisitos"
 VERSION = "prerrequisitos-v1"
+
+
 def paises_alto_desempeno(tope: int = 10) -> set[str]:
-    """Países entre los `tope` primeros de TIMSS 2023 Ciencias en 4.° u 8.° (evidencia en config/referentes.yaml)."""
+    """Select countries meeting the configured TIMSS science performance threshold."""
     out = set()
     for cod, p in cargar("referentes")["paises"].items():
         t = p.get("timss2023_ciencias") or {}
@@ -53,7 +55,7 @@ def _min(actual: float | None, nuevo: float) -> float:
 
 
 def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]:
-    """Por concepto: primer grado SV, primer grado por país (vía pivote) y nivel mínimo de marco."""
+    """Collect first-grade and framework-level ordering evidence by concept."""
     por_id = {n.id: n for n in nodos}
     obj_a_con, op_a_con = defaultdict(set), defaultdict(set)
     for a in aristas:
@@ -61,15 +63,16 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
             prefijo = a.origen.split(":")[0]
             if prefijo in ("OBJ", "OP"):
                 (obj_a_con if prefijo == "OBJ" else op_a_con)[a.origen].add(a.destino)
-    ev: dict[str, dict] = {n.id: {"sv": None, "paises": {}, "marco": None}
-                           for n in nodos if n.tipo == TipoNodo.CONCEPTO}
+    ev: dict[str, dict] = {
+        n.id: {"sv": None, "paises": {}, "marco": None} for n in nodos if n.tipo == TipoNodo.CONCEPTO
+    }
     _primer_grado_sv(ev, por_id, aristas)
     _nivel_de_marco(ev, por_id, obj_a_con)
     _primer_grado_paises(ev, por_id, aristas, obj_a_con, op_a_con)
     _compartir_entre_equivalentes(ev, aristas)
     alto = paises_alto_desempeno()
     for e in ev.values():
-        e["paises"] = dict(sorted(e["paises"].items()))   # orden estable: no depende del orden de los conjuntos
+        e["paises"] = dict(sorted(e["paises"].items()))  # orden estable: no depende del orden de los conjuntos
         alto_g = [g for p, g in e["paises"].items() if p in alto]
         e["mediana_alto_desempeno"] = statistics.median(alto_g) if alto_g else None
         e["via_paises"] = "directo" if op_a_con else "pivote"
@@ -78,8 +81,10 @@ def evidencia_orden(nodos: list[Nodo], aristas: list[Arista]) -> dict[str, dict]
 
 
 def _primer_grado_sv(ev: dict[str, dict], por_id: dict[str, Nodo], aristas: list[Arista]) -> None:
-    """Primer grado SV: temas donde el concepto es PRINCIPAL, o secundario con confianza alta o media (una mención
-    secundaria de confianza baja no es «enseñarlo»); si no hay ninguna, el primer grado como secundario."""
+    """Find the first supported local concept occurrence under the presence-confidence rule."""
+
+    # Implementation notes:
+    # secundaria de confianza baja no es «enseñarlo»); si no hay ninguna, el primer grado como secundario.
     for a in aristas:
         if a.tipo == TipoArista.TRABAJA and a.origen.startswith("TEMA:") and a.destino in ev:
             g = por_id[a.origen].grado
@@ -92,7 +97,7 @@ def _primer_grado_sv(ev: dict[str, dict], por_id: dict[str, Nodo], aristas: list
 
 
 def _nivel_de_marco(ev: dict[str, dict], por_id: dict[str, Nodo], obj_a_con: dict[str, set[str]]) -> None:
-    """Nivel mínimo de los marcos (TIMSS, PISA…) cuyos objetivos trabajan el concepto."""
+    """Find the earliest framework level whose objectives teach a concept."""
     for oid, cons in obj_a_con.items():
         nivel = NIVEL_MARCO.get(por_id[oid].props.get("marco"))
         if nivel:
@@ -100,9 +105,15 @@ def _nivel_de_marco(ev: dict[str, dict], por_id: dict[str, Nodo], obj_a_con: dic
                 ev[c]["marco"] = _min(ev[c]["marco"], nivel)
 
 
-def _primer_grado_paises(ev: dict[str, dict], por_id: dict[str, Nodo], aristas: list[Arista],
-                         obj_a_con: dict[str, set[str]], op_a_con: dict[str, set[str]]) -> None:
-    """Primer grado por país: directo (objetivo de país → concepto) o, si no hay, vía el objetivo de marco pivote."""
+def _primer_grado_paises(
+    ev: dict[str, dict],
+    por_id: dict[str, Nodo],
+    aristas: list[Arista],
+    obj_a_con: dict[str, set[str]],
+    op_a_con: dict[str, set[str]],
+) -> None:
+    """Find a country's earliest direct or explicitly pivoted concept occurrence."""
+
     def _pais(op_id: str, cons: set[str]) -> None:
         op = por_id[op_id]
         # Objetivos por banda (KS3 de Inglaterra, Estándares de Colombia): el punto medio de la banda, no el mínimo,
@@ -123,9 +134,14 @@ def _primer_grado_paises(ev: dict[str, dict], por_id: dict[str, Nodo], aristas: 
 
 
 def _compartir_entre_equivalentes(ev: dict[str, dict], aristas: list[Arista]) -> None:
-    """Conceptos equivalentes entre asignaturas comparten el primer grado (SV y países)."""
-    eq = nx.Graph([(a.origen, a.destino) for a in aristas
-                   if a.tipo == TipoArista.EQUIVALE_A and a.origen in ev and a.destino in ev])
+    """Share first-occurrence evidence between explicitly equivalent concepts."""
+    eq = nx.Graph(
+        [
+            (a.origen, a.destino)
+            for a in aristas
+            if a.tipo == TipoArista.EQUIVALE_A and a.origen in ev and a.destino in ev
+        ]
+    )
     for grupo in nx.connected_components(eq):
         svs = [ev[c]["sv"] for c in grupo if ev[c]["sv"] is not None]
         paises: dict[str, float] = {}
@@ -139,8 +155,10 @@ def _compartir_entre_equivalentes(ev: dict[str, dict], aristas: list[Arista]) ->
 
 
 def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
-    """Escribe un lote por asignatura (conceptos con su evidencia de orden) en lotes/lote_<asig>.json para el
-    subagente. Devuelve las rutas relativas escritas."""
+    """Prepare subject-specific prerequisite batches with ordering evidence."""
+
+    # Implementation notes:
+    # subagente. Devuelve las rutas relativas escritas.
     ev = evidencia_orden(nodos, aristas)
     conceptos = [n for n in nodos if n.tipo == TipoNodo.CONCEPTO]
     d = ruta(f"{DIR}/lotes")
@@ -148,10 +166,20 @@ def preparar(nodos: list[Nodo], aristas: list[Arista]) -> list[str]:
     escritos = []
     for asig in cargar("asignaturas")["asignaturas"]:
         lote = {
-            "lote": asig, "version": VERSION, "instrucciones": "prompts/prerrequisitos.md",
-            "conceptos": [{"id": c.id, "nombre": c.etiqueta, "definicion": c.props.get("definicion"),
-                           "nivel": c.props.get("nivel"), **ev[c.id]}
-                          for c in sorted(conceptos, key=lambda x: x.id) if c.asignatura == asig],
+            "lote": asig,
+            "version": VERSION,
+            "instrucciones": "prompts/prerrequisitos.md",
+            "conceptos": [
+                {
+                    "id": c.id,
+                    "nombre": c.etiqueta,
+                    "definicion": c.props.get("definicion"),
+                    "nivel": c.props.get("nivel"),
+                    **ev[c.id],
+                }
+                for c in sorted(conceptos, key=lambda x: x.id)
+                if c.asignatura == asig
+            ],
             "otras_asignaturas": [{"id": c.id, "nombre": c.etiqueta} for c in conceptos if c.asignatura != asig],
         }
         p = d / f"lote_{asig}.json"
@@ -169,9 +197,11 @@ def _errores_arista(e: dict, ids: set[str]) -> list[str]:
 
 
 def errores_salida(aristas: list[dict], ids: set[str] | None = None) -> list[str]:
-    """Errores de la salida de un lote de prerrequisitos: los que hacen fallar unir (y que revisa
-    `gskg lotes validar` al terminar el subagente ordenador-prerrequisitos). `ids`: conceptos válidos (por defecto,
-    el vocabulario vigente)."""
+    """Return prerequisite-batch errors under the consolidation contract."""
+
+    # Implementation notes:
+    # `gskg lotes validar` al terminar el subagente ordenador-prerrequisitos). `ids`: conceptos válidos (por defecto,
+    # el vocabulario vigente).
     if ids is None:
         from goes_science_kg.conceptos import vocabulario
 
@@ -180,8 +210,10 @@ def errores_salida(aristas: list[dict], ids: set[str] | None = None) -> list[str
 
 
 def unir(nodos: list[Nodo]) -> dict:
-    """Valida las salidas del subagente, rompe ciclos, quita redundancias transitivas y escribe prerrequisitos.json
-    y las dos listas de descartadas. Lanza ValueError si alguna arista es inválida; devuelve los conteos."""
+    """Validate prerequisites, break cycles, remove redundancy, and persist the result."""
+
+    # Implementation notes:
+    # y las dos listas de descartadas. Lanza ValueError si alguna arista es inválida; devuelve los conteos.
     ids = {n.id for n in nodos if n.tipo == TipoNodo.CONCEPTO}
     candidatas, errores = [], []
     for p in sorted(ruta(f"{DIR}/lotes").glob("salida_*.json")):
@@ -205,42 +237,65 @@ def unir(nodos: list[Nodo]) -> dict:
         rotas.append(g[u][v]["dato"])
         g.remove_edge(u, v)
     reducido = nx.transitive_reduction(g)
-    redundantes = [g[u][v]["dato"] for u, v in g.edges if not reducido.has_edge(u, v)
-                   and g[u][v]["dato"]["tipo_evidencia"] != "declarada"]
+    redundantes = [
+        g[u][v]["dato"]
+        for u, v in g.edges
+        if not reducido.has_edge(u, v) and g[u][v]["dato"]["tipo_evidencia"] != "declarada"
+    ]
     for e in redundantes:
         g.remove_edge(e["origen"], e["destino"])
-    final = sorted((g[u][v]["dato"] | {"version": VERSION} for u, v in g.edges),
-                   key=lambda e: (e["origen"], e["destino"]))
-    for nombre, datos in (("prerrequisitos.json", final), ("descartadas_ciclo.json", rotas),
-                          ("descartadas_transitivas.json", redundantes)):
+    final = sorted(
+        (g[u][v]["dato"] | {"version": VERSION} for u, v in g.edges), key=lambda e: (e["origen"], e["destino"])
+    )
+    for nombre, datos in (
+        ("prerrequisitos.json", final),
+        ("descartadas_ciclo.json", rotas),
+        ("descartadas_transitivas.json", redundantes),
+    ):
         (ruta(DIR) / nombre).write_text(json.dumps(datos, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     cargar_prerrequisitos.cache_clear()
-    return {"aristas": len(final), "rotas_por_ciclo": len(rotas), "transitivas_quitadas": len(redundantes),
-            "cadena_mas_larga": len(nx.dag_longest_path(g))}
+    return {
+        "aristas": len(final),
+        "rotas_por_ciclo": len(rotas),
+        "transitivas_quitadas": len(redundantes),
+        "cadena_mas_larga": len(nx.dag_longest_path(g)),
+    }
 
 
 def _con_divisiones(aristas: list[dict], voc: dict[str, dict]) -> list[dict]:
-    """Aplica los cambios de prerrequisitos de las divisiones de conceptos (quitar y agregar aristas)."""
+    """Apply explicit prerequisite changes associated with reviewed concept divisions."""
     for d in divisiones():
         quitar = {tuple(x) for x in d["prerrequisitos"]["quitar"]}
         aristas = [e for e in aristas if (e["origen"], e["destino"]) not in quitar]
-        aristas += [{"origen": x["origen"], "destino": x["destino"], "tipo_evidencia": "logica",
-                     "evidencias": ["division"], "confianza": "alta", "version": VERSION_DIVISION,
-                     "justificacion": x["justificacion"]}
-                    for x in d["prerrequisitos"]["agregar"] if x["origen"] in voc and x["destino"] in voc]
+        aristas += [
+            {
+                "origen": x["origen"],
+                "destino": x["destino"],
+                "tipo_evidencia": "logica",
+                "evidencias": ["division"],
+                "confianza": "alta",
+                "version": VERSION_DIVISION,
+                "justificacion": x["justificacion"],
+            }
+            for x in d["prerrequisitos"]["agregar"]
+            if x["origen"] in voc and x["destino"] in voc
+        ]
     return aristas
 
 
 @cache
 def cargar_prerrequisitos() -> tuple[dict, ...]:
-    """Prerrequisitos consolidados menos los que rechazó la revisión humana (con caché; `unir` y la revisión
-    humana la limpian al escribir)."""
+    """Load consolidated prerequisites excluding explicit human-review rejections."""
+
+    # Implementation notes:
+    # humana la limpian al escribir).
     p = ruta(f"{DIR}/prerrequisitos.json")
     if not p.exists():
         return ()
     r = ruta(f"{DIR}/rechazados.json")
-    rechazados = ({(x["origen"], x["destino"]) for x in json.loads(r.read_text(encoding="utf-8"))}
-                  if r.exists() else set())
+    rechazados = (
+        {(x["origen"], x["destino"]) for x in json.loads(r.read_text(encoding="utf-8"))} if r.exists() else set()
+    )
 
     aristas = json.loads(p.read_text(encoding="utf-8"))
     # Conceptos nuevos del triaje: sus prerrequisitos sugeridos entran como evidencia lógica de confianza media.
@@ -257,12 +312,22 @@ def cargar_prerrequisitos() -> tuple[dict, ...]:
             if o not in voc or g.has_edge(o, d) or (d in g and o in g and nx.has_path(g, d, o)):
                 continue
             g.add_edge(o, d)
-            aristas.append({"origen": o, "destino": d, "tipo_evidencia": "logica", "evidencias": ["triaje"],
-                            "confianza": "media", "version": VERSION_TRIAJE,
-                            "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje)."})
+            aristas.append(
+                {
+                    "origen": o,
+                    "destino": d,
+                    "tipo_evidencia": "logica",
+                    "evidencias": ["triaje"],
+                    "confianza": "media",
+                    "version": VERSION_TRIAJE,
+                    "justificacion": "Prerrequisito sugerido al incorporar el concepto (triaje).",
+                }
+            )
     # Como en `unir`: sin aristas transitivas. Solo se quitan las del triaje (las demás ya vienen reducidas).
     reducido = nx.transitive_reduction(g)
-    redundantes = {(e["origen"], e["destino"]) for e in aristas
-                   if e.get("version") in (VERSION_TRIAJE, VERSION_DIVISION)
-                   and not reducido.has_edge(e["origen"], e["destino"])}
+    redundantes = {
+        (e["origen"], e["destino"])
+        for e in aristas
+        if e.get("version") in (VERSION_TRIAJE, VERSION_DIVISION) and not reducido.has_edge(e["origen"], e["destino"])
+    }
     return tuple(e for e in aristas if (e["origen"], e["destino"]) not in rechazados | redundantes)

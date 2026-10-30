@@ -1,11 +1,11 @@
-"""Calidad y bidireccionalidad de los grafos versionados (auditoría del 2026-10-09).
+"""Test quality and bidirectional navigation in the historical versioned science graphs."""
 
-- Estructura: cada arista une los tipos de nodo que permite el modelo, sin autolazos ni pares en los dos sentidos, y
-  el DAG de prerrequisitos no tiene ciclos ni aristas transitivas.
-- Grafo ↔ fuentes, en los dos sentidos: cada nodo apunta a una fuente que existe (fila del Excel, página del PDF,
-  sha256) y cada elemento de las fuentes está en el grafo.
-- Entre grafos: los subgrafos por grado y el grafo internacional son coherentes con el principal.
-"""
+# Historical test notes:
+# - Estructura: cada arista une los tipos de nodo que permite el modelo, sin autolazos ni pares en los dos sentidos, y
+#   el DAG de prerrequisitos no tiene ciclos ni aristas transitivas.
+# - Grafo ↔ fuentes, en los dos sentidos: cada nodo apunta a una fuente que existe (fila del Excel, página del PDF,
+#   sha256) y cada elemento de las fuentes está en el grafo.
+# - Entre grafos: los subgrafos por grado y el grafo internacional son coherentes con el principal.
 
 from __future__ import annotations
 
@@ -64,8 +64,11 @@ def _archivo(doc):
 # -- Estructura -------------------------------------------------------------------------------------------------------
 def test_contrato_de_tipos_por_arista(principal):
     _, aristas, por_id = principal
-    malas = [(a.tipo, a.origen, a.destino) for a in aristas
-             if por_id[a.origen].tipo not in CONTRATO[a.tipo][0] or por_id[a.destino].tipo not in CONTRATO[a.tipo][1]]
+    malas = [
+        (a.tipo, a.origen, a.destino)
+        for a in aristas
+        if por_id[a.origen].tipo not in CONTRATO[a.tipo][0] or por_id[a.destino].tipo not in CONTRATO[a.tipo][1]
+    ]
     assert not malas, malas[:5]
 
 
@@ -84,13 +87,17 @@ def test_dag_de_prerrequisitos_sin_ciclos_ni_redundancias(principal):
 
 
 def test_sin_prerrequisitos_entre_equivalentes(principal):
-    """Si dos conceptos son el mismo (EQUIVALE_A), uno no puede ser prerrequisito del otro. Las 3 contradicciones de la
-    auditoría se resolvieron el 2026-10-09 (equivalencias_retiradas.json y prerrequisitos/rechazados.json)."""
+    """Reject prerequisites between concepts explicitly declared equivalent."""
+
+    # Historical test notes:
+    # auditoría se resolvieron el 2026-10-09 (equivalencias_retiradas.json y prerrequisitos/rechazados.json).
     _, aristas, _ = principal
-    eq = {frozenset((a.origen, a.destino)) for a in aristas
-          if a.tipo == A.EQUIVALE_A and a.origen.startswith("CON:")}
-    assert not [(a.origen, a.destino) for a in aristas
-                if a.tipo == A.PRERREQUISITO_DE and frozenset((a.origen, a.destino)) in eq]
+    eq = {frozenset((a.origen, a.destino)) for a in aristas if a.tipo == A.EQUIVALE_A and a.origen.startswith("CON:")}
+    assert not [
+        (a.origen, a.destino)
+        for a in aristas
+        if a.tipo == A.PRERREQUISITO_DE and frozenset((a.origen, a.destino)) in eq
+    ]
 
 
 def test_sin_nodos_aislados(principal):
@@ -100,8 +107,10 @@ def test_sin_nodos_aislados(principal):
 
 
 def test_el_enlace_quimico_no_depende_de_la_mecanica_cuantica(principal):
-    """Regresión pedagógica: la regla del octeto y el enlace se enseñan con el modelo de capas (división de
-    «Configuración electrónica», conceptos/divisiones.json)."""
+    """Keep the chemical-bonding model independent of advanced quantum-mechanics prerequisites."""
+
+    # Historical test notes:
+    # «Configuración electrónica», conceptos/divisiones.json).
     _, aristas, _ = principal
     dag = nx.DiGraph([(a.origen, a.destino) for a in aristas if a.tipo == A.PRERREQUISITO_DE])
     for cuantico in ("CON:quimica/numeros-cuanticos", "CON:quimica/configuracion-electronica"):
@@ -112,10 +121,13 @@ def test_el_enlace_quimico_no_depende_de_la_mecanica_cuantica(principal):
 def test_divisiones_aplicadas_en_todos_los_conjuntos():
     from goes_science_kg.internacional import etiquetar
 
-    cargadas = {"malla_v1": {i: e["conceptos"] for i, e in conceptos.etiquetado().items()},
-                "objetivos_pais": {i: e["conceptos"] for i, e in conceptos.etiquetado_paises().items()},
-                "internacional": {i: e["principales"] + e["secundarios"]
-                                  for i, e in etiquetar.cargar_etiquetas("pais_").items()}}
+    cargadas = {
+        "malla_v1": {i: e["conceptos"] for i, e in conceptos.etiquetado().items()},
+        "objetivos_pais": {i: e["conceptos"] for i, e in conceptos.etiquetado_paises().items()},
+        "internacional": {
+            i: e["principales"] + e["secundarios"] for i, e in etiquetar.cargar_etiquetas("pais_").items()
+        },
+    }
     for d in conceptos.divisiones():
         assert d["nuevo"]["id"] in conceptos.vocabulario()
         for conjunto, asignaciones in d["asignaciones"].items():
@@ -127,7 +139,7 @@ def test_divisiones_aplicadas_en_todos_los_conjuntos():
 
 
 def test_relaciones_esperadas_en_cada_nodo(principal):
-    """Navegación inversa: cada tema tiene grado, asignatura y conceptos; cada objetivo, su país o marco."""
+    """Require documented inverse navigation for topics and reference objectives."""
     nodos, aristas, _ = principal
     sal = defaultdict(Counter)
     for a in aristas:
@@ -158,8 +170,14 @@ def test_cada_tema_esta_en_su_fila_del_excel(principal):
 def test_documentos_con_sha256_coinciden(principal):
     nodos, _, _ = principal
     docs = [n for n in nodos if n.tipo == N.DOCUMENTO and n.props.get("ok", True)]
-    malos = [n.id for n in docs if (p := _archivo(n)) and p.is_file() and n.props.get("sha256")
-             and hashlib.sha256(p.read_bytes()).hexdigest() != n.props["sha256"]]
+    malos = [
+        n.id
+        for n in docs
+        if (p := _archivo(n))
+        and p.is_file()
+        and n.props.get("sha256")
+        and hashlib.sha256(p.read_bytes()).hexdigest() != n.props["sha256"]
+    ]
     assert not malos
     mallas = [n for n in docs if n.id.startswith("DOC:MALLA:")]
     assert mallas and all(n.props.get("sha256") for n in mallas)
@@ -197,12 +215,18 @@ def test_de_las_fuentes_al_grafo_uno_a_uno(principal):
     assert de_tipo(N.CONCEPTO) == set(conceptos.vocabulario())
     assert de_tipo(N.PRACTICA) == set(conceptos.practicas())
     assert de_tipo(N.OBJETIVO_PAIS) == {f"OP:{o['id']}" for o in [*legado.alineacion_paises(), *legado.paises_nuevos()]}
-    assert {(a.origen, a.destino) for a in aristas if a.tipo == A.PRERREQUISITO_DE} == \
-        {(e["origen"], e["destino"]) for e in cargar_prerrequisitos()}
-    assert {(a.origen, a.destino) for a in aristas if a.tipo == A.EQUIVALE_A and a.origen.startswith("CON:")} == \
-        {(e["a"], e["b"]) for e in conceptos.equivalencias()}
-    esperadas = {(f"TEMA:{t}", c) for t, e in Constructor._etiquetas_revisadas().items()
-                 for c in e["conceptos"] + e["practicas"] if f"TEMA:{t}" in por_id and c in por_id}
+    assert {(a.origen, a.destino) for a in aristas if a.tipo == A.PRERREQUISITO_DE} == {
+        (e["origen"], e["destino"]) for e in cargar_prerrequisitos()
+    }
+    assert {(a.origen, a.destino) for a in aristas if a.tipo == A.EQUIVALE_A and a.origen.startswith("CON:")} == {
+        (e["a"], e["b"]) for e in conceptos.equivalencias()
+    }
+    esperadas = {
+        (f"TEMA:{t}", c)
+        for t, e in Constructor._etiquetas_revisadas().items()
+        for c in e["conceptos"] + e["practicas"]
+        if f"TEMA:{t}" in por_id and c in por_id
+    }
     assert {(a.origen, a.destino) for a in aristas if a.tipo == A.TRABAJA and a.origen.startswith("TEMA:")} == esperadas
 
 
@@ -215,8 +239,9 @@ def test_subgrafos_por_grado_contenidos_y_completos(principal):
         sn = [json.loads(linea) for linea in open(d / "nodos.jsonl", encoding="utf-8")]
         sa = [json.loads(linea) for linea in open(d / "aristas.jsonl", encoding="utf-8")]
         ids = {n["id"] for n in sn}
-        assert all(por_id[n["id"]].model_dump(mode="json", exclude_none=True, exclude_defaults=True) == n
-                   for n in sn), d.name
+        assert all(
+            por_id[n["id"]].model_dump(mode="json", exclude_none=True, exclude_defaults=True) == n for n in sn
+        ), d.name
         assert all((a["origen"], a["destino"], a["tipo"], a.get("rol")) in claves for a in sa), d.name
         assert all(a["origen"] in ids and a["destino"] in ids for a in sa), d.name
         temas = {n.id for n in nodos if n.tipo == N.TEMA and n.grado == g and not n.props.get("fuera_de_alcance")}
@@ -241,7 +266,7 @@ def test_internacional_coherente_con_el_principal_y_sus_fuentes(principal, inter
 
     registro = {f"DOC:{r['id']}" for r in legado.manifiesto_fuentes()}
     docs = [n for n in nodos.values() if n["tipo"] == "Documento"]
-    assert docs and all(n["id"] in registro for n in docs)   # mismos ids que el registro de fuentes
+    assert docs and all(n["id"] in registro for n in docs)  # mismos ids que el registro de fuentes
     # Conceptos y prerrequisitos idénticos a los del principal.
     for n in nodos.values():
         if n["tipo"] in ("Concepto", "Practica"):
@@ -252,19 +277,31 @@ def test_internacional_coherente_con_el_principal_y_sus_fuentes(principal, inter
 
 
 def test_todo_elemento_con_un_concepto_dividido_tiene_asignacion():
-    """Etiquetas crudas (antes de la capa de divisiones): si un etiquetado nuevo usa un concepto dividido en un elemento
-    sin asignación, hay que decidir a cuál de las partes va (criterio en conceptos/divisiones.json)."""
+    """Require an explicit allocation when an element uses a divided concept."""
+
+    # Historical test notes:
+    # sin asignación, hay que decidir a cuál de las partes va (criterio en conceptos/divisiones.json).
     crudas = {
-        "malla_v1": {f["id"]: f["conceptos"] for f in json.loads(
-            ruta("data/interim/conceptos/etiquetado_temas.json").read_text(encoding="utf-8"))},
-        "objetivos_pais": {f["id"]: f["conceptos"] for f in json.loads(
-            ruta("data/interim/conceptos/etiquetado_paises.json").read_text(encoding="utf-8"))},
-        "internacional": {}, "malla_v2": {}}
-    for f in sorted(ruta("data/interim").glob("internacional*/etiquetado/*.json")):   # los dos tramos
+        "malla_v1": {
+            f["id"]: f["conceptos"]
+            for f in json.loads(ruta("data/interim/conceptos/etiquetado_temas.json").read_text(encoding="utf-8"))
+        },
+        "objetivos_pais": {
+            f["id"]: f["conceptos"]
+            for f in json.loads(ruta("data/interim/conceptos/etiquetado_paises.json").read_text(encoding="utf-8"))
+        },
+        "internacional": {},
+        "malla_v2": {},
+    }
+    for f in sorted(ruta("data/interim").glob("internacional*/etiquetado/*.json")):  # los dos tramos
         conjunto = "internacional" if f.name.startswith("pais_") else "malla_v2"
         for i, e in json.loads(f.read_text(encoding="utf-8")).items():
             crudas[conjunto].setdefault(i, []).extend(e["principales"] + e["secundarios"])
     for d in conceptos.divisiones():
-        sin = [(c, i) for c, items in crudas.items() for i, ids in items.items()
-               if d["concepto"] in ids and i not in d["asignaciones"].get(c, {})]
+        sin = [
+            (c, i)
+            for c, items in crudas.items()
+            for i, ids in items.items()
+            if d["concepto"] in ids and i not in d["asignaciones"].get(c, {})
+        ]
         assert not sin, f"{d['concepto']}: {len(sin)} elementos sin asignación, p. ej. {sin[:3]}"

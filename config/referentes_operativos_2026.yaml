@@ -1,0 +1,624 @@
+# Paráfrasis locales trazables; consultar cobertura y límites antes de usar.
+schema_version: '1.0'
+meta:
+  clasificacion: parafrasis_del_proyecto
+  no_equivalencia: Los IDs son locales; no son códigos oficiales ni acreditan alineación o eficacia.
+  fecha_consulta: '2026-10-21'
+  alcance: '29 referentes para analizar tareas: 21 de PISA 2025 final y 8 de ERCE 2019 técnico. La cobertura se
+    limita a las unidades contadas explícitamente.'
+  exhaustividad: por_unidad_no_global
+  paginas: Numeración PDF desde 1 incluida portada; los folios impresos pueden diferir.
+  procedencia: data/referencias_2026/manifest.json
+  documentacion: docs/investigacion/referentes_operativos_2026.md
+  limites:
+  - Subcompetencia es la etiqueta del proyecto para cada viñeta de desempeño de los recuadros PISA; la fuente no
+    les asigna estos IDs.
+  - No se incluyen todos los ejemplos de contenido ni los descriptores procedimentales y epistémicos detallados,
+    identidad científica o competencias ambientales específicas de PISA.
+  - Los cinco dominios y tres procesos ERCE no son todos sus indicadores de construcción de ítems; no se inventan
+    los indicadores no publicados aquí.
+  - La tabla 2.9 ERCE se verificó como distribución de la prueba, no como pesos para puntuar alineaciones o planificar
+    horas de clase.
+  - Ancla, edad o grado coincidentes no demuestran que una tarea solicite el desempeño; deben contrastarse consigna,
+    respuesta esperada y criterio de evaluación.
+  - PISA 2025 se referencia a población nominal de 15 años; ERCE 2019 ciencias a sexto de primaria, sin equivalencia
+    automática con edad.
+  - Este catálogo no sustituye ni modifica las 22 dimensiones de muestra ni los conjuntos de evaluación congelados.
+  cobertura:
+  - fuente: pisa_2025_marco_final
+    unidad: Competencias centrales de ciencias, recuadros 2.3, 2.4 y 2.5
+    paginas_pdf:
+    - 34
+    - 36
+    tipo: competencia
+    padre: null
+    esperados: 3
+    incluidos: 3
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+  - fuente: pisa_2025_marco_final
+    unidad: Viñetas de desempeños del recuadro 2.3
+    paginas_pdf:
+    - 34
+    tipo: subcompetencia
+    padre: LOCAL:pisa2025_explicar
+    esperados: 6
+    incluidos: 6
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+  - fuente: pisa_2025_marco_final
+    unidad: Viñetas de desempeños del recuadro 2.4
+    paginas_pdf:
+    - 34
+    tipo: subcompetencia
+    padre: LOCAL:pisa2025_diseno_evidencia
+    esperados: 4
+    incluidos: 4
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+  - fuente: pisa_2025_marco_final
+    unidad: Viñetas de desempeños del recuadro 2.5
+    paginas_pdf:
+    - 36
+    tipo: subcompetencia
+    padre: LOCAL:pisa2025_informacion_decisiones
+    esperados: 5
+    incluidos: 5
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+  - fuente: pisa_2025_marco_final
+    unidad: Tres tipos de conocimiento definidos en el recuadro 2.2
+    paginas_pdf:
+    - 24
+    tipo: tipo_conocimiento
+    padre: null
+    esperados: 3
+    incluidos: 3
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+  - fuente: erce_2019_reporte_tecnico_2025
+    unidad: Cinco dominios descritos en Aprendizajes evaluados en Ciencias
+    paginas_pdf:
+    - 11
+    - 19
+    tipo: dominio
+    padre: null
+    esperados: 5
+    incluidos: 5
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+  - fuente: erce_2019_reporte_tecnico_2025
+    unidad: Tres familias de procesos descritas en Aprendizajes evaluados en Ciencias
+    paginas_pdf:
+    - 11
+    - 19
+    tipo: proceso
+    padre: null
+    esperados: 3
+    incluidos: 3
+    estado: completa_en_unidad_declarada
+    limites: Conteo de entradas de esta unidad explícita; no acredita exhaustividad del marco ni alineación de tareas.
+referentes:
+- id: LOCAL:pisa2025_explicar
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Explain phenomena scientifically
+  descripcion: Elaborar y valorar explicaciones, predicciones y soluciones sobre fenómenos naturales o tecnológicos
+    mediante conocimientos y representaciones científicas.
+  eje: practica
+  tipo: competencia
+  padre: null
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_diseno_evidencia
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Construct and evaluate designs for scientific enquiry
+  descripcion: Construir y valorar investigaciones que respondan preguntas científicas y analizar críticamente datos
+    y evidencia para sostener conclusiones.
+  eje: practica
+  tipo: competencia
+  padre: null
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_informacion_decisiones
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 36
+  ancla: Research, evaluate and use scientific information for decision making and action
+  descripcion: Investigar y contrastar información y argumentos científicos para justificar decisiones y acciones
+    relacionadas con asuntos de la vida contemporánea.
+  eje: practica
+  tipo: competencia
+  padre: null
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_exp_aplicar_saber
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Recall and apply appropriate scientific knowledge
+  descripcion: Recuperar y utilizar el conocimiento científico pertinente para elaborar la explicación o solución
+    solicitada.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_explicar
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_exp_traducir_representaciones
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Use different forms of representations and translate between these forms
+  descripcion: Emplear distintas representaciones de una idea o fenómeno y convertir información entre ellas conservando
+    su significado.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_explicar
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_exp_predecir_justificar
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Make and justify appropriate scientific predictions and solutions
+  descripcion: Proponer predicciones o soluciones compatibles con la ciencia y justificar por qué se esperan esos
+    resultados.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_explicar
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_exp_evaluar_modelos
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Identify, construct and evaluate models
+  descripcion: Identificar, elaborar y valorar modelos científicos para explicar el fenómeno que representan.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_explicar
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_exp_formular_hipotesis
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Recognise and develop explanatory hypotheses
+  descripcion: Reconocer o proponer hipótesis que expliquen de manera provisional fenómenos del mundo material.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_explicar
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_exp_implicaciones_sociedad
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Explain the potential implications of scientific knowledge for society
+  descripcion: Explicar posibles consecuencias sociales de utilizar determinados conocimientos científicos.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_explicar
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_inv_identificar_pregunta
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Identify the question in a given scientific study
+  descripcion: Identificar la pregunta que una investigación científica concreta busca responder.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_diseno_evidencia
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_inv_proponer_diseno
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Propose an appropriate experimental design
+  descripcion: Proponer un diseño experimental pertinente para investigar la pregunta formulada.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_diseno_evidencia
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_inv_valorar_diseno
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Evaluate whether an experimental design is best suited to answer the question
+  descripcion: Juzgar si un diseño experimental permite responder adecuadamente la pregunta, considerando qué observa,
+    modifica y controla.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_diseno_evidencia
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_inv_interpretar_concluir
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 34
+  ancla: Interpret data presented in different representations
+  descripcion: Interpretar datos presentados mediante distintas representaciones, derivar conclusiones justificadas
+    y valorar los méritos relativos de esas representaciones o interpretaciones.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_diseno_evidencia
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_info_contrastar_fuentes
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 36
+  ancla: Search, evaluate and communicate the relative merits of different sources of information
+  descripcion: Buscar, evaluar y comunicar los méritos relativos de fuentes científicas, sociales, económicas o
+    éticas; juzgar si sustentan argumentos o soluciones para decidir sobre una cuestión relacionada con la ciencia.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_informacion_decisiones
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_info_distinguir_afirmaciones
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 36
+  ancla: Distinguish among claims based on strong scientific evidence
+  descripcion: Distinguir razonadamente afirmaciones con evidencia científica sólida, afirmaciones de personas expertas
+    o no expertas y opiniones.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_informacion_decisiones
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_info_argumentar_conclusion
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 36
+  ancla: Construct an argument to support an appropriate scientific conclusion from a set of data
+  descripcion: Construir un argumento que conecte datos con una conclusión científicamente apropiada.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_informacion_decisiones
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_info_criticar_falacias
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 36
+  ancla: Critique standard flaws in science
+  descripcion: Detectar y criticar fallos habituales en argumentos relacionados con ciencia, como supuestos débiles,
+    confusión entre correlación y causa o generalización desde datos escasos.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_informacion_decisiones
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_info_justificar_acciones
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 36
+  ancla: Justify decisions using scientific arguments
+  descripcion: Justificar decisiones individuales o colectivas mediante argumentos científicos que contribuyan a
+    resolver problemas contemporáneos o de sostenibilidad.
+  eje: practica
+  tipo: subcompetencia
+  padre: LOCAL:pisa2025_informacion_decisiones
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_conocimiento_contenido
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 24
+  ancla: facts, concepts, ideas and theories about the natural world
+  descripcion: Conocer hechos, conceptos, ideas y teorías establecidos por la ciencia para comprender el mundo natural;
+    el contenido se selecciona por pertinencia, solidez y adecuación a la población.
+  eje: conocimiento
+  tipo: tipo_conocimiento
+  padre: null
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_conocimiento_procedimental
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 24
+  ancla: Knowledge of the procedures that scientists use to establish scientific knowledge
+  descripcion: Conocer los procedimientos y conceptos que permiten obtener e interpretar evidencia empírica, como
+    controlar variables, repetir medidas y representar o comunicar datos.
+  eje: conocimiento
+  tipo: tipo_conocimiento
+  padre: null
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:pisa2025_conocimiento_epistemico
+  marco: PISA
+  ciclo: '2025'
+  version_documental: Marco final del ciclo 2025, publicado 2026
+  fuente: pisa_2025_marco_final
+  sha256: 5b50212929d3fe97c7226e9180a7349a3b619d416e3a5424c327a59e2d33898f
+  paginas_pdf:
+  - 24
+  ancla: the function that questions, observations, theories, hypotheses, models and arguments play in science
+  descripcion: Comprender el papel de preguntas, observaciones, hipótesis, modelos, teorías y argumentos, así como
+    de la revisión y el consenso, en la construcción y justificación del conocimiento científico.
+  eje: conocimiento
+  tipo: tipo_conocimiento
+  padre: null
+  alcance: Población nominal PISA de 15 años. No establece grado salvadoreño ni dificultad empírica; exige evidencia
+    del desempeño en la tarea.
+  grado_referencia: null
+  edad_referencia: 15
+- id: LOCAL:erce2019_dom_cuerpo_salud
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: Cuerpo humano y salud
+  descripcion: Conocer el cuerpo humano y comprender aspectos de su desarrollo, crecimiento y equilibrio.
+  eje: contenido
+  tipo: dominio
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_dom_ciencia_sociedad
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: Ciencia, tecnología y sociedad
+  descripcion: Comprender ciencia y tecnología como actividades humanas vinculadas al contexto social, político
+    y económico y analizar sus repercusiones en salud y ambiente.
+  eje: contenido
+  tipo: dominio
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_dom_tierra_solar
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: La Tierra y el sistema solar
+  descripcion: Comprender características y movimientos terrestres, fenómenos naturales y relaciones básicas entre
+    la Tierra, el Sol, la Luna y otros planetas.
+  eje: contenido
+  tipo: dominio
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_dom_energia_materia
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: Energía y materia
+  descripcion: Relacionar manifestaciones y transferencia de energía, calor y fuerza con nociones de materia, átomos
+    y moléculas, estados de agregación, masa, volumen y temperatura.
+  eje: contenido
+  tipo: dominio
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_dom_vida_ecologia
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: Seres vivos, ecología y medioambiente
+  descripcion: Comprender célula y función, biodiversidad, ciclos vitales, ecosistemas, recursos naturales y relaciones
+    alimentarias que sostienen la vida.
+  eje: contenido
+  tipo: dominio
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_proc_reconocer
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: conceptos, principios, hechos, datos, hipótesis,
+  descripcion: Reconocer o identificar conceptos, principios, hechos, datos, hipótesis, modelos, teorías y leyes
+    de las ciencias.
+  eje: demanda
+  tipo: proceso
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_proc_analizar_aplicar
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: una situación problemática simple
+  descripcion: Vincular fenómenos con explicaciones científicas, contrastar e interpretar información y utilizar
+    conocimientos para resolver una situación problemática sencilla.
+  eje: demanda
+  tipo: proceso
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null
+- id: LOCAL:erce2019_proc_producir_transferir_evaluar
+  marco: ERCE
+  ciclo: '2019'
+  version_documental: Reporte UNESCO 2025, 297 páginas; copia pública ministerial MINEDUC Guatemala
+  fuente: erce_2019_reporte_tecnico_2025
+  sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+  paginas_pdf:
+  - 11
+  - 19
+  ancla: propuestas, explicaciones y argumentos
+  descripcion: Elaborar o evaluar propuestas, explicaciones y argumentos con fundamento científico para construir
+    conocimiento y resolver problemas de mayor complejidad conceptual.
+  eje: demanda
+  tipo: proceso
+  padre: null
+  alcance: Ciencias Naturales de sexto de primaria en ERCE 2019; no se traslada automáticamente a tercero, otro
+    ciclo o edad fija.
+  grado_referencia: 6
+  edad_referencia: null

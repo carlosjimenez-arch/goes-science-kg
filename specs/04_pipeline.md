@@ -1,5 +1,9 @@
 # 04 · Pipeline
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 Cada etapa tiene entrada, salida, comando y criterio de aceptación. Las etapas con IA usan
 subagentes por lote (`.claude/skills/`) y un paso determinista para unir los resultados.
 

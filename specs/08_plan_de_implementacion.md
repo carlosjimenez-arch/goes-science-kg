@@ -1,5 +1,9 @@
 # 08 · Plan de implementación
 
+> Contrato del pipeline histórico V1–V3. Conserva decisiones y capacidades todavía usadas.
+> Para la publicación V4 y la API actual, consultar [spec 16](16_producto_v4.md),
+> [spec 17](17_aplicacion_curricular.md) y [documentación vigente](../docs/README.md).
+
 Fases en orden. Cada tarea tiene una definición de terminado (DdT). Al cerrar una fase se
 muestra el resultado al usuario antes de seguir, se actualiza este archivo (✅) y se hace commit.
 
@@ -164,3 +168,16 @@ V3 quitó.
 - CSV de revisión y reimportación de decisiones.
 - Explorador HTML del grafo por asignatura (siguiendo el de `reportes/`).
 - Opcional: API de lectura y exportación a Neo4j, como en `goes-math-kg`.
+
+
+## Entrega de biblioteca docente · 2026-10-22
+
+- ✅ Reconstruir cómo se generaban los paquetes V3 y preservar versiones/pendientes.
+- ✅ Compilar 1.013 preparaciones V4 y 108 unidades desde propuestas revisadas, con fuentes físicas verificadas.
+- ✅ Conservar 316 archivos originales y los cuatro bancos pedagógicos, sin migración semántica implícita.
+- ✅ Distribuir una biblioteca SQLite inmutable y manifest en GCS con restauración independiente.
+- ✅ Exponer consulta, filtros, detalle y descargas en `/api/v4/materiales`.
+- ✅ Verificar correspondencia completa y presupuesto sin nuevas llamadas a modelos.
+
+Alcance: preparación de clases con material existente; no guiones nuevos completos por objetivo.
+Contrato: [18](18_materiales_docentes.md). Operación: [biblioteca docente](../docs/MATERIALES_DOCENTES.md).

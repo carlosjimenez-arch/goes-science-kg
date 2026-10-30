@@ -1,8 +1,8 @@
-"""SessionStart: estado del proyecto al iniciar o retomar una sesión (hechos, no instrucciones).
+"""Report repository facts when an editor session starts or resumes."""
 
-Rama y cambios sin commit, cuenta de git frente a la de GOES, decisiones de contenido pendientes de confirmar con el
-MINED y el estado de las etapas del estudio internacional. Todo local y rápido: sin red ni llamadas a Vertex.
-"""
+# Historical test notes:
+# Rama y cambios sin commit, cuenta de git frente a la de GOES, decisiones de contenido pendientes de confirmar con el
+# MINED y el estado de las etapas del estudio internacional. Todo local y rápido: sin red ni llamadas a Vertex.
 
 from __future__ import annotations
 
@@ -50,26 +50,37 @@ def _decisiones() -> list[str]:
         pendientes = sum(not r.get("confirmaciones") and not r.get("observaciones") for r in registros)
         observadas = sum(bool(r.get("observaciones")) for r in registros)
         panel = sum(bool(r.get("dictamenes_panel")) for r in registros)
-        lineas.append(f"  - {nombre}: {len(registros)} ({pendientes} sin confirmar con el MINED, {panel} con dictamen "
-                      f"del panel IA, {observadas} observadas)")
+        lineas.append(
+            f"  - {nombre}: {len(registros)} ({pendientes} sin confirmar con el MINED, {panel} con dictamen "
+            f"del panel IA, {observadas} observadas)"
+        )
     return lineas
 
 
 ETAPAS = (  # (nombre, objetivos extraídos, etiquetado de los países, consenso); rutas de internacional/tramo.py
-    ("9.°–11.° (spec 11)", "data/interim/internacional/objetivos", "data/interim/internacional/etiquetado",
-     "data/grafo/internacional/consenso.json"),
-    ("2.°–8.° (spec 12)", "data/interim/internacional_2_8/objetivos", "data/interim/internacional_2_8/etiquetado",
-     "data/grafo/internacional_2_8/consenso.json"),
+    (
+        "9.°–11.° (spec 11)",
+        "data/interim/internacional/objetivos",
+        "data/interim/internacional/etiquetado",
+        "data/grafo/internacional/consenso.json",
+    ),
+    (
+        "2.°–8.° (spec 12)",
+        "data/interim/internacional_2_8/objetivos",
+        "data/interim/internacional_2_8/etiquetado",
+        "data/grafo/internacional_2_8/consenso.json",
+    ),
 )
 
 
 def _estado_etapa(objetivos: str, etiquetado: str, consenso: str) -> str:
-    """Hasta dónde llegó una etapa, mirando lo que dejó en disco (una extracción a medias también cuenta)."""
+    """Report observed stage progress, including incomplete extraction artifacts."""
     if (RAIZ / consenso).exists():
         return "construido"
     d_obj, d_etq = RAIZ / objetivos, RAIZ / etiquetado
-    paises = sorted(p.stem for p in d_obj.glob("*.json") if not p.stem.endswith("_descartados")) \
-        if d_obj.exists() else []
+    paises = (
+        sorted(p.stem for p in d_obj.glob("*.json") if not p.stem.endswith("_descartados")) if d_obj.exists() else []
+    )
     if not paises:
         return "lista para ejecutar; espera aprobación del gasto en Vertex"
     etiquetados = sorted({p.stem.split("_")[1] for p in d_etq.glob("pais_*.json")}) if d_etq.exists() else []
@@ -86,21 +97,31 @@ def main() -> None:
     cfg = config()
     correo, rama, gcloud = _git("config", "user.email"), _git("branch", "--show-current"), _gcloud()
     sin_commit = [linea for linea in _git("status", "--short").splitlines() if "Mallas sugeridas" not in linea]
-    texto = "\n".join([
-        "Estado del proyecto goes-science-kg (hook SessionStart):",
-        f"- Rama: {rama or '?'}; archivos con cambios sin commit: {len(sin_commit)}.",
-        f"- Cuenta de git: {correo or '(vacía)'} "
-        f"({'es la de GOES' if correo == cfg['correo_git'] else 'NO es la de GOES: ' + cfg['correo_git']}).",
-        f"- Proyecto de GCP esperado: {cfg['proyecto_gcp']} (credenciales por defecto de gcloud; el .env no se lee).",
-        f"- Cuenta activa de gcloud: {gcloud or '(no disponible)'}"
-        f"{'' if gcloud in (None, cfg['correo_git']) else ' — NO es la de GOES; Vertex se detendrá antes de gastar'}.",
-        "- Decisiones de contenido (capas que ganan sobre la IA):", *_decisiones(),
-        "- Estudio internacional:", *_etapas(),
-        "- Guardas activas (.claude/hooks): .env y fuentes protegidos, gasto en Vertex con aprobación del usuario,"
-        " commit solo con cuenta GOES y pruebas en verde.",
-    ])
-    print(json.dumps({"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": texto}},
-                     ensure_ascii=False))
+    aviso_cuenta = (
+        "" if gcloud in (None, cfg["correo_git"]) else " — NO es la de GOES; Vertex se detendrá antes de gastar"
+    )
+    texto = "\n".join(
+        [
+            "Estado del proyecto goes-science-kg (hook SessionStart):",
+            f"- Rama: {rama or '?'}; archivos con cambios sin commit: {len(sin_commit)}.",
+            f"- Cuenta de git: {correo or '(vacía)'} "
+            f"({'es la de GOES' if correo == cfg['correo_git'] else 'NO es la de GOES: ' + cfg['correo_git']}).",
+            f"- Proyecto de GCP esperado: {cfg['proyecto_gcp']} "
+            "(credenciales por defecto de gcloud; el .env no se lee).",
+            f"- Cuenta activa de gcloud: {gcloud or '(no disponible)'}{aviso_cuenta}.",
+            "- Decisiones de contenido (capas que ganan sobre la IA):",
+            *_decisiones(),
+            "- Estudio internacional:",
+            *_etapas(),
+            "- Guardas activas (.claude/hooks): .env y fuentes protegidos, gasto en Vertex con aprobación del usuario,"
+            " commit solo con cuenta GOES y pruebas en verde.",
+        ]
+    )
+    print(
+        json.dumps(
+            {"hookSpecificOutput": {"hookEventName": "SessionStart", "additionalContext": texto}}, ensure_ascii=False
+        )
+    )
 
 
 if __name__ == "__main__":

@@ -1,12 +1,12 @@
-"""Revisiones (spec 07): decisiones revisadas que GANAN sobre la clasificación automática o de IA.
+"""Apply explicit reviewed decisions ahead of automatic or AI classification."""
 
-Cada archivo data/interim/revisiones/<nombre>.json (excepto los lote_*.json) es una lista de registros por tema:
-{"id": "<id del tema sin TEMA:>", "asignatura": "...", "conceptos": [...], "practicas": [...],
- "confianza": "...", "justificacion": "...", "version": "...", "revisado_por": "..."}
-Los campos ausentes no se tocan. Si dos archivos revisan el mismo tema, gana el último en orden alfabético
-(por eso conviene nombrarlos con fecha: 2026-10-05_<tema>.json). La revisión humana del MINED (skill
-revision-humana) escribe en el mismo formato.
-"""
+# Historical implementation notes:
+# Cada archivo data/interim/revisiones/<nombre>.json (excepto los lote_*.json) es una lista de registros por tema:
+# {"id": "<id del tema sin TEMA:>", "asignatura": "...", "conceptos": [...], "practicas": [...],
+#  "confianza": "...", "justificacion": "...", "version": "...", "revisado_por": "..."}
+# Los campos ausentes no se tocan. Si dos archivos revisan el mismo tema, gana el último en orden alfabético
+# (por eso conviene nombrarlos con fecha: 2026-10-05_<tema>.json). La revisión humana del MINED (skill
+# revision-humana) escribe en el mismo formato.
 
 from __future__ import annotations
 
@@ -20,11 +20,12 @@ DIR = "data/interim/revisiones"
 
 @cache
 def revisiones_temas() -> dict[str, dict]:
-    """Revisiones por tema, indexadas por id; los archivos se fusionan en orden alfabético (en cada campo gana el
-    último).
+    """Merge topic reviews alphabetically with the documented field-level precedence."""
 
-    Cada registro lleva `archivo_revision` con el último archivo que lo tocó. Resultado en caché.
-    """
+    # Implementation notes:
+    # último).
+    #
+    # Cada registro lleva `archivo_revision` con el último archivo que lo tocó. Resultado en caché.
     d = ruta(DIR)
     out: dict[str, dict] = {}
     if not d.exists():

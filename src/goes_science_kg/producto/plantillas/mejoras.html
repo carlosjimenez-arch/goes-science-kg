@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ciencias V4 · Propuesta curricular</title>
+<style>
+body {font:16px/1.6 system-ui;background:#f4f6f4;color:#17352f;margin:0}
+main {max-width:1150px;margin:auto;padding:2rem}
+header,section {background:white;padding:1.5rem;margin:1rem 0;border-radius:12px;border:1px solid #cfddd7}
+h1 {font-size:2.3rem;line-height:1.2} h2 {font-size:1.2rem}
+details {border-top:1px solid #d8e3dc;padding:.8rem 0} summary {cursor:pointer;font-weight:600}
+dd {margin:0 0 .7rem} dt {font-weight:bold;text-transform:capitalize}
+small,code {overflow-wrap:anywhere;color:#4a625b}
+select {padding:.5rem;margin:.5rem} .estado {background:#edf4ed;padding:.3rem}
+section[hidden] {display:none} a {color:#175c51} .cobertura {font-variant-numeric:tabular-nums}
+@media(max-width:600px) {main {padding:.7rem} header,section {padding:1rem} h1 {font-size:1.7rem}}
+</style>
+<main>
+<header>
+<h1>Propuesta curricular de Ciencias V4</h1>
+<p>Objetivos, evaluación y apoyos con revisión de cuatro especialistas automáticos.</p>
+<p>Los recursos adicionales son condiciones para impartir la propuesta; su disponibilidad real en escuelas no se ha comprobado.</p>
+$alcance
+<p><a href="ciencias-v4-propuestas.xlsx">Descargar matriz Excel</a> ·
+<a href="archivo-curricular.json">Evidencias y votos completos</a></p>
+<p><label for="grado">Grado</label> <select id="grado" aria-label="Grado"><option value="">Todos</option>$grados</select>
+<label for="estado">Estado</label> <select id="estado" aria-label="Estado"><option value="">Todos</option>
+<option value="respaldado_automaticamente">Respaldada automáticamente</option>
+<option value="no_respaldado">Requiere corrección</option>
+<option value="abstencion">Evidencia insuficiente</option>
+</select></p>
+</header>
+$tarjetas
+<p id="sin-resultados" role="status" hidden>No hay unidades que coincidan con los filtros.</p>
+<aside><h2>Progresiones documentales nativas</h2>
+<p>Conservan sus bandas extranjeras. No equivalen a grados salvadoreños ni prueban prerrequisitos individuales.</p>
+<ul>$progresiones</ul></aside>
+<footer><details><summary>Identificador de esta entrega</summary><code>$archivo_id</code></details></footer>
+</main>
+<script>
+const grado = document.getElementById('grado');
+const estado = document.getElementById('estado');
+function filtrar() {
+  let visibles = 0;
+  document.querySelectorAll('section').forEach(s => {
+    s.hidden = Boolean((grado.value && s.dataset.grado !== grado.value) ||
+                       (estado.value && s.dataset.estado !== estado.value));
+    if (!s.hidden) visibles += 1;
+  });
+  document.getElementById('sin-resultados').hidden = visibles > 0;
+}
+grado.onchange = estado.onchange = filtrar;
+</script>
+</html>

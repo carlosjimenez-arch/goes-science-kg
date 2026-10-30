@@ -1,7 +1,7 @@
-"""Generadores de salidas (fichas, progresión, alineación, informe y visor internacionales, CLI).
+"""Test deterministic report, progression, alignment, international viewer, and CLI generators."""
 
-Todas escriben en carpetas temporales: las pruebas no tocan el repo.
-"""
+# Historical test notes:
+# Todas escriben en carpetas temporales: las pruebas no tocan el repo.
 
 from __future__ import annotations
 
@@ -15,7 +15,7 @@ from goes_science_kg.config import cargar, ruta
 
 
 def _redirigir(monkeypatch, modulo, tmp_path) -> None:
-    """Hace que `modulo.ruta(...)` apunte a tmp_path (solo para escribir; lo que lee llega por argumento)."""
+    """Redirect generated output paths without changing source reads supplied as arguments."""
     monkeypatch.setattr(modulo, "ruta", lambda rel: tmp_path / rel)
 
 
@@ -36,14 +36,16 @@ def test_progresion_autocontenida(grafo, tmp_path, monkeypatch):
     _redirigir(monkeypatch, progresion, tmp_path)
     for p in progresion.escribir_todas(*grafo):
         html = open(p, encoding="utf-8").read()
-        assert "<script src" not in html                      # sin librerías externas
+        assert "<script src" not in html  # sin librerías externas
         datos = json.loads(re.search(r"const D = (.*?);\n", html).group(1).replace("<\\/", "</"))
         assert datos["filas"] and datos["grados"] == list(range(2, 12))
 
 
 def _catalogo() -> list[dict]:
-    return [{"codigo": c, "asignatura": a, "unidad": "U1", "eje": "E", "tema": "T", "objetivo": "O"}
-            for c, a in (("BIO1", "biologia"), ("QUI1", "quimica"))]
+    return [
+        {"codigo": c, "asignatura": a, "unidad": "U1", "eje": "E", "tema": "T", "objetivo": "O"}
+        for c, a in (("BIO1", "biologia"), ("QUI1", "quimica"))
+    ]
 
 
 def test_alineacion_preparar_y_unir(tmp_path, monkeypatch):
@@ -55,8 +57,10 @@ def test_alineacion_preparar_y_unir(tmp_path, monkeypatch):
     for p in sorted((tmp_path / "lotes").glob("lote_*.json")):
         lote = json.loads(p.read_text(encoding="utf-8"))
         codigo = "BIO1" if "biologia" in lote["lote"] else "QUI1"
-        salida = [{"id": i["id"], "obj1": codigo, "obj2": "", "confianza": "alta", "justificacion": "prueba"}
-                  for i in lote["items"]]
+        salida = [
+            {"id": i["id"], "obj1": codigo, "obj2": "", "confianza": "alta", "justificacion": "prueba"}
+            for i in lote["items"]
+        ]
         p.with_name(p.name.replace("lote_", "salida_", 1)).write_text(json.dumps(salida), encoding="utf-8")
     r = alineacion.unir("AUSS_", "union", _catalogo())
     assert r["temas"] > 0 and r["confianza"] == {"alta": r["temas"]}
@@ -76,7 +80,7 @@ def test_alineacion_rechaza_codigos_inventados(tmp_path, monkeypatch):
 
 
 def test_consenso_versionado_al_dia(tmp_path, monkeypatch):
-    """El consenso internacional versionado corresponde a los objetivos y etiquetas versionados."""
+    """Keep the persisted international consensus consistent with its objectives and labels."""
     import dataclasses
 
     from goes_science_kg.internacional import consenso, tramo
@@ -104,7 +108,7 @@ def test_informe_internacional(tmp_path, monkeypatch):
         wb = load_workbook(tmp_path / f"Contraste_{asig}.xlsx")
         assert wb.sheetnames == ["Datos", "Contraste", "Resumen"]
         c = wb["Contraste"]
-        assert all(str(x.value).startswith("=") for x in c["C"][1:])       # todo número es fórmula
+        assert all(str(x.value).startswith("=") for x in c["C"][1:])  # todo número es fórmula
         total = wb["Resumen"].cell(wb["Resumen"].max_row, 2).value
         assert total.startswith("=SUM(")
     with open(tmp_path / "revision_humana.csv", encoding="utf-8") as f:
@@ -118,12 +122,21 @@ def test_informe_internacional(tmp_path, monkeypatch):
 def test_visor_internacional_escapa_el_cierre_de_script(tmp_path):
     from goes_science_kg.internacional import informe, visor
 
-    fila = {"concepto": "CON:x/y", "nombre": "</script><b>inyección</b>", "asignatura": "fisica", "clase": "alineado",
-            "sv_primer_grado": 10, "sv_en_tramo": 10, "n_nucleo_en_tramo": 1, "n_especializacion": 0, "paises": {},
-            "sv_temas": []}
+    fila = {
+        "concepto": "CON:x/y",
+        "nombre": "</script><b>inyección</b>",
+        "asignatura": "fisica",
+        "clase": "alineado",
+        "sv_primer_grado": 10,
+        "sv_en_tramo": 10,
+        "n_nucleo_en_tramo": 1,
+        "n_especializacion": 0,
+        "paises": {},
+        "sv_temas": [],
+    }
     visor.escribir({"filas": [fila], "temas": {}}, informe.clases(), informe.NOMBRE, tmp_path)
     html = (tmp_path / "visor.html").read_text(encoding="utf-8")
-    assert html.count("</script>") == 1                       # solo el cierre real del bloque
+    assert html.count("</script>") == 1  # solo el cierre real del bloque
     datos = json.loads(re.search(r"const D = (.*?);\n", html).group(1).replace("<\\/", "</"))
     assert datos["filas"][0]["c"] == fila["nombre"]
 
@@ -146,17 +159,17 @@ def test_visor_de_grado_y_comunidades(grafo, tmp_path, monkeypatch):
     nodos, aristas = grafo
     sn, sa, diag = subgrafo(7, nodos, aristas, evidencia_orden(nodos, aristas))
     a, b = comunidades.comunidades_grado(7, sn, sa), comunidades.comunidades_grado(7, sn, sa)
-    assert a and a == b                                       # Louvain con semilla fija: mismo resultado
+    assert a and a == b  # Louvain con semilla fija: mismo resultado
     _redirigir(monkeypatch, visor, tmp_path)
     html = open(visor.escribir_visor(7, sn, sa, diag), encoding="utf-8").read()
     externos = re.findall(r'<script src="([^"]+)"', html)
-    assert all(re.search(r"@\d+\.\d+\.\d+/", u) for u in externos), externos   # versión exacta fijada
+    assert all(re.search(r"@\d+\.\d+\.\d+/", u) for u in externos), externos  # versión exacta fijada
     assert html.count("</script>") == html.count("<script")
 
 
 @pytest.mark.parametrize("clave", ["9_11", "2_8"])
 def test_formula_lectura_balanceada_en_cada_tramo(tmp_path, clave):
-    """La fórmula «Lectura» del Excel cambia según el tramo; un paréntesis de más la vuelve inválida en Numbers."""
+    """Require balanced Excel formula branches for each selected grade band."""
     from openpyxl import load_workbook
 
     from goes_science_kg.internacional import informe, tramo

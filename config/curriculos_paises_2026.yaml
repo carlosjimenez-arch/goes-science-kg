@@ -1,0 +1,958 @@
+schema_version: '1.0'
+corte: '2026-10-21'
+repositorio: data/referencias_paises_2026
+politica:
+  descarga: Explicita mediante --descargar; sólo fuentes seleccionadas
+  version_curriculo_sv: No se activa ni cambia la publicación V4
+  equivalencias_sv: No establecidas; conservar edades, cohortes y modalidades originales
+  alcance: Identidad documental y alcance declarado; no cobertura ni causalidad pedagógica
+fuentes:
+  eng_nc_ciencias_ks1_2:
+    institucion: Department for Education
+    titulo: 'National curriculum in England: science programmes of study, key stages 1 and 2'
+    url: https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study
+    url_documento: https://assets.publishing.service.gov.uk/media/5a806ebd40f0b62305b8b1fa/PRIMARY_national_curriculum_-_Science.pdf
+    version: DFE-00182-2013/correccion-2015-05-06
+    estado_publicacion: programa_estudio_estatutario
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: ENG
+    jurisdiccion: Inglaterra
+    idioma: en
+    sha256_verificado: 5aafcbad6d43eb3aed6dbedf73ee334342a6033551c3a4a4cc1ac3a171a5e359
+    bytes_verificados: 250526
+    paginas_verificadas: 34
+    fecha_portada: 2013-09
+    correccion_documentada: '2015-05-06'
+    etapas:
+    - etapa: KS1
+      years_originales:
+      - 1
+      - 2
+      edades_habituales_originales:
+        min: 5
+        max: 7
+      grado_salvador: null
+      equivalencia_curricular_salvador: no_establecida
+    - etapa: KS2
+      years_originales:
+      - 3
+      - 4
+      - 5
+      - 6
+      edades_habituales_originales:
+        min: 7
+        max: 11
+      grado_salvador: null
+      equivalencia_curricular_salvador: no_establecida
+    implementacion:
+    - desde: 2014-09
+      alcance_original: KS1–2, con transición de Years 2 y 6
+    - desde: 2015-09
+      alcance_original: Years 2 y 6
+    alcance_legal:
+      escuelas_mantenidas: programa_nacional_obligatorio_sujeto_a_excepciones_y_adaptaciones_aplicables
+      academias: no_se_presupone_obligacion_de_seguir_este_programa_al_corte
+      contenido_no_estatutario: preservar_rango_y_rotulo_por_fragmento_no_hacerlo_obligatorio
+      fuente_alcance: ara_2027_actualizado_2026-10-14.html#14.1
+    anclas:
+    - paginas_pdf:
+      - 4
+      tema: Organización por etapa y condición normativa
+    - paginas_pdf:
+      - 6
+      - 14
+      - 15
+      - 25
+      - 26
+      tema: Prácticas científicas integradas al contenido
+    - paginas_pdf:
+      - 18
+      tema: Luz en Year 3, sección objeto de la corrección de 2015
+    correspondencia_repo:
+      archivo: data/fuentes/externos/paises/inglaterra/ENG_NC_Science_KS1-2_2013.pdf
+      sha256: 5aafcbad6d43eb3aed6dbedf73ee334342a6033551c3a4a4cc1ac3a171a5e359
+      bytes: 250526
+      identico_byte_a_byte: true
+      original_modificado: false
+    auditoria: docs/investigacion/curriculo_inglaterra_2026.md
+    alineaciones_confirmadas: 0
+  eng_nc_ciencias_ks3:
+    institucion: Department for Education
+    titulo: 'National curriculum in England: science programmes of study, key stage 3'
+    url: https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study
+    url_documento: https://assets.publishing.service.gov.uk/media/5a7d563de5274a2af0ae2ffa/SECONDARY_national_curriculum_-_Science_220714.pdf
+    version: DFE-00185-2013
+    estado_publicacion: programa_estudio_estatutario
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: ENG
+    jurisdiccion: Inglaterra
+    idioma: en
+    sha256_verificado: 8ec1ebae9fb00a6fff85a81e489117f036228106186aa8ab59486994ca0f6b42
+    bytes_verificados: 165020
+    paginas_verificadas: 13
+    fecha_portada: 2013-09
+    correccion_documentada: null
+    etapas:
+    - etapa: KS3
+      years_originales:
+      - 7
+      - 8
+      - 9
+      edades_habituales_originales:
+        min: 11
+        max: 14
+      grado_salvador: null
+      equivalencia_curricular_salvador: no_establecida
+    implementacion:
+    - desde: 2014-09
+      alcance_original: KS3
+    alcance_legal:
+      escuelas_mantenidas: programa_nacional_obligatorio_sujeto_a_excepciones_y_adaptaciones_aplicables
+      academias: no_se_presupone_obligacion_de_seguir_este_programa_al_corte
+      contenido_no_estatutario: preservar_rango_y_rotulo_por_fragmento_no_hacerlo_obligatorio
+      fuente_alcance: ara_2027_actualizado_2026-10-14.html#14.1
+    anclas:
+    - paginas_pdf:
+      - 3
+      tema: Expectativas de fin de etapa
+    - paginas_pdf:
+      - 4
+      - 5
+      tema: Prácticas científicas, investigación, evaluación y medición
+    correspondencia_repo:
+      archivo: data/fuentes/externos/paises/inglaterra/ENG_NC_Science_KS3_2013.pdf
+      sha256: 8ec1ebae9fb00a6fff85a81e489117f036228106186aa8ab59486994ca0f6b42
+      bytes: 165020
+      identico_byte_a_byte: true
+      original_modificado: false
+    auditoria: docs/investigacion/curriculo_inglaterra_2026.md
+    alineaciones_confirmadas: 0
+  eng_nc_ciencias_ks4:
+    institucion: Department for Education
+    titulo: 'National curriculum in England: science programmes of study, key stage 4'
+    url: https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study
+    url_documento: https://assets.publishing.service.gov.uk/media/5a7efc65ed915d74e33f3ac9/Science_KS4_PoS_7_November_2014.pdf
+    version: DFE-00677-2014
+    estado_publicacion: programa_estudio_estatutario
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: ENG
+    jurisdiccion: Inglaterra
+    idioma: en
+    sha256_verificado: 5e80965d08403c7807c210602493a299182c1a8d2a92e3317148e0b33a6d41fc
+    bytes_verificados: 281381
+    paginas_verificadas: 18
+    fecha_portada: 2014-12
+    correccion_documentada: null
+    etapas:
+    - etapa: KS4
+      years_originales:
+      - 10
+      - 11
+      edades_habituales_originales:
+        min: 14
+        max: 16
+      grado_salvador: null
+      equivalencia_curricular_salvador: no_establecida
+    implementacion:
+    - desde: 2016-09
+      alcance_original: Year 10
+    - desde: 2017-09
+      alcance_original: Year 11
+    alcance_legal:
+      escuelas_mantenidas: programa_nacional_obligatorio_sujeto_a_excepciones_y_adaptaciones_aplicables
+      academias: no_se_presupone_obligacion_de_seguir_este_programa_al_corte
+      contenido_no_estatutario: preservar_rango_y_rotulo_por_fragmento_no_hacerlo_obligatorio
+      fuente_alcance: ara_2027_actualizado_2026-10-14.html#14.1
+    anclas:
+    - paginas_pdf:
+      - 3
+      - 4
+      tema: Objeto, disciplinas y organización del programa
+    - paginas_pdf:
+      - 5
+      - 6
+      tema: Prácticas científicas
+    - paginas_pdf:
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      tema: Contenido de biología, química y física
+    correspondencia_repo:
+      archivo: data/fuentes/externos/paises/inglaterra/ENG_NC_Science_KS4_2014.pdf
+      sha256: 5e80965d08403c7807c210602493a299182c1a8d2a92e3317148e0b33a6d41fc
+      bytes: 281381
+      identico_byte_a_byte: true
+      original_modificado: false
+    auditoria: docs/investigacion/curriculo_inglaterra_2026.md
+    alineaciones_confirmadas: 0
+  jp_elementary_original:
+    institucion: MEXT
+    titulo: 小学校学習指導要領（平成29年告示）
+    url: https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+    url_documento: https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_01.pdf
+    version: Promulgación marzo 2017; identidad de portada
+    estado_publicacion: estandar_nacional_original
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: JP
+    idioma: ja
+    sha256_verificado: 6af90f134b243e44f9767c37ee3079fac092883fd6359b836a5733dd25b43902
+    bytes_verificados: 5838238
+    paginas_verificadas: 337
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: primaria
+      anios_etapa:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      anios_ciencias:
+      - 3
+      - 4
+      - 5
+      - 6
+      edades_etapa:
+      - 6
+      - 12
+      edades_fuente: https://www.mext.go.jp/en/policy/education/overview/
+      obligatoriedad: Etapa obligatoria; ciencias específica en años 3–6
+      implementacion: Desde abril 2020 según comunicación MEXT
+      paginas_relevantes:
+      - desde: 96
+        hasta: 113
+        funcion: ciencias, folios 94–111
+      - desde: 114
+        hasta: 114
+        funcion: inicio Living Environment Studies, años 1–2
+      limites:
+      - No ingerir como ciencias primaria los anexos de otros niveles.
+      - No inferir edición 2023 por fecha de URL.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: 平成29年3月告示
+        verificacion: visual_espacios_tipograficos
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      - pagina_pdf: 96
+        literal: 自然の事物・現象についての問題を科学的に解決するため
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  jp_lower_original:
+    institucion: MEXT
+    titulo: 中学校学習指導要領（平成29年告示）
+    url: https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+    url_documento: https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_02.pdf
+    version: Promulgación marzo 2017; identidad de portada
+    estado_publicacion: estandar_nacional_original
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: JP
+    idioma: ja
+    sha256_verificado: 42f967302945fd435a383db15e52e0459885b17285bce801feebbed95935debb
+    bytes_verificados: 4693611
+    paginas_verificadas: 331
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: secundaria_inferior
+      anios_etapa:
+      - 1
+      - 2
+      - 3
+      anios_ciencias:
+      - 1
+      - 2
+      - 3
+      edades_etapa:
+      - 12
+      - 15
+      edades_fuente: https://www.mext.go.jp/en/policy/education/overview/
+      obligatoriedad: Etapa obligatoria; ciencias común, no cuatro electivas
+      implementacion: Desde abril 2021 según comunicación MEXT
+      paginas_relevantes:
+      - desde: 80
+        hasta: 100
+        funcion: ciencias, folios 78–98
+      limites:
+      - Años 1–3 pertenecen a secundaria inferior, no primaria.
+      - PDF265 reproduce ciencias de primaria en anexos.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: 平成29年3月告示
+        verificacion: visual_espacios_tipograficos
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  jp_upper_original:
+    institucion: MEXT
+    titulo: 高等学校学習指導要領（平成30年告示）
+    url: https://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm
+    url_documento: https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_03.pdf
+    version: Promulgación marzo 2018; identidad de portada
+    estado_publicacion: estandar_nacional_original
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: JP
+    idioma: ja
+    sha256_verificado: 59ef17a825bd11a4fa39ed2cc1f27033c83a95e4e93f0f8a821a65e063bb2512
+    bytes_verificados: 3707108
+    paginas_verificadas: 604
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: secundaria_superior
+      anios_etapa: null
+      anios_ciencias: null
+      edades_etapa: null
+      edades_nominales_tiempo_completo:
+      - 15
+      - 18
+      edades_nominales_derivadas: true
+      edades_fuente: https://www.mext.go.jp/en/policy/education/overview/
+      obligatoriedad: Etapa posterior a la escolaridad obligatoria; selección de ciencias dentro del programa
+      implementacion: Desde abril 2022, progresión por cohortes según MEXT
+      modalidades:
+      - tiempo_completo
+      - tiempo_parcial
+      - correspondencia
+      - cursos_generales
+      - cursos_especializados
+      - cursos_integrados
+      paginas_relevantes:
+      - desde: 25
+        hasta: 25
+        funcion: selección de materias comunes obligatorias, folio23
+      - desde: 105
+        hasta: 132
+        funcion: ciencias, folios103–130
+      regla_seleccion_parafrasis: Ciencia y vida humana más una básica; alternativamente tres básicas entre física,
+        química, biología y ciencias de la Tierra.
+      limites:
+      - No exige que cada alumno curse las cuatro ciencias.
+      - Avanzadas y básicas tienen alcance distinto; PDF132 recoge precedencia general.
+      - PDF542 reproduce secundaria inferior como anexo.
+      - 'Extracción pypdf presenta glifos/encabezados corruptos: no aprobar fragmentos automáticamente.'
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: 平成30年3月告示
+        verificacion: visual_espacios_tipograficos
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      - pagina_pdf: 25
+        literal: うちから２科目（うち１科目は「科学と人間生活」とする。）
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      duracion_tiempo_completo_anios: 3
+      duracion_parcial_correspondencia_minima_anios: 3
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  jp_elementary_science_en:
+    institucion: MEXT
+    titulo: Section 4 Science
+    url: https://www.mext.go.jp/a_menu/shotou/new-cs/1417513_00001.htm
+    url_documento: https://www.mext.go.jp/content/20220405-mxt_kyoiku02-000005241_003.pdf
+    version: Traducción provisional de revisión 2017 según índice MEXT; no fechar por URL20220405
+    estado_publicacion: traduccion_oficial_provisional
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: JP
+    idioma: en
+    sha256_verificado: d26b2c7fa16aec16834268572a1cbfef124e6e49c6a291c41ca3ee4871d5a39c
+    bytes_verificados: 187337
+    paginas_verificadas: 23
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: primaria
+      anios_etapa:
+      - 3
+      - 4
+      - 5
+      - 6
+      edades_etapa: null
+      obligatoriedad: Misma población del original; traducción auxiliar, no promulgación independiente
+      relacion_documental: LOCAL:jp_elementary_original
+      paginas_relevantes:
+      - desde: 1
+        hasta: 1
+        funcion: comienzo Grade3
+      - desde: 6
+        hasta: 6
+        funcion: comienzo Grade4
+      - desde: 11
+        hasta: 11
+        funcion: comienzo Grade5
+      - desde: 16
+        hasta: 16
+        funcion: comienzo Grade6
+      limites:
+      - La etiqueta provisional procede del índice oficial.
+      - No reemplazar el original japonés.
+      - Terminología inglesa weight requiere revisión al adaptar magnitudes al español.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: Section 4 Science
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      - pagina_pdf: 6
+        literal: '[Grade 4]'
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  jp_lower_science_en:
+    institucion: MEXT
+    titulo: Section 4. Science
+    url: https://www.mext.go.jp/a_menu/shotou/new-cs/1417513_00002.htm
+    url_documento: https://www.mext.go.jp/content/20220405-mxt_kyoiku02-000005242_003.pdf
+    version: Traducción provisional de revisión 2017 según índice MEXT; no fechar por URL20220405
+    estado_publicacion: traduccion_oficial_provisional
+    estado_ingesta: bloqueada_extraccion_pdf
+    pais: JP
+    idioma: en
+    sha256_verificado: b2c347a181c7aae8cd54c6856c3bf24d96e1d00767ecaf2eee5c8e5e41b0d2af
+    bytes_verificados: 215580
+    paginas_verificadas: 27
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: secundaria_inferior
+      anios_etapa:
+      - 1
+      - 2
+      - 3
+      edades_etapa: null
+      obligatoriedad: Misma población del original; traducción auxiliar
+      relacion_documental: LOCAL:jp_lower_original
+      paginas_relevantes:
+      - desde: 1
+        hasta: 1
+        funcion: campo físico
+      - desde: 13
+        hasta: 13
+        funcion: comienzo campo vida/Tierra
+      - desde: 10
+        hasta: 10
+        funcion: secuenciación por año del primer campo
+      - desde: 21
+        hasta: 22
+        funcion: secuenciación por año del segundo campo
+      - desde: 25
+        hasta: 27
+        funcion: planificación y seguridad
+      limites:
+      - No confundir los años1–3 con grados primarios.
+      - No reemplazar el original japonés.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: Section 4. Science
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      - pagina_pdf: 13
+        literal: '[Field Two (Life and Earth Sciences)]'
+        verificacion: texto_extraido_espacios
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+    motivo_bloqueo: El PDF abierto no habilita el permiso EXTRACT; no se incluye en extracción automática.
+  jp_upper_science_commentary:
+    institucion: MEXT
+    titulo: 高等学校学習指導要領（平成30年告示）解説 理科編 理数編
+    url: https://www.mext.go.jp/a_menu/shotou/new-cs/1407074.htm
+    url_documento: https://www.mext.go.jp/content/20250311-mxt_kyoiku02-100002620_05.pdf
+    version: Julio 2018; revisión parcial agosto 2021, comprobada en portada
+    estado_publicacion: comentario_oficial
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: JP
+    idioma: ja
+    sha256_verificado: 6ce6df58f2ba7afce1f51cefe6be6bf03a4818fb0cb4cb59530098728e3dcf64
+    bytes_verificados: 3741048
+    paginas_verificadas: 382
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: secundaria_superior
+      anios_etapa: null
+      edades_etapa: null
+      obligatoriedad: Comentario del estándar, no otra obligación curricular
+      relacion_documental: LOCAL:jp_upper_original
+      paginas_relevantes:
+      - desde: 1
+        hasta: 1
+        funcion: identidad y revisión parcial
+      limites:
+      - No es un currículo promulgado 2025 por tener URL20250311.
+      - Interior no auditado exhaustivamente.
+      - Extraer fragmentos japoneses requiere revisión de glifos.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: 平成30年7月（令和3年8月一部改訂）
+        verificacion: visual_espacios_tipograficos
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  sg_primary_actual:
+    institucion: MOE Singapore / CPDD
+    titulo: 'Science Teaching & Learning Syllabus: Primary Three to Six, Standard / Foundation'
+    url: https://www.northlandpri.moe.edu.sg/departments/science/
+    url_documento: https://www.moe.gov.sg/media/files/primary/syllabus/2023-primary-science.ashx
+    version: ©2022 CPDD; actualizado octubre 2022 según portada
+    estado_publicacion: curriculo_oficial_ensenanza
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: SG
+    idioma: en
+    sha256_verificado: a1b6175dbafa7277c4ecc9ef703f60c6294bf76d278d20929381ff4f93211a03
+    bytes_verificados: 922875
+    paginas_verificadas: 87
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: primaria
+      anios_etapa:
+      - 3
+      - 4
+      - 5
+      - 6
+      edades_etapa: null
+      obligatoriedad: Currículo de Science para P3–P6 de la población indicada; no demuestra equivalencia legal
+        con SV
+      implementacion: Comienza con cohorte P3 de2023; índice Northland2026 confirma cohorte
+      modalidades:
+      - Standard
+      - Foundation
+      paginas_relevantes:
+      - desde: 1
+        hasta: 1
+        funcion: portada y cohorte
+      - desde: 22
+        hasta: 22
+        funcion: tabla por nivel; subrayado indica exclusión Foundation
+      - desde: 44
+        hasta: 44
+        funcion: ejemplo P5 Standard
+      - desde: 47
+        hasta: 47
+        funcion: ejemplo P5 Foundation
+      limites:
+      - No se acredita que sea la última revisión de todos los archivos MOE.
+      - La referencia a revisión mayo2024 no se verificó en bytes.
+      - Subrayados de exclusión Foundation se pierden en texto plano.
+      - 'Edad nominal por grado no verificada: null es desconocida.'
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: Implementation starting with 2023 Primary Three Cohort
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      - pagina_pdf: 1
+        literal: Updated October 2022
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+    uso: Referencia de captura octubre2022; no usar el nombre actual del ID como prueba de vigencia.
+  sg_lower_g1_peicai:
+    institucion: MOE Singapore / CPDD
+    titulo: 'Science Teaching and Learning Syllabus: Lower Secondary, General 1 Course'
+    url: https://www.peicaisec.moe.edu.sg/academic/science/
+    url_documento: https://www.moe.gov.sg/media/files/secondary/syllabuses/science/G1%20Lower%20Secondary%20Science%20Teaching%20and%20Learning%20Syllabus.pdf
+    version: ©2024 CPDD según portada
+    estado_publicacion: curriculo_oficial_ensenanza
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: SG
+    idioma: en
+    sha256_verificado: fe8878ae1afd83f0abf08853d49e07f52a839307a95a59849c7d07d3b1e54f58
+    bytes_verificados: 1371768
+    paginas_verificadas: 55
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: secundaria_inferior
+      anios_etapa:
+      - 1
+      - 2
+      edades_etapa: null
+      obligatoriedad: Alcance G1 de secundaria inferior; no inferir obligatoriedad legal universal de secundaria
+      implementacion: Desde cohorte Secondary One2021 según portada; enlazado por Peicai2026
+      modalidades:
+      - G1
+      paginas_relevantes:
+      - desde: 1
+        hasta: 1
+        funcion: identidad y cohorte
+      - desde: 12
+        hasta: 14
+        funcion: objetivos/contextos/estructura
+      - desde: 23
+        hasta: 23
+        funcion: medición y procedimientos
+      - desde: 50
+        hasta: 51
+        funcion: evaluación
+      limites:
+      - Interior conserva etiquetas Normal (Technical).
+      - G1 es nivel de asignatura, no grado/edad.
+      - Revisar tablas antes de extracción lineal.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: Implementation starting with 2021 Secondary One Cohort
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  sg_lower_g2g3_peicai:
+    institucion: MOE Singapore / CPDD
+    titulo: 'Science Syllabus: Lower Secondary, General 2 Course / General 3 Course'
+    url: https://www.peicaisec.moe.edu.sg/academic/science/
+    url_documento: https://www.moe.gov.sg/media/files/secondary/syllabuses/science/G2-3%20Lower%20Secondary%20Science%20Teaching%20and%20Learning%20Syllabus.pdf
+    version: ©2024 CPDD según portada
+    estado_publicacion: curriculo_oficial_ensenanza
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: SG
+    idioma: en
+    sha256_verificado: dfaf177b1407371002a3b00633c04f09d873376f8b20170b437008cc70871106
+    bytes_verificados: 1249294
+    paginas_verificadas: 57
+    poblacion_y_alcance:
+      equivalencia_sv: null
+      activacion_automatica: false
+      etapa: secundaria_inferior
+      anios_etapa:
+      - 1
+      - 2
+      edades_etapa: null
+      obligatoriedad: Alcance G2/G3 de secundaria inferior; no inferir obligación legal universal
+      implementacion: Desde cohorte Secondary One2021 según portada; enlazado por Peicai2026
+      modalidades:
+      - G2
+      - G3
+      paginas_relevantes:
+      - desde: 1
+        hasta: 1
+        funcion: identidad y cohorte
+      - desde: 14
+        hasta: 17
+        funcion: estructura, temas y resultados
+      - desde: 27
+        hasta: 28
+        funcion: evidencias y evaluación
+      limites:
+      - Documento compartido G2/G3 no equipara nivel con edad.
+      - Revisar tres columnas y contexto de cada resultado.
+      anclas_identidad:
+      - pagina_pdf: 1
+        literal: Implementation starting with 2021 Secondary One Cohort
+        verificacion: texto_extraido
+        funcion: identidad_documental_o_poblacion; no alineacion
+        normalizacion: Omitir espacios tipográficos; no inferir alineación desde la coincidencia.
+      pendientes_ingesta:
+      - Descargar por adaptador institucional y comprobar SHA esperado antes de registrar.
+      - Auditar extracción por página y modalidad.
+      - No trasladar al currículo salvadoreño sin revisión documental explícita.
+      nota_url_final: Se verificaron bytes desde url_documento con curl --location y TLS; no se capturó la URL efectiva
+        de redirección.
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    alineaciones_confirmadas: 0
+  sg_primary_jan2026:
+    institucion: MOE Singapore / CPDD
+    titulo: 'Science Teaching & Learning Syllabus: Primary Three to Six, Standard / Foundation'
+    url: https://www.moe.gov.sg/primary/curriculum/syllabus
+    url_documento: https://www.moe.gov.sg/media/files/primary/syllabus/ba3562d3-5b31-4459-8693-45cde7b97273.pdf
+    version: ©2022 CPDD; actualizado enero 2026 según portada; cohorte P3 desde 2023
+    estado_publicacion: curriculo_oficial_ensenanza
+    estado_ingesta: disponible_segun_manifiesto_paises
+    pais: SG
+    idioma: en
+    sha256_verificado: 0556023ceb55fe80de75ae044011b8c77ea7ea494a1873d2b224a9b2b8083ab0
+    bytes_verificados: 1006566
+    paginas_verificadas: 87
+    poblacion_y_alcance:
+      etapa: primaria
+      anios:
+      - P3
+      - P4
+      - P5
+      - P6
+      modalidades:
+      - Standard
+      - Foundation
+      cohorte: Desde P3 en 2023
+      edades: null
+      equivalencia_sv: null
+      limitacion: La extracción plana no acredita la conservación de subrayados que distinguen modalidades
+    auditoria: docs/investigacion/curriculos_sg_jp_2026.md
+    correspondencia_repo:
+      documento_id: sg_prim
+      archivo: data/fuentes/externos/paises/singapur/SG_Primary_Science_2023.pdf
+      sha256: 0556023ceb55fe80de75ae044011b8c77ea7ea494a1873d2b224a9b2b8083ab0
+      identico_byte_a_byte: true
+    alineaciones_confirmadas: 0
+pendientes:
+- id: LOCAL:sg_o_combined_2026
+  pais: SG
+  institucion: MOE / SEAB / Cambridge University Press & Assessment
+  titulo_original: 'Singapore–Cambridge GCE Ordinary Level (2026): Science'
+  naturaleza: programa_oficial_examen
+  idioma: en
+  version_documental: Examen 2026; copyright2024 en portada web
+  codigos_examen_oficiales:
+  - '5086'
+  - '5087'
+  - '5088'
+  url_catalogo: https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/
+  url_documento: https://isomer-user-content.by.gov.sg/334/a67fa90c-d3a3-4cb4-8c92-4f88346b5051/5086_y26_sy.pdf
+  url_final: null
+  fecha_consulta: '2026-10-21'
+  estado: identidad_y_paginas_verificadas_web_descarga_bloqueada
+  sha256: null
+  bytes: null
+  paginas: 64
+  paginas_origen_conteo: lector PDF web; no bytes locales
+  etapa: secundaria_superior
+  anios_etapa: null
+  edades_etapa: null
+  obligatoriedad: Sólo candidatos al programa indicado; no universal a estudiantes
+  equivalencia_sv: null
+  activacion_automatica: false
+  limites:
+  - 'Descarga curl HTTP403: falta identidad reproducible de bytes.'
+  - No reemplaza el currículo de enseñanza MOE.
+  - No activa equivalencia curricular ni cobertura.
+  - Science combinado tiene pares de disciplinas por código.
+  pendientes_ingesta:
+  - Recuperar PDF oficial y calcular SHA antes de registrar.
+  - Auditar extracción por página y modalidad.
+  - No trasladar al currículo salvadoreño sin revisión documental explícita.
+- id: LOCAL:sg_o_physics_2026
+  pais: SG
+  institucion: MOE / SEAB / Cambridge University Press & Assessment
+  titulo_original: 'Singapore–Cambridge GCE Ordinary Level (2026): Physics'
+  naturaleza: programa_oficial_examen
+  idioma: en
+  version_documental: Examen 2026; copyright2024 en portada web
+  codigos_examen_oficiales:
+  - '6091'
+  url_catalogo: https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/
+  url_documento: https://isomer-user-content.by.gov.sg/334/42ee79d0-bb13-43f5-94ab-629729f88aa0/6091_y26_sy.pdf
+  url_final: null
+  fecha_consulta: '2026-10-21'
+  estado: identidad_y_paginas_verificadas_web_descarga_bloqueada
+  sha256: null
+  bytes: null
+  paginas: 38
+  paginas_origen_conteo: lector PDF web; no bytes locales
+  etapa: secundaria_superior
+  anios_etapa: null
+  edades_etapa: null
+  obligatoriedad: Sólo candidatos al programa indicado; no universal a estudiantes
+  equivalencia_sv: null
+  activacion_automatica: false
+  limites:
+  - 'Descarga curl HTTP403: falta identidad reproducible de bytes.'
+  - No reemplaza el currículo de enseñanza MOE.
+  - No activa equivalencia curricular ni cobertura.
+  - Disciplina separada, no obligación universal.
+  pendientes_ingesta:
+  - Recuperar PDF oficial y calcular SHA antes de registrar.
+  - Auditar extracción por página y modalidad.
+  - No trasladar al currículo salvadoreño sin revisión documental explícita.
+- id: LOCAL:sg_o_chemistry_2026
+  pais: SG
+  institucion: MOE / SEAB / Cambridge University Press & Assessment
+  titulo_original: 'Singapore–Cambridge GCE Ordinary Level (2026): Chemistry'
+  naturaleza: programa_oficial_examen
+  idioma: en
+  version_documental: Examen 2026; copyright2024 en portada web
+  codigos_examen_oficiales:
+  - '6092'
+  url_catalogo: https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/
+  url_documento: https://isomer-user-content.by.gov.sg/334/19dfb9f9-b3ce-4609-a3cf-5d30052317f5/6092_y26_sy.pdf
+  url_final: null
+  fecha_consulta: '2026-10-21'
+  estado: identidad_y_paginas_verificadas_web_descarga_bloqueada
+  sha256: null
+  bytes: null
+  paginas: 34
+  paginas_origen_conteo: lector PDF web; no bytes locales
+  etapa: secundaria_superior
+  anios_etapa: null
+  edades_etapa: null
+  obligatoriedad: Sólo candidatos al programa indicado; no universal a estudiantes
+  equivalencia_sv: null
+  activacion_automatica: false
+  limites:
+  - 'Descarga curl HTTP403: falta identidad reproducible de bytes.'
+  - No reemplaza el currículo de enseñanza MOE.
+  - No activa equivalencia curricular ni cobertura.
+  - Disciplina separada, no obligación universal.
+  pendientes_ingesta:
+  - Recuperar PDF oficial y calcular SHA antes de registrar.
+  - Auditar extracción por página y modalidad.
+  - No trasladar al currículo salvadoreño sin revisión documental explícita.
+- id: LOCAL:sg_o_biology_2026
+  pais: SG
+  institucion: MOE / SEAB / Cambridge University Press & Assessment
+  titulo_original: 'Singapore–Cambridge GCE Ordinary Level (2026): Biology'
+  naturaleza: programa_oficial_examen
+  idioma: en
+  version_documental: Examen 2026; copyright2024 en portada web
+  codigos_examen_oficiales:
+  - '6093'
+  url_catalogo: https://www.seab.gov.sg/gce-o-level/o-level-syllabuses-examined-for-school-candidates-2026/
+  url_documento: https://isomer-user-content.by.gov.sg/334/3d8f2c30-36a3-4aa3-babe-4a41b314a381/6093_y26_sy.pdf
+  url_final: null
+  fecha_consulta: '2026-10-21'
+  estado: identidad_y_paginas_verificadas_web_descarga_bloqueada
+  sha256: null
+  bytes: null
+  paginas: 29
+  paginas_origen_conteo: lector PDF web; no bytes locales
+  etapa: secundaria_superior
+  anios_etapa: null
+  edades_etapa: null
+  obligatoriedad: Sólo candidatos al programa indicado; no universal a estudiantes
+  equivalencia_sv: null
+  activacion_automatica: false
+  limites:
+  - 'Descarga curl HTTP403: falta identidad reproducible de bytes.'
+  - No reemplaza el currículo de enseñanza MOE.
+  - No activa equivalencia curricular ni cobertura.
+  - Disciplina separada, no obligación universal.
+  pendientes_ingesta:
+  - Recuperar PDF oficial y calcular SHA antes de registrar.
+  - Auditar extracción por página y modalidad.
+  - No trasladar al currículo salvadoreño sin revisión documental explícita.
+- id: LOCAL:sg_upper_physics_moe_pendiente
+  pais: SG
+  institucion: MOE Singapore / CPDD
+  titulo_original: 'Physics Syllabus: Upper Secondary, Express Course'
+  naturaleza: curriculo_oficial_ensenanza_por_recuperar
+  idioma: en
+  version_documental: 'Metadatos de portada indexados: cohorte Sec3 de2023; ©2022; actualizaciónabril 2024'
+  url_catalogo: https://www.moe.gov.sg/secondary/courses/express/electives/?subterm=Foreign+Language+Programme%3A+French%2C+German+or+Spanish&term=Language
+  url_documento: https://www.moe.gov.sg/-/media/files/secondary/syllabuses/science/updated-2024/2023-olevel-physics-syllabus-updated-2024.pdf
+  url_final: null
+  fecha_consulta: '2026-10-21'
+  estado: localizada_en_indice_busqueda_primario_sin_bytes
+  sha256: null
+  bytes: null
+  paginas: null
+  etapa: secundaria_superior
+  anios_etapa:
+  - 3
+  - 4
+  edades_etapa: null
+  modalidades:
+  - Express
+  obligatoriedad: No acreditada para todas las modalidades/cohortes
+  equivalencia_sv: null
+  activacion_automatica: false
+  limites:
+  - No inspeccionado visualmente ni descargado.
+  - No inferir aplicación universal Full SBB2026.
+  - El enlace indexado no es un archivo de bytes certificado en este paquete.
+  pendientes_ingesta:
+  - Recuperar PDF oficial y calcular SHA antes de registrar.
+  - Auditar extracción por página y modalidad.
+  - No trasladar al currículo salvadoreño sin revisión documental explícita.
+- id: LOCAL:sg_upper_biology_moe_pendiente
+  pais: SG
+  institucion: MOE Singapore / CPDD
+  titulo_original: 'Biology Syllabus: Upper Secondary, Express Course'
+  naturaleza: curriculo_oficial_ensenanza_por_recuperar
+  idioma: en
+  version_documental: 'Metadatos de portada indexados: cohorte Sec3 de2023; ©2022; actualizaciónabril 2024'
+  url_catalogo: https://www.moe.gov.sg/secondary/courses/express/electives/?subterm=Foreign+Language+Programme%3A+French%2C+German+or+Spanish&term=Language
+  url_documento: https://www.moe.gov.sg/-/media/files/secondary/syllabuses/science/updated-2024/2023-olevel-biology-syllabus-updated-2024.pdf
+  url_final: null
+  fecha_consulta: '2026-10-21'
+  estado: localizada_en_indice_busqueda_primario_sin_bytes
+  sha256: null
+  bytes: null
+  paginas: null
+  etapa: secundaria_superior
+  anios_etapa:
+  - 3
+  - 4
+  edades_etapa: null
+  modalidades:
+  - Express
+  obligatoriedad: No acreditada para todas las modalidades/cohortes
+  equivalencia_sv: null
+  activacion_automatica: false
+  limites:
+  - No inspeccionado visualmente ni descargado.
+  - No inferir aplicación universal Full SBB2026.
+  - El enlace indexado no es un archivo de bytes certificado en este paquete.
+  pendientes_ingesta:
+  - Recuperar PDF oficial y calcular SHA antes de registrar.
+  - Auditar extracción por página y modalidad.
+  - No trasladar al currículo salvadoreño sin revisión documental explícita.

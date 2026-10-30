@@ -1,100 +1,185 @@
-# goes-science-kg
+<div align="center">
+  <img src="https://images.seeklogo.com/logo-png/43/1/gobierno-de-el-salvador-logo-png_seeklogo-430249.png" alt="Gobierno de El Salvador" width="360">
+  <h1>GOEs · Science Knowledge Graph</h1>
+  <p><strong>Departamento de AI · Gobierno de El Salvador · 2026</strong></p>
+  <p>Ingeniería curricular de Ciencias con evidencia verificable, revisión especializada y trazabilidad.</p>
 
-Grafo de conocimiento de **Ciencias** para El Salvador. Une la malla del MINED (2.° a 11.°) con los
-marcos internacionales (TIMSS 2027, TIMSS Advanced, PISA 2025) y con los currículos de otros
-países. El fin es **proponer, por asignatura, una curricularización mejor y con evidencia**.
+[![Pruebas locales](docs/badges/tests.svg)](docs/badges/medicion.json)
+[![Porcentaje aprobado](docs/badges/pass-rate.svg)](docs/badges/medicion.json)
+[![Cobertura de líneas](docs/badges/coverage.svg)](docs/badges/medicion.json)
+[![Python](https://img.shields.io/badge/Python-%E2%89%A53.11-3565fc)](pyproject.toml)
+[![API](https://img.shields.io/badge/API-1.2.0-1c1e4d)](docs/APLICACION_CIENCIAS.md)
+[![CI](https://github.com/carlosjimenez-arch/goes-science-kg/actions/workflows/quality.yml/badge.svg?branch=feat%2Fapi)](https://github.com/carlosjimenez-arch/goes-science-kg/actions/workflows/quality.yml?query=branch%3Afeat%2Fapi)
 
-| Asignatura | Grados | Carpeta |
-|---|---|---|
-| Biología | 2.°–11.° | [`asignaturas/biologia`](asignaturas/biologia) |
-| Física | 2.°–11.° | [`asignaturas/fisica`](asignaturas/fisica) |
-| Química | 2.°–11.° | [`asignaturas/quimica`](asignaturas/quimica) |
-| Ciencias de la Tierra y del Espacio | 2.°–9.° | [`asignaturas/ciencias_tierra_espacio`](asignaturas/ciencias_tierra_espacio) |
+[Aplicación y API](docs/APLICACION_CIENCIAS.md) · [Arquitectura](docs/ARQUITECTURA.md) · [Operación](docs/OPERACION.md) · [Calidad](docs/CALIDAD.md) · [Documentación](docs/README.md)
+</div>
 
-## Inicio rápido
+## Propósito
+
+GOEs Science KG organiza la evidencia curricular de **Biología, Física, Química y Ciencias de la
+Tierra y del Espacio** de 2.º a 11.º para El Salvador. Conserva el currículo original del MINED, registra
+propuestas por objetivo, describe cómo se introduce y refuerza cada concepto entre grados y ofrece una
+biblioteca para preparar clases. Cada resultado conserva sus fuentes y los dictámenes que lo sustentan.
+
+Es **un solo producto**: currículo V4 con propuestas revisadas, grafo de conocimiento con progresión
+2.º–11.º, biblioteca docente, API y aplicación. Los datos viven en el bucket institucional y se restauran
+con recibos verificables. **Cuando no hay una publicación válida, la API responde 503 y la aplicación
+muestra «No hay datos disponibles».** El respaldo automático y las verificaciones por agentes son
+resultados técnicos: la aprobación institucional y la eficacia de aprendizaje requieren evidencia propia.
+
+![Progresión 2.º–11.º en la aplicación GOEs](docs/auditoria/app-progresion-2026.png)
+
+## Producto disponible
+
+Publicación `producto-4`, snapshot `e92bc700d78f0f559671acc62f559f9e5176b09c3341a47c575c640195022008`.
+
+| Componente | Contenido |
+|---|---|
+| Currículo | 1.020 filas originales; 1.013 propuestas de Ciencias y 7 filas fuera de alcance preservadas |
+| Revisión | 108 unidades con cuatro dictámenes; 30 filas originales conservan alerta científica |
+| Grafo publicado | 2.327 nodos y 7.304 relaciones con fuente verificable |
+| Progresión 2.º–11.º | 1.314 etiquetas de concepto con evidencia literal, 468 trayectorias, triaje de prerrequisitos verificado |
+| Guiones de clase | **862 guiones y 108 guiones de unidad publicados, todos con revisión directa aprobada**; 151 objetivos declarados sin guion con su motivo |
+| Complementos de implementación | **819 anexos y 97 evaluaciones publicados**; 43 anexos y 11 evaluaciones retenidos tras revisión independiente |
+| Biblioteca docente | 3.837 registros: guiones, preparaciones por objetivo (1.013) y por unidad (108), paquetes V3 y bancos históricos |
+
+Hallazgos principales de la progresión: el refuerzo es mayoritariamente **intermitente** (202 de 468
+conceptos vuelven tras dos o más grados de ausencia y sólo 33 forman una espiral continua); Química es la
+disciplina más fragmentada; Tierra y espacio termina en 9.º; las prácticas científicas sí se refuerzan de 2.º a
+11.º. [Método, verificación y límites](docs/PROGRESION_2_11.md).
+
+No hay datos conectados de escuelas, territorio, resultados LXP o usuarios institucionales. Esas vistas
+declaran su ausencia. El ledger registra 4.442 invocaciones históricas; la reserva no equivale a una factura.
+
+## Puesta en marcha
+
+Requisitos: Python 3.11 o superior, `uv` y, para restaurar, `gcloud` con la cuenta GOES y acceso de lectura
+al bucket. Si `gcloud storage` falla con Python 3.14, el código elige un Python 3.13/3.12/3.11 instalado o
+respeta `CLOUDSDK_PYTHON`.
+
 ```bash
-uv sync --extra dev --extra pdf --extra rag --extra api
-uv run gskg grafo construir    # arma el grafo en data/grafo/
-uv run gskg grafo validar      # revisa invariantes
-uv run gskg fichas             # genera asignaturas/<x>/ficha.md
-uv run pytest -q
+uv sync --frozen --all-extras
+uv run --frozen gskg datos sincronizar # trae del bucket lo que falte según config/*.lock.json
+uv run --frozen gskg servir            # aplicación y API en 127.0.0.1:8010
 ```
 
-## Estado
-**Grafo v1** sobre la **malla V2** del MINED (desde el 2026-10-11): 3.675 nodos y 20.538 aristas.
-- 1.307 temas de la malla (1.292 en alcance y 15 de tecnología o transversales fuera de alcance). La V2 conserva los
-  1.260 temas de la V1 sin cambios y agrega 47; la V1 queda en `config/mallas_v1.yaml`.
-- **513 conceptos y 30 prácticas científicas**, con 822 prerrequisitos entre conceptos (un grafo sin ciclos por
-  asignatura) y equivalencias entre asignaturas. 14 conceptos vienen del triaje de los que propuso el etiquetado.
-- 493 objetivos de los marcos: TIMSS 2027, TIMSS Advanced, PISA 2025 y ACARA Senior Secondary
-  (este último es el pivote de Biología y Química de 10.°–11.°).
-- 1.265 objetivos de 6 países: Uruguay, Colombia, Singapur, **Inglaterra**, **Australia** y **Japón** (estos cuatro
-  últimos en el top 10 de Ciencias de TIMSS 2023, verificado con los anexos oficiales), alineados a TIMSS 2027 y etiquetados con
-  conceptos.
+`make producto` hace los tres pasos (`gskg servir --sincronizar`). `gskg datos estado` muestra qué está al día
+frente a los recibos y `gskg datos verificar` coteja por SHA con el inventario remoto. El servicio sólo escucha
+en loopback; `--permitir-red` lo expone, pero la API no autentica y debe ir detrás de un proxy con acceso.
 
-**Grafos por grado** (lo que pidió el MINED): [`grados/`](grados/README.md). Cada grado tiene una ficha
-(conceptos nuevos y retomados, bloques temáticos, prerrequisitos que llegan tarde y faltantes frente a otros
-países) y un **visor interactivo** (`grafo.html`).
+Abrir [la aplicación](http://127.0.0.1:8010/app/) o [OpenAPI](http://127.0.0.1:8010/docs). La consulta,
+exportación y compilación de briefs no invocan modelos. Sin corpus se puede abrir la aplicación y comprobar
+`/health/live`; `/health/ready` responde 503 hasta que la publicación esté disponible.
 
-**Por asignatura**: `asignaturas/<x>/` tiene la ficha, el **mapa de progresión** (`progresion.html`), las brechas
-(md + Excel), las propuestas curriculares en borrador ([resumen](asignaturas/PROPUESTAS.md)) y los CSV de revisión.
-Las 11 propuestas (escritas sobre la V1) se conciliaron con la V2: de sus 47 acciones «nuevo», el MINED adoptó 5 en
-el mismo grado, 8 en otro grado y 8 en parte. Simuladas sobre la V2, bajan los errores de secuencia de confianza alta
-de 55 a 5 (decisiones abiertas para el MINED en cada informe).
+## Datos en el bucket
 
-**Contraste internacional de 9.°–11.°** (malla V2): [`internacional/`](internacional/README.md). Hay grafos de
-9 países de alto desempeño (SG, JP, KR, ENG, AU, HK, TW, EE y ON; 9.040 objetivos extraídos y validados con Vertex
-AI), un consenso por concepto y un informe por asignatura con los hallazgos verificados contra las fuentes.
-Se construye con `uv run gskg internacional extraer | etiquetar | construir`.
+El repositorio no contiene matrices, PDF, snapshots, SQLite ni resultados: todo vive en
+`gs://goes-ai-kg-artefactos/ciencias/v4/`, con objetos nombrados por SHA que nunca se sobrescriben.
 
-**Apoyo al aprendizaje (prototipo, spec 13)**: un tutor que complementa la malla sin cambiarla: revisa las bases de
-un objetivo, comprueba hipótesis con preguntas breves, refuerza, reevalúa con otra actividad y programa repasos.
-Tres recorridos de ejemplo en [`aprendizaje/`](aprendizaje/README.md) (`uv run gskg tutor recorridos`); el
-contenido pedagógico es propuesta pendiente de revisión y la mejora del aprendizaje requiere un piloto.
+| Recibo | Contenido |
+|---|---|
+| `config/datos_ciencias.lock.json` | Corpus completo: 30.956 archivos, incluidos fuentes, publicación, campañas de guiones, ledgers y progresión |
+| `config/materiales_ciencias.lock.json` | Biblioteca docente ampliada con los guiones, para la aplicación |
+| `config/clases_ciencias.lock.json` | Entrega descargable de guiones (Markdown docente y de estudiante, fuentes y auditorías) |
+| `config/complementos_ciencias.lock.json` | Anexos y evaluaciones aprobados, con dictámenes y correcciones fijados por SHA |
+| `config/materiales_preparaciones.lock.json` | Biblioteca base que fijan las preparaciones; necesaria sólo para recompilar guiones |
 
-**GraphRAG**: `uv run gskg rag "¿qué necesita saber un estudiante antes de genética?" --grado 7`
-(recuperación local y citada; `--responder` genera la respuesta con Claude; `--global` busca bloques temáticos).
-API de lectura: `uv run gskg servir` (FastAPI, `/docs`). La recuperación se mide con 60 preguntas de ajuste (MRR 0,85) y dos conjuntos de prueba independientes (MRR 0,66 y 0,55) ([resultados](data/evaluacion/resultados.md)).
+El recibo vigente se restauró desde GCS en un consumidor aislado sin datos: inventario sin diferencias ni
+faltantes, salud y API de complementos verificadas. Todo dato
+nuevo se publica con `gskg datos publicar --trabajo <carpeta fuera del repositorio>` y se adopta su recibo.
+[Datos, publicación y límites](docs/DATOS_EXTERNOS.md) · [verificación GCS](docs/VERIFICACION_GCS.md).
 
-Lo que sigue (países de alto desempeño, conceptos y prerrequisitos, brechas y propuesta) está en
-[`specs/08_plan_de_implementacion.md`](specs/08_plan_de_implementacion.md).
+## Aplicación y API
 
-## Secuencia del proceso
-Cada paso usa lo que deja el anterior. `make todo` corre los automáticos en este orden y deja el repo sin diferencias si
-todo está al día (las salidas son deterministas y una prueba verifica que `data/grafo/` corresponde a las fuentes).
+| Sección | Información real |
+|---|---|
+| Inicio | Estado y alcance de la publicación seleccionada |
+| Monitoreo nacional | Balance curricular por grado; ausencia explícita de métricas escolares |
+| Corpus | Fuentes registradas y citadas, versiones, SHA y enlaces disponibles |
+| Grafo 3D | Nodos y relaciones tipadas con filtros y alternativa tabular |
+| Progresión 2.º–11.º | Introducción y refuerzo de conceptos, prerrequisitos tardíos y entrada a bachillerato |
+| Revisión de conocimiento | Dictámenes registrados por unidad, rol y ronda |
+| Curricularización | Comparación original/propuesta, indicadores, didáctica y alertas |
+| Templates y Brief | Organización documental de propuestas respaldadas, sin nueva generación |
+| Materiales docentes | Guiones de clase y de unidad, hoja de estudiante, preparaciones, bancos históricos y descargas |
+| Administración | Identidad del snapshot, permisos locales y actividad registrada disponible |
 
-| # | Paso | Comando | Entrada → salida |
-|---|---|---|---|
-| 1 | Mallas | `gskg temas` | Excel del MINED → `data/interim/temas.json` |
-| 2 | Conceptos (con revisión) | `gskg conceptos preparar-* / unir-*` | lotes de subagentes → vocabulario, etiquetado, prerrequisitos |
-| 3 | Grafo | `gskg grafo construir` y `validar` | temas, conceptos, marcos y países → `data/grafo/` |
-| 4 | Lecturas del grafo | `gskg fichas`, `grados construir`, `brechas`, `progresion` | grafo → `asignaturas/`, `grados/` |
-| 5 | Propuestas (con revisión) | `make propuestas` | propuestas → simulación, Excel y `asignaturas/PROPUESTAS.md` |
-| 6 | Internacional | `make internacional` (o `make internacional-ia` con Vertex) | países y malla V2 → `internacional/` |
+| Método | Ruta | Resultado |
+|---|---|---|
+| GET | `/health/live`, `/health/ready` | Proceso disponible; publicación íntegra y disponible |
+| GET | `/api/v4/interfaz/resumen` | Conteos, grados, disciplinas e integraciones |
+| GET | `/api/v4/interfaz/filas[/{id}]` | Filtros y paginación; original, propuesta, evidencia y alertas |
+| GET | `/api/v4/interfaz/documentos` | Fuentes verificables de la publicación |
+| GET | `/api/v4/interfaz/grafo`, `/nodos/{id}` | Subgrafo real con recorte explícito; nodo y relaciones |
+| GET | `/api/v4/interfaz/progresion[/conceptos[/{id}]]` | Patrones, prerrequisitos y trayectorias 2.º–11.º |
+| POST | `/api/v4/interfaz/briefs` | Briefs documentales de 1–20 objetivos |
+| GET | `/api/v4/interfaz/exportaciones/matriz.xlsx` | Matriz completa original/propuesta |
+| GET | `/api/v4/materiales[/detalle/{id}][/descarga/{id}]` | Biblioteca docente de sólo lectura |
+| GET | `/api/v4/complementos`, `/api/v4/complementos/clases[/{fila_id}]`, `/api/v4/complementos/unidades/{unidad_id}`, `/api/v4/complementos/fuentes` | Anexos y evaluaciones con aprobación verificable |
 
-## Cómo continuar con Claude Code
-El repo trae su propio harness: hooks que protegen `.env` y las fuentes, piden aprobación antes de gastar en Vertex y
-exigen la cuenta GOES y pruebas en verde para hacer commit; además, un subagente verificador y skills por proceso
-(`.claude/hooks/README.md`).
-Abre Claude Code en esta carpeta y pega [`prompts/00_montar_proyecto.md`](prompts/00_montar_proyecto.md).
-Claude Code lee [`CLAUDE.md`](CLAUDE.md), las [specs](specs/) y las skills de `.claude/skills/`.
+Los filtros inválidos reciben 422; una identidad ajena, 404; una publicación incompatible, 409; la ausencia o
+alteración de evidencia, 503. [Contrato completo](specs/17_aplicacion_curricular.md) ·
+[biblioteca](docs/MATERIALES_DOCENTES.md) · [guiones](docs/CLASES_V4.md).
 
-## Estructura
+## Arquitectura
+
+```mermaid
+flowchart LR
+  F[Fuentes originales verificadas] --> I[Ingesta y contratos curriculares]
+  I --> P[Publicación inmutable V4]
+  P --> L[LecturaProducto]
+  L --> S[ServicioInterfaz e índices]
+  P --> C[Etiquetas de concepto con evidencia]
+  C --> G[Progresión 2.º–11.º]
+  G --> S
+  P --> M[Biblioteca docente]
+  M --> A
+  S --> A[API FastAPI y OpenAPI]
+  A --> W[Aplicación curricular GOEs]
+  B[(GCS: corpus y biblioteca por SHA)] -.restaurar.-> P
+  B -.restaurar.-> M
 ```
-asignaturas/   una carpeta por asignatura (README + ficha generada; luego brechas y propuesta)
-config/        reglas en YAML: mallas, asignaturas, marcos pivote, países de referencia
-src/           paquete goes_science_kg (CLI gskg)
-data/fuentes/  mallas del MINED y PDF de marcos y países (solo lectura)
-data/grafo/    el grafo versionado (JSONL + manifest)
-specs/         especificación y plan
-reportes/      trabajo previo: cobertura TIMSS/PISA y comparación con países
-prompts/       instrucciones para Claude Code
+
+| Directorio | Responsabilidad |
+|---|---|
+| `curriculo/`, `ingesta/` | Lectura y trazabilidad de fuentes originales |
+| `producto/` | Publicación V4, consulta, exportación, conceptos y progresión |
+| `interfaz/` | Servicios, contratos y assets locales de la aplicación |
+| `materiales/`, `clases/` | Biblioteca docente y guiones con cuatro lectores (código congelado por campaña) |
+| `motor/`, `recuperacion/` | Generación explícita, revisiones, abstención, presupuesto y recuperación |
+| `operacion/` | Respaldos, almacenamiento GCS y recuperaciones verificadas |
+| `cli/` | Comandos `gskg` sobre los mismos casos de uso |
+| `grafo/`, `aprendizaje/`, `internacional/` | Pipeline histórico y prototipos documentados |
+
+Estas rutas viven bajo `src/goes_science_kg/`. [Decisiones de arquitectura](docs/ARQUITECTURA.md) ·
+[referencia `eor-api`](docs/REFERENCIA_EOR_API.md).
+
+## Calidad y reproducibilidad
+
+```bash
+make lint       # reglas y formato uniforme
+make cobertura  # suite completa, cobertura real y badges fechados
+make auditoria  # dependencias, documentación y candidatos a limpieza
+make pruebas-js # regresiones de navegación con Node.js 24
 ```
 
-## Reportes
-- [`reportes/cobertura_curricular/`](reportes/cobertura_curricular): trabajo previo (antes `goes-science-kg-II`).
-  Mide la cobertura de las mallas frente a TIMSS 2027/2023, TIMSS Advanced 2015 y PISA 2025, y la compara
-  con Uruguay, Colombia y Singapur. Sus scripts se ejecutan desde esa carpeta (ver su `CLAUDE.md`).
+Los badges superiores se generan desde JUnit y cobertura XML de una ejecución local completa;
+[la medición](docs/badges/medicion.json) conserva fecha, denominadores y huella del código.
+El porcentaje aprobado y la cobertura de líneas son métricas distintas. GitHub Actions comprueba
+un conjunto portable de contratos con datos sintéticos y conserva sus informes. El badge de CI
+enlaza el estado remoto de `feat/api`; sus resultados son independientes de la medición local.
 
-## Fuentes y licencias
-El código es del equipo GOES. Los documentos de `data/fuentes/` pertenecen a sus autores (ver [`NOTICE`](NOTICE)).
+Los docstrings mantenidos están en inglés y el formato se controla con Ruff. Dos extractores y el código de
+guiones (`clases/`) conservan sus bytes y docstrings históricos porque identifican evidencia publicada. La excepción,
+la retirada de código desconectado y los límites de la auditoría están en [Calidad](docs/CALIDAD.md).
+La [política de versionado](docs/auditoria/GITIGNORE_2026.md) protege secretos, corpus, SQLite y
+respaldos, conservando visibles el código, los contratos, los recibos de restauración y los badges.
+
+## Documentación y contribución
+
+[Índice vigente](docs/README.md) · [Guía de contribución](CONTRIBUTING.md) ·
+[Auditoría de producto 2026-10-25](docs/auditoria/QA_PRODUCTO_20261025.md) · [Especificaciones](specs/README.md) ·
+[Continuidad](HANDOFF.md). Los informes de investigación, cierre y QA anteriores están en el historial de Git.
+
+El código pertenece al equipo GOEs. Los documentos originales pertenecen a sus autores y conservan
+sus condiciones de uso. [Fuentes y atribuciones](NOTICE).

@@ -1,18 +1,18 @@
-"""GraphRAG sobre el grafo de Ciencias (local, por grado).
+"""Retrieve local grade-specific evidence through the science GraphRAG baseline."""
 
-Recuperación (determinista, sin red):
-1. Índice léxico BM25 en español sobre los nodos con texto (temas, conceptos, prácticas, objetivos de marco
-   y de países). Normaliza tildes y quita palabras vacías.
-2. Semillas: los k nodos con mejor puntaje, filtrados por grado y asignatura si se pide.
-3. Expansión por el grafo: vecinos a 1–2 saltos por aristas con significado curricular
-   (TRABAJA, CUBRE, ALINEA_CON, PRERREQUISITO_DE). El puntaje decae por salto y depende del tipo de arista;
-   los temas fuera del grado pedido se penalizan.
-4. Contexto: los nodos mejor puntuados, como bloques de evidencia citables (id, tipo, grado, fuente con
-   documento y página, u hoja y fila) más las relaciones entre ellos.
-
-Generación (opcional, `responder()`): manda el contexto a Claude (SDK oficial de Anthropic) con la instrucción
-de responder solo con esa evidencia y citar los ids. Requiere `uv sync --extra rag` y credenciales de Anthropic.
-"""
+# Historical implementation notes:
+# Recuperación (determinista, sin red):
+# 1. Índice léxico BM25 en español sobre los nodos con texto (temas, conceptos, prácticas, objetivos de marco
+#    y de países). Normaliza tildes y quita palabras vacías.
+# 2. Semillas: los k nodos con mejor puntaje, filtrados por grado y asignatura si se pide.
+# 3. Expansión por el grafo: vecinos a 1–2 saltos por aristas con significado curricular
+#    (TRABAJA, CUBRE, ALINEA_CON, PRERREQUISITO_DE). El puntaje decae por salto y depende del tipo de arista;
+#    los temas fuera del grado pedido se penalizan.
+# 4. Contexto: los nodos mejor puntuados, como bloques de evidencia citables (id, tipo, grado, fuente con
+#    documento y página, u hoja y fila) más las relaciones entre ellos.
+#
+# Generación (opcional, `responder()`): manda el contexto a Claude (SDK oficial de Anthropic) con la instrucción
+# de responder solo con esa evidencia y citar los ids. Requiere `uv sync --extra rag` y credenciales de Anthropic.
 
 from __future__ import annotations
 
@@ -26,17 +26,29 @@ from dataclasses import dataclass, field
 from goes_science_kg.config import ruta
 from goes_science_kg.modelos import Arista, Nodo, TipoArista, TipoNodo
 
-TIPOS_INDEXADOS = {TipoNodo.TEMA, TipoNodo.CONCEPTO, TipoNodo.PRACTICA, TipoNodo.OBJETIVO_MARCO,
-                   TipoNodo.OBJETIVO_PAIS}
-PESO_ARISTA = {TipoArista.TRABAJA: 1.0, TipoArista.PRERREQUISITO_DE: 0.9, TipoArista.CUBRE: 0.8,
-               TipoArista.ALINEA_CON: 0.6}
-VACIAS = set("""a al algo ante con contra de del desde donde durante e el ella ellas ellos en entre era es esa
+TIPOS_INDEXADOS = {
+    TipoNodo.TEMA,
+    TipoNodo.CONCEPTO,
+    TipoNodo.PRACTICA,
+    TipoNodo.OBJETIVO_MARCO,
+    TipoNodo.OBJETIVO_PAIS,
+    TipoNodo.DIMENSION_DOCUMENTAL,
+}
+PESO_ARISTA = {
+    TipoArista.TRABAJA: 1.0,
+    TipoArista.PRERREQUISITO_DE: 0.9,
+    TipoArista.CUBRE: 0.8,
+    TipoArista.ALINEA_CON: 0.6,
+}
+VACIAS = set(
+    """a al algo ante con contra de del desde donde durante e el ella ellas ellos en entre era es esa
 ese eso esta este esto estos estas ha han hasta la las le les lo los mas me mi muy no nos o otra otro para
 pero por que se sea ser si sin sobre su sus tambien te tiene tienen tu un una uno unos unas y ya cual cuales
 como cuando grado grados tema temas estudiante estudiantes alumno alumnos docente docentes deben debe saber
 sabe necesita necesitan dominar dominan comprender entender trabajar trabaja relacion ideas idea antes despues
 consolidadas consolidado previo previos aborda abordan ensena ensenan ensenar cual cuales que quien donde
-para hacer pais paises otros""".split())
+para hacer pais paises otros""".split()
+)
 # Léxico amplio (sin tildes): verbos de requisito, bases y fundamentos, «haberse visto antes»… Se fijó por
 # conocimiento del idioma, ANTES de ver el conjunto de prueba 2 (data/evaluacion/resultados.md). «antes» suelto no
 # cuenta: «¿en qué país se enseña antes…?» es una comparación.
@@ -47,23 +59,37 @@ INTENCION_PRERREQ = re.compile(
     r"(apoya|basa|sustenta)(n)? en|depend\w* de|para (comprender|entender|poder)|"
     r"(haberse|haber|haya|hayan) (trabajado|visto|estudiado|aprendido|dominado)|"
     r"(trabajad|vist|estudiad|aprendid)[oa]s? (antes|previamente)|conocimientos (previos|necesarios)|"
-    r"ideas previas|consolidad\w*|sin (saber|conocer|dominar))\b")
+    r"ideas previas|consolidad\w*|sin (saber|conocer|dominar))\b"
+)
 # Patrones sin tildes (se comparan con la consulta sin tildes, como palabras completas): país y gentilicio.
 # «inglés» no cuenta: casi siempre es el idioma.
-PAIS_NOMBRADO = {r"uruguay\w*": "UY", r"colombia\w*": "CO", r"singapur\w*": "SG", "inglaterra": "ENG",
-                 r"britanic[oa]s?": "ENG", r"australian[oa]s?|australia": "AU", r"japon(es|esa|eses|esas)?": "JP"}
-INTENCION_PAISES = re.compile(r"\b(pais|paises|internacional(es)?|otros sistemas|"
-                              r"compar(a|an|ar|e|en|acion|aciones|ando|ado|ada|ados|adas)|"
-                              + "|".join(PAIS_NOMBRADO) + r")\b")
+PAIS_NOMBRADO = {
+    r"uruguay\w*": "UY",
+    r"colombia\w*": "CO",
+    r"singapur\w*": "SG",
+    "inglaterra": "ENG",
+    r"britanic[oa]s?": "ENG",
+    r"australian[oa]s?|australia": "AU",
+    r"japon(es|esa|eses|esas)?": "JP",
+}
+INTENCION_PAISES = re.compile(
+    r"\b(pais|paises|internacional(es)?|otros sistemas|"
+    r"compar(a|an|ar|e|en|acion|aciones|ando|ado|ada|ados|adas)|" + "|".join(PAIS_NOMBRADO) + r")\b"
+)
 INTENCION_MARCO = re.compile(
     r"\b(timss|pisa|acara|australian|curriculo australiano|marco|marcos|evaluacion(es)? internacional(es)?|"
-    r"(objetivos?|metas?|estandares|descriptores|referentes) internacional(es)?|marcos? de referencia)\b")
-MARCO_NOMBRADO = {"timss": ("T4_27", "T8_27", "TA15"), "pisa": ("PISA25",), "acara": ("AUSS",),
-                  "australian": ("AUSS",), "curriculo australiano": ("AUSS",)}
+    r"(objetivos?|metas?|estandares|descriptores|referentes) internacional(es)?|marcos? de referencia)\b"
+)
+MARCO_NOMBRADO = {
+    "timss": ("T4_27", "T8_27", "TA15"),
+    "pisa": ("PISA25",),
+    "acara": ("AUSS",),
+    "australian": ("AUSS",),
+    "curriculo australiano": ("AUSS",),
+}
 PESO_MARCO = 1.0  # ablación 1,0–1,8 sin mejora en preguntas de marco (data/evaluacion/resultados.md)
 PESO_TIPO = {TipoNodo.CONCEPTO: 1.15}  # ablación en data/evaluacion/resultados.md
 PESO_CONCEPTO_PRERREQ = 1.6  # conceptos cuando la consulta pregunta por prerrequisitos (ablación en resultados.md)
-GARANTIA_MARCO = 0  # ObjetivoMarco garantizados arriba con intención de marco; 0 = no (sin efecto en la prueba ciega 3)
 PESO_PAIS_SIN_INTENCION = 0.8  # objetivos de país si la consulta no habla de países (ablación en resultados.md)
 
 
@@ -72,24 +98,40 @@ def _sin_tildes(texto: str) -> str:
 
 
 def normalizar(texto: str) -> list[str]:
-    """Palabras de `texto` en minúsculas y ASCII (sin tildes), de más de dos caracteres y sin palabras vacías."""
+    """Tokenize lowercase ASCII words while removing short tokens and stop words."""
     t = unicodedata.normalize("NFKD", (texto or "").lower()).encode("ascii", "ignore").decode()
     return [w for w in re.findall(r"[a-z0-9]+", t) if len(w) > 2 and w not in VACIAS]
 
 
 def _texto(n: Nodo) -> str:
     p = n.props
-    partes = [n.etiqueta, p.get("definicion"), p.get("unidad"), p.get("contenido"), p.get("subcontenido"),
-              p.get("indicador"), p.get("area"), p.get("tema"), p.get("texto_en"), p.get("titulo_en"),
-              " ".join(p.get("sinonimos") or [])]
+    partes = [
+        n.etiqueta,
+        p.get("definicion"),
+        p.get("unidad"),
+        p.get("contenido"),
+        p.get("subcontenido"),
+        p.get("indicador"),
+        p.get("area"),
+        p.get("tema"),
+        p.get("texto_en"),
+        p.get("titulo_en"),
+        " ".join(p.get("sinonimos") or []),
+    ]
+    if n.tipo == TipoNodo.TEMA and p.get("version_curriculo") == "V4":
+        partes.extend(
+            p.get(c) for c in ("procedimental", "indicadores_logro", "indicador_avanzado", "evidencia_aprendizaje")
+        )
+    if n.tipo == TipoNodo.DIMENSION_DOCUMENTAL:
+        partes.extend(p.get(c) for c in ("alcance", "ancla"))
     return " ".join(x for x in partes if isinstance(x, str) and x)
 
 
 class BM25:
-    """Índice BM25 en memoria sobre documentos ya tokenizados (id → palabras)."""
+    """Index pretokenized documents for in-memory BM25 scoring."""
 
     def __init__(self, docs: dict[str, list[str]], k1: float = 1.4, b: float = 0.75):
-        """Precalcula el largo medio, el IDF de cada término y las frecuencias por documento."""
+        """Precompute document frequencies, term frequencies, and mean document length."""
         self.docs, self.k1, self.b = docs, k1, b
         self.largo_medio = sum(map(len, docs.values())) / max(1, len(docs))
         df = Counter(t for toks in docs.values() for t in set(toks))
@@ -98,7 +140,7 @@ class BM25:
         self.tf = {d: Counter(toks) for d, toks in docs.items()}
 
     def puntaje(self, consulta: list[str], doc: str) -> float:
-        """Puntaje BM25 del documento `doc` para la consulta ya tokenizada."""
+        """Score a tokenized query against one indexed document with BM25."""
         tf, largo = self.tf[doc], len(self.docs[doc])
         s = 0.0
         for t in consulta:
@@ -110,7 +152,7 @@ class BM25:
 
 @dataclass
 class Contexto:
-    """Resultado de una recuperación: consulta, filtros, nodos con su puntaje y relaciones entre ellos."""
+    """Retain retrieval filters, ranked nodes, and their connecting relationships."""
 
     consulta: str
     grado: int | None
@@ -119,31 +161,41 @@ class Contexto:
     relaciones: list[Arista] = field(default_factory=list)
 
     def como_texto(self) -> str:
-        """El contexto en Markdown para el modelo: evidencia citable (id, tipo, grado, fuente) y relaciones."""
-        md = [f"Consulta: {self.consulta}",
-              f"Filtro: grado={self.grado or 'todos'} asignatura={self.asignatura or 'todas'}",
-             "", "## Evidencia"]
+        """Render citable evidence identities, provenance, and relationships as model context."""
+        md = [
+            f"Consulta: {self.consulta}",
+            f"Filtro: grado={self.grado or 'todos'} asignatura={self.asignatura or 'todas'}",
+            "",
+            "## Evidencia",
+        ]
         for n, _s in self.nodos:
             f = n.fuente
-            cita = ("" if not f else f"{f.documento}" + (f" p.{f.pagina}" if f.pagina else "")
-                    + (f" {f.localizador}" if f.localizador else "")
-                    + (f" hoja «{f.hoja}» fila {f.fila}" if f.hoja else ""))
+            cita = (
+                ""
+                if not f
+                else f"{f.documento}"
+                + (f" p.{f.pagina}" if f.pagina else "")
+                + (f" {f.localizador}" if f.localizador else "")
+                + (f" hoja «{f.hoja}» fila {f.fila}" if f.hoja else "")
+            )
             extra = n.props.get("definicion") or n.props.get("unidad") or ""
             extra = extra if isinstance(extra, str) else ""
-            md.append(f"[{n.id}] ({n.tipo.value}{', ' + str(n.grado) + '.°' if n.grado else ''}"
-                     f"{', ' + n.asignatura if n.asignatura else ''}) {n.etiqueta}"
-                      + (f" — {extra}" if extra and extra != n.etiqueta else "")
-                      + (f" · fuente: {cita}" if cita else ""))
+            md.append(
+                f"[{n.id}] ({n.tipo.value}{', ' + str(n.grado) + '.°' if n.grado else ''}"
+                f"{', ' + n.asignatura if n.asignatura else ''}) {n.etiqueta}"
+                + (f" — {extra}" if extra and extra != n.etiqueta else "")
+                + (f" · fuente: {cita}" if cita else "")
+            )
         md += ["", "## Relaciones"]
         md += [f"{a.origen} -{a.tipo.value}{'/' + a.rol if a.rol else ''}-> {a.destino}" for a in self.relaciones]
         return "\n".join(md)
 
 
 class GraphRAG:
-    """Recuperación local sobre el grafo: BM25 sobre los nodos con texto y expansión por aristas curriculares."""
+    """Retrieve local graph evidence using lexical seeds and typed curriculum expansion."""
 
     def __init__(self, nodos: list[Nodo], aristas: list[Arista]):
-        """Indexa los vecinos por las aristas con peso (en ambos sentidos) y arma el BM25 de los nodos con texto."""
+        """Index weighted bidirectional adjacency and textual graph nodes."""
         self.por_id = {n.id: n for n in nodos}
         self.vecinos: dict[str, list[tuple[str, Arista]]] = defaultdict(list)
         for a in aristas:
@@ -153,6 +205,11 @@ class GraphRAG:
         self.bm25 = BM25({n.id: normalizar(_texto(n)) for n in nodos if n.tipo in TIPOS_INDEXADOS})
 
     def _admite(self, n: Nodo, grado: int | None, asignatura: str | None) -> bool:
+        if n.tipo == TipoNodo.TEMA and n.props.get("version_curriculo") == "V4":
+            if n.props.get("estado_clasificacion") not in {"declarado_malla", "coincidencia_automatica"}:
+                return False
+            if asignatura and asignatura not in n.props.get("disciplinas", []):
+                return False
         if n.props.get("marco") == "T23":  # TIMSS 2023 es referencia secundaria: no entra al contexto
             return False
         if asignatura and n.asignatura and n.asignatura != asignatura:
@@ -162,44 +219,58 @@ class GraphRAG:
         return True
 
     def _ancestros(self, puntos: dict[str, float], asignatura: str | None, saltos: int = 2) -> None:
-        """Consulta de prerrequisitos: sube por el DAG desde los conceptos mejor puntuados."""
+        """Traverse prerequisite ancestors from the highest-scoring concepts."""
         conceptos = sorted((d for d in puntos if d.startswith("CON:")), key=lambda d: -puntos[d])[:3]
         frontera = {c: puntos[c] for c in conceptos}
         for salto in range(1, saltos + 1):
             nueva = {}
             for d, s in frontera.items():
                 for v, a in self.vecinos[d]:
-                    if a.tipo == TipoArista.PRERREQUISITO_DE and a.destino == d and v in self.por_id \
-                            and self._admite(self.por_id[v], None, asignatura):
-                        nueva[v] = max(nueva.get(v, 0.0), s * (0.95 ** salto))
+                    if (
+                        a.tipo == TipoArista.PRERREQUISITO_DE
+                        and a.destino == d
+                        and v in self.por_id
+                        and self._admite(self.por_id[v], None, asignatura)
+                    ):
+                        nueva[v] = max(nueva.get(v, 0.0), s * (0.95**salto))
             for v, s in nueva.items():
                 puntos[v] = max(puntos.get(v, 0.0), s)
             frontera = nueva
 
     @staticmethod
     def _foco(n: Nodo, grado: int | None) -> float:
-        """Con un grado elegido, prioriza los temas de ese grado y atenúa lo que es de otros grados."""
+        """Prioritize the selected grade while attenuating evidence from other grades."""
         if not grado or n.grado is None:
             return 1.0
         return 1.5 if (n.tipo == TipoNodo.TEMA and n.grado == grado) else 0.5 if n.grado != grado else 1.0
 
-    def recuperar(self, consulta: str, grado: int | None = None, asignatura: str | None = None,
-                  k_semillas: int = 8, saltos: int = 2, k_final: int = 25) -> Contexto:
-        """Semillas por BM25 ponderado por intención → expansión por vecinos → refuerzos → los k mejores."""
+    def recuperar(
+        self,
+        consulta: str,
+        grado: int | None = None,
+        asignatura: str | None = None,
+        k_semillas: int = 8,
+        saltos: int = 2,
+        k_final: int = 25,
+    ) -> Contexto:
+        """Rank lexical seeds, expand neighbors, apply evidence weights, and retain the top results."""
         q = normalizar(consulta)
         intencion = _Intencion.de(consulta)
         puntos = self._semillas(q, grado, asignatura, intencion, k_semillas)
         self._expandir(puntos, grado, asignatura, saltos)
         if intencion.prerreq:
             self._ancestros(puntos, asignatura)
-        if intencion.marco and GARANTIA_MARCO and puntos:
-            self._garantizar_marco(puntos, q, intencion.marcos)
         elegidos = sorted(puntos.items(), key=lambda x: (-x[1], x[0]))[:k_final]
-        return Contexto(consulta, grado, asignatura, [(self.por_id[d], s) for d, s in elegidos],
-                        self._relaciones({d for d, _ in elegidos}))
+        return Contexto(
+            consulta,
+            grado,
+            asignatura,
+            [(self.por_id[d], s) for d, s in elegidos],
+            self._relaciones({d for d, _ in elegidos}),
+        )
 
     def _peso(self, n: Nodo, grado: int | None, intencion: _Intencion) -> float:
-        """Peso de un nodo según su tipo, el grado pedido y la intención de la consulta."""
+        """Weight a node by its type, requested grade, and explicit query intent."""
         w = self._foco(n, grado) * PESO_TIPO.get(n.tipo, 1.0)
         if n.tipo == TipoNodo.OBJETIVO_PAIS:
             if intencion.refuerzo_pais:
@@ -212,16 +283,18 @@ class GraphRAG:
             w *= PESO_CONCEPTO_PRERREQ
         return w
 
-    def _semillas(self, q: list[str], grado: int | None, asignatura: str | None, intencion: _Intencion,
-                  k: int) -> dict[str, float]:
-        """Los k documentos con mayor BM25 × peso que pasan los filtros de grado y asignatura."""
-        candidatos = ((d, self.bm25.puntaje(q, d) * self._peso(self.por_id[d], grado, intencion))
-                      for d in self.bm25.docs)
+    def _semillas(
+        self, q: list[str], grado: int | None, asignatura: str | None, intencion: _Intencion, k: int
+    ) -> dict[str, float]:
+        """Select the highest weighted lexical seeds that satisfy subject and grade filters."""
+        candidatos = (
+            (d, self.bm25.puntaje(q, d) * self._peso(self.por_id[d], grado, intencion)) for d in self.bm25.docs
+        )
         admitidos = ((d, s) for d, s in candidatos if s > 0 and self._admite(self.por_id[d], grado, asignatura))
         return dict(sorted(admitidos, key=lambda x: (-x[1], x[0]))[:k])
 
     def _expandir(self, puntos: dict[str, float], grado: int | None, asignatura: str | None, saltos: int) -> None:
-        """Propaga el puntaje a los vecinos, amortiguado por el tipo de arista y por cada salto (modifica `puntos`)."""
+        """Propagate scores through typed neighbors with per-hop attenuation."""
         frontera = dict(puntos)
         for salto in range(1, saltos + 1):
             nueva: dict[str, float] = {}
@@ -230,7 +303,7 @@ class GraphRAG:
                     n = self.por_id.get(v)
                     if not n or not self._admite(n, None, asignatura):
                         continue
-                    factor = PESO_ARISTA[a.tipo] * (0.5 ** salto)
+                    factor = PESO_ARISTA[a.tipo] * (0.5**salto)
                     if grado and n.tipo == TipoNodo.TEMA and n.grado != grado:
                         factor *= 0.3
                     nueva[v] = max(nueva.get(v, 0.0), s * factor)
@@ -239,28 +312,21 @@ class GraphRAG:
                     puntos[v] = s
             frontera = nueva
 
-    def _garantizar_marco(self, puntos: dict[str, float], q: list[str], marcos: set[str]) -> None:
-        """Los objetivos del marco quedaban debajo de temas y conceptos: se suben los más pertinentes por BM25 (del
-        marco nombrado, si lo hay) justo debajo de la mejor semilla."""
-        objetivos = sorted(((d, self.bm25.puntaje(q, d)) for d in self.bm25.docs
-                            if self.por_id[d].tipo == TipoNodo.OBJETIVO_MARCO
-                            and (not marcos or self.por_id[d].props.get("marco") in marcos)),
-                           key=lambda x: (-x[1], x[0]))
-        tope = max(puntos.values())
-        pertinentes = [d for d, s in objetivos if s > 0][:GARANTIA_MARCO]
-        for i, d in enumerate(pertinentes):
-            puntos[d] = max(puntos.get(d, 0.0), tope * (0.9 - 0.01 * i))
-
     def _relaciones(self, ids: set[str]) -> list[Arista]:
-        """Aristas entre los nodos elegidos, sin repetir y en orden estable."""
-        unicas = {(a.origen, a.destino, a.tipo, a.rol): a for d in ids for _, a in self.vecinos[d]
-                  if a.origen in ids and a.destino in ids}
+        """Return unique connecting edges in deterministic order."""
+        unicas = {
+            (a.origen, a.destino, a.tipo, a.rol): a
+            for d in ids
+            for _, a in self.vecinos[d]
+            if a.origen in ids and a.destino in ids
+        }
         return sorted(unicas.values(), key=lambda a: (a.tipo, a.origen, a.destino))
 
 
 @dataclass(frozen=True)
 class _Intencion:
-    """Lo que la consulta pide más allá de sus palabras: marco, países y prerrequisitos."""
+    """Represent query intent for frameworks, countries, and prerequisites."""
+
     marco: bool
     marcos: frozenset[str]
     pais: bool
@@ -270,6 +336,8 @@ class _Intencion:
 
     @classmethod
     def de(cls, consulta: str) -> _Intencion:
+        """Classify the query's explicit framework, country, and prerequisite retrieval intent."""
+
         plano = _sin_tildes(consulta)
         marco = bool(INTENCION_MARCO.search(plano))
         # «currículo australiano» es el marco ACARA, no el país; con intención de marco, el refuerzo de país solo
@@ -277,25 +345,37 @@ class _Intencion:
         plano_paises = re.sub(r"curriculo australiano|australian curriculum", "acara", plano)
         pais = bool(INTENCION_PAISES.search(plano_paises))
         nombrados = frozenset(c for p, c in PAIS_NOMBRADO.items() if re.search(rf"\b(?:{p})\b", plano_paises))
-        return cls(marco=marco,
-                   marcos=frozenset(m for clave, ms in MARCO_NOMBRADO.items()
-                                    if re.search(rf"\b{clave}\b", plano) for m in ms),
-                   pais=pais, nombrados=nombrados,
-                   refuerzo_pais=pais and (not marco or bool(nombrados)),
-                   prerreq=bool(INTENCION_PRERREQ.search(plano)))
+        return cls(
+            marco=marco,
+            marcos=frozenset(
+                m for clave, ms in MARCO_NOMBRADO.items() if re.search(rf"\b{clave}\b", plano) for m in ms
+            ),
+            pais=pais,
+            nombrados=nombrados,
+            refuerzo_pais=pais and (not marco or bool(nombrados)),
+            prerreq=bool(INTENCION_PRERREQ.search(plano)),
+        )
 
 
 def busqueda_global(consulta: str, grado: int, k: int = 5) -> list[dict]:
-    """Búsqueda «global»: devuelve los bloques temáticos (comunidades) del grado más pertinentes a la consulta."""
-
+    """Find the grade's thematic communities most relevant to the query."""
 
     p = ruta(f"data/grafo/grados/G{grado:02d}/comunidades.json")
     if not p.exists():
         return []
     coms = {c["id"]: c for c in json.loads(p.read_text(encoding="utf-8"))}
-    idx = BM25({i: normalizar(" ".join(x for x in (c["nombre"], c["resumen"], c.get("titulo"), c.get("resumen_ia"),
-                                                      *(c["unidades"] or [])) if x))
-                for i, c in coms.items()})
+    idx = BM25(
+        {
+            i: normalizar(
+                " ".join(
+                    x
+                    for x in (c["nombre"], c["resumen"], c.get("titulo"), c.get("resumen_ia"), *(c["unidades"] or []))
+                    if x
+                )
+            )
+            for i, c in coms.items()
+        }
+    )
     q = normalizar(consulta)
     orden = sorted(coms, key=lambda i: (-idx.puntaje(q, i), -len(coms[i]["conceptos"]), i))
     return [coms[i] | {"puntaje": round(idx.puntaje(q, i), 3)} for i in orden[:k]]
@@ -310,7 +390,7 @@ MODELO = "claude-opus-5-5"
 
 
 def responder(ctx: Contexto, modelo: str = MODELO) -> str:
-    """Genera una respuesta citada con Claude. Requiere el extra `rag` (paquete `anthropic`)."""
+    """Generate a cited Claude response through the explicitly installed RAG adapter."""
     import anthropic
 
     client = anthropic.Anthropic()

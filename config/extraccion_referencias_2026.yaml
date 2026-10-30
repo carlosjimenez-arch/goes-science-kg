@@ -1,0 +1,31 @@
+# Perfiles de regiones auditadas visualmente el 2026-10-21.
+# Coordenadas PDF en puntos: [x0, top, x1, bottom], origen superior izquierdo.
+# Página 595.276 x 841.89 puntos. El orden de regiones es parte del perfil.
+# Probar con pdfplumber 0.11.10. No sustituir el raw de pypdf ni su manifiesto.
+# Evidencia y límites: docs/investigacion/referentes_operativos_2026.md.
+schema_version: '1.0'
+perfiles:
+  - id: LOCAL:erce2019_pdf11_columnas_v1
+    fuente: erce_2019_reporte_tecnico_2025
+    sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+    pagina_pdf: 11
+    extractor: pdfplumber
+    version: '1'
+    regiones:
+      - id: LOCAL:erce2019_pdf11_cuerpo_izquierda
+        bbox: [54, 75, 305, 655]
+      - id: LOCAL:erce2019_pdf11_cuerpo_derecha
+        bbox: [313, 75, 565, 655]
+      - id: LOCAL:erce2019_pdf11_nota_izquierda
+        bbox: [54, 669, 305, 795]
+      - id: LOCAL:erce2019_pdf11_nota_derecha
+        bbox: [313, 669, 565, 795]
+  - id: LOCAL:erce2019_pdf19_tabla_2_9_v1
+    fuente: erce_2019_reporte_tecnico_2025
+    sha256: def86f829083cdfa94437eb0fb65334a3526b3467ef66778ff0e0c329d117892
+    pagina_pdf: 19
+    extractor: pdfplumber
+    version: '1'
+    regiones:
+      - id: LOCAL:erce2019_pdf19_tabla_2_9
+        bbox: [54, 75, 565, 308]
