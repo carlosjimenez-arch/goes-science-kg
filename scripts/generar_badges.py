@@ -42,6 +42,7 @@ def huella_codigo(raiz: Path) -> str:
             raiz / nombre
             for nombre in ("pyproject.toml", "uv.lock", ".gitignore", "Makefile", ".github/workflows/quality.yml")
         ]
+        + [raiz / nombre for nombre in ("AGENTS.md", "CONTRIBUTING.md") if (raiz / nombre).is_file()]
     )
     for archivo in archivos:
         digest.update(archivo.relative_to(raiz).as_posix().encode() + b"\0" + archivo.read_bytes() + b"\0")

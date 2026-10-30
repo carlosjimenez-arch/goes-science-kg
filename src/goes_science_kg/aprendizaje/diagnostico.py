@@ -99,10 +99,13 @@ def resolver(h: Hipotesis, perfil: Perfil) -> str:
     e = perfil.conceptos.get(h.concepto)
     if not e:
         return h.estado
-    ultima = next((x for x in reversed(perfil.evidencias) if x.id == (h.evidencias or [""])[-1]), None)
+    ids = set(h.evidencias)
+    relevantes = [x for x in perfil.evidencias if x.id in ids and h.concepto in x.evalua]
+    actividades_distintas = {x.actividad for x in relevantes}
+    ultima = relevantes[-1] if relevantes else None
     if ultima and ultima.correcta and e.p >= cfg["umbral_descartar"]:
         h.estado = "descartada"
-    elif len(h.evidencias) >= cfg["evidencias_para_confirmar"] and e.p < d["umbral_brecha"]:
+    elif len(actividades_distintas) >= cfg["evidencias_para_confirmar"] and e.p < d["umbral_brecha"]:
         h.estado = "confirmada"
     return h.estado
 
@@ -112,7 +115,7 @@ def comprobar(
     perfil: Perfil,
     ped: Pedagogia,
     grado: int,
-    responder: Callable[[dict], Evidencia],
+    responder: Callable[[dict], Evidencia | None],
     usadas: set[str],
 ) -> Hipotesis | None:
     """Probe hypotheses in order under the configured diagnostic limit."""
@@ -129,6 +132,8 @@ def comprobar(
             usadas.add(sondeo["id"])
             restantes -= 1
             ev = responder(sondeo)
+            if ev is None:
+                continue  # La revisión docente pendiente no se cuenta como respuesta ni como error.
             h.evidencias.append(ev.id)
             resolver(h, perfil)
         if h.estado == "confirmada":

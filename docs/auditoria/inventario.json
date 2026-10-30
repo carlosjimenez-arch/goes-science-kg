@@ -1,16 +1,16 @@
 {
-  "archivos_inspeccionados": 566,
+  "archivos_inspeccionados": 599,
   "conteos": {
     "AsyncFunctionDef": 4,
     "AsyncFunctionDef_documentados": 2,
-    "ClassDef": 314,
-    "ClassDef_documentados": 256,
-    "FunctionDef": 1699,
-    "FunctionDef_documentados": 1042,
-    "Module": 239,
-    "Module_documentados": 239,
-    "lineas_python": 49603,
-    "modulos_python": 239
+    "ClassDef": 337,
+    "ClassDef_documentados": 276,
+    "FunctionDef": 1811,
+    "FunctionDef_documentados": 1096,
+    "Module": 255,
+    "Module_documentados": 255,
+    "lineas_python": 53591,
+    "modulos_python": 255
   },
   "consumidores_estaticos": {
     "src/goes_science_kg/__init__.py": [
@@ -22,6 +22,7 @@
       "src/goes_science_kg/api_materiales.py",
       "src/goes_science_kg/api_mejoras.py",
       "src/goes_science_kg/api_producto.py",
+      "src/goes_science_kg/aprendizaje/cierre_recorridos.py",
       "src/goes_science_kg/aprendizaje/contexto.py",
       "src/goes_science_kg/aprendizaje/diagnostico.py",
       "src/goes_science_kg/aprendizaje/estudiante.py",
@@ -37,6 +38,12 @@
       "src/goes_science_kg/archivos.py",
       "src/goes_science_kg/brechas.py",
       "src/goes_science_kg/bucle.py",
+      "src/goes_science_kg/campanas_vertex/__main__.py",
+      "src/goes_science_kg/campanas_vertex/continuidad.py",
+      "src/goes_science_kg/campanas_vertex/contratos.py",
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
+      "src/goes_science_kg/campanas_vertex/proveedor.py",
+      "src/goes_science_kg/campanas_vertex/validacion.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
@@ -77,6 +84,7 @@
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/cli/conceptos.py",
       "src/goes_science_kg/cli/datos.py",
+      "src/goes_science_kg/cli/entrega.py",
       "src/goes_science_kg/cli/grados.py",
       "src/goes_science_kg/cli/grafo.py",
       "src/goes_science_kg/cli/internacional.py",
@@ -104,6 +112,9 @@
       "src/goes_science_kg/curriculo/contexto_fuentes.py",
       "src/goes_science_kg/curriculo/ingesta.py",
       "src/goes_science_kg/disciplinas.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/despacho.py",
+      "src/goes_science_kg/entrega/lectura.py",
       "src/goes_science_kg/evaluacion.py",
       "src/goes_science_kg/fichas.py",
       "src/goes_science_kg/grados.py",
@@ -241,7 +252,15 @@
       "tests/test_brechas.py",
       "tests/test_bucle.py",
       "tests/test_calidad_grafos.py",
+      "tests/test_campanas_vertex_auditoria.py",
+      "tests/test_campanas_vertex_continuidad.py",
+      "tests/test_campanas_vertex_presupuesto.py",
+      "tests/test_campanas_vertex_proveedor.py",
+      "tests/test_campanas_vertex_recorrido_transporte.py",
+      "tests/test_campanas_vertex_recuperacion.py",
+      "tests/test_carga_cognitiva.py",
       "tests/test_catalogacion_v4.py",
+      "tests/test_cierre_recorridos.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_complementaria.py",
@@ -277,6 +296,8 @@
       "tests/test_disciplinas.py",
       "tests/test_embeddings_presupuesto.py",
       "tests/test_enmiendas_excel.py",
+      "tests/test_entrega_despacho.py",
+      "tests/test_entrega_didactica.py",
       "tests/test_escenarios.py",
       "tests/test_esquemas_transporte.py",
       "tests/test_evaluacion_rag.py",
@@ -383,6 +404,7 @@
     ],
     "src/goes_science_kg/aprendizaje/__init__.py": [
       "src/goes_science_kg/agentes_vertex.py",
+      "src/goes_science_kg/aprendizaje/cierre_recorridos.py",
       "src/goes_science_kg/aprendizaje/contexto.py",
       "src/goes_science_kg/aprendizaje/diagnostico.py",
       "src/goes_science_kg/aprendizaje/evaluador.py",
@@ -392,12 +414,25 @@
       "src/goes_science_kg/aprendizaje/recorridos.py",
       "src/goes_science_kg/aprendizaje/sesion.py",
       "src/goes_science_kg/aprendizaje/tutor.py",
+      "src/goes_science_kg/campanas_vertex/contratos.py",
       "src/goes_science_kg/cli/tutor.py",
+      "src/goes_science_kg/entrega/compilacion.py",
       "src/goes_science_kg/lotes.py",
       "src/goes_science_kg/panel.py",
       "tests/test_aprendizaje.py",
       "tests/test_bucle.py",
+      "tests/test_carga_cognitiva.py",
+      "tests/test_cierre_recorridos.py",
       "tests/test_panel.py"
+    ],
+    "src/goes_science_kg/aprendizaje/carga_cognitiva.py": [
+      "src/goes_science_kg/aprendizaje/cierre_recorridos.py",
+      "tests/test_carga_cognitiva.py"
+    ],
+    "src/goes_science_kg/aprendizaje/cierre_recorridos.py": [
+      "src/goes_science_kg/campanas_vertex/contratos.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "tests/test_cierre_recorridos.py"
     ],
     "src/goes_science_kg/aprendizaje/contexto.py": [
       "src/goes_science_kg/aprendizaje/sesion.py",
@@ -432,6 +467,9 @@
       "src/goes_science_kg/aprendizaje/tutor.py",
       "src/goes_science_kg/cli/tutor.py",
       "tests/test_aprendizaje.py"
+    ],
+    "src/goes_science_kg/aprendizaje/materiales_recorridos.py": [
+      "tests/test_cierre_recorridos.py"
     ],
     "src/goes_science_kg/aprendizaje/paquete.py": [
       "src/goes_science_kg/cli/tutor.py",
@@ -493,6 +531,8 @@
       "src/goes_science_kg/cli/producto.py",
       "src/goes_science_kg/cli/referencias.py",
       "src/goes_science_kg/cli/unidades.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/despacho.py",
       "src/goes_science_kg/materiales/almacen.py",
       "src/goes_science_kg/materiales/publicacion.py",
       "src/goes_science_kg/motor/ejecuciones.py",
@@ -522,9 +562,55 @@
       "src/goes_science_kg/refuerzo.py",
       "tests/test_bucle.py"
     ],
+    "src/goes_science_kg/campanas_vertex/__init__.py": [
+      "src/goes_science_kg/campanas_vertex/__main__.py",
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
+      "src/goes_science_kg/campanas_vertex/proveedor.py",
+      "src/goes_science_kg/campanas_vertex/validacion.py",
+      "tests/test_campanas_vertex_auditoria.py",
+      "tests/test_campanas_vertex_continuidad.py",
+      "tests/test_campanas_vertex_presupuesto.py",
+      "tests/test_campanas_vertex_proveedor.py",
+      "tests/test_campanas_vertex_recorrido_transporte.py",
+      "tests/test_campanas_vertex_recuperacion.py"
+    ],
+    "src/goes_science_kg/campanas_vertex/__main__.py": [],
+    "src/goes_science_kg/campanas_vertex/continuidad.py": [
+      "src/goes_science_kg/campanas_vertex/presupuesto.py"
+    ],
+    "src/goes_science_kg/campanas_vertex/contratos.py": [
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
+      "src/goes_science_kg/campanas_vertex/proveedor.py",
+      "src/goes_science_kg/campanas_vertex/validacion.py",
+      "tests/test_campanas_vertex_auditoria.py",
+      "tests/test_campanas_vertex_proveedor.py",
+      "tests/test_campanas_vertex_recorrido_transporte.py",
+      "tests/test_campanas_vertex_recuperacion.py"
+    ],
+    "src/goes_science_kg/campanas_vertex/presupuesto.py": [
+      "src/goes_science_kg/campanas_vertex/proveedor.py",
+      "tests/test_campanas_vertex_continuidad.py",
+      "tests/test_campanas_vertex_presupuesto.py",
+      "tests/test_campanas_vertex_proveedor.py"
+    ],
+    "src/goes_science_kg/campanas_vertex/prompts.py": [],
+    "src/goes_science_kg/campanas_vertex/proveedor.py": [
+      "src/goes_science_kg/campanas_vertex/__main__.py",
+      "tests/test_campanas_vertex_auditoria.py",
+      "tests/test_campanas_vertex_proveedor.py",
+      "tests/test_campanas_vertex_recorrido_transporte.py",
+      "tests/test_campanas_vertex_recuperacion.py"
+    ],
+    "src/goes_science_kg/campanas_vertex/validacion.py": [
+      "src/goes_science_kg/campanas_vertex/proveedor.py"
+    ],
     "src/goes_science_kg/clases/__init__.py": [
       "src/goes_science_kg/api_complementos.py",
       "src/goes_science_kg/api_materiales.py",
+      "src/goes_science_kg/aprendizaje/cierre_recorridos.py",
+      "src/goes_science_kg/campanas_vertex/contratos.py",
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
+      "src/goes_science_kg/campanas_vertex/validacion.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
@@ -551,9 +637,12 @@
       "src/goes_science_kg/clases/revision_contenido.py",
       "src/goes_science_kg/clases/validacion.py",
       "src/goes_science_kg/cli/clases.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/lectura.py",
       "src/goes_science_kg/materiales/compilacion.py",
       "src/goes_science_kg/materiales/publicacion.py",
       "src/goes_science_kg/operacion/sincronizacion.py",
+      "tests/test_campanas_vertex_recuperacion.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_complementaria.py",
@@ -572,6 +661,7 @@
       "tests/test_clases_reales.py",
       "tests/test_clases_recuperacion.py",
       "tests/test_clases_revision_contenido.py",
+      "tests/test_entrega_didactica.py",
       "tests/test_materiales_reales.py",
       "tests/test_sincronizacion.py"
     ],
@@ -596,13 +686,18 @@
       "tests/test_clases_entrega_parcial.py"
     ],
     "src/goes_science_kg/clases/complementaria.py": [
+      "src/goes_science_kg/campanas_vertex/contratos.py",
+      "src/goes_science_kg/campanas_vertex/validacion.py",
       "src/goes_science_kg/clases/complementaria_publicacion.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/lectura.py",
       "tests/test_clases_complementaria.py"
     ],
     "src/goes_science_kg/clases/complementaria_publicacion.py": [
       "src/goes_science_kg/api_complementos.py",
       "src/goes_science_kg/clases/complementaria_revision.py",
       "src/goes_science_kg/cli/clases.py",
+      "src/goes_science_kg/entrega/compilacion.py",
       "src/goes_science_kg/operacion/sincronizacion.py",
       "tests/test_clases_complementaria_publicacion.py",
       "tests/test_sincronizacion.py"
@@ -628,6 +723,8 @@
       "tests/test_clases_contexto_agente.py"
     ],
     "src/goes_science_kg/clases/contratos.py": [
+      "src/goes_science_kg/campanas_vertex/contratos.py",
+      "src/goes_science_kg/campanas_vertex/validacion.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
@@ -645,6 +742,8 @@
       "src/goes_science_kg/clases/preparacion.py",
       "src/goes_science_kg/clases/proveedor.py",
       "src/goes_science_kg/clases/validacion.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "tests/test_campanas_vertex_recuperacion.py",
       "tests/test_clases.py",
       "tests/test_clases_editorial.py"
     ],
@@ -688,6 +787,7 @@
     "src/goes_science_kg/clases/lectura.py": [
       "src/goes_science_kg/api_materiales.py",
       "src/goes_science_kg/clases/paquete.py",
+      "src/goes_science_kg/entrega/compilacion.py",
       "src/goes_science_kg/materiales/compilacion.py",
       "tests/test_clases.py"
     ],
@@ -704,9 +804,11 @@
     "src/goes_science_kg/clases/paquete.py": [
       "src/goes_science_kg/clases/publicacion.py",
       "src/goes_science_kg/cli/clases.py",
+      "src/goes_science_kg/entrega/compilacion.py",
       "src/goes_science_kg/materiales/publicacion.py",
       "tests/test_clases.py",
-      "tests/test_clases_entrega_parcial.py"
+      "tests/test_clases_entrega_parcial.py",
+      "tests/test_entrega_didactica.py"
     ],
     "src/goes_science_kg/clases/planificacion.py": [
       "tests/test_clases_planificacion.py"
@@ -725,6 +827,7 @@
       "tests/test_clases_planificacion.py"
     ],
     "src/goes_science_kg/clases/presupuesto.py": [
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/proveedor.py",
@@ -760,6 +863,7 @@
       "tests/test_clases_revision_contenido.py"
     ],
     "src/goes_science_kg/clases/validacion.py": [
+      "src/goes_science_kg/aprendizaje/cierre_recorridos.py",
       "src/goes_science_kg/clases/campana.py",
       "src/goes_science_kg/clases/compilacion.py",
       "src/goes_science_kg/clases/complementaria.py",
@@ -823,6 +927,9 @@
       "src/goes_science_kg/cli/__init__.py",
       "src/goes_science_kg/cli/principales.py",
       "tests/test_datos_externos.py"
+    ],
+    "src/goes_science_kg/cli/entrega.py": [
+      "src/goes_science_kg/cli/__init__.py"
     ],
     "src/goes_science_kg/cli/grados.py": [
       "src/goes_science_kg/cli/__init__.py"
@@ -935,11 +1042,14 @@
       "src/goes_science_kg/archivos.py",
       "src/goes_science_kg/brechas.py",
       "src/goes_science_kg/bucle.py",
+      "src/goes_science_kg/campanas_vertex/continuidad.py",
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
       "src/goes_science_kg/clases/presupuesto.py",
       "src/goes_science_kg/cli/alineacion.py",
       "src/goes_science_kg/cli/artefactos.py",
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/cli/datos.py",
+      "src/goes_science_kg/cli/entrega.py",
       "src/goes_science_kg/cli/grados.py",
       "src/goes_science_kg/cli/grafo.py",
       "src/goes_science_kg/cli/investigacion.py",
@@ -1192,6 +1302,27 @@
     "src/goes_science_kg/disciplinas.py": [
       "src/goes_science_kg/grafo/construir.py",
       "tests/test_disciplinas.py"
+    ],
+    "src/goes_science_kg/entrega/__init__.py": [
+      "src/goes_science_kg/cli/entrega.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/despacho.py",
+      "tests/test_entrega_despacho.py",
+      "tests/test_entrega_didactica.py"
+    ],
+    "src/goes_science_kg/entrega/compilacion.py": [
+      "src/goes_science_kg/cli/entrega.py",
+      "src/goes_science_kg/entrega/despacho.py",
+      "tests/test_entrega_despacho.py",
+      "tests/test_entrega_didactica.py"
+    ],
+    "src/goes_science_kg/entrega/despacho.py": [
+      "src/goes_science_kg/cli/entrega.py",
+      "tests/test_entrega_despacho.py"
+    ],
+    "src/goes_science_kg/entrega/lectura.py": [
+      "src/goes_science_kg/entrega/compilacion.py",
+      "tests/test_entrega_didactica.py"
     ],
     "src/goes_science_kg/evaluacion.py": [
       "src/goes_science_kg/cli/principales.py",
@@ -1598,6 +1729,8 @@
       "src/goes_science_kg/clases/revision_contenido.py",
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/cli/materiales.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/despacho.py",
       "src/goes_science_kg/materiales/almacen.py",
       "src/goes_science_kg/materiales/publicacion.py",
       "src/goes_science_kg/operacion/sincronizacion.py",
@@ -1610,6 +1743,8 @@
       "tests/test_clases_insumos.py",
       "tests/test_clases_presupuesto.py",
       "tests/test_clases_revision_contenido.py",
+      "tests/test_entrega_despacho.py",
+      "tests/test_entrega_didactica.py",
       "tests/test_materiales.py",
       "tests/test_materiales_reales.py",
       "tests/test_sincronizacion.py"
@@ -1649,6 +1784,8 @@
       "src/goes_science_kg/clases/revision_contenido.py",
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/cli/materiales.py",
+      "src/goes_science_kg/entrega/compilacion.py",
+      "src/goes_science_kg/entrega/despacho.py",
       "src/goes_science_kg/materiales/almacen.py",
       "src/goes_science_kg/materiales/publicacion.py",
       "tests/test_clases.py",
@@ -1660,6 +1797,8 @@
       "tests/test_clases_insumos.py",
       "tests/test_clases_presupuesto.py",
       "tests/test_clases_revision_contenido.py",
+      "tests/test_entrega_despacho.py",
+      "tests/test_entrega_didactica.py",
       "tests/test_materiales.py",
       "tests/test_materiales_reales.py",
       "tests/test_sincronizacion.py"
@@ -1734,6 +1873,7 @@
     "src/goes_science_kg/motor/__init__.py": [
       "src/goes_science_kg/api_interfaz.py",
       "src/goes_science_kg/api_producto.py",
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
       "src/goes_science_kg/clases/auditoria.py",
       "src/goes_science_kg/clases/compilacion.py",
       "src/goes_science_kg/clases/complementaria.py",
@@ -1825,6 +1965,10 @@
       "tests/test_api_interfaz.py",
       "tests/test_archivo_alineaciones.py",
       "tests/test_archivo_conocimiento_adversarial.py",
+      "tests/test_campanas_vertex_continuidad.py",
+      "tests/test_campanas_vertex_presupuesto.py",
+      "tests/test_campanas_vertex_proveedor.py",
+      "tests/test_campanas_vertex_recuperacion.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_contexto_agente.py",
@@ -2125,6 +2269,7 @@
       "src/goes_science_kg/motor/calidad.py"
     ],
     "src/goes_science_kg/motor/registro.py": [
+      "src/goes_science_kg/campanas_vertex/presupuesto.py",
       "src/goes_science_kg/cli/alineacion.py",
       "src/goes_science_kg/cli/clases.py",
       "src/goes_science_kg/cli/investigacion.py",
@@ -2142,6 +2287,10 @@
       "src/goes_science_kg/producto/unidades.py",
       "tests/test_agentic.py",
       "tests/test_api_interfaz.py",
+      "tests/test_campanas_vertex_continuidad.py",
+      "tests/test_campanas_vertex_presupuesto.py",
+      "tests/test_campanas_vertex_proveedor.py",
+      "tests/test_campanas_vertex_recuperacion.py",
       "tests/test_clases.py",
       "tests/test_clases_compilacion_real.py",
       "tests/test_clases_presupuesto.py",
@@ -2898,6 +3047,8 @@
     ]
   },
   "candidatos_sin_consumidor_estatico": [
+    "src/goes_science_kg/campanas_vertex/__main__.py",
+    "src/goes_science_kg/campanas_vertex/prompts.py",
     "src/goes_science_kg/clases/consultas.py",
     "src/goes_science_kg/cli/__main__.py"
   ],
@@ -3015,6 +3166,10 @@
       "enlaces": []
     },
     {
+      "archivo": "AGENTS.md",
+      "enlaces": []
+    },
+    {
       "archivo": "CLAUDE.md",
       "enlaces": [
         {
@@ -3086,6 +3241,26 @@
         {
           "destino": "docs/CLASES_V4.md",
           "estado": "versionado"
+        },
+        {
+          "destino": "docs/CLASES_V4.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "docs/VERIFICACION_GCS.md",
+          "estado": "versionado"
+        },
+        {
+          "destino": "docs/ENTREGA_DIDACTICA_V2.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "docs/DESPACHO_CIENCIAS_V4.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "docs/AMPLIACION_VERTEX_CIENCIAS_V4.md",
+          "estado": "activo_local"
         },
         {
           "destino": "docs/CALIDAD.md",
@@ -3252,6 +3427,10 @@
       ]
     },
     {
+      "archivo": "docs/AMPLIACION_VERTEX_CIENCIAS_V4.md",
+      "enlaces": []
+    },
+    {
       "archivo": "docs/APLICACION_CIENCIAS.md",
       "enlaces": [
         {
@@ -3348,7 +3527,12 @@
     },
     {
       "archivo": "docs/CLASES_V4.md",
-      "enlaces": []
+      "enlaces": [
+        {
+          "destino": "VERIFICACION_GCS.md",
+          "estado": "versionado"
+        }
+      ]
     },
     {
       "archivo": "docs/DATOS_EXTERNOS.md",
@@ -3356,6 +3540,32 @@
         {
           "destino": "VERIFICACION_GCS.md",
           "estado": "versionado"
+        }
+      ]
+    },
+    {
+      "archivo": "docs/DESPACHO_CIENCIAS_V4.md",
+      "enlaces": [
+        {
+          "destino": "ENTREGA_DIDACTICA_V2.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "AMPLIACION_VERTEX_CIENCIAS_V4.md",
+          "estado": "activo_local"
+        }
+      ]
+    },
+    {
+      "archivo": "docs/ENTREGA_DIDACTICA_V2.md",
+      "enlaces": [
+        {
+          "destino": "PEDAGOGIA_CIENCIAS_V4.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "DESPACHO_CIENCIAS_V4.md",
+          "estado": "activo_local"
         }
       ]
     },
@@ -3437,6 +3647,10 @@
       ]
     },
     {
+      "archivo": "docs/PEDAGOGIA_CIENCIAS_V4.md",
+      "enlaces": []
+    },
+    {
       "archivo": "docs/PROGRESION_2_11.md",
       "enlaces": []
     },
@@ -3494,6 +3708,26 @@
         {
           "destino": "MATERIALES_DOCENTES.md",
           "estado": "versionado"
+        },
+        {
+          "destino": "AMPLIACION_VERTEX_CIENCIAS_V4.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "ENTREGA_DIDACTICA_V2.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "PEDAGOGIA_CIENCIAS_V4.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "DESPACHO_CIENCIAS_V4.md",
+          "estado": "activo_local"
+        },
+        {
+          "destino": "../AGENTS.md",
+          "estado": "activo_local"
         },
         {
           "destino": "PROGRESION_2_11.md",
@@ -3558,6 +3792,10 @@
       "archivo": "docs/VERIFICACION_GCS.md",
       "enlaces": [
         {
+          "destino": "badges/medicion.json",
+          "estado": "versionado"
+        },
+        {
           "destino": "DATOS_EXTERNOS.md",
           "estado": "versionado"
         }
@@ -3613,6 +3851,10 @@
           "estado": "versionado"
         }
       ]
+    },
+    {
+      "archivo": "docs/auditoria/REVISION_ENTREGA_CIENCIAS_V4_20261029.md",
+      "enlaces": []
     },
     {
       "archivo": "docs/investigacion/auditoria_fuentes_primarias.md",

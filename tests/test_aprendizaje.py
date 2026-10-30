@@ -113,11 +113,36 @@ def test_confirmar_exige_dos_evidencias(nav, ped):
     )
     previas = {h.concepto: (0.6, "visto")}
     for i in (1, 2):
-        ev = Evidencia(f"E{i}", "2026-10-12", "x", h.objetivo, [h.concepto], "x", False)
+        ev = Evidencia(f"E{i}", "2026-10-12", f"x-{i}", h.objetivo, [h.concepto], "x", False)
         perfil.observar(ev, "opcion_multiple", previas)
         h.evidencias.append(ev.id)
         estado = diagnostico.resolver(h, perfil)
         assert estado == ("abierta" if i == 1 else "confirmada")
+
+
+def test_repetir_la_misma_tarea_no_confirma_una_brecha():
+    perfil = Perfil("t", 9)
+    h = diagnostico.Hipotesis("H1", "TEMA:x", "CON:x", "base", "E0", 0.5)
+    for i in range(2):
+        ev = Evidencia(f"E{i}", "2026-10-29", "misma_tarea", h.objetivo, [h.concepto], "x", False)
+        perfil.observar(ev, "opcion_multiple", {h.concepto: (0.6, "supuesto")})
+        h.evidencias.append(ev.id)
+    assert diagnostico.resolver(h, perfil) == "abierta"
+
+
+@pytest.mark.parametrize("duplicada", [False, True])
+def test_no_reutiliza_la_respuesta_inicial_como_comprobacion_final(nav, ped, tmp_path, duplicada):
+    rec = next(r for r in RECORRIDOS if r["id"] == "R3")
+    act = ped.es_evaluado_por(rec["objetivo"], rol="objetivo", grado=9)[0]
+    actividades = {act["id"]: act}
+    if duplicada:
+        actividades[act["id"] + "-clon"] = {**act, "id": act["id"] + "-clon"}
+    incompleta = Pedagogia(actividades, ped.dificultades, ped.microtemas)
+    sesion, resumen = correr({**rec, "guion": {}}, nav, incompleta, tmp_path)
+    assert resumen["cierre_sesion"] == "pendiente_comprobacion_independiente"
+    assert resumen["comprobacion_independiente"]["evidencia"] is None
+    assert not sesion.perfil.repasos
+    assert any("No hay" in n or "Falta" in n for n in resumen["notas_docente"])
 
 
 # -- ciclo completo -------------------------------------------------------------------------------------------------

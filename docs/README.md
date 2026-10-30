@@ -15,6 +15,9 @@ código están en [medicion.json](badges/medicion.json). La continuidad está en
 | Revisar protección de archivos y secretos | [Auditoría de versionado](auditoria/GITIGNORE_2026.md) |
 | Revisar la auditoría vigente de producto | [QA de producto 2026-10-25](auditoria/QA_PRODUCTO_20261025.md) |
 | Preparar clases | [Guiones V4](CLASES_V4.md) y [materiales docentes](MATERIALES_DOCENTES.md) |
+| Ampliar paquetes con autoría Vertex y revisión por versión | [Piloto, fuentes y presupuesto separado](AMPLIACION_VERTEX_CIENCIAS_V4.md) |
+| Usar la edición local corregida y los cinco recorridos finales | [Entrega didáctica sucesora](ENTREGA_DIDACTICA_V2.md) y [criterios de pedagogía y medición](PEDAGOGIA_CIENCIAS_V4.md) |
+| Entregar en el Escritorio y comprobar calidad antes de copiar | [Despacho verificado](DESPACHO_CIENCIAS_V4.md) y [reglas del repositorio](../AGENTS.md) |
 | Ver cómo se introducen y refuerzan los conceptos | [Progresión 2.º–11.º](PROGRESION_2_11.md) |
 | Entender juicios y alineaciones | [Conocimiento](juicios_conocimiento.md) y [alineación](alineacion.md) |
 | Consultar contratos | [Especificaciones](../specs/README.md) |

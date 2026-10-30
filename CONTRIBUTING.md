@@ -33,3 +33,17 @@ que repitan literalmente la implementación.
 
 Los cambios se revisan sobre una rama propia. En este trabajo la rama solicitada es `feat/api`.
 No incorporar corpus, `.env`, credenciales, SQLite, PDF ni Excel al historial público.
+
+## Despacho de materiales
+
+`AGENTS.md` conserva la instrucción del usuario: al terminar, dejar todos los paquetes finales en su
+Escritorio, en una carpeta nueva con índice y evidencias. La calidad de la salida exige revisión editorial,
+científica/pedagógica e integridad estructural. Una modificación de contenido invalida su dictamen anterior;
+una prueba o un SHA no acreditan aprendizaje, eficacia ni carga cognitiva medida.
+
+Para una edición didáctica usar `gskg entrega despachar`, con el ZIP final y el JSON de la auditoría
+independiente. El comando debe comprobar materiales, dictámenes exactos, ZIP, suite completa sin omisiones
+y huella del código vigente antes de escribir; después verifica la copia y genera un recibo portable.
+Por defecto propone una carpeta en el Escritorio. No sobrescribir entregas ni enviar ensayos como finales.
+Los demás tipos de entregable deben cumplir controles equivalentes, documentados para su alcance.
+Copiar al Escritorio no autoriza llamadas a Vertex, presupuesto nuevo ni publicación en GCS.

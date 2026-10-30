@@ -319,10 +319,14 @@ def _markdown(rec: dict, sesion: Sesion, resumen: dict, nav: Navegador) -> str:
             ],
         ),
         "",
-        "## Estado final del estudiante (solo su perfil; el grafo compartido no cambia)",
+        "## Estado final simulado (solo su perfil; el grafo compartido no cambia)",
+        "",
+        "P es una salida del modelo BKT simplificado con parámetros de diseño sin calibrar. "
+        "No mide carga cognitiva, aprendizaje real ni eficacia; las respuestas correctas de esta demo "
+        "están prefijadas. Completar el software no acredita el aprendizaje de una persona.",
         "",
         *_tabla(
-            ["Concepto u objetivo", "P(dominio)", "Estado", "Previa", "Evidencias"],
+            ["Concepto u objetivo", "P del simulador", "Estado simulado", "Previa", "Respuestas simuladas"],
             [
                 [
                     nombre(e.id) if e.id in nav.por_id and e.id.startswith("CON:") else e.id.removeprefix("TEMA:"),

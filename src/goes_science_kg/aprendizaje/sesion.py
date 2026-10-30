@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import random
 import re
+import unicodedata
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
@@ -94,6 +95,11 @@ def barajar(actividad: dict, semilla: str) -> tuple[dict, dict[str, str]]:
         "distractores": {a_mostrada[k]: v for k, v in (actividad.get("distractores") or {}).items()},
     }
     return mostrada, a_original
+
+
+def _enunciado(actividad: dict) -> str:
+    texto = unicodedata.normalize("NFKD", actividad["enunciado"].casefold())
+    return " ".join(re.findall(r"[a-z0-9]+", texto))
 
 
 @dataclass
@@ -353,16 +359,24 @@ class Sesion:
                 self.reforzar(objetivo, principal, "durante", "ninguna base confirmada: dificultad en el objetivo", 0)
         # Con evaluador, la reevaluación es la respuesta abierta: otra forma de evidencia (producir una explicación en
         # lugar de elegir una opción). Sin él, otra actividad con otra habilidad.
-        otra = next((a for a in abiertas if a["id"] not in self.usadas), None) or next(
-            (a for a in acts if a["id"] not in self.usadas and a["habilidad"] != inicial["habilidad"]),
-            next((a for a in acts if a["id"] not in self.usadas), None),
+        enunciados_usados = {_enunciado(self.ped.actividades[i]) for i in self.usadas}
+        disponibles = [
+            a for a in [*abiertas, *acts] if a["id"] not in self.usadas and _enunciado(a) not in enunciados_usados
+        ]
+        otra = next((a for a in disponibles if a["formato"] == "abierta"), None) or next(
+            (a for a in disponibles if a["habilidad"] != inicial["habilidad"]),
+            next(iter(disponibles), None),
         )
-        final = self.presentar(otra, objetivo, "reevaluación") if otra else ev
+        final = self.presentar(otra, objetivo, "reevaluación") if otra else None
         estado = self.perfil.objetivos[objetivo]
         if final is None:
-            self.presupuesto.notas_docente.append(
+            nota = (
                 "La reevaluación abierta espera la revisión del docente; el objetivo queda como estaba hasta entonces."
+                if otra
+                else "Falta una comprobación nueva del objetivo: no se reutiliza la respuesta inicial como cierre. "
+                "El docente debe disponer de otra tarea sin ayuda antes de acreditar el cierre."
             )
+            self.presupuesto.notas_docente.append(nota)
             self._paso("cierre", self.presupuesto.notas_docente[-1])
         elif final.correcta:
             if estado.estado != "dominado":
@@ -402,5 +416,24 @@ class Sesion:
             "minutos_desvio": self.presupuesto.minutos,
             "notas_docente": self.presupuesto.notas_docente,
             "propuestas": self.presupuesto.propuestas,
+            "cierre_sesion": (
+                "pendiente_comprobacion_independiente"
+                if final is None
+                else "comprobacion_satisfecha"
+                if final.correcta
+                else "requiere_refuerzo"
+            ),
+            "comprobacion_independiente": {
+                "actividad": otra["id"] if otra else None,
+                "evidencia": final.id if final else None,
+                "sin_ayuda_del_tutor": bool(final),
+                "limite": "Enunciado nuevo sin turno del tutor; no acredita independencia estadística ni retención.",
+            },
+            "modelo_dominio": {
+                "tipo": "BKT_simplificado",
+                "calibrado": False,
+                "medicion_carga_cognitiva": False,
+                "limite": "La probabilidad depende de supuestos de diseño; no es una medición validada de aprendizaje.",
+            },
             **({"revision_docente": self.revision_docente} if self.revision_docente else {}),
         }

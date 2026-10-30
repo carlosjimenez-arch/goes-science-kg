@@ -13,6 +13,7 @@ from goes_science_kg.cli import (
     clases,
     conceptos,
     datos,
+    entrega,
     grados,
     grafo,
     internacional,
@@ -38,6 +39,7 @@ __all__ = ["app"]
 app.add_typer(grafo.app, name="grafo")
 app.add_typer(artefactos.app, name="artefactos")
 app.add_typer(datos.app, name="datos")
+app.add_typer(entrega.app, name="entrega")
 app.add_typer(materiales.app, name="materiales")
 app.add_typer(clases.app, name="clases")
 app.add_typer(refuerzo.app, name="refuerzo")
